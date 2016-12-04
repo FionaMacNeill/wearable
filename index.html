@@ -1,0 +1,110 @@
+<!--Website for peri-operative wearable device - an interactive site explaining a project
+Copyright (C) 2016  Fiona MacNeill
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>
+
+    Includes:
+    Flickity PACKAGED v2.0.5
+    Touch, responsive, flickable carousels
+
+    Licensed GPLv3 for open source use
+
+    http://flickity.metafizzy.co
+    Copyright 2016 Metafizzy
+
+    Modified by F.MacNeill, November 2016.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wearable devices for pre-operative care</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="style.css" media="screen">
+    <link rel="stylesheet" href="flickity.css" media="screen">
+    <script src="js/flickity.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+</head>
+<body>
+<span id="home"></span>
+<div id="wrapper">
+    <div class="site-header">
+        <header>
+            <h1>Peri-operative Wearable</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a data-scroll href="#home" title="home"><strong>Peri-operative Wearable Project</strong></a></li>
+                <li>||</li>
+                <li><a data-scroll href="#team">Team</a></li>
+                <li><a data-scroll href="#device">Devices</a></li>
+                <li><a data-scroll href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+<!-- Flickity HTML init -->
+<div class="carousel"
+    data-flickity='{"freeScroll": true}'>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+</div>
+<div class="timeline-line-end"></div>
+
+    <!-- Content of my portfolio site starts here -->
+
+<aside></aside>
+<!---------------- Section 1----------------------->
+<span id="team"></span>
+<section class="team-area">
+
+            <h2>Research Team</h2>
+
+</section>
+
+<!---------------- Section 2----------------------->
+<span id="device"></span>
+<section class="device-area">
+
+            <h2>Devices</h2>
+</section>
+
+<!---------------- Section 3----------------------->
+<span id="contact"></span>
+<section class="contact-area">
+            <h2>Contact</h2>
+</section>
+
+<!---------------- Section 4----------------------->
+<span id="links"></span>
+<section class="links-area">
+        <h2>Links</h2>
+</section>
+
+<footer>
+    <script>
+        smoothScroll.init();
+    </script>
+</footer>
+</div>
+</div>
+</body>
+</html>
