@@ -28,7 +28,6 @@
 nav{
     float: left;
     z-index: 4;
-    position: fixed;
     height: 80px;
     width: 100%;
     list-style: none;
@@ -87,28 +86,59 @@ nav ul li a:active {
 
 .page-nav-spacer {
     height: 30px;
-    /*border-top: solid 4px #EEEEEE;*/
 }
 
-/* content sections */
+/*/////////////////////
+//                   //
+//     Typography    //
+//                   //
+/////////////////////*/
 
-.about-area {
-    /* top | right | bottom | left */
-    margin: 60px 0 30px 0;
-    padding: 2% 0 0 0;
-    border-radius: 5px;
-    position: relative;
-    overflow: auto;
+body {
+    color: #333333;
 }
 
-#about-header{
+ul {
+    text-align: left;
+    list-style: circle;
+}
+
+
+.free-header{
     /* top | right | bottom | left */
     margin: auto;
     padding: 2% 0 2% 0;
     width: 100%;
     text-align: center;
-    color: #333333;
 }
+
+.color-bk-header{
+    /* top | right | bottom | left */
+    margin: 0 auto 0 auto;
+    padding: 2% 0 2% 0;
+    width: 100%;
+    text-align: center;
+    color: #FFF;
+}
+
+.device-desc{
+    text-align: left;
+}
+
+
+
+
+/* content sections */
+
+.about-area {
+    /* top | right | bottom | left */
+    margin: 5% 0 2% 0;
+    padding: 2% 0 0 0;
+    position: relative;
+    overflow: auto;
+}
+
+
 
 .about_img {
     /* top | right | bottom | left */
@@ -122,7 +152,7 @@ nav ul li a:active {
 
 .team-area {
     /* top | right | bottom | left */
-    margin: 0 0 30px 0;
+    margin: 0 0 2% 0;
     padding: 2% 0 2% 0;
     border-radius: 5px;
     position: relative;
@@ -130,19 +160,14 @@ nav ul li a:active {
     background: #5b55b9;
 }
 
-#team-header{
-    /* top | right | bottom | left */
-    margin: 0 auto 0 auto;
-    padding: 2% 0 2% 0;
-    width: 100%;
-    text-align: center;
-    color: #FFF;
-}
 
 .team-img{
     -moz-box-shadow: 0 5px 5px -3px black;
     -webkit-box-shadow: 0 5px 5px -3px black;
     box-shadow: 0 5px 5px -3px black;
+    width: 100%;
+    height: 100%;
+    max-width: 180px;
 }
 
 
@@ -155,22 +180,29 @@ nav ul li a:active {
 
 .device-area {
     /* top | right | bottom | left */
-    margin: 0;
-    padding: 2% 0 0 0;
+    margin: 0 0 2% 0;
+    padding: 2% 0 2% 0;
     border-radius: 5px;
     position: relative;
     overflow: auto;
-    background: #5b55b9;
+}
+
+/* Device-img is based on column 4 and is in the grid section */
+
+.device-img-sz{
+    /* top | right | bottom | left */
+    margin: -10% -10% -10% -10%;
+    width: 110%;
+    height: 120%;
 }
 
 .contact-area {
     /* top | right | bottom | left */
-    margin: 0;
+    margin: 0 0 2% 0;
     padding: 2% 0 0 0;
     border-radius: 5px;
     position: relative;
     overflow: auto;
-    background: #5b55b9;
 }
 
 .links-area {
@@ -197,6 +229,8 @@ nav ul li a:active {
 || 12 column layout - original pixel dimensions column: 65px, gutter: 15px
 || This grid is used to layout all the text residing in the sections */
 
+
+
 .grid-container {
     width: 100%;
     max-width: 1000px;
@@ -207,17 +241,38 @@ nav ul li a:active {
     box-sizing: border-box;
 
 }
-/* It may be possible to take this out as it has been superseded by row-align */
-.single-row {
-    clear: both;
-}
 
 .row-align{
     clear: both;
     /* top | right | bottom | left */
-    margin: auto 0 auto 5%;
+    margin: auto 1.5% auto 5%;
 }
 
+/* used in situations where the height of text columns need to match height */
+
+.single-row {
+    float: left;
+    clear: both;
+    /* top | right | bottom | left */
+    margin: auto 1.5% auto 5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+/* tried this and hated it
+.is-table-row {
+    display: table;
+}
+.is-table-row [class*="col-"] {
+    float: none;
+    display: table-cell;
+    vertical-align: top;
+    border: solid 7px #EEEEEE;
+    border-radius: 0;
+}
+*/
 
 .col {
     float: left;
@@ -225,7 +280,8 @@ nav ul li a:active {
     margin: 1% 0 2% 0;
     padding: 1%;
     text-align: center;
-    border: solid 1px black;
+    /*border: solid 1px black;*/
+    border-radius: 5px;
 }
 
 /* One column width - (65px X 12) + (15px x 12) = 960px total width */
@@ -248,8 +304,8 @@ nav ul li a:active {
     margin-right: 1.5%;
 }
 
-.col.team-photo {
-    width: 22.5%;
+.team-photo {
+    min-width: 120px;
     /* top | right | bottom | left */
     margin-right: 1.5%;
     padding: 0 5px 0 0;
@@ -261,25 +317,37 @@ nav ul li a:active {
     margin-right: 1.5%;
 }
 
-/* Four column widths : 260px + (15px x 3) =  305px per column */
-.col.three-column {
-    width: 30.5%;
-    margin-right: 1.5%;
+/* Styling for free standing columns */
+.free-columns {
     border: solid 2px #EEEEEE;
-    border-radius: 5px;
+
 }
 
 /* Six column widths : 390px + (15 x 5) =  465px per column */
 .col.col-4 {
     width: 46.5%;
     margin-right: 1.5%;
+}
 
+/* Styling for device image based on column 4 - remove*/
+.col.device-img {
+    width: 46.5%;
+    margin-right: 1.5%;
+    padding: 0;
+    overflow: hidden;
+    border: solid 2px #EEEEEE;
+    object-fit: scale-down;
 }
 
 /* twelve column widths : 960px (total width) - 15px = 945px */
 .col.col-5 {
     width: 94.5%;
-    margin-right: 1.5%;
+    margin: 1.5%;
+}
+
+/* Based on col-5 */
+.col.full-width{
+    width: 94.5%;
 }
 
 /* eleven column widths for combined column plus margins and adjustment
@@ -300,14 +368,12 @@ nav ul li a:active {
 
 }
 
-.col-8.bios {
-    width: calc((6.5% * 9) + (1.5% * 8));
-    background: #FFFFFF;
-    opacity: 0.5;
-    border-radius: 5px;
+/* Text background that uses col-8 as the basis - this is for consistent styling */
+.bios {
+    background: #c0c8eb;
     text-align: left;
     margin-left: 5px;
-
+    min-height: 170px;
 }
 
 .col-9.later {
@@ -349,7 +415,7 @@ nav ul li a:active {
     margin: 0 auto 10% auto;
     padding-bottom: 10%;
     position: absolute;
-    height: 250px;
+    height: 80%;
     width: 100%;
 
 }
@@ -378,9 +444,21 @@ nav ul li a:active {
     margin: 2% auto 20% auto;
     padding: 0 10% 20% 10%;
     text-align: center;
-    color: #333333;
 }
 
+/*////////////////////////////
+//                          //
+//     Buttons & Forms      //
+//                          //
+////////////////////////////*/
+
+button{
+    /* top | right | bottom | left */
+    margin: 1% auto 2% 1%;
+    font-size: 16px;
+    border-radius: 5px;
+    background: #cccccc;
+}
 
 /* Desktop first media queries - this will generally be viewed from a desktop in the work environment */
 
@@ -409,47 +487,176 @@ nav ul li a:active {
         line-height: 26px;
     }
 
-/* larger phone of phablet */
-@media (max-width: 600px) {
+    /* larger phone or phablet */
+    @media (max-width: 470px) {
 
-    body {
-        font-size: 13px;
-        line-height: 24px;
+        body {
+            font-size: 13px;
+            line-height: 24px;
+        }
+        .row-align {
+
+        }
+
+        .single-row {
+            margin: 0 2% 2% 0;
+        }
+
+        .col.col-0,
+        .col.col-1,
+        .col.col-2,
+        .col.col-3,
+        .col.col-4,
+        .col.col-5,
+        .col.col-6.later,
+        .col.col-7.later,
+        .col.col-8.later,
+        .col.col-9.later,
+        .col.col-10.later,
+        .col.col-11.later,
+        .col.col-12.later {
+            float: none;
+            width: 99%;
+            margin-right: 0;
+        }
+
+        .about-area {
+            /* top | right | bottom | left */
+            margin: 15% 4% 2% 0;
+
+        }
+
+        .free-header{
+            /* top | right | bottom | left */
+            margin: 0 auto 5% auto;
+            padding: 2% 0 2% 4%;
+        }
+
+        .team-area {
+            /* top | right | bottom | left */
+            margin: 0 2% 2% 0;
+            padding: 2% 4% 2% 0;
+            border-radius: 5px;
+            position: relative;
+            overflow: auto;
+            background: #5b55b9;
+            width: 100%
+        }
+
+        .on-color-text {
+            /* top | right | bottom | left */
+            margin: auto 2% 2% 0;
+
+        }
+
+
     }
 
-}
+    /* larger than a mobile phone */
+    @media (max-width: 414px) {
+        body {
+            font-size: 12px;
+            line-height: 14px;
+        }
 
-/* larger than a mobile phone */
-@media (min-width: 400px) {
-    body {
-        font-size: 12px;
-        line-height: 18px;
+        .row-align {
+
+        }
+
+        .single-row {
+            margin: 0 2% 2% 0;
+        }
+
+        .col.col-0,
+        .col.col-1,
+        .col.col-2,
+        .col.col-3,
+        .col.col-4,
+        .col.col-5,
+        .col.col-6.later,
+        .col.col-7.later,
+        .col.col-8.later,
+        .col.col-9.later,
+        .col.col-10.later,
+        .col.col-11.later,
+        .col.col-12.later {
+            float: none;
+            width: 99%;
+            margin-right: 0;
+        }
+
+        .timeline-line-end {
+            display: none;
+        }
+
+        /* ---- page dots ---- */
+        .flickity-page-dots {
+            display: none;
+
+        }
+
+        .tl_grid {
+            /* top | right | bottom | left */
+            margin: 5% auto 10% auto;
+            height: 80%;
+
+        }
+
+        .tl_img {
+            /* top | right | bottom | left */
+            margin: 2% auto 5% auto;
+            height: 70px;
+            width: 70px;
+        }
+
+        .tl_title{
+            /* top | right | bottom | left */
+            margin: 2% 5% 5% 5%;
+            padding: 0 5% 0 5%;
+            font-size: 16px;
+        }
+
+        .tl_desc{
+            /* top | right | bottom | left */
+            margin: 2% 8% 20% 8%;
+            text-align: center;
+        }
+
+
+        .tl_image_lv{
+            display: none;
+        }
+
+
+
+        .about-area {
+            /* top | right | bottom | left */
+            margin: 0 4% 2% 0;
+
+        }
+
+        .free-header{
+            /* top | right | bottom | left */
+            margin: 0 auto 5% auto;
+            padding: 2% 0 2% 4%;
+        }
+
+        .team-area {
+            /* top | right | bottom | left */
+            margin: 0 2% 2% 0;
+            padding: 2% 4% 2% 0;
+            border-radius: 5px;
+            position: relative;
+            overflow: auto;
+            background: #5b55b9;
+            width: 100%
+        }
+
+        .bios {
+            /* top | right | bottom | left */
+            margin: auto 2% 2% 0;
+
+        }
+
     }
-
-    .singlerow {
-
-    }
-
-    .col.col-0,
-    .col.col-1,
-    .col.col-2,
-    .col.col-2.team-photo,
-    .col.col-3,
-    .col.three-column,
-    .col.col-4,
-    .col.col-5,
-    .col.col-6,
-    .col.col-7,
-    .col.col-8,
-    .col-8.bios,
-    .col.col-9,
-    .col.col-10,
-    .col.col-11,
-    .col.col-12 {
-        float: none;
-        width: 99%;
-    }
-
-}
-
 }
