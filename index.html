@@ -41,9 +41,7 @@ Copyright (C) 2016  Fiona MacNeill
 
     <link rel="stylesheet" href="style.css" media="screen">
     <link rel="stylesheet" href="flickity.css" media="screen">
-    <script src="js/flickity.js"></script>
-    <script src="js/smooth-scroll.js"></script>
-</head>
+   </head>
 <body>
 <span id="home"></span>
 <div id="wrapper">
@@ -65,12 +63,12 @@ Copyright (C) 2016  Fiona MacNeill
 <!-- Flickity HTML init -->
     <div class="grid-container">
 <div class="carousel"
-    data-flickity='{"freeScroll": true}'>
+    data-flickity='{ "cellSelector": ".carousel-cell", "freeScroll": true}'>
     <div class="carousel-cell">
         <div class="tl_grid">
             <img class="tl_img" src="img/patientsvgplch.svg">
-            <h2 class="tl_title">Patient: Ruth Greenway</h2>
-            <p class="tl_desc">In this text we introduce our patient Ruth and why she has been prescribed a wearable
+            <h2 class="tl_title">Patient: Carol Greenway</h2>
+            <p class="tl_desc">In this text we introduce our patient Carol and why she has been prescribed a wearable
                 device.
                 How much text can I realistically fit it here? I do need enough space to flesh out who this person is,
                 what type
@@ -174,19 +172,19 @@ Copyright (C) 2016  Fiona MacNeill
         <div class="page-nav-spacer"></div>
         <section class="about-area">
             <span id="about"></span>
-            <h2 id="about-header">About the Project</h2>
+            <h2 class="free-header" title="About the Project">About the Project</h2>
             <div class="row-align">
-                    <div class="col three-column"><img class="about_img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
+                    <div class="col col-3 free-columns"><img class="about_img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
                         <h3>Goal 1</h3>
                         <p>This is where we describe the project in a few sentences. This is where we describe the project in a few sentences. This is where we describe the project in a few sentences.
                         </p>
                     </div>
-                    <div class="col three-column"><img class="about_img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
+                    <div class="col col-3 free-columns"><img class="about_img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
                         <h3>Goal 2</h3>
                         <p>This is where we describe the project in a few sentences. This is where we describe the project in a few sentences. This is where we describe the project in a few sentences.
                         </p>
                     </div>
-                    <div class="col three-column"><img class="about_img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
+                    <div class="col col-3 free-columns"><img class="about_img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
                         <h3>Goal 3</h3>
                         <p>This is where we describe the project in a few sentences. This is where we describe the project in a few sentences. This is where we describe the project in a few sentences.
                         </p>
@@ -197,15 +195,15 @@ Copyright (C) 2016  Fiona MacNeill
 
 <section class="team-area">
     <span id="team"></span>
-        <h2 id="team-header">Research Team</h2>
+        <h2 class="color-bk-header">Research Team</h2>
     <div class="row-align">
-        <div class="col col-8 team-photo"><img class="team-img" alt="photo of Dr Theo Fotis" title="Dr Theo Fotis" src="img/team/theo_fotis.jpg"></div>
-        <div class="col col-8 bios"><p><strong>Theo Fotis's</strong> bio goes here...</p></div>
+        <div class="col col-2 team-photo"><img class="team-img" alt="photo of Dr Theo Fotis" title="Dr Theo Fotis" src="img/team/theo_fotis.jpg"></div>
+        <div class="col col-8 later bios"><p><strong>Theo Fotis's</strong> bio goes here...</p></div>
     </div>
     <div class="row-align">
-        <div class="col col-8 team-photo"><img class="team-img" alt="photo of Fiona MacNeill" title="Fiona MacNeill" src="img/team/fiona_macneill.jpg"></div>
+        <div class="col col-2 team-photo"><img class="team-img" alt="photo of Fiona MacNeill" title="Fiona MacNeill" src="img/team/fiona_macneill.jpg"></div>
         <!-- bio written by F.MacNeill - source: SenSe Research Cluster website, University of Brighton - http://www.sense-brighton.eu/our-team/macneill/ -->
-        <div class="col col-8 bios"><p><strong>Fiona MacNeill</strong> is a part-time MSc User Experience Design student, focusing on the variance between users’ perceptual experience of technology and the operational nature of its use; studying the idiomatic culture used to coalesce these two states. She received her BA(hons) Fine Art from University of Kent in 2005, moving into creative digital media and then computing in 2009. MacNeill’s professional practice is founded on user-focused, design-grounded theory, coupled with consideration of privacy and trust issues, particularly in IoT, mobile and cloud computing.</p></div>
+        <div class="col col-8 later bios"><p><strong>Fiona MacNeill</strong> is a part-time MSc User Experience Design student, focusing on the variance between users’ perceptual experience of technology and the operational nature of its use; studying the idiomatic culture used to coalesce these two states. She received her BA(hons) Fine Art from University of Kent in 2005, moving into creative digital media and then computing in 2009. MacNeill’s professional practice is founded on user-focused, design-grounded theory, coupled with consideration of privacy and trust issues, particularly in IoT, mobile and cloud computing.</p></div>
     </div>
 </section>
 
@@ -213,96 +211,116 @@ Copyright (C) 2016  Fiona MacNeill
 
 <section class="device-area">
     <span id="device"></span>
-            <h2>Devices</h2>
+            <h2 class="free-header" title="Devices">Devices</h2>
     <div class="row-align">
-        <div class="col col-0"><p>col-0</p></div>
-        <div class="col col-0"><p>col-0</p></div>
-        <div class="col col-0"><p>col-0</p></div>
-        <div class="col col-0"><p>col-0</p></div>
-        <div class="col col-0"><p>col-0</p></div>
-        <div class="col col-0"><p>col-0</p></div>
-        <div class="col col-0"><p>col-0</p></div>
-        <div class="col col-0"><p>col-0</p></div>
-        <div class="col col-0"><p>col-0</p></div>
-        <div class="col col-0"><p>col-0</p></div>
-        <div class="col col-0"><p>col-0</p></div>
-        <div class="col col-0"><p>col-0</p></div>
+        <div class="col full-width free-columns"><p>This is where I write a short introduction to the different device-types that we have been researching.
+        Best not to be too specific at this point as we should investigate the most appropriate form factor for our target demographic. Attitudes towards device
+        vary according to age group, for example older users prefer clip-ons as opposed to a watch type.</p></div>
     </div>
     <div class="row-align">
-        <div class="col col-1"><p>col-1</p></div>
-        <div class="col col-1"><p>col-1</p></div>
-        <div class="col col-1"><p>col-1</p></div>
-        <div class="col col-1"><p>col-1</p></div>
-        <div class="col col-1"><p>col-1</p></div>
-        <div class="col col-1"><p>col-1</p></div>
+        <!--image overflow is intentional - images will be designed for this-->
+        <div class="col device-img"><p><img class="device-img-sz" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=picture+of+min-height+200&h=200"></p></div>
+        <div class="col device-img"><p><img class="device-img-sz" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=picture+of+min-height+200&h=200"></p></div>
+    </div>
+    <div class="single-row">
+        <div class="col col-4 free-columns">
+                <h3>Hand/Wrist Type</h3><p class="device-desc">This is where I need to provide a brief description of the different types of devices that we
+        have been looking at and the types of sensors that they contain. I think that including a list of Pros and Cons.
+            <br/><br/>
+            <strong>Pros:</strong></p>
+            <ul>
+                <li>Readily visible to the user at all times</li>
+                <li>Popular device types are available</li>
+                <li>Where the device has an touchscreen interface or physical buttons this could be used for self-reporting</li>
+            </ul>
+            <p class="device-desc"><strong>Cons:</strong></p>
+            <ul>
+                <li>The patient may not wish for others to know about their use of the device</li>
+                <li>The device may not be in-keeping with the user's aesthetic taste</li>
+                <li>The device may be inconvenient when undertaking certain physical activities</li>
+            </ul>
+        </div>
+        <div class="col col-4 free-columns">
+            <h3>Clip-on/Fasten Type</h3><p class="device-desc">This is where I need to provide a brief description of the different types of devices that we
+            have been looking at and the types of sensors that they contain. I think that including a list of Pros and Cons.
+            <br/><br/>
+            <strong>Pros:</strong></p>
+            <ul>
+                <li>More discreet and can be hidden under clothing</li>
+                <li>Perceived as less of a sport or fitness device</li>
+                <li>Where the device has an touchscreen interface or physical buttons this could be used for self-reporting</li>
+            </ul>
+            <p class="device-desc"><strong>Cons:</strong></p>
+            <ul>
+                <li>The user may forget to wear/clip on the device</li>
+                <li>The users phone would need to be the main interface, if an interface for the patient is a requirement</li>
+                <li>The device may be inconvenient when undertaking certain physical activities</li>
+            </ul>
+        </div>
     </div>
     <div class="row-align">
-        <div class="col col-2"><p>col-2</p></div>
-        <div class="col col-2"><p>col-2</p></div>
-        <div class="col col-2"><p>col-2</p></div>
-        <div class="col col-2"><p>col-2</p></div>
+        <div class="col full-width free-columns"><h3>Straw poll: which device type would you prefer to use?</h3>
+                <div id="poll">
+                <form>
+                    Hand/Wrist:
+                    <input type="radio" name="vote" id="hand" value="0" onclick="getVote(this.value)">
+                    <br>Clip-on/Fasten:
+                    <input type="radio" name="vote" id="clip" value="1" onclick="getVote(this.value)">
+                </form>
+                 </div>
+            </div>
+        </div>
     </div>
-    <div class="row-align">
-        <div class="col col-3"><p>col-3</p></div>
-        <div class="col col-3"><p>col-3</p></div>
-        <div class="col col-3"><p>col-3</p></div>
-    </div>
-    <div class="row-align">
-        <div class="col col-4"><p>col-4</p></div>
-        <div class="col col-4"><p>col-4</p></div>
-    </div>
-    <div class="row-align">
-        <div class="col col-5"><p>col-5</p></div>
-    </div>
-    <div class="row-align">
-        <div class="col col-0"><p>col-0</p></div>
-        <div class="col col-6 later"><p>col-6</p></div>
-    </div>
-    <div class="row-align">
-        <div class="col col-1"><p>col-1</p></div>
-        <div class="col col-7 later"><p>col-7</p></div>
-    </div>
-    <div class="row-align">
-        <div class="col col-2"><p>col-2</p></div>
-        <div class="col col-8 later"><p>col-8</p></div>
-    </div>
-    <div class="row-align">
-        <div class="col col-3"><p>col-3</p></div>
-        <div class="col col-9 later"><p>col-9</p></div>
-    </div>
-    <div class="row-align">
-        <div class="col col-4"><p>col-4</p></div>
-        <div class="col col-10 later"><p>col-10</p></div>
-    </div>
-    <div class="row-align">
-        <div class="col col-11 later"><p>col-11</p></div>
-        <div class="col col-12 later"><p>col-12</p></div>
-    </div>
-
 </section>
 
 <!---------------- Section 3----------------------->
 
 <section class="contact-area">
     <span id="contacts"></span>
-            <h2>Contact</h2>
+            <h2 class="free-header">Contact</h2>
+    <div class="row-align">
+        <div class="col full-width free-columns">
+            <form>
+                Enter your Name: <input type="text" name="name"><p></p>
+                Enter your email address: <input type="email" name="email"><p></p>
+                Write your message:<textarea type="text" name="textarea"></textarea>
+                <br/>
+                <button>Submit</button>
+
+            </form>
+        </div>
+    </div>
 </section>
 
 <!---------------- Section 4----------------------->
 
 <section class="links-area">
     <span id="links"></span>
-        <h2>Links</h2>
+        <h2 class="color-bk-header">References/Links</h2>
 </section>
 
     </div>
 </div>
 </body>
 <footer>
-    <script>
-        smoothScroll.init({
-            selectorHeader: '[data-scroll-header]'
-        });
-    </script>
 </footer>
+    <script src="js/main.js"></script>
+    <script src="js/flickity.js"></script>
+    <script>
+    function getVote(int) {
+  if (window.XMLHttpRequest) {
+   // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("poll").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","poll_vote.php?vote="+int,true);
+  xmlhttp.send();
+}
+</script>
 </html>
