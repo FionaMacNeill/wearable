@@ -1,9 +1,46 @@
+
+ //Prevent the function from running before the document is loaded
+ /*document.addEventListener('readystatechange', function init() {
+ if (document.readyState === "complete") {
+ smoothScroll.init();
+ }
+ });
+*/
+
 window.addEventListener("load", init);
 
 
-function init(){
+function init() {
     smoothScroll.init();
 }
+
+
+/* Button listener for navigation unfolding - some nice original script written by F. MacNeill */
+
+    var toggle = document.querySelector(".toggle");
+    var hdHeight = document.querySelector(".site-header");
+
+
+    // Listen for click event on toggle var
+    toggle.addEventListener('click', function() {
+        console.log("toggle clicked");
+        // toggle class "active" on topNav var
+        hdHeight.classList.toggle("active");
+    }, false );
+
+
+ /*
+    window.onload = function () {
+     window.addEventListener('resize', function(){
+         var el = document.querySelector(".site-header");
+         el.style.height = "4em";
+         el.style.transition = ".4s";
+         var ln = document.querySelector(".timeline-line-end");
+         ln.style.top = "424px";
+         ln.style.transition = ".4s";
+        });
+    };
+*/
 
 /*!
  * smooth-scroll v10.1.0: Animate scrolling to anchor links
