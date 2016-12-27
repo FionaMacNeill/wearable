@@ -35,24 +35,24 @@ Copyright (C) 2016  Fiona MacNeill
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Wearable devices for pre-operative care</title>
+    <title>Wearable Devices for Perioperative Anxiety</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="style.css" media="screen">
     <link rel="stylesheet" href="flickity.css" media="screen">
    </head>
+<div id="skip"><a href="#content" tabindex="1" title="skip to content">skip to main content</a></div>
 <body>
-<span id="home"></span>
+<div class="grid-container">
 <div id="wrapper">
     <div class="site-header">
         <header>
-            <h1>Peri-operative Wearable</h1>
+            <h1>Perioperative Wearable</h1>
         </header>
         <nav data-scroll-header>
             <ul>
-                <li><a data-scroll href="#home" title="home"><strong>Peri-operative Wearable Project</strong></a></li>
-                <li>||</li>
+                <button class="toggle" id="menu-btn">Menu</button>
                 <li><a data-scroll href="#about">About</a></li>
                 <li><a data-scroll href="#team">Team</a></li>
                 <li><a data-scroll href="#device">Devices</a></li>
@@ -60,10 +60,19 @@ Copyright (C) 2016  Fiona MacNeill
             </ul>
         </nav>
     </div>
+    </div>
 <!-- Flickity HTML init -->
-    <div class="grid-container">
+   <!--<div class="grid-container">-->
 <div class="carousel"
     data-flickity='{ "cellSelector": ".carousel-cell", "freeScroll": true}'>
+    <div class="carousel-cell" id="content">
+        <div class="tl_grid">
+            <img class="tl_img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=100%C3%97100&w=100&h=100">
+            <h2 class="tl_title">A Perioperative Timeline</h2>
+            <p class="tl_desc">This text introduces the project and invites our visitors to follow Carol's story.
+            </p>
+        </div>
+    </div>
     <div class="carousel-cell">
         <div class="tl_grid">
             <img class="tl_img" src="img/patientsvgplch.svg">
@@ -164,7 +173,7 @@ Copyright (C) 2016  Fiona MacNeill
         </div>
     </div>
 </div>
-<div class="timeline-line-end"></div>
+<div class="timeline-line-end" id="timeline"></div>
 
     <!-- Content of my portfolio site starts here -->
 <!-- this is where the side bar overlay will go --->
@@ -258,19 +267,6 @@ Copyright (C) 2016  Fiona MacNeill
             </ul>
         </div>
     </div>
-    <div class="row-align">
-        <div class="col full-width free-columns"><h3>Straw poll: which device type would you prefer to use?</h3>
-                <div id="poll">
-                <form>
-                    Hand/Wrist:
-                    <input type="radio" name="vote" id="hand" value="0" onclick="getVote(this.value)">
-                    <br>Clip-on/Fasten:
-                    <input type="radio" name="vote" id="clip" value="1" onclick="getVote(this.value)">
-                </form>
-                 </div>
-            </div>
-        </div>
-    </div>
 </section>
 
 <!---------------- Section 3----------------------->
@@ -298,29 +294,10 @@ Copyright (C) 2016  Fiona MacNeill
     <span id="links"></span>
         <h2 class="color-bk-header">References/Links</h2>
 </section>
-
-    </div>
 </div>
 </body>
 <footer>
 </footer>
     <script src="js/main.js"></script>
     <script src="js/flickity.js"></script>
-    <script>
-    function getVote(int) {
-  if (window.XMLHttpRequest) {
-   // code for IE7+, Firefox, Chrome, Opera, Safari
-    xmlhttp=new XMLHttpRequest();
-  } else {  // code for IE6, IE5
-    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-  xmlhttp.onreadystatechange=function() {
-    if (this.readyState==4 && this.status==200) {
-      document.getElementById("poll").innerHTML=this.responseText;
-    }
-  }
-  xmlhttp.open("GET","poll_vote.php?vote="+int,true);
-  xmlhttp.send();
-}
-</script>
 </html>
