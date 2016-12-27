@@ -3,90 +3,141 @@
 .wrapper {
     position: relative;
     /* top | right | bottom | left */
+    margin-bottom: 10px;
     padding: 0 10px 0 0;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0;
-    box-sizing: border-box;
+    display: block;
 }
 
+/* element hidden offscreen until tabbed to for those who use screen readers and keyboard nav */
+/* Does not show in Firefox 50+ or Safari but operates as part of the tabindex, will be visible to Chrome users */
+/* referred to http://webaim.org/techniques/css/invisiblecontent/ */
+
+#skip {
+    z-index: 500;
+    padding: 4.5em;
+    position: absolute;
+    top: -20em;
+}
+
+#skip a{
+    background: #ececec;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: auto;
+
+}
+
+#skip a:focus, a:hover{
+    top: 20em;
+}
 
 .site-header {
     z-index: 3;
     overflow: hidden;
     position: relative;
-    height: 80px;
+    height: 4em;
+    transition: .4s;
+    -moz-Transition: .4s;
+    -webkit-Transition: .4s;
 
 }
 
-.site-header h1{
-    /* top | right | bottom | left */
-    margin: 30px 0 20px 10px;
+#menu-btn {
     display: none;
 }
 
-nav{
-    float: left;
-    z-index: 4;
-    height: 80px;
-    width: 100%;
-    list-style: none;
+.toggle{
     display: inline-block;
-    line-height: 0;
+    width: 5em;
+    float: right;
+    margin-right: 0.5em;
+}
+
+.active {
+    height: 17em;
+    transition: .4s;
+    -moz-Transition: .4s;
+    -webkit-Transition: .4s;
+}
+
+.site-header h1{
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 1.8em;
+    line-height: 1em;
+    /* top | right | bottom | left */
+    margin: 0 auto 20px auto;
+    width: 20%;
+    float: left;
+    position: relative;
+    color: #333333;
+}
+
+
+nav{
+    z-index: 4;
     background: #FFF;
     top: 0;
     left: 0;
-}
-
-
-nav .padded {
-    padding: 30px;
+    float: right;
 }
 
 nav ul{
-    /* top | right | bottom | left */
-    margin: 20px 0 40px 10px;
-    float: left;
-    display: inline;
-    width: 100%;
     list-style: none;
+    /* top | right | bottom | left */
+    /*margin: 20px 0 40px 10px;*/
+    text-align: center;
+    background: #FFFFFF;
+    margin: 0;
     padding: 0;
+    width: 100%;
 }
 
-nav ul li{
+nav li{
     /* top | right | bottom | left */
-    padding: 20px 5px 20px 5px;
+    /*padding: 20px 5px 20px 5px;*/
     float: left;
-    display: inline;
+    font-size: 1em;
+    line-height: 30px;
+    height: 30px;
+
 }
 
 nav a{
-    margin-right: 5px;
+    /*margin-right: 5px;*/
     /* top | right | bottom | left */
     padding: 10px 10px 10px 10px;
     text-decoration: none;
-    border-radius: 5px;
+    display: block;
 }
 
-nav ul li a:hover {
-    margin-right: 5px;
+nav a:hover {
+    /*margin-right: 5px;*/
     /* top | right | bottom | left */
-    padding: 10px 10px 10px 10px;
+    /*padding: 10px 10px 10px 10px;*/
     background: #5b55b9;
-    color: white;
-    border-radius: 5px;
-
+    color: #FFFFFF;
 }
 
-nav ul li a:active {
+nav a:active {
     background: #00aeef;
     color: #000;
+    cursor: default;
+}
+
+nav{
+    z-index: 4;
+    background: #FFF;
+    top: 0;
+    left: 0;
+    float: right;
 }
 
 
 .page-nav-spacer {
-    height: 30px;
+    height: 3em;
 }
+
 
 /*/////////////////////
 //                   //
@@ -258,21 +309,6 @@ ul {
     display: flex;
     flex-wrap: wrap;
 }
-
-
-
-/* tried this and hated it
-.is-table-row {
-    display: table;
-}
-.is-table-row [class*="col-"] {
-    float: none;
-    display: table-cell;
-    vertical-align: top;
-    border: solid 7px #EEEEEE;
-    border-radius: 0;
-}
-*/
 
 .col {
     float: left;
@@ -487,8 +523,29 @@ button{
         line-height: 26px;
     }
 
-    /* larger phone or phablet */
-    @media (max-width: 470px) {
+/* larger phone or phablet */
+@media (max-width: 470px) {
+
+        #menu-btn{
+            display: inline-block;
+        }
+
+        nav{
+            float: none;
+        }
+
+        nav li {
+            display: inline-block;
+            float: none;
+            width: 100%;
+            margin-top: 0.5em;
+            line-height: 1em;
+            background: #5383dd;
+        }
+
+        nav a{
+            color: #FFFFFF;
+        }
 
         body {
             font-size: 13px;
@@ -552,8 +609,13 @@ button{
 
     }
 
-    /* larger than a mobile phone */
-    @media (max-width: 414px) {
+/* larger than a mobile phone */
+@media (max-width: 414px) {
+
+        .site-header h1{
+            font-size: 1.5em;
+        }
+
         body {
             font-size: 12px;
             line-height: 14px;
