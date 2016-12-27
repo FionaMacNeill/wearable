@@ -1,4 +1,5 @@
-<!--Website for peri-operative wearable device - an interactive site explaining a project
+<!--Website for perioperative wearable device - an interactive site explaining a project
+
 Copyright (C) 2016  Fiona MacNeill
 
     This program is free software: you can redistribute it and/or modify
@@ -39,11 +40,10 @@ Copyright (C) 2016  Fiona MacNeill
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="style.css" media="screen">
-    <link rel="stylesheet" href="flickity.css" media="screen">
+    <link rel="stylesheet" href="css/style.css" media="screen">
    </head>
 <div id="skip"><a href="#content" tabindex="1" title="skip to content">skip to main content</a></div>
-<body>
+<body id ="top">
 <div class="grid-container">
 <div id="wrapper">
     <div class="site-header">
@@ -62,7 +62,7 @@ Copyright (C) 2016  Fiona MacNeill
     </div>
     </div>
 <!-- Flickity HTML init -->
-   <!--<div class="grid-container">-->
+    <main id="main">
 <div class="carousel"
     data-flickity='{ "cellSelector": ".carousel-cell", "freeScroll": true}'>
     <div class="carousel-cell" id="content">
@@ -294,9 +294,15 @@ Copyright (C) 2016  Fiona MacNeill
     <span id="links"></span>
         <h2 class="color-bk-header">References/Links</h2>
 </section>
+    </main>
 </div>
 </body>
 <footer>
+    <button class="return-top-button">
+        <svg viewBox="-12 70 120 150"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow-up" transform="translate(100, 100) rotate(90) ">
+        </path>
+        </svg>
+    </button>
 </footer>
     <script src="js/main.js"></script>
     <script src="js/flickity.js"></script>
