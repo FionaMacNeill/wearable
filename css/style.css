@@ -1,7 +1,7 @@
 /*
 CSS for Website for perioperative wearable device - an interactive site explaining a project
-Copyright (C) 2016  Fiona MacNeill
 
+Copyright (C) 2017 Fiona MacNeill
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -15,22 +15,38 @@ Copyright (C) 2016  Fiona MacNeill
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>
 
-    Includes:
-    Flickity PACKAGED v2.0.5
+    -----------Includes-------------
+
+    CSS styles for Flickity PACKAGED v2.0.5
     Touch, responsive, flickable carousels
 
     Licensed GPLv3 for open source use
 
     Flickity carousel
     http://flickity.metafizzy.co
-    Copyright 2016 Metafizzy
+    Copyright (c) 2016 Metafizzy
     Modified by F.MacNeill, December 2016.
 
-    Written content and images are property of Fiona MacNeill and Dr Theo Fotis.
-    Copyright 2016 T.Fotis, 2016.
-    Copyright 2016 F. MacNeill, 2016.
-    Ownership is indicated in the markup.
+    --------------AND---------------
+
+    CSS styles for contact.js section
+    Copyright (c) 2016 Marcus Winter. Used with permission.
+    * Includes PHPMailer by Andy Prevost and Marcus Bointon
+    * * Distributed under the Lesser General Public License (LGPL): http://www.gnu.org/copyleft/lesser.html
+    * * Copyright (c) 2004-2009, Andy Prevost. All Rights Reserved. Copyright (c) 2001-2003, Brent R. Matzelle
+    Modified by F.MacNeill, January 2017.
+
+    --------------------------------
+
+    Written content and images are property of Fiona MacNeill and Dr Theo Fotis unless stated otherwise.
+    Copyright (c) 2016 T. Fotis, 2017.
+    Copyright (c) 2016 F. MacNeill, 2017.
+    Ownership and licenses for content are indicated in the markup.
 */
+
+* {
+    box-sizing: border-box;
+}
 
 .wrapper {
     position: relative;
@@ -220,14 +236,6 @@ nav a:hover, nav a:active {
 
 /* draggable */
 
-.flickity-enabled.is-draggable {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
 .flickity-enabled.is-draggable .flickity-viewport {
     cursor: move;
     cursor: -webkit-grab;
@@ -254,6 +262,9 @@ nav a:hover, nav a:active {
     /* vertically center */
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
+    transition: .4s;
+    -moz-Transition: .4s;
+    -webkit-Transition: .4s;
 }
 
 .flickity-prev-next-button:hover { background: white; }
@@ -293,14 +304,11 @@ nav a:hover, nav a:active {
 }
 
 .flickity-prev-next-button .arrow {
-    fill: #333;
+    color: #333333;
 }
 
 /* -----Main carousel content------*/
 
-* { box-sizing: border-box; }
-
-body { font-family: sans-serif; }
 
 .carousel {
     background: #EEE;
@@ -339,14 +347,7 @@ body { font-family: sans-serif; }
     margin-left: 160%;
 }
 
-/* cell number */
-.carousel-cell:before {
-    display: block;
-    text-align: center;
-    line-height: 200px;
-    font-size: 80px;
-    color: #FFF;
-}
+/* removed the cell number pseudo class from original CSS here - no longer needed */
 
 /* -----Timeline line------*/
 
@@ -373,33 +374,35 @@ body { font-family: sans-serif; }
 }
 
 
-/* ---- page dots ---- */
+/* ---- page dots - the name hidden is applied via the JavaScript as this item needs to be
+    excluded in Firefox reader mode - this was the only practical means for doing that ---- */
 
-.flickity-page-dots {
+
+/* dots container class */
+.hidden {
     z-index: 2;
     position: absolute;
     overflow: hidden;
     width: 100%;
-    top: 327px;
-    bottom: -80px;
+    top: 333px;
     padding: 0;
     margin: 0;
     list-style: none;
     text-align: center;
-    line-height: 1;
+    line-height: 0.9;
     /* added to remove ghosting of the dots in the wrap */
     white-space: nowrap;
-
 }
 
-.flickity-rtl .flickity-page-dots { direction: rtl; }
 
-.flickity-page-dots .dot {
+.flickity-rtl .hidden { direction: rtl; }
+
+.hidden .dot {
     position: relative;
     overflow: hidden;
     display: inline-block;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     margin: 0 20px;
     background: #a9a9a9;
     border-radius: 50%;
@@ -407,27 +410,103 @@ body { font-family: sans-serif; }
     counter-increment: flickity-page-dots;
 }
 
-.dot::before{
+
+.dot::before {
     display: block;
     text-align: center;
     content: counter(flickity-page-dots);
-    padding-top: 14px;
-    font-size: 24px;
+    padding-top: 11px;
+    font-size: 20px;
     color: #FFF;
 }
 
-.flickity-page-dots .dot.is-selected {
+.hidden .dot.is-selected {
     background: #333;
+}
+
+
+
+/*/////////////////////
+//                   //
+//     Typography    //
+//                   //
+/////////////////////*/
+
+h2 {
+    font-weight: normal;
+    text-align: center;
+
+}
+
+h3.goal {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+
+h3.publication {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    text-align: left;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333333;
+}
+
+p{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.05em;
+    line-height: 1.48;
+    text-align: left;
+}
+
+p.reference{
+    padding-left: 4em;
+    text-indent: -4em;
+    font-size: 0.9em;
+}
+
+#conf-link .p{
+    text-align: center;
+}
+
+ul {
+    text-align: left;
+    list-style: circle;
+    font-size: 1.05em;
+    line-height: 1.48;
+}
+
+.color-bk-header{
+    /* top | right | bottom | left */
+    margin: 0 auto 0 auto;
+    padding: 2% 0 2% 0;
+    width: 100%;
+    text-align: center;
+    color: #FFF;
+}
+
+.goal-text{
+    /* top | right | bottom | left */
+    margin: 0 0.2em 0 auto;
+    font-size: 1.02em;
+
+}
+
+.device-desc{
+    text-align: left;
+
 }
 
 /*////////////////////////////////////////////
 //                                          //
-//  Timeline image and Information boxes    //
+//       Timeline Information boxes         //
 //                                          //
 ////////////////////////////////////////////*/
 
 /* This timeline is inspired by https://duckduckgo.com/about and uses Flickity.js
-// as the carousel: http://flickity.metafizzy.co/ */
+// as the carousel: http://flickity.metafizzy.co/
+// Style below by F. MacNeill */
+
 
 .tl_grid {
     z-index: 4;
@@ -442,84 +521,68 @@ body { font-family: sans-serif; }
 
 .tl_img {
     /* top | right | bottom | left */
-    margin: 2% auto 0 auto;
+    margin: 3% auto 0 auto;
     display: block;
     height: 100px;
     width: 100px;
-    background: #FFF;
     border-radius: 100%;
+    background: #FFFFFF;
 }
 
-.tl_title{
+/* first and last timeline images need black backgrounds not white */
+.first-last {
+    background: #000000;
+}
+
+.tl_logo {
+    z-index: auto;
     /* top | right | bottom | left */
-    margin: 2% auto 0 auto;
+    margin: 6px auto 5px 20px;
+    display: block;
+    height: 2.5em;
+    position: absolute;
+}
+
+.tl_title {
+    /* top | right | bottom | left */
+    margin: 1% auto 0 auto;
     font-weight: normal;
-    color: #FFF;
+    color: #FFFFFF;
     text-align: center;
 }
 
-
-.tl_desc{
+.tl_desc {
     /* top | right | bottom | left */
-    margin: 2% auto 20% auto;
-    padding: 0 10% 20% 10%;
-    text-align: center;
+    margin: 1% 10% auto 10%;
+    padding: 1% 1% 1% 1%;
+    width: 80%;
+    font-size: 1em;
+    line-height: 1.3;
+    text-align: justify;
+    border-radius: 2px;
+}
+
+/* handles tl_desc background opacity to allow
+anxiety level graphic to show through slightly */
+
+.bk {
+    background: rgba(194, 206, 255, 0.8);
 }
 
 
-/*/////////////////////
-//                   //
-//     Typography    //
-//                   //
-/////////////////////*/
-
-body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333333;
-}
-
-p{
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-ul {
-    text-align: left;
-    list-style: circle;
-}
+/*////////////////////////////
+//                          //
+//     Content Sections     //
+//                          //
+////////////////////////////*/
 
 
-.free-header{
-    /* top | right | bottom | left */
-    margin: auto;
-    padding: 2% 0 2% 0;
-    width: 100%;
-    text-align: center;
-}
-
-.color-bk-header{
-    /* top | right | bottom | left */
-    margin: 0 auto 0 auto;
-    padding: 2% 0 2% 0;
-    width: 100%;
-    text-align: center;
-    color: #FFF;
-}
-
-.device-desc{
-    text-align: left;
-}
-
-
-
-
-/* content sections */
-
-.about-area {
-    /* top | right | bottom | left */
-    margin: 5% 0 2% 0;
-    padding: 2% 0 0 0;
+#about-area {
+    /* top | right | bottom | left*/
+    margin: 6% 5% 2% 5%;
     position: relative;
     overflow: auto;
+    display: block;
 }
 
 
@@ -534,10 +597,10 @@ ul {
     border-radius: 100%;
 }
 
-.team-area {
+#team-area {
     /* top | right | bottom | left */
-    margin: 0 0 2% 0;
-    padding: 2% 0 2% 0;
+    margin: 0 5% 2% 5%;
+    padding: 2% 2% 2% 2%;
     border-radius: 5px;
     position: relative;
     overflow: auto;
@@ -551,48 +614,33 @@ ul {
     box-shadow: 0 5px 5px -3px black;
     width: 100%;
     height: 100%;
-    max-width: 180px;
+    max-width: 120px;
 }
 
 
-.team-area-desc{
+#device-area {
     /* top | right | bottom | left */
-    margin: 2% 2% 0 2%;
-    padding: 0 0 0 2%;
-
+    margin: 0 5% 2% 5%;
+    padding: 2% 0 0 0;
+    border-radius: 5px;
+    position: relative;
+    overflow: auto;
 }
 
-.device-area {
+#contact-area {
     /* top | right | bottom | left */
-    margin: 0 0 2% 0;
+    margin: 0 5% 5% 5%;
+    padding: 2% 5% 2% 5%;
+    border-radius: 5px;
+    position: relative;
+    overflow: auto;
+    border: solid 5px rgba(64,95,155, 0.5);
+}
+
+#links-area {
+    /* top | right | bottom | left */
+    margin: 0 5% 0 5%;
     padding: 2% 0 2% 0;
-    border-radius: 5px;
-    position: relative;
-    overflow: auto;
-}
-
-/* Device-img is based on column 4 and is in the grid section */
-
-.device-img-sz{
-    /* top | right | bottom | left */
-    margin: -10% -10% -10% -10%;
-    width: 110%;
-    height: 120%;
-}
-
-.contact-area {
-    /* top | right | bottom | left */
-    margin: 0 0 2% 0;
-    padding: 2% 0 0 0;
-    border-radius: 5px;
-    position: relative;
-    overflow: auto;
-}
-
-.links-area {
-    /* top | right | bottom | left */
-    margin: 0;
-    padding: 2% 0 0 0;
     border-radius: 5px;
     position: relative;
     overflow: auto;
@@ -613,6 +661,13 @@ ul {
 || 12 column layout - original pixel dimensions column: 65px, gutter: 15px
 || This grid is used to layout all the text residing in the sections */
 
+/* The complete grid can be turned on for reference in the section just prior to the footer
+|| It is set to display none by default in the html file */
+
+
+#grid-ref {
+    display: none;
+}
 
 
 .grid-container {
@@ -621,24 +676,31 @@ ul {
     display: block;
     /* top | right | bottom | left */
     margin: 0 auto 10% auto;
-    padding: 0 0 0 1%;
+    padding: 0 1% 0 1%;
     box-sizing: border-box;
-
 }
+
+/* General row alignment for the grid */
 
 .row-align{
     clear: both;
     /* top | right | bottom | left */
-    margin: auto 1.5% auto 5%;
+    margin: auto 5% auto 5%;
 }
 
 /* used in situations where the height of text columns need to match height */
 
 .single-row {
+    margin-bottom: 2.5%;
     float: left;
     clear: both;
-    /* top | right | bottom | left */
-    margin: auto 1.5% auto 5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nofloat {
+    float: none;
+    clear: both;
     display: flex;
     flex-wrap: wrap;
 }
@@ -646,120 +708,174 @@ ul {
 .col {
     float: left;
     /* top | right | bottom | left */
-    margin: 1% 0 2% 0;
+    margin: 1% auto 2% auto;
     padding: 1%;
     text-align: center;
-    /*border: solid 1px black;*/
     border-radius: 5px;
 }
 
-/* One column width - (65px X 12) + (15px x 12) = 960px total width */
+/* Styling for free standing columns */
+.free-columns {
+    border: solid 2px #EEEEEE;
+    padding: 2%;
+}
+
+#first-goal {
+    margin-left: 1.5%;
+}
+
+/* REMOVE - temp border for formatting */
+.temp {
+    border: solid 1px black;
+}
+
+/* One column width = 65px --> (65px x 12) + (15px x 12) = 960px total width
+            This is 12 columns across the screen width             */
 .col.col-0 {
     width: 6.5%;
     margin-right: 1.5%;
 
 }
 
-/* Two column widths : 130px + 15px = 145px per column */
+/* Two column widths : (65px x 2) = 130px + 15px = 145px per column
+             This is 6 columns across the screen width             */
 .col.col-1 {
     width: 14.5%;
     margin-right: 1.5%;
 
 }
 
-/* Three column widths : 195px + (15px x 2) = 225px per column */
+/* Three column widths : (65px x 3) = 195px + (15px x 2) = 225px per column
+                    This is 4 columns across the screen width             */
 .col.col-2 {
     width: 22.5%;
     margin-right: 1.5%;
 }
 
+/* based on col-1 */
 .team-photo {
-    min-width: 120px;
+    float: right;
     /* top | right | bottom | left */
-    margin-right: 1.5%;
-    padding: 0 5px 0 0;
+    margin: 3% auto 1% 2%;
 }
 
-/* Four column widths : 260px + (15px x 3) =  305px per column */
+/* Four column widths : (65px x 4) = 260px + (15px x 3) =  305px per column
+                    This is 3 columns across the screen width             */
 .col.col-3 {
     width: 30.5%;
     margin-right: 1.5%;
 }
 
-/* Styling for free standing columns */
-.free-columns {
-    border: solid 2px #EEEEEE;
-
-}
-
-/* Six column widths : 390px + (15 x 5) =  465px per column */
+/* Six column widths : (65px x 6) = 390px + (15px x 5) =  465px per column
+                    This is 2 columns across the screen width             */
 .col.col-4 {
     width: 46.5%;
     margin-right: 1.5%;
 }
 
-/* Styling for device image based on column 4 - remove*/
-.col.device-img {
+/* Styling for device image based on col-4 */
+.device-img {
     width: 46.5%;
-    margin-right: 1.5%;
     padding: 0;
-    overflow: hidden;
+    overflow: auto;
     border: solid 2px #EEEEEE;
     object-fit: scale-down;
 }
 
-/* twelve column widths : 960px (total width) - 15px = 945px */
-.col.col-5 {
-    width: 94.5%;
-    margin: 1.5%;
+/* Text background that uses col-4 as the basis - this is for consistent styling */
+.bios {
+    width: 96%;
+    /* top | right | bottom | left */
+    margin: 0 auto 4% auto;
+    padding: 2%;
+    background: #c0c8eb;
+    text-align: left;
+    min-height: 170px;
+    border-radius: 5px;
 }
 
-/* Based on col-5 */
-.col.full-width{
+/* Based on col-4 the Recent publications areas needed to lose the margins */
+.pub {
+    width: calc(6.5% * 9);
+    padding: 0;
+    margin: 0;
+
+}
+
+/* twelve column widths : 960px (total width) - 15px = 945px
+                                   This runs across the entire screen width */
+.col.col-5 {
     width: 94.5%;
+}
+
+/* Is used for certain children/descendants of col-5 - this is important as the max-width is 1000px not 945px
+This adjustment allows col-5 to span the space when needed */
+
+.full-width {
+    width: 96%;
+    /* top | right | bottom | left */
+    margin: 0 auto 4% auto;
+    padding: 2%;
+    border-radius: 5px;
+}
+
+/* Used specifically for the field divs in the contact form */
+.nopadding {
+    /* top | right | bottom | left */
+    padding: 1% 0 1% 0;
 }
 
 /* eleven column widths for combined column plus margins and adjustment
-- Total width: (65 X 11) + (15 X 10 for margin-right value) =  865px */
+- Total width: (65 x 11) + (15 x 10 for margin-right value) =  865px
+                    This runs across 11 column widths - use with col-0 */
 
 .col-6.later {
     width: calc((6.5% * 11) + (1.5% * 10));
 
 }
 
+/* ten column widths for combined column plus margins and adjustment
+                    This runs across 10 column widths - use with col-1 */
+
 .col-7.later {
     width: calc((6.5% * 10) + (1.5% * 9));
 
 }
+
+/* nine column widths for combined column plus margins and adjustment
+                    This runs across 9 column widths - use with col-2 */
 
 .col-8.later {
     width: calc((6.5% * 9) + (1.5% * 8));
 
 }
 
-/* Text background that uses col-8 as the basis - this is for consistent styling */
-.bios {
-    background: #c0c8eb;
-    text-align: left;
-    margin-left: 5px;
-    min-height: 170px;
-}
+/* eight column widths for combined column plus margins and adjustment
+                    This runs across 8 column widths - use with col-3 */
 
 .col-9.later {
     width: calc((6.5% * 8) + (1.5% * 7));
 }
+
+/* six column widths for combined column plus margins and adjustment
+                    This runs across 6 column widths - use with col-4
+                    simpler to use 2 x col-4 when this effect is needed */
 
 .col-10.later {
     width: calc((6.5% * 6) + (1.5% * 5));
 
 }
 
-/* This column is unique and not based on a column ancestor thus it needs it's own margin */
+/* This column is unique and not based on a column ancestor thus it needs it's own margin
+ although it is basically identical to col-9.
+ This runs across 8 column widths - use with col-3 or col 12 */
 
 .col-11.later {
     width: calc((6.5% * 8) + (1.5% * 7));
     margin-right: 1.5%;
 }
+
+/* Essentially the same as col-3, but included in the grid for organisational purposes */
 
 .col-12.later {
     width: calc((6.5% * 4) + (1.5% * 3));
@@ -781,14 +897,100 @@ button{
     background: #cccccc;
 }
 
+#contact_form{
+    display: block;
+}
+
+legend {
+    text-align: center;
+}
+
+fieldset {
+    border: 0;
+}
+
+label.form-label {
+    margin-bottom: 3px;
+    text-align: left;
+    display: block;
+    font-weight: 600;
+    position: relative;
+}
+
+/* short hand for styling form elements to take up full width of containing grid column */
+.i-full-width {
+    width: 100%;
+    height: 3em;
+}
+
+input {
+    border-radius: 5px;
+    border: solid 1px #405F9B;
+}
+
+textarea {
+    border-radius: 5px;
+    border: solid 1px #405F9B;
+}
+
+#message {
+    height: 8em;
+    text-align: start;
+}
+
+#submit {
+    width: 100%;
+    margin-top: 1%;
+    height: 3em;
+}
+
+#loading {
+    display: none;
+    text-align: center;
+    padding-top: 9em;
+}
+
+#confirmation {
+    display: none;
+    text-align: center;
+    padding-top: 10em;
+
+}
+
+#errmessage {
+    display: none;
+    text-align: center;
+    padding-top: 10em;
+}
+
+#errmessage h3 {
+    color: #ff0000;
+}
+
+.hint {
+    display: none;
+    color: #ff0000;
+}
+
+/*//////////////////////////////////
+//                                //
+//     Accessibility specific     //
+//                                //
+//////////////////////////////////*/
+
+/* For hiding elements that should not be shown in the clean reader mode (FireFox)
+or when screen readers are used - it is deliberately empty as it is only for labelling */
+
+.sr-only {
+}
+
+
 /* Desktop first media queries - this will generally be viewed from a desktop in the work environment */
 
 /* larger than Desktop HD */
 @media (min-width: 1200px) {
 
-    body {
-        font-size: 15px;
-    }
+
 }
 
 
@@ -816,12 +1018,14 @@ button{
         line-height: 26px;
     }
 
-    .return-top-button{
+    .return-top-button {
         display: none;
     }
 
+}
+
 /* Correct menu overlap on responsive display */
-@media (max-width: 510px) {
+@media (max-width: 580px) {
 
     nav li {
         font-size: 1em;
@@ -831,13 +1035,45 @@ button{
         width: 5em;
     }
 
+    .site-header h1 {
+        font-size: 1.6em;
+    }
+
+    .col.col-4,
+    .col.col-5 {
+        float: none;
+        width: 99%;
+        margin-right: 0;
+    }
+
+    .tl_title {
+        /* top | right | bottom | left */
+        margin: 2% 5% 2% 5%;
+    }
+
+    .tl_img {
+        /* top | right | bottom | left*/
+        margin: 5% auto 2% auto;
+        height: 80px;
+        width: 80px;
+    }
+
+    .tl_desc {
+        /* top | right | bottom | left */
+        margin: 2% 10% 0 15%;
+        width: 70%;
+        font-size: 1em;
+    }
+
 }
+
+
 
 /* larger phone or phablet */
 @media (max-width: 470px) {
 
         .site-header h1{
-            font-size: 1.8em;
+            font-size: 1.5em;
         }
 
         #menu-btn{
@@ -893,6 +1129,10 @@ button{
             background: #003057;
         }
 
+        .timeline-line-end {
+            top: 4em;
+        }
+
 
         body {
             font-size: 13px;
@@ -902,10 +1142,6 @@ button{
 
         }
 
-        .single-row {
-            margin: 0 2% 2% 0;
-        }
-
         .col.col-0,
         .col.col-1,
         .col.col-2,
@@ -918,15 +1154,21 @@ button{
         .col.col-9.later,
         .col.col-10.later,
         .col.col-11.later,
-        .col.col-12.later {
+        .col.col-12.later,
+        .col.device-img {
             float: none;
             width: 99%;
             margin-right: 0;
+            margin-left: 0;
+        }
+
+        #first-goal {
+            margin-left: auto;
         }
 
         .about-area {
             /* top | right | bottom | left */
-            margin: 15% 4% 2% 0;
+            margin: 10% auto 2% auto;
 
         }
 
@@ -936,17 +1178,6 @@ button{
             padding: 2% 0 2% 4%;
         }
 
-        .team-area {
-            /* top | right | bottom | left */
-            margin: 0 2% 2% 0;
-            padding: 2% 4% 2% 0;
-            border-radius: 5px;
-            position: relative;
-            overflow: auto;
-            background: #5b55b9;
-            width: 100%
-        }
-
         .on-color-text {
             /* top | right | bottom | left */
             margin: auto 2% 2% 0;
@@ -954,7 +1185,7 @@ button{
         }
 
 
-    }
+}
 
 /* larger than a mobile phone */
 @media (max-width: 414px) {
@@ -964,38 +1195,21 @@ button{
             line-height: 14px;
         }
 
-        .row-align {
-
-        }
-
-        .single-row {
-            margin: 0 2% 2% 0;
-        }
-
-        .col.col-0,
-        .col.col-1,
-        .col.col-2,
-        .col.col-3,
-        .col.col-4,
-        .col.col-5,
-        .col.col-6.later,
-        .col.col-7.later,
-        .col.col-8.later,
-        .col.col-9.later,
-        .col.col-10.later,
-        .col.col-11.later,
-        .col.col-12.later {
-            float: none;
-            width: 99%;
-            margin-right: 0;
-        }
-
         .timeline-line-end {
             display: none;
         }
 
+        .flickity-prev-next-button {
+            position: absolute;
+            top: 30%;
+            transition: .4s;
+            -moz-Transition: .4s;
+            -webkit-Transition: .4s;
+
+        }
+
         /* ---- page dots ---- */
-        .flickity-page-dots {
+        .hidden {
             display: none;
 
         }
@@ -1008,27 +1222,41 @@ button{
         }
 
         .tl_img {
-            /* top | right | bottom | left */
+            /* top | right | bottom | left*/
             margin: 2% auto 5% auto;
-            height: 70px;
-            width: 70px;
+            height: 80px;
+            width: 80px;
         }
 
-        .tl_title{
+        .tl_logo {
+            margin-top: 1%;
+            height: 2em;
+            width: 7em;
+        }
+
+        .tl_title {
             /* top | right | bottom | left */
             margin: 2% 5% 5% 5%;
             padding: 0 5% 0 5%;
             font-size: 16px;
         }
 
-        .tl_desc{
+        .tl_desc {
             /* top | right | bottom | left */
-            margin: 2% 8% 20% 8%;
-            text-align: center;
+            margin: 5% 5% 0 5%;
+            padding: 1% 1% 1% 1%;
+            width: 90%;
         }
 
+        /* handles tl_desc background opacity
+        - no longer needed here as the anxiety graphic is not shown at this size*/
 
-        .tl_image_lv{
+        .bk {
+            background: #c2ceff;
+        }
+
+        /* The anxiety level graphic */
+        .tl_image_lv {
             display: none;
         }
 
@@ -1036,32 +1264,25 @@ button{
 
         .about-area {
             /* top | right | bottom | left */
-            margin: 0 4% 2% 0;
+            margin: 0 auto 2% auto;
 
         }
 
-        .free-header{
+        .free-header {
             /* top | right | bottom | left */
             margin: 0 auto 5% auto;
             padding: 2% 0 2% 4%;
         }
 
-        .team-area {
-            /* top | right | bottom | left */
-            margin: 0 2% 2% 0;
-            padding: 2% 4% 2% 0;
-            border-radius: 5px;
-            position: relative;
-            overflow: auto;
-            background: #5b55b9;
-            width: 100%
+
+}
+
+/* larger than a mobile phone */
+@media (max-width: 414px) {
+
+        .tl_logo{
+            height: 1.8em;
+            width: 6.5em;
         }
 
-        .bios {
-            /* top | right | bottom | left */
-            margin: auto 2% 2% 0;
-
-        }
-
-    }
 }
