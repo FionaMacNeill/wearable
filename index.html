@@ -1,6 +1,7 @@
-<!--Website for perioperative wearable device - an interactive site explaining a project
+<!--
+Website for perioperative wearable device - an interactive site explaining a project
 
-Copyright (C) 2016  Fiona MacNeill
+Copyright (C) 2017  Fiona MacNeill
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -15,22 +16,41 @@ Copyright (C) 2016  Fiona MacNeill
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>
 
-    Includes:
-    Flickity PACKAGED v2.0.5
+    -----------Includes-------------
+
+    html for smooth-scroll v10.2.1: Animate scrolling to anchor links
+    Copyright (c) 2016 Chris Ferdinandi
+    MIT License
+    http://github.com/cferdinandi/smooth-scroll
+
+    --------------AND---------------
+
+    html for Flickity PACKAGED v2.0.5
     Touch, responsive, flickable carousels
 
     Licensed GPLv3 for open source use
 
     Flickity carousel
     http://flickity.metafizzy.co
-    Copyright 2016 Metafizzy
+    Copyright (c) 2016 Metafizzy
     Modified by F.MacNeill, December 2016.
 
-    Written content and images are property of Fiona MacNeill and Dr Theo Fotis.
-    Copyright 2016 T.Fotis, 2016.
-    Copyright 2016 F. MacNeill, 2016.
-    Ownership is indicated in the markup.
-    -->
+    --------------AND---------------
+
+    html for contact.js section
+    Copyright (c) 2016 Marcus Winter. Used with permission.
+    * Includes PHPMailer by Andy Prevost and Marcus Bointon
+    * * Distributed under the Lesser General Public License (LGPL): http://www.gnu.org/copyleft/lesser.html
+    * * Copyright (c) 2004-2009, Andy Prevost. All Rights Reserved. Copyright (c) 2001-2003, Brent R. Matzelle
+    Modified by F.MacNeill, January 2017.
+
+    --------------------------------
+
+    Written content and images are property of Fiona MacNeill and Dr Theo Fotis unless stated otherwise.
+    Copyright (c) 2016 T. Fotis, 2017.
+    Copyright (c) 2016 F. MacNeill, 2017.
+    Ownership and licenses for content are indicated in the markup.
+-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +60,7 @@ Copyright (C) 2016  Fiona MacNeill
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="css/style.css" media="screen">
+    <link rel="stylesheet" media="screen" href="css/style.css" />
    </head>
 <div id="skip"><a href="#content" tabindex="1" title="skip to content">skip to main content</a></div>
 <body id ="top">
@@ -51,12 +71,12 @@ Copyright (C) 2016  Fiona MacNeill
             <h1>Perioperative Wearable</h1>
         </header>
         <nav data-scroll-header>
-            <ul>
                 <button class="toggle" id="menu-btn">Menu</button>
+            <ul>
                 <li><a data-scroll href="#about">About</a></li>
                 <li><a data-scroll href="#team">Team</a></li>
                 <li><a data-scroll href="#device">Devices</a></li>
-                <li><a data-scroll href="#contacts">Contact</a></li>
+                <li><a data-scroll href="#contact">Contact</a></li>
             </ul>
         </nav>
     </div>
@@ -67,169 +87,259 @@ Copyright (C) 2016  Fiona MacNeill
     data-flickity='{ "cellSelector": ".carousel-cell", "freeScroll": true}'>
     <div class="carousel-cell" id="content">
         <div class="tl_grid">
-            <img class="tl_img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=100%C3%97100&w=100&h=100">
+            <img class="tl_logo sr-only" src="img/uobwhite2.png" alt="Univeristy of Brighton logo">
+            <img class="tl_img first-last" src="img/timeline/01hipimg_opt.png" alt="Illustration of hip x-ray">
             <h2 class="tl_title">A Perioperative Timeline</h2>
-            <p class="tl_desc">This text introduces the project and invites our visitors to follow Carol's story.
+            <p class="tl_desc bk">
+                This timeline outlines the story of a fictional patient who is preparing for a hip replacement
+                operation. The journey of our patient is used to explore how a wearable device could be introduced to
+                monitor the patient's anxiety prior to the operation.
             </p>
         </div>
     </div>
     <div class="carousel-cell">
         <div class="tl_grid">
-            <img class="tl_img" src="img/patientsvgplch.svg">
+            <img class="tl_img" src="img/timeline/02Woman.png" alt="Illustration of patient (Carol Greenway in the narrative)">
             <h2 class="tl_title">Patient: Carol Greenway</h2>
-            <p class="tl_desc">In this text we introduce our patient Carol and why she has been prescribed a wearable
-                device.
-                How much text can I realistically fit it here? I do need enough space to flesh out who this person is,
-                what type
-                of operation she is having. What are interests, what are her motivators, what is her attitude towards
-                technology?
+            <p class="tl_desc bk">Carol is 58 years old, with a well-established career as a property manager and a
+                portfolio of properties across Sussex and Surrey. Her job is important to her and she travels to
+                properties two days a week by car in addition to her normal daily commute. Carol is an enthusiastic
+                runner and has completed several marathons.
             </p>
         </div>
         <div class="tl_image_lv" id="anxiety"></div>
     </div>
+    <div class="carousel-cell">
+        <div class="tl_grid">
+            <img class="tl_img" src="img/timeline/03Referral.png" alt="Illustration of a doctor's desk">
+            <h2 class="tl_title">Referral to specialist</h2>
+            <p class="tl_desc bk">8 months ago, Carol started to experience pain and discomfort in her left hip while
+                running and reported this to her doctor. She attended sports physiotherapy sessions and tried swimming
+                as an alternative to running, but found that the pain increased and the movement in her hip became
+                restricted. Her doctor referred her to a hip replacement specialist.
+            </p>
+        </div>
+    </div>
 
     <div class="carousel-cell">
         <div class="tl_grid">
-            <img class="tl_img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=100%C3%97100&w=100&h=100">
-            <h2 class="tl_title">Referral to consultant</h2>
-            <p class="tl_desc">
-                In this text we introduce our patient Ruth and why she has been prescribed a wearable
-                device. How much text can I realistically fit it here? I do need enough space to flesh out who this person is,
-                what type of operation she is having. What are interests, what are her motivators, what is her attitude towards
-                technology?
+            <img class="tl_img" src="img/timeline/04Wearable.png" alt="Illustration of a Wearable device (watch type)">
+            <h2 class="tl_title">Wearable device</h2>
+            <p class="tl_desc bk">
+                Once Carol's appointment with the specialist is confirmed, she is invited for a follow-up with a nurse
+                at her doctors surgery. The nurse provides an overview of Carol's care plan including the prescription
+                of a wearable device for monitoring heart rate, breathing and electrodermal activity for use from the
+                appointment through until the conclusion of recovery.
             </p>
             </div>
         </div>
     <div class="carousel-cell">
         <div class="tl_grid">
-        <img class="tl_img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=100%C3%97100&w=100&h=100">
-        <h2 class="tl_title">Consultation with specialist</h2>
-        <p class="tl_desc">
-            In this text we introduce our patient Ruth and why she has been prescribed a wearable
-            device. How much text can I realistically fit it here? I do need enough space to flesh out who this person is,
-            what type of operation she is having. What are interests, what are her motivators, what is her attitude towards
-            technology?
-        </p>
+            <img class="tl_img" src="img/timeline/05Specialist.png" alt="Illustration of hands using a tablet device">
+            <h2 class="tl_title">Consultation with specialist</h2>
+            <p class="tl_desc bk">
+                Carol is examined by the consultant for the hip replacement. She also meets her perioperative nurse,
+                Brian who will monitor her vitals and anxiety levels through the wearable system. Brian asks how Carol
+                is getting on with the wearable device, has she tried the app yet? Carol and Brian agree on her
+                preferred method of contact as part of her pre-operative care plan.
+            </p>
+            </div>
         </div>
-    </div>
     <div class="carousel-cell">
         <div class="tl_grid">
-            <img class="tl_img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=100%C3%97100&w=100&h=100">
-            <h2 class="tl_title">Outpatient pre-operative assessment clinic</h2>
-            <p class="tl_desc">
-                In this text we introduce our patient Ruth and why she has been prescribed a wearable
-                device. How much text can I realistically fit it here? I do need enough space to flesh out who this person is,
-                what type of operation she is having. What are interests, what are her motivators, what is her attitude towards
-                technology?
+            <img class="tl_img" src="img/timeline/06clinic.png" alt="Illustration of a nurse (Brian in the narrative)">
+            <h2 class="tl_title">Pre-operative assessment clinic</h2>
+            <p class="tl_desc bk">
+                Brian asks Carol to complete the State-Trait Anxiety Inventory<sup>1</sup>. Carol is
+                concerned about the operation and how recovery might affect her work and independence.
+                Brian notes that the wearable system has shown that Carol's anxiety has increased. Brian talks through
+                the operative procedure with her and they agree that he will contact if her anxiety levels continue
+                to rise.
             </p>
         </div>
     </div>
     <div class="carousel-cell">
         <div class="tl_grid">
-            <img class="tl_img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=100%C3%97100&w=100&h=100">
-            <h2 class="tl_title">Letter arrives for date of operation</h2>
-            <p class="tl_desc">
-                In this text we introduce our patient Ruth and why she has been prescribed a wearable
-                device. How much text can I realistically fit it here? I do need enough space to flesh out who this person is,
-                what type of operation she is having. What are interests, what are her motivators, what is her attitude towards
-                technology?
+            <img class="tl_img" src="img/timeline/07letter.png" alt="Illustration of a letter received in the mail">
+            <h2 class="tl_title">Letter for date of operation</h2>
+            <p class="tl_desc bk">
+                Carol receives a letter informing her of the date for her operation; this is both reassuring and
+                worrying. She feels underprepared for the operation and recovery. Brian notices a spike in
+                her vitals and as previously agreed, sends a text message to check-in with her. After a follow-up call
+                with Brian explaining things to arrange for her hospital visit and after care, she feels a lot better.
             </p>
         </div>
     </div>
     <div class="carousel-cell">
         <div class="tl_grid">
-            <img class="tl_img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=100%C3%97100&w=100&h=100">
+            <img class="tl_img" src="img/timeline/08reschedule.png" alt="Illustration of a paper calendar">
             <h2 class="tl_title">Cancellation and rescheduling</h2>
-            <p class="tl_desc">
-                In this text we introduce our patient Ruth and why she has been prescribed a wearable
-                device. How much text can I realistically fit it here? I do need enough space to flesh out who this person is,
-                what type of operation she is having. What are interests, what are her motivators, what is her attitude towards
-                technology?
+            <p class="tl_desc bk">
+                Due to unforeseen circumstances at the hospital Carol's operation has to be cancelled and rescheduled.
+                Unfortunately, the new date occurs when Carol will be abroad and the only other date is several months
+                away. Carol is concerned about the level of pain that she will experience during the longer
+                wait. The specialist and Brian consider pain management for the waiting period.
             </p>
         </div>
     </div>
     <div class="carousel-cell">
         <div class="tl_grid">
-            <img class="tl_img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=100%C3%97100&w=100&h=100">
-            <h2 class="tl_title">Day of operation and recovery</h2>
-            <p class="tl_desc">
-                In this text we introduce our patient Ruth and why she has been prescribed a wearable
-                device. How much text can I realistically fit it here? I do need enough space to flesh out who this person is,
-                what type of operation she is having. What are interests, what are her motivators, what is her attitude towards
-                technology?
+            <img class="tl_img" src="img/timeline/09operation.png" alt="Illustration showing close-up of a hospital bed on a ward">
+            <h2 class="tl_title">Day of operation</h2>
+            <p class="tl_desc bk">
+                Carol feels ready for her operation, although a fire drill at the flats next door the night
+                before causes her additional anxiety. Brian is concerned about Carol's levels and decides to move her
+                operation to be first in the day. This will minimise her waiting time and to allow her daughter to pick
+                her up and take her home as soon as she is cleared to leave.
             </p>
         </div>
     </div>
     <div class="carousel-cell">
         <div class="tl_grid">
-            <img class="tl_img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=100%C3%97100&w=100&h=100">
-            <h2 class="tl_title">Recovery and return of the device</h2>
-            <p class="tl_desc">
-                In this text we introduce our patient Ruth and why she has been prescribed a wearable
-                device. How much text can I realistically fit it here? I do need enough space to flesh out who this person is,
-                what type of operation she is having. What are interests, what are her motivators, what is her attitude towards
-                technology?
+            <img class="tl_img first-last" src="img/timeline/10recovery.png" alt="Illustration of tea on a tray in a bed in a home to represent recovery">
+            <h2 class="tl_title">Recovery and device return</h2>
+            <p class="tl_desc bk">
+                Carol's daughter took time off work to support Carol's recovery and Brian continued to monitor her
+                vitals, contacting her when needed. Initially, Carol was starting to move around too soon, but she could
+                tell from the wearable app that this was contributing to increased heart and breathing rates.
+                As a result, she took more time to recover and feels positive about care that she received.
             </p>
         </div>
     </div>
 </div>
 <div class="timeline-line-end" id="timeline"></div>
-
     <!-- Content of my portfolio site starts here -->
 <!-- this is where the side bar overlay will go --->
 <!---------------- Section 1 - About the Project ----------------------->
-        <div class="page-nav-spacer"></div>
-        <section class="about-area">
-            <span id="about"></span>
-            <h2 class="free-header" title="About the Project">About the Project</h2>
-            <div class="row-align">
-                    <div class="col col-3 free-columns"><img class="about_img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
-                        <h3>Goal 1</h3>
-                        <p>This is where we describe the project in a few sentences. This is where we describe the project in a few sentences. This is where we describe the project in a few sentences.
-                        </p>
-                    </div>
-                    <div class="col col-3 free-columns"><img class="about_img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
-                        <h3>Goal 2</h3>
-                        <p>This is where we describe the project in a few sentences. This is where we describe the project in a few sentences. This is where we describe the project in a few sentences.
-                        </p>
-                    </div>
-                    <div class="col col-3 free-columns"><img class="about_img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
-                        <h3>Goal 3</h3>
-                        <p>This is where we describe the project in a few sentences. This is where we describe the project in a few sentences. This is where we describe the project in a few sentences.
-                        </p>
-                    </div>
-                </div>
-        </section>
+<div class="page-nav-spacer"></div>
+<section id="about-area">
+  <span id="about"></span>
+    <h2 title="About the Project">About the Project</h2>
+    <div class="single-row">
+        <div class="col col-3 free-columns" id="first-goal">
+            <img class="about_img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
+            <h3 class="goal">Goal 1 : Explore</h3>
+                <p class="goal-text">Use service design research methods to find out if a
+                    wearable device for monitoring anxiety and an accompanying service could be effective in a
+                    perioperative environment.
+                    What issues might be raised through the introduction of this disruptive technology? What problems
+                    could be solved? How could service and care be improved?
+                </p>
+        </div>
+        <div class="col col-3 free-columns">
+            <img class="about_img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
+            <h3 class="goal">Goal 2 : Creation</h3>
+                <p class="goal-text">To understand patient interaction with medical professionals in a perioperative
+                    environment; striving to understand the perspective of care providers in the first instance.
+                    This can be achieved through co-creation with stakeholders<sup>2</sup> and iterative simulation of
+                    a wearable system and its accompanying service (e.g. app, interfaces).
+                </p>
+               </div>
+        <div class="col col-3 free-columns">
+            <img class="about_img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
+            <h3 class="goal">Goal 3 : Requirements</h3>
+                <p class="goal-text">To define a set of requirements for a wearable device and service specifically
+                    designed to monitor perioperative anxiety. The requirements, accompanying research and
+                    recommendations will provide a compelling resource as NHS Trusts move towards to the "user-centered"
+                    goals put forth in the recent National Advisory Group report, <em>Marking IT Work...</em><sup>3</sup>.
+                </p>
+        </div>
+    </div>
+</section>
 <!---------------- Section 2 - The Research Team ----------------------->
 
-<section class="team-area">
-    <span id="team"></span>
-        <h2 class="color-bk-header">Research Team</h2>
-    <div class="row-align">
-        <div class="col col-2 team-photo"><img class="team-img" alt="photo of Dr Theo Fotis" title="Dr Theo Fotis" src="img/team/theo_fotis.jpg"></div>
-        <div class="col col-8 later bios"><p><strong>Theo Fotis's</strong> bio goes here...</p></div>
-    </div>
-    <div class="row-align">
-        <div class="col col-2 team-photo"><img class="team-img" alt="photo of Fiona MacNeill" title="Fiona MacNeill" src="img/team/fiona_macneill.jpg"></div>
-        <!-- bio written by F.MacNeill - source: SenSe Research Cluster website, University of Brighton - http://www.sense-brighton.eu/our-team/macneill/ -->
-        <div class="col col-8 later bios"><p><strong>Fiona MacNeill</strong> is a part-time MSc User Experience Design student, focusing on the variance between users’ perceptual experience of technology and the operational nature of its use; studying the idiomatic culture used to coalesce these two states. She received her BA(hons) Fine Art from University of Kent in 2005, moving into creative digital media and then computing in 2009. MacNeill’s professional practice is founded on user-focused, design-grounded theory, coupled with consideration of privacy and trust issues, particularly in IoT, mobile and cloud computing.</p></div>
+<section id="team-area">
+ <span id="team"></span>
+    <h2 class="color-bk-header">Research Team</h2>
+    <div class="single-row">
+        <div class="col col-4 bios">
+        <div class="col team-photo">
+            <img class="team-img" alt="photo of Dr Theo Fotis" title="Dr Theo Fotis" src="img/team/theo_fotis.jpg">
+        </div>
+                <!-- bio written by T.Fotis - source: provided by T. Fotis -->
+                    <p><strong>Dr. Theo Fotis</strong> is a Nurse Futurist and Digital Nursing evangelist. He is
+                        currently a Principal Lecturer at the School of Health Sciences, University of Brighton,
+                        Visiting Lecturer at the Polytechnic University of Hong Kong and Associate Lecturer at the
+                        Open University UK.
+                        He is the Editor in Chief of the British Journal of Anaesthetic & Recovery Nursing and Editor of
+                        the Brighton Journal of Health Sciences. He has more than 15 years of clinical experience in the
+                        perioperative environment.
+                        He has published numerous articles and book chapters, and is frequently
+                        an invited speaker at national and international events. Currently Theo is leading research
+                        projects on digital health focusing on anxiety measurements and implementation and use of
+                        digital tools/wearables at the “bedside” for patient’s benefit.
+                    </p>
+                        <p>
+                        <a href="https://about.brighton.ac.uk/staff/details.php?uid=tf75"
+                           title="Link to T. Fotis profile page"> View Theo's profile at University of Brighton website
+                        </a>
+                    </p>
+
+        </div>
+    <div class="col col-4 bios">
+        <div class="col team-photo">
+           <img class="team-img" alt="photo of Fiona MacNeill" title="Fiona MacNeill" src="img/team/fiona_macneill.jpg">
+        </div>
+               <!-- bio written by F.MacNeill - based on bio at SenSe Research Cluster website,
+                University of Brighton - http://www.sense-brighton.eu/our-team/macneill/ -->
+                    <p><strong>Fiona MacNeill</strong> is a part-time MSc User Experience
+                    Design student and a learning technologist. Her research focuses on the variance between users’
+                    perceptual experience of technology and the operational nature of its use; studying the idiomatic
+                    culture used to coalesce these two states. She received her BA(hons) Fine Art from University of
+                    Kent in 2005, moving into creative digital media and then computing in 2009.
+                    MacNeill’s professional practice is founded on user-focused, design-grounded theory, coupled with
+                    consideration of privacy and trust issues, particularly in IoT, mobile and cloud computing. She has
+                    published work on design theory and mobile learning and has undertaken research and presented in the
+                        United States and Europe. In 2016, MacNeill was the recipient of a "highly commended" award
+                        in the ALT Learning Technologist of the year awards.
+                    </p>
+        </div>
     </div>
 </section>
 
-<!---------------- Section 2----------------------->
+<!---------------- Section 3 - Devices ----------------------->
 
-<section class="device-area">
+<section id="device-area">
     <span id="device"></span>
-            <h2 class="free-header" title="Devices">Devices</h2>
-    <div class="row-align">
-        <div class="col full-width free-columns"><p>This is where I write a short introduction to the different device-types that we have been researching.
-        Best not to be too specific at this point as we should investigate the most appropriate form factor for our target demographic. Attitudes towards device
-        vary according to age group, for example older users prefer clip-ons as opposed to a watch type.</p></div>
-    </div>
-    <div class="row-align">
-        <!--image overflow is intentional - images will be designed for this-->
-        <div class="col device-img"><p><img class="device-img-sz" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=picture+of+min-height+200&h=200"></p></div>
-        <div class="col device-img"><p><img class="device-img-sz" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=picture+of+min-height+200&h=200"></p></div>
+    <h2 title="Devices">Devices</h2>
+    <div class="single-row">
+        <div class="col-5 free-columns full-width">
+            <p>
+                In 2016, Ofcom reported that 71% of UK adults owned a smartphone [#]. This can be viewed alongside smart
+                watch ownership, which based on Ofcom's sample, are owned by 5% of UK adults [#]. When we look
+                at these statistics in relation to our patient story above, the demographics do not quite match-up.
+                Our patient is 58 years old and according to Ofcom the highest proportion of Smartphone owners are
+                those under 55. This is intentional as our story is designed to pose a question, what about this adult
+                population of under 55s in future years? How will their expectations have been shaped by their use of
+                these technologies and the mobile applications they use to manage many services as part of their
+                lifestyle? According to the same Ofcom report 44% of adults claimed to use the Internet for looking up
+                health information. The interest is patently there and with both wearables and mobile health application
+                (or mHealth) forecast to increase [#] it is a trend which cannot afford to be ignored.
+                <br /><br />
+
+                As perioperative care is pertinent to any age group, how will these digital expectations be met in
+                relation to the perioperative environment specifically? Temporarily setting aside IT infrastructure
+                limitations [#], the more specific question is how <em>can</em> these digital expectations be met and
+                actioned considering current staff workloads and workflow? This is one facet of what we hope to learn
+                through this user-focused research. In the first instance our <em>users</em> shall be health
+                professionals, asked to consider the effects both positive and negative of introducing a wearable device
+                into a care plan. This exploration will undoubtedly raise more questions than it solves, but these are
+                the questions which prepare us for the future.
+
+                <!--Fiona MacNeill, January 2017.-->
+            </p>
+        </div>
+        </div>
+    <div class="single-row">
+        <div class="col-5 free-columns full-width">
+            Here be a graph in future
+        </div>
+        <div class="col device-img">
+            <img src="https://placeholdit.imgix.net/~text?txtsize=20&txt=400%C3%97400&w=400&h=400" >
+        </div>
+        <div class="col device-img">
+            <img src="https://placeholdit.imgix.net/~text?txtsize=20&txt=400%C3%97400&w=400&h=400" >
+        </div>
     </div>
     <div class="single-row">
         <div class="col col-4 free-columns">
@@ -265,45 +375,170 @@ Copyright (C) 2016  Fiona MacNeill
                 <li>The users phone would need to be the main interface, if an interface for the patient is a requirement</li>
                 <li>The device may be inconvenient when undertaking certain physical activities</li>
             </ul>
-        </div>
+    </div>
     </div>
 </section>
 
-<!---------------- Section 3----------------------->
+<!---------------- Section 3 - Contact us ----------------------->
 
-<section class="contact-area">
-    <span id="contacts"></span>
-            <h2 class="free-header">Contact</h2>
-    <div class="row-align">
-        <div class="col full-width free-columns">
+<section id="contact-area">
+    <span id="contact"></span><!--this exists as the position to scroll to with the smoothscroll() function-->
+    <div id="contact_form">
+        <h2>Contact</h2>
             <form>
-                Enter your Name: <input type="text" name="name"><p></p>
-                Enter your email address: <input type="email" name="email"><p></p>
-                Write your message:<textarea type="text" name="textarea"></textarea>
-                <br/>
-                <button>Submit</button>
-
+                <fieldset>
+                    <legend>Contact us to learn more about the project or join our very occasional mailing list</legend>
+                    <div class="nofloat">
+                    <div class="col col-4 nopadding">
+                        <label for="email" class="form-label">Enter your email address*</label>
+                        <span id="hint_email" class="hint"> - please enter your email address</span>
+                        <input id="email" class="i-full-width" type="email" >
+                    </div>
+                    <div class="col col-4 nopadding">
+                        <label for="subject" class="form-label">I am interested in...*</label>
+                        <select  id="subject" class="i-full-width" name="subject">
+                            <option value="mailing list" selected>joining the occasional mailing list</option>
+                            <option value="learn more about project">learning more about the project</option>
+                            <option value="collaborate">collaborating with you</option>
+                            <option value="other">other</option>
+                        </select>
+                    </div>
+                    <div class="full-width nopadding">
+                        <label for="message" class="form-label">Write your message*</label>
+                        <span id="hint_message" class="hint"> - please enter a message</span>
+                        <textarea class="i-full-width" id="message" name="message"></textarea>
+                        <input id="submit" type="button" value="submit" onclick="sendmail()" />
+                        </div>
+                    </div>
+                </fieldset>
             </form>
-        </div>
+    </div>
+    <div id="loading" class="sr-only">
+        <img src="img/loading.gif" />
+    </div>
+    <div id="confirmation">
+        <h2>Thank you!</h2>
+        <p><a href="#" onclick="reset()">Send another message</a></p>
+    </div>
+    <div id="errmessage">
+        <h2>Oops - something went wrong</h2>
+        <p id="conf-link"><a href="#" onclick="reset()">Try again</a></p>
     </div>
 </section>
 
-<!---------------- Section 4----------------------->
+<!---------------- Section 4 - Links/References ----------------------->
 
-<section class="links-area">
-    <span id="links"></span>
+<section id="links-area">
+        <span id="links"></span>
         <h2 class="color-bk-header">References/Links</h2>
-</section>
+        <div class="row-align">
+            <div class="col col-5 temp">col col-5</div>
+
+            <div class="col col-3 temp">
+                <h4>Timeline images</h4>
+                <p>Slide 01: Illustration based on original photo -
+                <a href="https://flic.kr/p/7p3mai" title="Link to image at Flickr.com">"IMAG0039"</a> by
+                <a href="https://www.flickr.com/photos/phalinn/" title="Link to photographer page at Flickr.com">
+                    Phalinn Ooi</a> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/"
+                                                         title="Link to CC license">CC BY 2.0</a></p></div>
+
+            <div class="col col-3 temp">col col-3</div>
+            <div class="col col-3 temp">col col-3</div>
+            <div class="single-row">
+                <div class="col col-4 pub"><h3 class="publication">Highlighted Publications</h3>
+                    <p class="reference">
+                        Fotis, T. (2016). The era of the robots is now? Association for Perioperative Practice, <em>Journal of
+                        Perioperative Practice</em>.
+                    </p>
+                    <p class="reference">
+                        Fotis, T. (2015). Malignant Hyperthermia: Nursing Implications for Care. <em>British Journal of
+                        Anaesthetic and Recovery Nursing, 15</em> (4). pp. 15-17. ISSN 1742-6456
+                    </p>
+                    <p class="reference">
+                        Latessa, V. and Fotis, T. (2013). Ultrasound-guided thrombin injection for treatment of iatrogenic
+                        femoral pseudo-aneurysm: a nursing protocol. <em>Journal of Vascular Nursing, 31</em> (4). pp. 165-171.
+                        ISSN 1062-0303
+                    </p>
+                    <p class="reference">
+                        Macneill, F. (2015). Approaching apps for learning, teaching and research. In: Middleton, A., ed.
+                        <em>Smart learning: teaching and learning with smartphones and tablets in post compulsory education.</em>
+                        Media-Enhanced Learning Special Interest Group and Sheffield Hallam University, Sheffield, UK,
+                        pp. 238-264. ISBN 1843873834
+                    </p>
+
+                </div>
+
+        </div>
+        </div>
+    </section>
+
+ <section id="grid-ref" class="sr-only">
+        <span id="#"></span>
+        <h2 class="color-bk-header">References/Links</h2>
+        <div class="row-align">
+                <div class="col col-0 temp">col col-0</div>
+                <div class="col col-0 temp">col col-0</div>
+                <div class="col col-0 temp">col col-0</div>
+                <div class="col col-0 temp">col col-0</div>
+                <div class="col col-0 temp">col col-0</div>
+                <div class="col col-0 temp">col col-0</div>
+                <div class="col col-0 temp">col col-0</div>
+                <div class="col col-0 temp">col col-0</div>
+                <div class="col col-0 temp">col col-0</div>
+                <div class="col col-0 temp">col col-0</div>
+                <div class="col col-0 temp">col col-0</div>
+                <div class="col col-0 temp">col col-0</div>
+
+                <div class="col col-1 temp">col col-1</div>
+                <div class="col col-1 temp">col col-1</div>
+                <div class="col col-1 temp">col col-1</div>
+                <div class="col col-1 temp">col col-1</div>
+                <div class="col col-1 temp">col col-1</div>
+                <div class="col col-1 temp">col col-1</div>
+
+                <div class="col col-2 temp">col col-2</div>
+                <div class="col col-2 temp">col col-2</div>
+                <div class="col col-2 temp">col col-2</div>
+                <div class="col col-2 temp">col col-2</div>
+
+                <div class="col col-3 temp">col col-3</div>
+                <div class="col col-3 temp">col col-3</div>
+                <div class="col col-3 temp">col col-3</div>
+
+                <div class="col col-4 temp">col col-4</div>
+                <div class="col col-4 temp">col col-4</div>
+
+                <div class="col col-5 temp">col col-5</div>
+
+                <div class="col col-0 temp">col0</div>
+                <div class="col col-6 later temp">col col-6 later</div>
+
+                <div class="col col-1 temp">col col-1</div>
+                <div class="col col-7 later temp">col col-7 later</div>
+
+                <div class="col col-2 temp">col col-2</div>
+                <div class="col col-8 later temp">col col-8 later</div>
+
+                <div class="col col-3 temp">col col-3</div>
+                <div class="col col-9 later temp">col col-9 later</div>
+
+                <div class="col col-4 temp">col col-4</div>
+                <div class="col col-10 later temp">col col-10 later</div>
+
+                <div class="col col-11 later temp">col col-11 later</div>
+                <div class="col col-12 later temp">col col-12 later</div>
+
+        </div>
+ </section>
     </main>
 </div>
 </body>
 <footer>
     <button class="return-top-button">
-        <svg viewBox="-12 70 120 150"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow-up" transform="translate(100, 100) rotate(90) ">
+        <svg xmlns="http://www.w3.org/2000/svg" width="38" height= 48 viewBox="-12 70 120 150"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow-up" transform="translate(100, 100) rotate(90) ">
         </path>
         </svg>
     </button>
 </footer>
     <script src="js/main.js"></script>
-    <script src="js/flickity.js"></script>
 </html>
