@@ -57,7 +57,7 @@ Copyright (C) 2017  Fiona MacNeill
 <head>
     <meta charset="UTF-8">
     <title>Wearable Devices for Perioperative Anxiety</title>
-    <meta name="description" content="">
+    <meta name="description" content="A project about wearable devices for perioperative care">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" media="screen" href="css/style.css" />
@@ -84,10 +84,10 @@ Copyright (C) 2017  Fiona MacNeill
 <!-- Flickity HTML init -->
     <main id="main">
 <div class="carousel"
-    data-flickity='{ "cellSelector": ".carousel-cell", "freeScroll": true}'>
+    data-flickity='{ "cellSelector": ".carousel-cell", "freeScroll": true, "setGallerySize": false }'>
     <div class="carousel-cell" id="content">
         <div class="tl_grid">
-            <img class="tl_logo sr-only" src="img/uobwhite2.png" alt="Univeristy of Brighton logo">
+            <img class="tl_logo sr-only" src="img/uobwhite2.png" alt="University of Brighton logo">
             <img class="tl_img first-last" src="img/timeline/01hipimg_opt.png" alt="Illustration of hip x-ray">
             <h2 class="tl_title">A Perioperative Timeline</h2>
             <p class="tl_desc bk">
@@ -125,7 +125,7 @@ Copyright (C) 2017  Fiona MacNeill
         <div class="tl_grid">
             <img class="tl_img" src="img/timeline/04Wearable.png" alt="Illustration of a Wearable device (watch type)">
             <h2 class="tl_title">Wearable device</h2>
-            <p class="tl_desc bk">
+            <p class="tl_desc">
                 Once Carol's appointment with the specialist is confirmed, she is invited for a follow-up with a nurse
                 at her doctors surgery. The nurse provides an overview of Carol's care plan including the prescription
                 of a wearable device for monitoring heart rate, breathing and electrodermal activity for use from the
@@ -137,7 +137,7 @@ Copyright (C) 2017  Fiona MacNeill
         <div class="tl_grid">
             <img class="tl_img" src="img/timeline/05Specialist.png" alt="Illustration of hands using a tablet device">
             <h2 class="tl_title">Consultation with specialist</h2>
-            <p class="tl_desc bk">
+            <p class="tl_desc">
                 Carol is examined by the consultant for the hip replacement. She also meets her perioperative nurse,
                 Brian who will monitor her vitals and anxiety levels through the wearable system. Brian asks how Carol
                 is getting on with the wearable device, has she tried the app yet? Carol and Brian agree on her
@@ -149,7 +149,7 @@ Copyright (C) 2017  Fiona MacNeill
         <div class="tl_grid">
             <img class="tl_img" src="img/timeline/06clinic.png" alt="Illustration of a nurse (Brian in the narrative)">
             <h2 class="tl_title">Pre-operative assessment clinic</h2>
-            <p class="tl_desc bk">
+            <p class="tl_desc">
                 Brian asks Carol to complete the State-Trait Anxiety Inventory<a data-scroll href="#1" class="caption-link"><sup>1</sup></a>.
                 Carol is concerned about the operation and how recovery might affect her work and independence.
                 Brian notes that the wearable system has shown that Carol's anxiety has increased. Brian talks through
@@ -162,7 +162,7 @@ Copyright (C) 2017  Fiona MacNeill
         <div class="tl_grid">
             <img class="tl_img" src="img/timeline/07letter.png" alt="Illustration of a letter received in the mail">
             <h2 class="tl_title">Letter for date of operation</h2>
-            <p class="tl_desc bk">
+            <p class="tl_desc">
                 Carol receives a letter informing her of the date for her operation; this is both reassuring and
                 worrying. She feels underprepared for the operation and recovery. Brian notices a spike in
                 her vitals and as previously agreed, sends a text message to check-in with her. After a follow-up call
@@ -172,13 +172,17 @@ Copyright (C) 2017  Fiona MacNeill
     </div>
     <div class="carousel-cell">
         <div class="tl_grid">
-            <img class="tl_img" src="img/timeline/08reschedule.png" alt="Illustration of a paper calendar">
-            <h2 class="tl_title">Cancellation and rescheduling</h2>
-            <p class="tl_desc bk">
+            <img class="tl_img" id="tl_img_resched" src="img/timeline/08reschedule.png" alt="Illustration of a paper calendar">
+            <h2 class="tl_title" id="tl_title_resched">Outcome 1: Cancellation</h2>
+            <p class="tl_desc" id="tl_desc_resched1">
                 Due to unforeseen circumstances at the hospital Carol's operation has to be cancelled and rescheduled.
                 Unfortunately, the new date occurs when Carol will be abroad and the only other date is several months
                 away. Carol is concerned about the level of pain that she will experience during the longer
                 wait. The specialist and Brian consider pain management for the waiting period.
+            </p>
+            <h2 class="tl_title">Outcome 2: As planned</h2>
+            <p class="tl_desc">
+                The operation will take place as scheduled.
             </p>
         </div>
     </div>
@@ -186,7 +190,7 @@ Copyright (C) 2017  Fiona MacNeill
         <div class="tl_grid">
             <img class="tl_img" src="img/timeline/09operation.png" alt="Illustration showing close-up of a hospital bed on a ward">
             <h2 class="tl_title">Day of operation</h2>
-            <p class="tl_desc bk">
+            <p class="tl_desc_resched">
                 Carol feels ready for her operation, although a fire drill at the flats next door the night
                 before causes her additional anxiety. Brian is concerned about Carol's levels and decides to move her
                 operation to be first in the day. This will minimise her waiting time and to allow her daughter to pick
@@ -198,7 +202,7 @@ Copyright (C) 2017  Fiona MacNeill
         <div class="tl_grid">
             <img class="tl_img first-last" src="img/timeline/10recovery.png" alt="Illustration of tea on a tray in a bed in a home to represent recovery">
             <h2 class="tl_title">Recovery and device return</h2>
-            <p class="tl_desc bk">
+            <p class="tl_desc_resched">
                 Carol's daughter took time off work to support Carol's recovery and Brian continued to monitor her
                 vitals, contacting her when needed. Initially, Carol was starting to move around too soon, but she could
                 tell from the wearable app that this was contributing to increased heart and breathing rates.
@@ -210,21 +214,19 @@ Copyright (C) 2017  Fiona MacNeill
 <!-- the timeline line behind the dots -->
 <div class="timeline-line-end" id="timeline"></div>
 
-
 <!-- All CONTENT BELOW WRITTEN BY F. MacNeill with the exception of the T. Fotis bio. Citations are provided in the text-->
 
-<!---------------- Section 1 - About the Project ----------------------->
-<div class="page-nav-spacer"></div>
-        <div id="text-wrapper">
-<section id="about-area">
+<!---------------- Section ? - About ----------------------->
+        <section id="about-area">
   <span id="about"></span>
-    <div class="col full-width">
     <h2 title="About site">About</h2>
+    <div class="col full-width" id="intro">
         <p class="justify">This site outlines a future service design and user experience project to be undertaken by F. MacNeill.
             The project is based on, and will contribute to, the ongoing research of Dr. Theo Fotis into the use of wearable
             devices and other technologies in the perioperative environment.
         </p>
-    <div class="col col-4">
+    </div>
+    <div class="col col-4" id="data_text">
     <p class="justify">In 2016, Ofcom reported that 71% of UK adults owned a smartphone<a data-scroll href="#2" class="caption-link"><sup>2</sup></a>.
         This can be viewed alongside smart watch ownership,
         which based on Ofcom's sample, are owned by 5% of UK adults<a data-scroll href="#3" class="caption-link"><sup>3</sup></a>.
@@ -233,6 +235,10 @@ Copyright (C) 2017  Fiona MacNeill
         those under 55.
         This is intentional as our story is designed to pose a question, what will this adult
         population of under 55s need and expect in future years?
+        <p class="callout" id="question"><em>How will patients'
+            experiences have been shaped by their use of wearable technologies and the mobile applications they use to manage
+            many essential services as part of their lifestyle, such as banking and work?</em>
+        </p>
     </div>
         <div class="col col-4" id="data_align">
             <div id="bar_stacked" aria-label="A tabular representation of the data in the chart.">
@@ -240,16 +246,14 @@ Copyright (C) 2017  Fiona MacNeill
             </div>
         <p class="caption">Source: Ofcom Technology Tracker, H1 2016<a data-scroll href="#11" class="caption-link"><sup>11</sup></a>.
             <br>Base: Adults aged 16+, 16-24 n = 519, 25-34 n = 604, 35-54 n = 1172, 55+ n = 1442</p>
-    </div>
+            <p class="callout" id="stat"><strong class="bignumber">43%</strong> <br>of UK Adults look up health information online</p>
         </div>
-        <div class="col full-width" id="callout">
-        <p class="callout" id="question"><em>How will patients'
-        experiences have been shaped by their use of wearable technologies and the mobile applications they use to manage
-        many essential services as part of their lifestyle, such as banking and work?</em>
-        </p>
-        </div>
-        <div class="col full-width">
-        <p>
+</section>
+
+    <!---------------- Section ? - Why Perioperative Care ----------------------->
+    <section id="why-area">
+            <h2>Why Perioperative Care?</h2>
+        <p class="justify">
         The rationale for this investigation into the use of a wearable devices to support pre-operative, also termed as perioperative, care is
         specifically is supported by the following drivers:
         </p>
@@ -266,14 +270,13 @@ Copyright (C) 2017  Fiona MacNeill
             <li>As a use case, this application of a wearable device offers clear benefits and a tangible path for
                 investigation.</li>
             </ul>
-    </div>
     </section>
-    <!---------------- Section 2 - Goals----------------------->
+    <!---------------- Section ? - Goals----------------------->
     <section id="goals-area">
     <div class="single-row">
-        <div class="col col-3 free-columns" id="first-goal">
+        <div class="col col-3 free-columns goals">
             <img class="about-img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
-            <h3 class="goal">Goal 1 : Explore</h3>
+            <h3>Goal 1 : Explore</h3>
                 <p class="goal-text"><strong>To find out</strong> if a consumer-level wearable device could be used as
                     part of a perioperative care plan. The device and an accompanying service would be used to monitor a
                     patient's vital signs, as a means to identify symptoms of anxiety from the pre-operative phase
@@ -283,9 +286,9 @@ Copyright (C) 2017  Fiona MacNeill
                     care?
                 </p>
         </div>
-        <div class="col col-3 free-columns">
+        <div class="col col-3 free-columns goals">
             <img class="about-img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
-            <h3 class="goal">Goal 2 : Creation</h3>
+            <h3>Goal 2 : Creation</h3>
                 <p class="goal-text"><strong>To conceive</strong> how a hypothetical wearable device could be used as
                     part of a patient care plan during the lead up to an operative procedure. In the first instance we
                     strive to understand the perspective of nurses; do they believe that consumer-level wearable devices
@@ -294,9 +297,9 @@ Copyright (C) 2017  Fiona MacNeill
                     provider's perspective.
                 </p>
                </div>
-        <div class="col col-3 free-columns">
+        <div class="col col-3 free-columns goals">
             <img class="about-img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
-            <h3 class="goal">Goal 3 : Requirements</h3>
+            <h3>Goal 3 : Requirements</h3>
                 <p class="goal-text"><strong>To define</strong> a set of requirements for a wearable device and service
                     designed to monitor perioperative anxiety. The requirements, accompanying research and recommendations
                     will provide a compelling resource as NHS Trusts move towards the "user-centered" goals put forth
@@ -307,7 +310,12 @@ Copyright (C) 2017  Fiona MacNeill
                 </p>
         </div>
     </div>
-        <div class="full-width">
+    </section>
+    <!---------------- Section ? - Technology in Health in UK----------------------->
+    <section id="technology-area">
+        <div class="single-row">
+        <div class="col full-width">
+            <h2>Technology in Health in the UK</h2>
         <p>
             This can also be considered alongside the recent influx of funding
             announced to establish 12 NHS trusts as global centres of digital excellence<a data-scroll href="#8" class="caption-link"><sup>8</sup></a>.
@@ -322,20 +330,22 @@ Copyright (C) 2017  Fiona MacNeill
                 upload patient-generated data (via surveys,
                 sensors, wearables, patient-reported outcome
                 measures, and data from other apps) into their
-                electronic record." (Wachter, 2016<a data-scroll href="#7" class="caption-link"><sup>7</sup></a>, p. 30).
+                electronic record."
             </cite>
+            <p id = "cite">(Wachter, 2016<a data-scroll href="#7" class="caption-link"><sup>7</sup></a>, p. 30).</p><br>
         </blockquote>
         <p>With the adoption of both wearable devices and mobile health applications forecast to increase<a data-scroll href="#10" class="caption-link"><sup>10</sup></a>,
             in spite of the significant technical challenges these disruptive technologies present, these trends cannot
             afford to be ignored.
         </p>
         </div>
+        </div>
 </section>
 <!---------------- Section 3 - The Research Team ----------------------->
 
 <section id="team-area">
  <span id="team"></span>
-    <h2 class="color-bk-header">Research Team</h2>
+    <h2 class="color-bk-header">Introducing the Research Team</h2>
     <div class="single-row">
         <div class="col col-4 bios">
         <div class="col team-photo">
@@ -391,12 +401,12 @@ Copyright (C) 2017  Fiona MacNeill
 
 <section id="device-area">
     <span id="device"></span>
-    <h2 title="Devices">Devices</h2>
     <div class="single-row">
         <div class="col full-width free-columns" id="device-blurb">
+            <h2 title="Devices">Devices</h2>
             <p>
                 As a means to explore future service models we acknowledge, yet temporarily set aside IT infrastructure
-                limitations[#] as any data/information derived from wearable devices would ideally contribute to a
+                limitations[#] as suitable information derived from wearable devices would ideally contribute to a
                 patient electronic records system which may not yet be available.
                 There is however precedent for independent developers to build applications and services which can
                 have interoperability with existing systems where they are available, for example the
@@ -428,7 +438,7 @@ Copyright (C) 2017  Fiona MacNeill
             </div>
         </div>
     <div class="single-row">
-            <div class="col full-width free-columns" id="device-factors">
+            <div class="col full-width" id="device-factors">
                 <div class="tab-container sr-only"></div>
                 <div class="tab-class"></div>
                 <div id="factors-bk">
@@ -722,66 +732,6 @@ Copyright (C) 2017  Fiona MacNeill
                         </p>
             </div>
     </section>
-<!-- take this out before hand-in and the grid-ref class - is sr-only used elsewhere -->
- <section id="grid-ref" class="sr-only">
-        <span id="#"></span>
-        <h2 class="color-bk-header">References/Links</h2>
-        <div class="row-align">
-                <div class="col col-0 temp">col col-0</div>
-                <div class="col col-0 temp">col col-0</div>
-                <div class="col col-0 temp">col col-0</div>
-                <div class="col col-0 temp">col col-0</div>
-                <div class="col col-0 temp">col col-0</div>
-                <div class="col col-0 temp">col col-0</div>
-                <div class="col col-0 temp">col col-0</div>
-                <div class="col col-0 temp">col col-0</div>
-                <div class="col col-0 temp">col col-0</div>
-                <div class="col col-0 temp">col col-0</div>
-                <div class="col col-0 temp">col col-0</div>
-                <div class="col col-0 temp">col col-0</div>
-
-                <div class="col col-1 temp">col col-1</div>
-                <div class="col col-1 temp">col col-1</div>
-                <div class="col col-1 temp">col col-1</div>
-                <div class="col col-1 temp">col col-1</div>
-                <div class="col col-1 temp">col col-1</div>
-                <div class="col col-1 temp">col col-1</div>
-
-                <div class="col col-2 temp">col col-2</div>
-                <div class="col col-2 temp">col col-2</div>
-                <div class="col col-2 temp">col col-2</div>
-                <div class="col col-2 temp">col col-2</div>
-
-                <div class="col col-3 temp">col col-3</div>
-                <div class="col col-3 temp">col col-3</div>
-                <div class="col col-3 temp">col col-3</div>
-
-                <div class="col col-4 temp">col col-4</div>
-                <div class="col col-4 temp">col col-4</div>
-
-                <div class="col col-5 temp">col col-5</div>
-
-                <div class="col col-0 temp">col0</div>
-                <div class="col col-6 later temp">col col-6 later</div>
-
-                <div class="col col-1 temp">col col-1</div>
-                <div class="col col-7 later temp">col col-7 later</div>
-
-                <div class="col col-2 temp">col col-2</div>
-                <div class="col col-8 later temp">col col-8 later</div>
-
-                <div class="col col-3 temp">col col-3</div>
-                <div class="col col-9 later temp">col col-9 later</div>
-
-                <div class="col col-4 temp">col col-4</div>
-                <div class="col col-10 later temp">col col-10 later</div>
-
-                <div class="col col-11 later temp">col col-11 later</div>
-                <div class="col col-12 later temp">col col-12 later</div>
-
-        </div>
- </section>
-        </div>
     </main>
 </div>
 </body>
