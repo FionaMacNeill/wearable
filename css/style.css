@@ -146,11 +146,10 @@ nav ul{
 
 nav li{
     /* top | right | bottom | left */
-    /*padding: 5px 8px 5px 8px;*/
+    margin: 0 1px auto auto;
     float: left;
     font-size: 1.02em;
     line-height: 1em;
-    margin-right: 1px;
     background: #0066B9;
 }
 
@@ -362,8 +361,7 @@ nav a:hover, nav a:active {
     left: 0;
     padding: 0;
     margin: 0;
-    background: #000000;
-    opacity: 0.1;
+    background: #e6e6e6;
 }
 
 .menuActive {
@@ -465,6 +463,34 @@ p.reference{
     font-size: 0.9em;
 }
 
+p.caption{
+    /* top | right | bottom | left */
+    margin: 0 auto 0 auto;
+    font-size: 0.7em;
+    text-align: center;
+}
+
+.caption-link{
+    color: #4a4bca;
+    text-decoration: none;
+}
+
+p.callout{
+    padding: 0.5em;
+    font-size: 1.3em;
+    border-left: 2px solid #333333;
+}
+
+#question{
+    background: #d2ccff;
+    margin-right: 50%;
+}
+
+blockquote{
+    line-height: 1.48;
+}
+
+
 #conf-link .p{
     text-align: center;
 }
@@ -474,6 +500,15 @@ ul {
     list-style: circle;
     font-size: 1.05em;
     line-height: 1.48;
+}
+
+li {
+    /* top | right | bottom | left */
+    margin: 0.9em auto 0 auto;
+}
+
+li:first-child{
+    margin-top: 0;
 }
 
 .color-bk-header{
@@ -585,6 +620,14 @@ anxiety level graphic to show through slightly */
     display: block;
 }
 
+#goals-area{
+    /* top | right | bottom | left*/
+    margin: 2% 5% 2% 5%;
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+
 
 
 .about_img {
@@ -627,6 +670,28 @@ anxiety level graphic to show through slightly */
     overflow: auto;
 }
 
+#device-scenarios{
+    background: #563557;
+    border: none;
+}
+
+#scenarios-bk{
+    padding: 1%;
+    background: #C0B2C7;
+    border-radius: 5px;
+}
+
+#wear-intro{
+    background: #563557;
+    border: none;
+}
+
+#wear-bk{
+    padding: 1%;
+    background: #C0B2C7;
+    border-radius: 5px;
+}
+
 #contact-area {
     /* top | right | bottom | left */
     margin: 0 5% 5% 5%;
@@ -639,12 +704,48 @@ anxiety level graphic to show through slightly */
 
 #links-area {
     /* top | right | bottom | left */
-    margin: 0 5% 0 5%;
+    margin: 0 5% 5% 5%;
     padding: 2% 0 2% 0;
     border-radius: 5px;
     position: relative;
     overflow: auto;
     background: #5b55b9;
+}
+
+.links-bk{
+    margin: 5%;
+    padding: 5%;
+    background: #c0c8eb;
+    overflow: auto;
+}
+
+
+/*//////////////////////////////////
+//                                //
+//       Data Visualisation       //
+//                                //
+//////////////////////////////////*/
+
+
+#data_align {
+    /* top | right | bottom | left */
+    margin: auto 0 0.5em 1em;
+    padding: 0.5em;
+    float: right;
+    border: 2px solid #e6e6e6;
+    width: 400px;
+    background: #FFFFFF;
+}
+
+#bar_stacked {
+    overflow: hidden;
+    height: 300px;
+    position: relative;
+
+}
+
+#load_img {
+    margin-top: 5em;
 }
 
 
@@ -663,6 +764,7 @@ anxiety level graphic to show through slightly */
 
 /* The complete grid can be turned on for reference in the section just prior to the footer
 || It is set to display none by default in the html file */
+
 
 
 #grid-ref {
@@ -792,14 +894,6 @@ anxiety level graphic to show through slightly */
     text-align: left;
     min-height: 170px;
     border-radius: 5px;
-}
-
-/* Based on col-4 the Recent publications areas needed to lose the margins */
-.pub {
-    width: calc(6.5% * 9);
-    padding: 0;
-    margin: 0;
-
 }
 
 /* twelve column widths : 960px (total width) - 15px = 945px
@@ -947,7 +1041,7 @@ textarea {
 #loading {
     display: none;
     text-align: center;
-    padding-top: 9em;
+    padding-top: 10em;
 }
 
 #confirmation {
@@ -984,6 +1078,12 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 .sr-only {
 }
 
+
+/*//////////////////////////////////
+//                                //
+//         Media Queries          //
+//                                //
+//////////////////////////////////*/
 
 /* Desktop first media queries - this will generally be viewed from a desktop in the work environment */
 
@@ -1063,6 +1163,12 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         margin: 2% 10% 0 15%;
         width: 70%;
         font-size: 1em;
+    }
+
+
+    #data_align {
+        /* top | right | bottom | left */
+        margin: 0.5em 3em 0.5em 6em;
     }
 
 }
@@ -1184,6 +1290,11 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 
         }
 
+        #data_align {
+            /* top | right | bottom | left */
+            margin: 0.5em 0 0.5em 0;
+    }
+
 
 }
 
@@ -1274,15 +1385,31 @@ or when screen readers are used - it is deliberately empty as it is only for lab
             padding: 2% 0 2% 4%;
         }
 
+        #bar_stacked {
+            width: 330px;
+        }
+
+        #data_align {
+            /* top | right | bottom | left */
+            margin: 0.5em 0 0.5em 0;
+            width: 350px;
+        }
 
 }
 
 /* larger than a mobile phone */
-@media (max-width: 414px) {
+@media (max-width: 320px){
 
-        .tl_logo{
-            height: 1.8em;
-            width: 6.5em;
-        }
+    #bar_stacked {
+        width: 250px;
+    }
+
+    #data_align {
+        /* top | right | bottom | left */
+        margin: 0.2em 0 0.2em 10%;
+        width: 270px;
+        border: none;
+    }
+
 
 }

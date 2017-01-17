@@ -52,12 +52,22 @@
  Ownership and licenses for content are indicated in the markup.
  */
 
+/* Added to make smoothScroll load when the page is ready */
 window.addEventListener("load", init);
 
 
 function init() {
     smoothScroll.init();
 }
+
+/* Added to make Google chart data load when the page is ready */
+window.addEventListener("load", chartLoad);
+
+function chartLoad() {
+    google.charts.load('current', {packages: ['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+}
+
 
 /*!---------------------------------------------------------------------------------------------------------------------
 * CUSTOM Script by F. MacNeill for responsive nav/menu button
@@ -5275,4 +5285,55 @@ function reset() {
     document.querySelector("#contact_form").style.display = "block";
     document.querySelector("#email").value = "";
     document.querySelector("#message").value = "";
+}
+
+
+/*!---------------------------------------------------------------------------------------------------------------------
+ * Google Charts api
+ *
+ * * Copyright (c) 2016, Google.
+ * * Licensed under http://www.apache.org/licenses/LICENSE-2.0
+ ---------------------------------------------------------------------------------------------------------------------*/
+
+function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+        ['Device', 'Smartphone', 'Smart Watch', 'Tablet', { role: 'annotation' } ],
+        ['16-24', 90, 7, 63, '' ],
+        ['25-34', 91, 7, 67, '' ],
+        ['35-54', 83, 7, 70, '' ],
+        ['55+', 42, 2, 43, '' ]
+    ]);
+
+
+    var options_fullStacked = {
+        title: 'Data from Take-up of internet-enabled devices, by age',
+        chartArea: {width: '80%', height: '70%'},
+        isStacked: 'percent',
+        legend: { position: 'top', maxLines: 2},
+        series: {
+            0: { color: '#5B55B9' },
+            1: { color: '#6B7DFF' },
+            2: { color: '#B97AAE' },
+        },
+        bar: { groupWidth: '75%' },
+        hAxis: {
+            minValue: 0,
+            ticks: [0, .3, .6, .9, 1]
+        },
+        titleTextStyle: {
+            bold: true,
+            fontSize: 11.5,
+            color: '#333333'
+        }
+    };
+    var bar_stacked = document.getElementById('bar_stacked');
+    var chart = new google.visualization.ColumnChart(bar_stacked);
+
+    google.visualization.events.addListener(chart, 'ready', function () {
+        bar_stacked.innerHTML = '<img src="' + chart.getImageURI() + '">';
+        console.log(bar_stacked.innerHTML);
+    });
+
+    var chart = new google.visualization.BarChart(document.getElementById('bar_stacked'));
+    chart.draw(data, options_fullStacked);
 }

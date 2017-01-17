@@ -16,14 +16,13 @@ Copyright (C) 2017  Fiona MacNeill
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>
 
-    -----------Includes-------------
+    //Includes//
 
     html for smooth-scroll v10.2.1: Animate scrolling to anchor links
     Copyright (c) 2016 Chris Ferdinandi
     MIT License
     http://github.com/cferdinandi/smooth-scroll
 
-    --------------AND---------------
 
     html for Flickity PACKAGED v2.0.5
     Touch, responsive, flickable carousels
@@ -35,8 +34,6 @@ Copyright (C) 2017  Fiona MacNeill
     Copyright (c) 2016 Metafizzy
     Modified by F.MacNeill, December 2016.
 
-    --------------AND---------------
-
     html for contact.js section
     Copyright (c) 2016 Marcus Winter. Used with permission.
     * Includes PHPMailer by Andy Prevost and Marcus Bointon
@@ -44,7 +41,10 @@ Copyright (C) 2017  Fiona MacNeill
     * * Copyright (c) 2004-2009, Andy Prevost. All Rights Reserved. Copyright (c) 2001-2003, Brent R. Matzelle
     Modified by F.MacNeill, January 2017.
 
-    --------------------------------
+    * Google Charts api
+    *
+    * * Copyright (c) 2016, Google.
+    * * Licensed under http://www.apache.org/licenses/LICENSE-2.0
 
     Written content and images are property of Fiona MacNeill and Dr Theo Fotis unless stated otherwise.
     Copyright (c) 2016 T. Fotis, 2017.
@@ -73,7 +73,7 @@ Copyright (C) 2017  Fiona MacNeill
         <nav data-scroll-header>
                 <button class="toggle" id="menu-btn">Menu</button>
             <ul>
-                <li><a data-scroll href="#about">About</a></li>
+                <li ><a data-scroll href="#about">About</a></li>
                 <li><a data-scroll href="#team">Team</a></li>
                 <li><a data-scroll href="#device">Devices</a></li>
                 <li><a data-scroll href="#contact">Contact</a></li>
@@ -150,7 +150,7 @@ Copyright (C) 2017  Fiona MacNeill
             <img class="tl_img" src="img/timeline/06clinic.png" alt="Illustration of a nurse (Brian in the narrative)">
             <h2 class="tl_title">Pre-operative assessment clinic</h2>
             <p class="tl_desc bk">
-                Brian asks Carol to complete the State-Trait Anxiety Inventory<sup>1</sup>. Carol is
+                Brian asks Carol to complete the State-Trait Anxiety Inventory<a data-scroll href="#1" class="caption-link"><sup>1</sup></a>. Carol is
                 concerned about the operation and how recovery might affect her work and independence.
                 Brian notes that the wearable system has shown that Carol's anxiety has increased. Brian talks through
                 the operative procedure with her and they agree that he will contact if her anxiety levels continue
@@ -207,41 +207,101 @@ Copyright (C) 2017  Fiona MacNeill
         </div>
     </div>
 </div>
+<!-- the timeline line behind the dots -->
 <div class="timeline-line-end" id="timeline"></div>
-    <!-- Content of my portfolio site starts here -->
-<!-- this is where the side bar overlay will go --->
+
+
+<!-- All CONTENT BELOW WRITTEN BY F. MacNeill with the exception of the T. Fotis bio. Citations are provided in the text-->
+
 <!---------------- Section 1 - About the Project ----------------------->
 <div class="page-nav-spacer"></div>
 <section id="about-area">
   <span id="about"></span>
-    <h2 title="About the Project">About the Project</h2>
+    <h2 title="About site">About</h2>
+    <p>This site outlines a future service design and user experience project to be undertaken by F. MacNeill.
+        The project is based on, and will contribute to, the ongoing research of Dr. Theo Fotis into the use wearable
+        devices and other technologies in the perioperative environment.
+    </p>
+    <div class="col col-4" id="data_align">
+        <div id="bar_stacked" aria-label="A tabular representation of the data in the chart.">
+            <img src="img/loading.gif" class="sr-only" alt="loading image" id="load_img">
+        </div>
+        <p class="caption">Source: Ofcom Technology Tracker, H1 2016<a data-scroll href="#7" class="caption-link"><sup>7</sup></a>.
+            <br>Base: Adults aged 16+, 16-24 n = 519, 25-34 n = 604, 35-54 n = 1172, <br> 55+ n = 1442</p>
+    </div>
+
+    <p>In 2016, Ofcom reported that 71% of UK adults owned a smartphone<a data-scroll href="#2" class="caption-link"><sup>2</sup></a>.
+        This can be viewed alongside smart watch ownership,
+        which based on Ofcom's sample, are owned by 5% of UK adults<a data-scroll href="#3" class="caption-link"><sup>3</sup></a>.
+        When we look at these statistics in relation to our patient story above, the demographics do not quite match-up.
+        Our patient is 58 years old and according to Ofcom the highest proportion of Smartphone owners are
+        those under 55.
+        This is intentional as our story is designed to pose a question,<p class="callout" id="question">what will this adult
+        population of under 55s need and expect in future years? How will their experiences have been shaped by
+        their use of these technologies and the mobile applications they use to manage many essential
+        services as part of their lifestyle, such as banking and work?</p>
+        <p>
+        According to the same Ofcom report 44% of
+        adults claimed to use the Internet for looking up health information, so there is certainly a thirst for
+        digital services to support healthcare.
+        <br><br>
+        This can also be considered alongside the recent influx of funding
+        announced to establish 12 NHS trusts as global centres of digital excellence<a data-scroll href="#4" class="caption-link"><sup>4</sup></a>.
+        The funding was announced in the wake of an independent review and report by the National Advisory Group, entitled
+        <em>Making IT Work: Harnessing the Power of Health Information Technology to Improve Care in England</em>,
+        of the many recommendations outlined in the document the following quote is particularly relevant to this project.<a data-scroll href="#5" class="caption-link"><sup>5</sup></a></p>
+    <blockquote>
+        <cite>"...we endorse giving patients full access to their
+        electronic data... We also favour creating easy ways
+        for patients to download such data (in a
+        computable format) for their own use, and to
+        upload patient-generated data (via surveys,
+        sensors, wearables, patient-reported outcome
+        measures, and data from other apps) into their
+        electronic record." (Wachter, 2016<a data-scroll href="#7" class="caption-link"><sup>7</sup></a>, p. 30).
+        </cite>
+    </blockquote>
+    <p>With the adoption of both wearable devices and mobile health applications forecast to increase<a data-scroll href="#6" class="caption-link"><sup>6</sup></a>,
+       in spite of the significant technical challenges these disruptive technologies present, these trends cannot
+       afford to be ignored.
+    </p>
+    </section>
+    <!---------------- Section 1 - About the Project ----------------------->
+    <section id="goals-area">
     <div class="single-row">
         <div class="col col-3 free-columns" id="first-goal">
             <img class="about_img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
             <h3 class="goal">Goal 1 : Explore</h3>
-                <p class="goal-text">Use service design research methods to find out if a
-                    wearable device for monitoring anxiety and an accompanying service could be effective in a
-                    perioperative environment.
+                <p class="goal-text"><strong>To find out</strong> if a consumer-level wearable device could be used as
+                    part of a perioperative care plan. The device and an accompanying service would be used to monitor a
+                    patient's vital signs, as a means to identify symptoms of anxiety from the pre-operative phase
+                    through to recovery.
                     What issues might be raised through the introduction of this disruptive technology? What problems
-                    could be solved? How could service and care be improved?
+                    could be solved? If this technology is introduced is there potential for improvement to service and
+                    care?
                 </p>
         </div>
         <div class="col col-3 free-columns">
             <img class="about_img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
             <h3 class="goal">Goal 2 : Creation</h3>
-                <p class="goal-text">To understand patient interaction with medical professionals in a perioperative
-                    environment; striving to understand the perspective of care providers in the first instance.
-                    This can be achieved through co-creation with stakeholders<sup>2</sup> and iterative simulation of
-                    a wearable system and its accompanying service (e.g. app, interfaces).
+                <p class="goal-text"><strong>To conceive</strong> how a hypothetical wearable device could be used as
+                    part of a patient care plan during the lead up to an operative procedure. In the first instance we
+                    strive to understand the perspective of nurses; do they believe that consumer-level wearable devices
+                    have potential to be used and what are their reservations? Through user-focused co-design with nurses
+                    and other medical professionals we hope to define base requirements for such a system from the care
+                    provider's perspective.
                 </p>
                </div>
         <div class="col col-3 free-columns">
             <img class="about_img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
             <h3 class="goal">Goal 3 : Requirements</h3>
-                <p class="goal-text">To define a set of requirements for a wearable device and service specifically
-                    designed to monitor perioperative anxiety. The requirements, accompanying research and
-                    recommendations will provide a compelling resource as NHS Trusts move towards to the "user-centered"
-                    goals put forth in the recent National Advisory Group report, <em>Marking IT Work...</em><sup>3</sup>.
+                <p class="goal-text"><strong>To define</strong> a set of requirements for a wearable device and service
+                    designed to monitor perioperative anxiety. The requirements, accompanying research and recommendations
+                    will provide a compelling resource as NHS Trusts move towards the "user-centered" goals put forth
+                    in the recent National Advisory Group report, <em>Making IT Work...</em>
+                    <a data-scroll href="#5" class="caption-link"><sup>5</sup></a>.
+                    It will also provide user-focused insight for device manufacturers and application developers who
+                    wish to create solutions for health contexts.
                 </p>
         </div>
     </div>
@@ -257,17 +317,17 @@ Copyright (C) 2017  Fiona MacNeill
             <img class="team-img" alt="photo of Dr Theo Fotis" title="Dr Theo Fotis" src="img/team/theo_fotis.jpg">
         </div>
                 <!-- bio written by T.Fotis - source: provided by T. Fotis -->
-                    <p><strong>Dr. Theo Fotis</strong> is a Nurse Futurist and Digital Nursing evangelist. He is
-                        currently a Principal Lecturer at the School of Health Sciences, University of Brighton,
-                        Visiting Lecturer at the Polytechnic University of Hong Kong and Associate Lecturer at the
-                        Open University UK.
-                        He is the Editor in Chief of the British Journal of Anaesthetic & Recovery Nursing and Editor of
-                        the Brighton Journal of Health Sciences. He has more than 15 years of clinical experience in the
-                        perioperative environment.
-                        He has published numerous articles and book chapters, and is frequently
-                        an invited speaker at national and international events. Currently Theo is leading research
-                        projects on digital health focusing on anxiety measurements and implementation and use of
-                        digital tools/wearables at the “bedside” for patient’s benefit.
+                    <p><strong>Dr. Theo Fotis</strong> is a Nurse, Futurist and Digital Nursing evangelist. He is
+                    currently a Principal Lecturer at the School of Health Sciences, University of Brighton,
+                    Visiting Lecturer at the Polytechnic University of Hong Kong and Associate Lecturer at the
+                    Open University UK.
+                    He is the Editor in Chief of the British Journal of Anaesthetic & Recovery Nursing and Editor of
+                    the Brighton Journal of Health Sciences. He has more than 15 years of clinical experience in the
+                    perioperative environment.
+                    He has published numerous articles and book chapters, and is frequently
+                    an invited speaker at national and international events. Currently Theo is leading research
+                    projects on digital health focusing on anxiety measurements and implementation and use of
+                    digital tools/wearables at the “bedside” for patient’s benefit.
                     </p>
                         <p>
                         <a href="https://about.brighton.ac.uk/staff/details.php?uid=tf75"
@@ -290,8 +350,8 @@ Copyright (C) 2017  Fiona MacNeill
                     MacNeill’s professional practice is founded on user-focused, design-grounded theory, coupled with
                     consideration of privacy and trust issues, particularly in IoT, mobile and cloud computing. She has
                     published work on design theory and mobile learning and has undertaken research and presented in the
-                        United States and Europe. In 2016, MacNeill was the recipient of a "highly commended" award
-                        in the ALT Learning Technologist of the year awards.
+                    United States and Europe. In 2016, MacNeill was the recipient of a "highly commended" award
+                    in the ALT Learning Technologist of the year awards.
                     </p>
         </div>
     </div>
@@ -305,52 +365,114 @@ Copyright (C) 2017  Fiona MacNeill
     <div class="single-row">
         <div class="col-5 free-columns full-width">
             <p>
-                In 2016, Ofcom reported that 71% of UK adults owned a smartphone [#]. This can be viewed alongside smart
-                watch ownership, which based on Ofcom's sample, are owned by 5% of UK adults [#]. When we look
-                at these statistics in relation to our patient story above, the demographics do not quite match-up.
-                Our patient is 58 years old and according to Ofcom the highest proportion of Smartphone owners are
-                those under 55. This is intentional as our story is designed to pose a question, what about this adult
-                population of under 55s in future years? How will their expectations have been shaped by their use of
-                these technologies and the mobile applications they use to manage many services as part of their
-                lifestyle? According to the same Ofcom report 44% of adults claimed to use the Internet for looking up
-                health information. The interest is patently there and with both wearables and mobile health application
-                (or mHealth) forecast to increase [#] it is a trend which cannot afford to be ignored.
-                <br /><br />
-
-                As perioperative care is pertinent to any age group, how will these digital expectations be met in
-                relation to the perioperative environment specifically? Temporarily setting aside IT infrastructure
-                limitations [#], the more specific question is how <em>can</em> these digital expectations be met and
-                actioned considering current staff workloads and workflow? This is one facet of what we hope to learn
-                through this user-focused research. In the first instance our <em>users</em> shall be health
-                professionals, asked to consider the effects both positive and negative of introducing a wearable device
-                into a care plan. This exploration will undoubtedly raise more questions than it solves, but these are
-                the questions which prepare us for the future.
-
-                <!--Fiona MacNeill, January 2017.-->
+                As a means to explore future service models we acknowledge, yet temporarily set aside IT infrastructure
+                limitations[#] as any data/information derived from wearable devices would ideally contribute to a
+                patient electronic records system which may not yet be available.
+                There is however precedent for independent developers to build applications and services which can
+                have interoperability with existing systems where they are available, for example the
+                <a href="https://www.echo.co.uk/company" title="echo company site link">echo app</a> for repeat
+                prescriptions and medication management, at the primary care level.
             </p>
-        </div>
-        </div>
-    <div class="single-row">
-        <div class="col-5 free-columns full-width">
-            Here be a graph in future
+            <p>
+                This project focuses on two possible use case scenarios for wearable devices as diagnostic
+                and monitoring tools in a perioperative situation:
+            </p>
+            <ul>
+                <li>
+                    <strong>Supplied:</strong> a wearable device supplied by the hospital, which is worn for the
+                    duration of care from the
+                    initiation of care plan, prior to the operation through to recovery. This requires that the patient
+                    owns a smartphone, tablet or laptop as at this time consumer-level wearables typically have to
+                    synchronise
+                    via Bluetooth and cannot operate independently.
+                </li>
+                <li>
+                    <strong>BYOD:</strong> A Bring Your Own Device (B.Y.O.D.) approach, which could be facilitated through a
+                    bridging mobile
+                    application on the patients' smartphone that would allow the information from a variety of devices
+                    to be ported to a compatible format. This requires that the patient owns a compatible wearable
+                    device
+                    and a smartphone or tablet.
+                </li>
+            </ul>
+            </div>
+            <div class="col-5 free-columns full-width" id="device-scenarios">
+                <div id="scenarios-bk">
+            <p>
+                These scenarios will also consider the following factors of user experience from a nursing perspective.
+            </p>
+            <p>
+            Workflow in a clinical environment, such as but not limited to:
+            </p>
+                <ul>
+                    <li>impact on staff workload</li>
+                    <li>perceived benefits and barriers</li>
+                    <li>sanitation and device upkeep</li>
+                    <li>training and learning model for staff for the devices/system</li>
+                    <li>integration with current practices</li>
+                    <li>device disposal to be inline with sustainability goals</li>
+                </ul>
+            <p>
+            The nursing perspective on the patient user experience, such as but not limited to:
+            </p>
+                <ul>
+                    <li>benefits and barriers for the patient</li>
+                    <li>training and learning model for the patient for the device/system</li>
+                    <li>Trust: in the accuracy of information due to device/system limitations or user error</li>
+                    <li>Privacy: complies with the Data Protection Act 1998 (#ref) and the Caldicott principles (#ref)</li>
+                </ul>
+            <p>
+                It will be important to observe how/if the definition of responsibilities differ between the Supplied
+                scenario
+                and the BYOD scenario.
+            </p>
+                </div>
         </div>
         <div class="col device-img">
-            <img src="https://placeholdit.imgix.net/~text?txtsize=20&txt=400%C3%97400&w=400&h=400" >
+            <img src="https://placeholdit.imgix.net/~text?txtsize=20&txt=400%C3%97400&w=400&h=400">
         </div>
         <div class="col device-img">
-            <img src="https://placeholdit.imgix.net/~text?txtsize=20&txt=400%C3%97400&w=400&h=400" >
+            <img src="https://placeholdit.imgix.net/~text?txtsize=20&txt=400%C3%97400&w=400&h=400">
         </div>
-    </div>
-    <div class="single-row">
+
+        <div class="col-5 free-columns full-width" id="wear-intro">
+            <div id="wear-bk">
+            <p>
+                In order to consider how consumer-level wearables could be implemented we need to look at what is
+                currently
+                available. Specifically, we need to examine the following factors: device form (how it is worn);
+                sensors contained; the type of information that can be captured by the sensors; data/information output;
+                service restrictions; interoperability; usability; price. These factors will be explored in more depth
+                in
+                the project a brief summary is provided below.
+            </p>
+            </div>
+        </div>
         <div class="col col-4 free-columns">
-                <h3>Hand/Wrist Type</h3><p class="device-desc">This is where I need to provide a brief description of the different types of devices that we
-        have been looking at and the types of sensors that they contain. I think that including a list of Pros and Cons.
-            <br/><br/>
-            <strong>Pros:</strong></p>
+            <h3>Device form: Hand/Wrist Type</h3>
+            <p class="device-desc">Devices worn on the hand or wrist are exemplified
+                by the likes of the Apple Watch, Fitbit products such as the Alta, Charge and Surge, and Withings Pulse
+                Ox.
+            </p>
+            <p>
+                <strong>Specific examples currently available:</strong>
+                <br>
+                <strong>Sensors:</strong>
+                <br>
+                <strong>Service restrictions:</strong>
+                <br>
+                <strong>Interoperability:</strong>
+                <br>
+                <strong>Price:</strong>
+            </p>
+            <p>
+                <strong>Pros:</strong></p>
             <ul>
                 <li>Readily visible to the user at all times</li>
                 <li>Popular device types are available</li>
-                <li>Where the device has an touchscreen interface or physical buttons this could be used for self-reporting</li>
+                <li>Where the device has an touchscreen interface or physical buttons this could be used for
+                    self-reporting
+                </li>
             </ul>
             <p class="device-desc"><strong>Cons:</strong></p>
             <ul>
@@ -360,22 +482,43 @@ Copyright (C) 2017  Fiona MacNeill
             </ul>
         </div>
         <div class="col col-4 free-columns">
-            <h3>Clip-on/Fasten Type</h3><p class="device-desc">This is where I need to provide a brief description of the different types of devices that we
-            have been looking at and the types of sensors that they contain. I think that including a list of Pros and Cons.
-            <br/><br/>
-            <strong>Pros:</strong></p>
+            <h3>Clip-on/Fasten Type</h3>
+            <p class="device-desc">Devices clipped or fastened onto clothing close, in some bases touching the skin.
+                Some of the wrist type devices have adaptors to allow them to be
+                worn as clips.
+            </p>
+            <p>
+                <strong>Specific examples currently available:</strong>
+                <br>
+                <strong>Sensors:</strong>
+                <br>
+                <strong>Service restrictions:</strong>
+                <br>
+                <strong>Interoperability:</strong>
+                <br>
+                <strong>Price:</strong>
+            </p>
+            <p>
+                <strong>Pros:</strong>
             <ul>
                 <li>More discreet and can be hidden under clothing</li>
                 <li>Perceived as less of a sport or fitness device</li>
-                <li>Where the device has an touchscreen interface or physical buttons this could be used for self-reporting</li>
+                <li>Where the device has an touchscreen interface or physical buttons this could be used for
+                    self-reporting
+                </li>
             </ul>
             <p class="device-desc"><strong>Cons:</strong></p>
             <ul>
                 <li>The user may forget to wear/clip on the device</li>
-                <li>The users phone would need to be the main interface, if an interface for the patient is a requirement</li>
+                <li>The device may not be as accurate as it may be further from the user's pulse than devices worn on
+                    the wrist
+                </li>
+                <li>The users phone would need to be the main interface, if an interface for the patient is a
+                    requirement
+                </li>
                 <li>The device may be inconvenient when undertaking certain physical activities</li>
             </ul>
-    </div>
+        </div>
     </div>
 </section>
 
@@ -431,7 +574,7 @@ Copyright (C) 2017  Fiona MacNeill
 <section id="links-area">
         <span id="links"></span>
         <h2 class="color-bk-header">References/Links</h2>
-        <div class="row-align">
+        <div class="single-row">
             <div class="col col-5 temp">col col-5</div>
 
             <div class="col col-3 temp">
@@ -445,7 +588,7 @@ Copyright (C) 2017  Fiona MacNeill
             <div class="col col-3 temp">col col-3</div>
             <div class="col col-3 temp">col col-3</div>
             <div class="single-row">
-                <div class="col col-4 pub"><h3 class="publication">Highlighted Publications</h3>
+                <div class="col col-5 links-bk"><h3 class="publication">Highlighted Publications</h3>
                     <p class="reference">
                         Fotis, T. (2016). The era of the robots is now? Association for Perioperative Practice, <em>Journal of
                         Perioperative Practice</em>.
@@ -465,8 +608,35 @@ Copyright (C) 2017  Fiona MacNeill
                         Media-Enhanced Learning Special Interest Group and Sheffield Hallam University, Sheffield, UK,
                         pp. 238-264. ISBN 1843873834
                     </p>
-
                 </div>
+                <div class="single-row">
+                <div class="col col-4 links-bk"><h3 class="publication">References</h3>
+                        <p class="reference">
+                            <span id="1">[1]</span> Stait Trait Anxiety Inventory
+                        </p>
+                        <p class="reference">
+                            <span id="2">[2]</span> Ofcom report page number is needed
+                        </p>
+                        <p class="reference">
+                            <span id="3">[3]</span> Ofcom report page number is needed
+                        </p>
+                        <p class="reference">
+                            <span id="4">[4]</span> Centres for National excellence: https://www.england.nhs.uk/2016/09/digital-revolution/
+                        </p>
+                        <p class="reference">
+                            <span id="5">[5]</span> Wachter, R. M. (2016, September 7). Making IT work: Harnessing the power
+                            of health information technology to improve care in England. Retrieved 12, 2016,
+                            from https://www.gov.uk/government/publications/using-information-technology-to-improve-the-nhs
+                        </p>
+                        <p class="reference">
+                            <span id="6">[6]</span> Standing & Hampson (2015)
+                        </p>
+                        <p class="reference">
+                            <span id="7">[7]</span> Ofcom. (2016). Internet and online content data. Retrieved from <a href="https://www.ofcom.org.uk/research-and-data/cmr/cmr16/downloads" title="link to Ofcom Data downloads">https://www.ofcom.org.uk/research-and-data/cmr/cmr16/downloads</a>
+                        </p>
+            </div>
+                    <div class="col col-4 pub links-bk"></div>
+                    </div>
 
         </div>
         </div>
@@ -540,5 +710,6 @@ Copyright (C) 2017  Fiona MacNeill
         </svg>
     </button>
 </footer>
-    <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </html>
