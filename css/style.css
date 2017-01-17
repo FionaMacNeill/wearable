@@ -61,7 +61,6 @@ Copyright (C) 2017 Fiona MacNeill
 /* referred to http://webaim.org/techniques/css/invisiblecontent/ */
 
 #skip {
-    /*z-index: 500;*/
     padding: 4.5em;
     position: absolute;
     top: -20em;
@@ -85,9 +84,9 @@ Copyright (C) 2017 Fiona MacNeill
     overflow: hidden;
     position: relative;
     height: 4em;
-    transition: .4s;
     -moz-Transition: .4s;
     -webkit-Transition: .4s;
+    transition: .4s;
 
 }
 
@@ -109,26 +108,9 @@ Copyright (C) 2017 Fiona MacNeill
 
 .active {
     height: 4em;
-    transition: .4s;
     -moz-Transition: .4s;
     -webkit-Transition: .4s;
-}
-
-#text-wrapper{
-    width: 90%;
-    margin: auto;
-}
-
-.site-header h1{
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.8em;
-    line-height: 1em;
-    /* top | right | bottom | left */
-    margin: 0 auto 20px auto;
-    width: 20%;
-    float: left;
-    position: relative;
-    color: #333333;
+    transition: .4s;
 }
 
 
@@ -182,7 +164,7 @@ nav a:hover, nav a:active {
 .return-top-button {
     display: block;
     position: fixed;
-    bottom: 0.15em;
+    bottom: -4em;
     right: 0.5em;
     width: 50px;
     height: 50px;
@@ -196,10 +178,17 @@ nav a:hover, nav a:active {
     -moz-box-shadow: 1px 1px 1px #333333;
     -webkit-box-shadow: 1px 1px 1px #333333;
     box-shadow: 1px 1px 1px #333333;
+    -moz-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
 }
 
 .return-top-button:hover {
     opacity: .9;
+}
+
+.return-top-button-active {
+    bottom: 0.15em;
 }
 
 /*/////////////////////////////////////////////////
@@ -223,13 +212,15 @@ nav a:hover, nav a:active {
     position: relative;
 }
 
-.flickity-enabled:focus { outline: none; }
+.flickity-enabled:focus {
+    outline: none;
+}
 
 .flickity-viewport {
     overflow: hidden;
     position: relative;
     height: 100%;
-    background: #EEEEEE;
+    background: #6b7dff;
 }
 
 .flickity-slider {
@@ -255,7 +246,7 @@ nav a:hover, nav a:active {
 
 .flickity-prev-next-button {
     position: absolute;
-    top: 50%;
+    top: 40%;
     width: 44px;
     height: 44px;
     border: none;
@@ -266,9 +257,9 @@ nav a:hover, nav a:active {
     /* vertically center */
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
-    transition: .4s;
     -moz-Transition: .4s;
     -webkit-Transition: .4s;
+    transition: .4s;
 }
 
 .flickity-prev-next-button:hover { background: white; }
@@ -282,8 +273,14 @@ nav a:hover, nav a:active {
     opacity: 0.6;
 }
 
-.flickity-prev-next-button.previous { left: 10px; }
-.flickity-prev-next-button.next { right: 10px; }
+.flickity-prev-next-button.previous {
+    left: 15px;
+    margin: 0;
+}
+.flickity-prev-next-button.next {
+    right: 15px;
+    margin: 0;
+}
 /* right to left */
 .flickity-rtl .flickity-prev-next-button.previous {
     left: auto;
@@ -315,17 +312,18 @@ nav a:hover, nav a:active {
 
 
 .carousel {
-    background: #EEE;
     opacity: 0;
+    background: #FFFFFF;
 }
 
 .carousel-cell {
     width: 100%; /*changed this 100% from 66% made more sense for the layout of my timeline cells and content */
-    height: 300px;
+    /*height: 300px;*/
+    height: 450px;
     margin-right: 10px;
-    border: solid 1px #cccccc;
-    background-color: #6b7dff;
-    border-radius: 5px;
+    /*border: solid 1px #cccccc;*/
+    background-color: #6B7DFF;
+    /*border-radius: 5px;*/
 }
 
 /* the image that runs along the bottom of the timeline */
@@ -362,18 +360,11 @@ nav a:hover, nav a:active {
     content: "";
     height: 2px;
     width: 100%;
-    top: 3.2em;
+    bottom: 8.4em;
     left: 0;
     padding: 0;
     margin: 0;
-    background: #e6e6e6;
-}
-
-.menuActive {
-    top: 3.2em;
-    transition: .4s;
-    -moz-Transition: .4s;
-    -webkit-Transition: .4s;
+    background: #8C9AFF;
 }
 
 
@@ -384,30 +375,31 @@ nav a:hover, nav a:active {
 /* dots container class */
 .hidden {
     z-index: 2;
-    position: absolute;
+    position: relative;
     overflow: hidden;
     width: 100%;
-    top: 333px;
+    bottom: 7em;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     list-style: none;
     text-align: center;
     line-height: 0.9;
-    /* added to remove ghosting of the dots in the wrap */
     white-space: nowrap;
 }
 
 
-.flickity-rtl .hidden { direction: rtl; }
+.flickity-rtl .hidden {
+    direction: rtl;
+}
 
-.hidden .dot {
+.dot {
     position: relative;
     overflow: hidden;
     display: inline-block;
     width: 40px;
     height: 40px;
     margin: 0 20px;
-    background: #a9a9a9;
+    background: #8c9aff;
     border-radius: 50%;
     cursor: pointer;
     counter-increment: flickity-page-dots;
@@ -420,11 +412,11 @@ nav a:hover, nav a:active {
     content: counter(flickity-page-dots);
     padding-top: 11px;
     font-size: 20px;
-    color: #FFF;
+    color: #333333;
 }
 
-.hidden .dot.is-selected {
-    background: #333;
+.dot.is-selected {
+    background: #DADEFF;
 }
 
 
@@ -435,18 +427,32 @@ nav a:hover, nav a:active {
 //                   //
 /////////////////////*/
 
+h1 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.8em;
+    line-height: 1em;
+    /* top | right | bottom | left */
+    margin: 0 auto 20px auto;
+    width: 20%;
+    float: left;
+    position: relative;
+    color: #333333;
+}
+
+
 h2 {
     font-weight: normal;
     text-align: center;
-
 }
 
-h3.goal {
+
+
+h3 {
     font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 
-h3.publication {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+/* h3 class */
+.publication {
     text-align: left;
 }
 
@@ -476,20 +482,22 @@ p {
     text-align: left;
 }
 
-p.reference {
+/* p classes */
+
+.reference {
     padding-left: 4em;
     text-indent: -4em;
     font-size: 0.9em;
 }
 
-p.imagelist {
+.imagelist {
     padding-left: 4em;
     font-size: 0.9em;
 }
 
-p.caption {
+.caption {
     /* top | right | bottom | left */
-    margin: 0 10% 0 10%;
+    margin: 0 12% 0 10%;
     font-size: 0.7em;
     text-align: left;
 }
@@ -499,33 +507,53 @@ p.caption {
     text-decoration: none;
 }
 
-p.callout {
-    padding: 0.5em;
-    font-size: 1.3em;
-    border-left: 2px solid #333333;
-    font-family: "Optima", "Trebuchet MS", serif;
+/* strong class */
+
+.bignumber{
+    font-size: 3.5em;
+    color: #6B7DFF;
 }
 
-p#question {
-    background: #d2ccff;
-}
 
-p.bio-link{
+.bio-link{
     font-size: 0.9em;
 }
 
-p.justify{
+.justify{
     text-align: justify;
 }
 
 blockquote{
     line-height: 1.48;
+    text-align: left;
 }
 
-
-#conf-link .p{
-    text-align: center;
+#cite{
+    text-align: right;
 }
+
+/* callout classes */
+
+.callout {
+    padding: 0.5em;
+    font-size: 1.5em;
+    font-family: "Optima", "Trebuchet MS", serif;
+}
+
+#question {
+    background: #d2ccff;
+    margin-top: 10%;
+    margin-bottom: 4%;
+    border-left: 2px solid #333333;
+}
+
+#stat{
+    text-align: right;
+    border-right: 3px solid #333333;
+}
+
+/* list classes */
+
 
 ul {
     text-align: left;
@@ -583,17 +611,22 @@ li:first-child{
     position: absolute;
     height: 80%;
     width: 100%;
-
 }
 
 .tl_img {
+    z-index: 1;
     /* top | right | bottom | left */
+    position: relative;
     margin: 3% auto 0 auto;
     display: block;
     height: 100px;
     width: 100px;
     border-radius: 100%;
     background: #FFFFFF;
+}
+
+#tl_img_resched {
+    margin-right: 80%;
 }
 
 /* first and last timeline images need black backgrounds not white */
@@ -613,28 +646,42 @@ li:first-child{
 .tl_title {
     /* top | right | bottom | left */
     margin: 1% auto 0 auto;
-    font-weight: normal;
     color: #FFFFFF;
     text-align: center;
 }
 
-.tl_desc {
-    /* top | right | bottom | left */
-    margin: 1% 10% auto 10%;
-    padding: 1% 1% 1% 1%;
+#tl_title_resched {
+    margin-top: -3em;
     width: 80%;
+}
+
+.tl_desc {
+    z-index: 2;
+    position: relative;
+    margin: 1% auto;
+    padding: 1% 1% 1% 1%;
+    width: 70%;
     font-size: 1em;
     line-height: 1.3;
     text-align: justify;
     border-radius: 2px;
+    background: rgba(194, 206, 255, 0.8);
+}
+
+.tl_desc_resched {
+    width: 60%;
+    margin: 1% auto;
+    padding: 1% 1% 1% 1%;
+    font-size: 1em;
+    line-height: 1.3;
+    text-align: justify;
+    border-radius: 2px;
+    background: rgba(194, 206, 255, 0.8);
 }
 
 /* handles tl_desc background opacity to allow
 anxiety level graphic to show through slightly */
 
-.bk {
-    background: rgba(194, 206, 255, 0.8);
-}
 
 
 /*////////////////////////////
@@ -646,20 +693,36 @@ anxiety level graphic to show through slightly */
 
 #about-area {
     /* top | right | bottom | left*/
-    margin: 6% 5% 0 5%;
+    margin: 1% auto 0 auto;
+    padding: 0 5% 2% 5%;
     position: relative;
     overflow: auto;
-    display: block;
+    background: #FFFFFF;
+    -moz-Transition: .4s;
+    -webkit-Transition: .4s;
+    transition: .4s;
 }
 
-#goals-area{
+#why-area {
+    margin: 0 5% 2% 5%;
+    padding: 2% 7% 2% 7%;
+    position: relative;
+    overflow: auto;
+    background: #89d8eb;
+}
+
+#goals-area {
     /* top | right | bottom | left*/
-    margin: 2% 5% 2% 5%;
+    margin: 2% 5% 1% 5%;
     position: relative;
     overflow: hidden;
-    display: block;
 }
 
+#technology-area{
+    margin: 1% 5% 2% 5%;
+    position: relative;
+    overflow: auto;
+}
 
 
 .about-img {
@@ -675,8 +738,7 @@ anxiety level graphic to show through slightly */
 #team-area {
     /* top | right | bottom | left */
     margin: 0 5% 2% 5%;
-    padding: 2% auto 2% auto;
-    border-radius: 5px;
+    /*padding: 2% 7% 2% 7%;*/
     position: relative;
     overflow: auto;
     background: #5b55b9;
@@ -808,15 +870,17 @@ anxiety level graphic to show through slightly */
 
 
 #data_align {
-    background: #FFFFFF;
+    padding-top: 1.35em;
+    /*width: 26em;*/
+    border-radius: 0;
 }
 
 #bar_stacked {
     overflow: hidden;
     height: 300px;
     position: relative;
-    width: 26.5em;
-
+    width: 25em;
+    background: transparent;
 }
 
 #load_img {
@@ -844,7 +908,6 @@ anxiety level graphic to show through slightly */
 #grid-ref {
     display: none;
 }
-
 
 
 .grid-container {
@@ -887,7 +950,6 @@ anxiety level graphic to show through slightly */
     margin: 1% auto 1% auto;
     padding: 1%;
     text-align: center;
-    border-radius: 5px;
 }
 
 /* Styling for free standing columns */
@@ -897,17 +959,6 @@ anxiety level graphic to show through slightly */
     border: solid 2px #EEEEEE;
     padding: 2%;
     border-radius: 5px;
-}
-
-/*
-#first-goal {
-    margin-left: 1.5%;
-}
-*/
-
-/* REMOVE - temp border for formatting */
-.temp {
-    border: solid 1px black;
 }
 
 /* One column width = 65px --> (65px x 12) + (15px x 12) = 960px total width
@@ -945,6 +996,10 @@ anxiety level graphic to show through slightly */
 .col.col-3 {
     width: 30.5%;
     margin-right: 1.5%;
+
+}
+
+.goals{
     background: #d6e1ff;
     border: 2px solid #CCCCCC;
 }
@@ -966,15 +1021,33 @@ anxiety level graphic to show through slightly */
     margin-right: 1.5%;
 }
 
+.col.col-4:first-child{
+    margin-left: 0;
+}
+
+.col.col-4:last-child{
+    margin-right: 0;
+}
+
+.col.col-4#data_text{
+    margin-right: 7%;
+}
+
 /* TO DO Text background that uses col-4 as the basis - this is for consistent styling */
 .bios {
-    /* top | right | bottom | left */
-    margin: 0 auto 4% auto;
     padding: 2%;
     background: #c0c8eb;
     text-align: left;
     min-height: 170px;
     border-radius: 5px;
+}
+
+.col.col-4.bios:first-child {
+    margin-left: 2%;
+}
+
+.col.col-4.bios:last-child {
+    margin-right: 2%;
 }
 
 #device-blurb {
@@ -983,14 +1056,13 @@ anxiety level graphic to show through slightly */
 
 /* Styling for device image based on col-4*/
 .device-img {
-    margin: 0 auto 1% auto;
     padding: 0;
     overflow: auto;
     border: solid 2px #EEEEEE;
     /*object-fit: scale-down;*/
 }
 
-
+/* Why isn't this a free-column test it later TO DO */
 .device-block {
     border: solid 2px #EEEEEE;
     padding: 2%;
@@ -1012,12 +1084,10 @@ This adjustment allows col-5 to span the space when needed */
     /* top | right | bottom | left */
     margin: 0 auto 1% auto;
     padding: 0 2% 0 2%;
-    border-radius: 5px;
 }
 
-#callout {
-    margin-right: 0;
-    padding-right: 0;
+#intro{
+    padding-left: 0.5em;
 }
 
 /* Used specifically for the field divs in the contact form */
@@ -1217,20 +1287,14 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         width: 5.5em;
     }
 
-    .timeline-line-end {
-        top: 3.7em;
-    }
-
     body {
         font-size: 14px;
         line-height: 26px;
     }
 
-    .return-top-button {
-        display: none;
-    }
-
 }
+
+
 /* Correct menu overlap on responsive display */
 @media (max-width: 580px) {
 
@@ -1242,21 +1306,8 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         width: 5em;
     }
 
-    .site-header h1 {
+    h1 {
         font-size: 1.6em;
-    }
-
-    #text-wrapper {
-        width: 100%;
-    }
-
-    .col.col-4,
-    .col.col-5,
-    .col.full-width {
-        float: none;
-        width: 99%;
-        margin-right: 0;
-        margin-left: 0;
     }
 
     .tl_title {
@@ -1278,13 +1329,33 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         font-size: 1em;
     }
 
+    .return-top-button {
+        display: none;
+    }
+
+    .timeline-line-end {
+        display: none;
+    }
+
+
+    .dot {
+        display: none;
+    }
+
+    #about-area {
+        margin: -7em -0.01em auto -0.01em;
+        padding-top: 1em;
+        -moz-Transition: .4s;
+        -webkit-Transition: .4s;
+        transition: .4s;
+    }
 
     #data_align {
         /* top | right | bottom | left */
         margin: 0.5em 3em 0.5em -0.8em;
-        transition: .4s;
         -moz-Transition: .4s;
         -webkit-Transition: .4s;
+        transition: .4s;
     }
 
     #team-area {
@@ -1298,14 +1369,22 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         margin: 0 5% 2% 5%;
         padding: 2% 3% 2% 3%;
     }
+
+    .col.col-4,
+    .col.col-5,
+    .col.full-width {
+        float: none;
+        width: 99%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
 }
-
-
 
 /* larger phone or phablet */
 @media (max-width: 470px) {
 
-        .site-header h1{
+        h1{
             font-size: 1.5em;
         }
 
@@ -1314,17 +1393,10 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         }
 
         .active {
-            height: 20em;
-            transition: .4s;
+            height: 19.5em;
             -moz-Transition: .4s;
             -webkit-Transition: .4s;
-        }
-
-        .menuActive {
-            top: 4em;
             transition: .4s;
-            -moz-Transition: .4s;
-            -webkit-Transition: .4s;
         }
 
         nav{
@@ -1362,8 +1434,10 @@ or when screen readers are used - it is deliberately empty as it is only for lab
             background: #003057;
         }
 
-        .timeline-line-end {
-            top: 4em;
+
+        /* The anxiety level graphic */
+        .tl_image_lv {
+            display: none;
         }
 
 
@@ -1424,22 +1498,12 @@ or when screen readers are used - it is deliberately empty as it is only for lab
             line-height: 14px;
         }
 
-        .timeline-line-end {
-            display: none;
-        }
-
         .flickity-prev-next-button {
             position: absolute;
-            top: 30%;
-            transition: .4s;
+            top: 74%;
             -moz-Transition: .4s;
             -webkit-Transition: .4s;
-
-        }
-
-        /* ---- page dots ---- */
-        .hidden {
-            display: none;
+            transition: .4s;
 
         }
 
@@ -1482,10 +1546,6 @@ or when screen readers are used - it is deliberately empty as it is only for lab
             background: #c2ceff;
         }
 
-        /* The anxiety level graphic */
-        .tl_image_lv {
-            display: none;
-        }
 
         .about-area {
             /* top | right | bottom | left */
