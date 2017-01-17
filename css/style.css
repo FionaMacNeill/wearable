@@ -756,6 +756,7 @@ anxiety level graphic to show through slightly */
 }
 
 #wear-bk {
+    position: relative;
     margin: 0.5em;
     padding: 0.2em 0.5em 0.2em 0.5em;
     background: #C0B2C7;
@@ -775,17 +776,19 @@ anxiety level graphic to show through slightly */
 #links-area {
     /* top | right | bottom | left */
     margin: 0 5% 0 5%;
+    padding: 2% 5% 2% 5%;
     border-radius: 5px;
     position: relative;
     overflow: auto;
     background: #5b55b9;
 }
 
-.links-bk{
-    margin: 5%;
-    padding: 5%;
+#links-bk{
+    margin: 0.5em;
+    padding: 0.2em 0.5em 0.2em 0.5em;
     background: #c0c8eb;
     overflow: auto;
+    border-radius: 5px;
 }
 
 
