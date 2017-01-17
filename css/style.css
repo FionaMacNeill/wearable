@@ -39,8 +39,8 @@ Copyright (C) 2017 Fiona MacNeill
     --------------------------------
 
     Written content and images are property of Fiona MacNeill and Dr Theo Fotis unless stated otherwise.
-    Copyright (c) 2016 T. Fotis, 2017.
-    Copyright (c) 2016 F. MacNeill, 2017.
+    Copyright (c) 2017, T. Fotis.
+    Copyright (c) 2017, F. MacNeill.
     Ownership and licenses for content are indicated in the markup.
 */
 
@@ -445,6 +445,20 @@ h3.publication {
     text-align: left;
 }
 
+h4 {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    text-align: left;
+    font-weight: normal;
+    font-size: 1.2em;
+}
+
+h5 {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    color: #333333;
+    text-align: center;
+    font-size: 0.9em;
+}
+
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333333;
@@ -480,16 +494,20 @@ p.caption {
     text-decoration: none;
 }
 
-p.callout{
+p.callout {
     padding: 0.5em;
     font-size: 1.3em;
     border-left: 2px solid #333333;
     font-family: "Optima", "Trebuchet MS", serif;
 }
 
-p#question{
+p#question {
     background: #d2ccff;
     margin-right: 50%;
+}
+
+p.bio-link{
+    font-size: 0.9em;
 }
 
 blockquote{
@@ -676,7 +694,7 @@ anxiety level graphic to show through slightly */
     overflow: auto;
 }
 
-#device-scenarios{
+#device-factors {
     /* top | right | bottom | left */
     margin: 0 auto 0.5em auto;
     background: #563557;
@@ -700,7 +718,7 @@ anxiety level graphic to show through slightly */
 }
 
 .tab-class::before{
-    content: "Scenarios";
+    content: "UX Factors";
     color: #333333;
     font-weight: 500;
     font-size: 1.5em;
@@ -721,7 +739,7 @@ anxiety level graphic to show through slightly */
     border-radius: 5px;
 }
 
-#scenarios-bk {
+#factors-bk {
     position: relative;
     /* top | right | bottom | left */
     margin: 3.5em 0.5em 1em 0.5em;
@@ -729,8 +747,6 @@ anxiety level graphic to show through slightly */
     background: #C0B2C7;
     border-radius: 5px;
 }
-
-
 
 
 #wear-intro {
@@ -758,7 +774,7 @@ anxiety level graphic to show through slightly */
 
 #links-area {
     /* top | right | bottom | left */
-    margin: 0 5% 5% 5%;
+    margin: 0 5% 0 5%;
     border-radius: 5px;
     position: relative;
     overflow: auto;
@@ -931,16 +947,6 @@ anxiety level graphic to show through slightly */
     margin-right: 1.5%;
 }
 
-/* Styling for device image based on col-4 */
-.device-img {
-    width: 46.5%;
-    margin-bottom: 2em;
-    padding: 0;
-    overflow: auto;
-    border: solid 2px #EEEEEE;
-    object-fit: scale-down;
-}
-
 /* Text background that uses col-4 as the basis - this is for consistent styling */
 .bios {
     width: 96%;
@@ -952,6 +958,23 @@ anxiety level graphic to show through slightly */
     min-height: 170px;
     border-radius: 5px;
 }
+
+/* Styling for device image based on col-4 */
+.device-img {
+    width: 46.5%;
+    margin-bottom: 2em;
+    padding: 0;
+    overflow: auto;
+    border: solid 2px #EEEEEE;
+    object-fit: scale-down;
+}
+
+.col-4.device-block {
+    margin-right: 0;
+    margin-left: 2.28%;
+}
+
+
 
 /* twelve column widths : 960px (total width) - 15px = 945px
                                    This runs across the entire screen width */
@@ -1093,6 +1116,7 @@ textarea {
     width: 100%;
     margin-top: 1%;
     height: 3em;
+    font-size: 1.05em;
 }
 
 #loading {
@@ -1493,14 +1517,14 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 
     }
 
-    #device-scenarios{
+    #device-factors{
         /* top | right | bottom | left */
         margin: 0 auto 0.5em auto;
         background: #563557;
         border: none;
     }
 
-    #scenarios-bk {
+    #factors-bk {
         /* top | right | bottom | left */
         margin: 0.5em 0.5em 1em 0.5em;
     }
