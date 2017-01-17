@@ -450,27 +450,32 @@ body {
     color: #333333;
 }
 
-p{
+p {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1.05em;
     line-height: 1.48;
     text-align: left;
 }
 
-p.reference{
+p.reference {
     padding-left: 4em;
     text-indent: -4em;
     font-size: 0.9em;
 }
 
-p.caption{
+p.imagelist {
+    padding-left: 4em;
+    font-size: 0.9em;
+}
+
+p.caption {
     /* top | right | bottom | left */
     margin: 0 auto 0 auto;
     font-size: 0.7em;
     text-align: center;
 }
 
-.caption-link{
+.caption-link {
     color: #4a4bca;
     text-decoration: none;
 }
@@ -479,9 +484,10 @@ p.callout{
     padding: 0.5em;
     font-size: 1.3em;
     border-left: 2px solid #333333;
+    font-family: "Optima", "Trebuchet MS", serif;
 }
 
-#question{
+p#question{
     background: #d2ccff;
     margin-right: 50%;
 }
@@ -522,7 +528,7 @@ li:first-child{
 
 .goal-text{
     /* top | right | bottom | left */
-    margin: 0 0.2em 0 auto;
+    margin: 0 0.2em 1em auto;
     font-size: 1.02em;
 
 }
@@ -630,9 +636,9 @@ anxiety level graphic to show through slightly */
 
 
 
-.about_img {
+.about-img {
     /* top | right | bottom | left */
-    margin: auto;
+    margin: 1em auto;
     display: block;
     height: 80px;
     width: 80px;
@@ -643,7 +649,7 @@ anxiety level graphic to show through slightly */
 #team-area {
     /* top | right | bottom | left */
     margin: 0 5% 2% 5%;
-    padding: 2% 2% 2% 2%;
+    padding: 2% auto 2% auto;
     border-radius: 5px;
     position: relative;
     overflow: auto;
@@ -671,23 +677,71 @@ anxiety level graphic to show through slightly */
 }
 
 #device-scenarios{
+    /* top | right | bottom | left */
+    margin: 0 auto 0.5em auto;
     background: #563557;
     border: none;
 }
 
-#scenarios-bk{
-    padding: 1%;
+/* Used pixel values here as they had to be set and not responsive */
+.tab-container{
+    z-index: 1;
+    /* top | right | bottom | left */
+    margin: 0.8em 150px auto 130px;
+    transform: skewX(40deg);
+    position: relative;
+    display: block;
+    float: left;
+    background: #C0B2C7;
+    padding: 0.5em;
+    width: 50px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.tab-class::before{
+    content: "Scenarios";
+    color: #333333;
+    font-weight: 500;
+    font-size: 1.5em;
+    line-height: 1;
+}
+
+.tab-class{
+    z-index: 2;
+    /* top | right | bottom | left */
+    margin: 0.8em 15em auto 0.5em;
+    position: absolute;
+    display: block;
+    float: left;
+    background: #C0B2C7;
+    padding: 0.5em;
+    width: 140px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+#scenarios-bk {
+    position: relative;
+    /* top | right | bottom | left */
+    margin: 3.5em 0.5em 1em 0.5em;
+    padding: 0.2em 1em 0.2em 1em;
     background: #C0B2C7;
     border-radius: 5px;
 }
 
-#wear-intro{
+
+
+
+#wear-intro {
     background: #563557;
     border: none;
+    margin: 0 auto 2em;
 }
 
-#wear-bk{
-    padding: 1%;
+#wear-bk {
+    margin: 0.5em;
+    padding: 0.2em 0.5em 0.2em 0.5em;
     background: #C0B2C7;
     border-radius: 5px;
 }
@@ -705,7 +759,6 @@ anxiety level graphic to show through slightly */
 #links-area {
     /* top | right | bottom | left */
     margin: 0 5% 5% 5%;
-    padding: 2% 0 2% 0;
     border-radius: 5px;
     position: relative;
     overflow: auto;
@@ -818,8 +871,11 @@ anxiety level graphic to show through slightly */
 
 /* Styling for free standing columns */
 .free-columns {
+    /* top | right | bottom | left */
+    margin: 1em auto 2em auto;
     border: solid 2px #EEEEEE;
     padding: 2%;
+    border-radius: 5px;
 }
 
 #first-goal {
@@ -878,6 +934,7 @@ anxiety level graphic to show through slightly */
 /* Styling for device image based on col-4 */
 .device-img {
     width: 46.5%;
+    margin-bottom: 2em;
     padding: 0;
     overflow: auto;
     border: solid 2px #EEEEEE;
@@ -908,8 +965,8 @@ This adjustment allows col-5 to span the space when needed */
 .full-width {
     width: 96%;
     /* top | right | bottom | left */
-    margin: 0 auto 4% auto;
-    padding: 2%;
+    margin: 0 auto 2em auto;
+    padding: 1em;
     border-radius: 5px;
 }
 
@@ -1122,8 +1179,11 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         display: none;
     }
 
-}
+    p#question {
+        margin-right: 0;
+    }
 
+}
 /* Correct menu overlap on responsive display */
 @media (max-width: 580px) {
 
@@ -1171,6 +1231,17 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         margin: 0.5em 3em 0.5em 6em;
     }
 
+    #team-area {
+        /* top | right | bottom | left*/
+        margin: 0 5% 2% 5%;
+        padding: 2% 3% 2% 3%;
+    }
+
+    #links-area {
+        /* top | right | bottom | left*/
+        margin: 0 5% 2% 5%;
+        padding: 2% 3% 2% 3%;
+    }
 }
 
 
@@ -1264,12 +1335,12 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         .col.device-img {
             float: none;
             width: 99%;
-            margin-right: 0;
-            margin-left: 0;
+            /* top | right | bottom | left */
+            margin: 1em 0 1em 0;
         }
 
         #first-goal {
-            margin-left: auto;
+            margin-left: 0;
         }
 
         .about-area {
@@ -1359,8 +1430,6 @@ or when screen readers are used - it is deliberately empty as it is only for lab
             width: 90%;
         }
 
-        /* handles tl_desc background opacity
-        - no longer needed here as the anxiety graphic is not shown at this size*/
 
         .bk {
             background: #c2ceff;
@@ -1371,12 +1440,9 @@ or when screen readers are used - it is deliberately empty as it is only for lab
             display: none;
         }
 
-
-
         .about-area {
             /* top | right | bottom | left */
             margin: 0 auto 2% auto;
-
         }
 
         .free-header {
@@ -1393,9 +1459,19 @@ or when screen readers are used - it is deliberately empty as it is only for lab
             /* top | right | bottom | left */
             margin: 0.5em 0 0.5em 0;
             width: 350px;
+            border: none;
         }
 
+        .tab-container {
+            height: 40px;
+        }
+
+        .tab-class {
+            height: 40px;
+        }
 }
+
+
 
 /* larger than a mobile phone */
 @media (max-width: 320px){
@@ -1406,9 +1482,51 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 
     #data_align {
         /* top | right | bottom | left */
-        margin: 0.2em 0 0.2em 10%;
-        width: 270px;
+        margin: 0.2em auto 0.2em auto;
+        width: 100%;
         border: none;
+        padding: 0;
+    }
+
+    #device-area {
+        margin: 0.5em auto 0.5em auto;
+
+    }
+
+    #device-scenarios{
+        /* top | right | bottom | left */
+        margin: 0 auto 0.5em auto;
+        background: #563557;
+        border: none;
+    }
+
+    #scenarios-bk {
+        /* top | right | bottom | left */
+        margin: 0.5em 0.5em 1em 0.5em;
+    }
+
+
+    .tab-container{
+       display: none;
+    }
+
+    .tab-class::before{
+        display: none;
+    }
+
+    .tab-class{
+        display: none;
+    }
+
+    #links-area{
+        margin: 0 2% 2% 2%;
+        padding: 2% auto 2% auto;
+    }
+
+    .links-bk{
+        width: 90%;
+        margin: 5%;
+        padding: 2%;
     }
 
 
