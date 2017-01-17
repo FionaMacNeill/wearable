@@ -61,7 +61,7 @@ Copyright (C) 2017 Fiona MacNeill
 /* referred to http://webaim.org/techniques/css/invisiblecontent/ */
 
 #skip {
-    z-index: 500;
+    /*z-index: 500;*/
     padding: 4.5em;
     position: absolute;
     top: -20em;
@@ -112,6 +112,11 @@ Copyright (C) 2017 Fiona MacNeill
     transition: .4s;
     -moz-Transition: .4s;
     -webkit-Transition: .4s;
+}
+
+#text-wrapper{
+    width: 90%;
+    margin: auto;
 }
 
 .site-header h1{
@@ -484,9 +489,9 @@ p.imagelist {
 
 p.caption {
     /* top | right | bottom | left */
-    margin: 0 auto 0 auto;
+    margin: 0 10% 0 10%;
     font-size: 0.7em;
-    text-align: center;
+    text-align: left;
 }
 
 .caption-link {
@@ -503,11 +508,14 @@ p.callout {
 
 p#question {
     background: #d2ccff;
-    margin-right: 50%;
 }
 
 p.bio-link{
     font-size: 0.9em;
+}
+
+p.justify{
+    text-align: justify;
 }
 
 blockquote{
@@ -547,7 +555,7 @@ li:first-child{
 .goal-text{
     /* top | right | bottom | left */
     margin: 0 0.2em 1em auto;
-    font-size: 1.02em;
+    font-size: 0.95em;
 
 }
 
@@ -638,7 +646,7 @@ anxiety level graphic to show through slightly */
 
 #about-area {
     /* top | right | bottom | left*/
-    margin: 6% 5% 2% 5%;
+    margin: 6% 5% 0 5%;
     position: relative;
     overflow: auto;
     display: block;
@@ -720,7 +728,7 @@ anxiety level graphic to show through slightly */
 .tab-class::before{
     content: "UX Factors";
     color: #333333;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1.5em;
     line-height: 1;
 }
@@ -742,7 +750,7 @@ anxiety level graphic to show through slightly */
 #factors-bk {
     position: relative;
     /* top | right | bottom | left */
-    margin: 3.5em 0.5em 1em 0.5em;
+    margin: 3.5em auto 1em auto;
     padding: 0.2em 1em 0.2em 1em;
     background: #C0B2C7;
     border-radius: 5px;
@@ -750,11 +758,11 @@ anxiety level graphic to show through slightly */
 
 
 #wear-intro {
-    background: #563557;
+    margin: 0 auto 1% auto;
+    background: #C0B2C7;
     border: none;
-    margin: 0 auto 2em;
 }
-
+/* This can go
 #wear-bk {
     position: relative;
     margin: 0.5em;
@@ -762,7 +770,7 @@ anxiety level graphic to show through slightly */
     background: #C0B2C7;
     border-radius: 5px;
 }
-
+*/
 #contact-area {
     /* top | right | bottom | left */
     margin: 0 5% 5% 5%;
@@ -800,12 +808,6 @@ anxiety level graphic to show through slightly */
 
 
 #data_align {
-    /* top | right | bottom | left */
-    margin: auto 0 0.5em 1em;
-    padding: 0.5em;
-    float: right;
-    border: 2px solid #e6e6e6;
-    width: 400px;
     background: #FFFFFF;
 }
 
@@ -813,6 +815,7 @@ anxiety level graphic to show through slightly */
     overflow: hidden;
     height: 300px;
     position: relative;
+    width: 26.5em;
 
 }
 
@@ -838,18 +841,17 @@ anxiety level graphic to show through slightly */
 || It is set to display none by default in the html file */
 
 
-
 #grid-ref {
     display: none;
 }
 
 
+
 .grid-container {
-    width: 100%;
     max-width: 1000px;
     display: block;
     /* top | right | bottom | left */
-    margin: 0 auto 10% auto;
+    margin: 0 auto 5% auto;
     padding: 0 1% 0 1%;
     box-sizing: border-box;
 }
@@ -865,7 +867,7 @@ anxiety level graphic to show through slightly */
 /* used in situations where the height of text columns need to match height */
 
 .single-row {
-    margin-bottom: 2.5%;
+    margin: 0 auto 2% auto;
     float: left;
     clear: both;
     display: flex;
@@ -882,7 +884,7 @@ anxiety level graphic to show through slightly */
 .col {
     float: left;
     /* top | right | bottom | left */
-    margin: 1% auto 2% auto;
+    margin: 1% auto 1% auto;
     padding: 1%;
     text-align: center;
     border-radius: 5px;
@@ -897,9 +899,11 @@ anxiety level graphic to show through slightly */
     border-radius: 5px;
 }
 
+/*
 #first-goal {
     margin-left: 1.5%;
 }
+*/
 
 /* REMOVE - temp border for formatting */
 .temp {
@@ -941,6 +945,18 @@ anxiety level graphic to show through slightly */
 .col.col-3 {
     width: 30.5%;
     margin-right: 1.5%;
+    background: #d6e1ff;
+    border: 2px solid #CCCCCC;
+}
+
+
+.col.col-3:first-child{
+    margin-left: 0;
+}
+
+
+.col.col-3:last-child{
+    margin-right: 0;
 }
 
 /* Six column widths : (65px x 6) = 390px + (15px x 5) =  465px per column
@@ -950,9 +966,8 @@ anxiety level graphic to show through slightly */
     margin-right: 1.5%;
 }
 
-/* Text background that uses col-4 as the basis - this is for consistent styling */
+/* TO DO Text background that uses col-4 as the basis - this is for consistent styling */
 .bios {
-    width: 96%;
     /* top | right | bottom | left */
     margin: 0 auto 4% auto;
     padding: 2%;
@@ -962,21 +977,25 @@ anxiety level graphic to show through slightly */
     border-radius: 5px;
 }
 
-/* Styling for device image based on col-4 */
+#device-blurb {
+    padding: 1% 2% 1% 2%;
+}
+
+/* Styling for device image based on col-4*/
 .device-img {
-    width: 46.5%;
-    margin-bottom: 2em;
+    margin: 0 auto 1% auto;
     padding: 0;
     overflow: auto;
     border: solid 2px #EEEEEE;
-    object-fit: scale-down;
+    /*object-fit: scale-down;*/
 }
 
-.col-4.device-block {
-    margin-right: 0;
-    margin-left: 2.28%;
-}
 
+.device-block {
+    border: solid 2px #EEEEEE;
+    padding: 2%;
+    border-radius: 5px;
+}
 
 
 /* twelve column widths : 960px (total width) - 15px = 945px
@@ -989,11 +1008,16 @@ anxiety level graphic to show through slightly */
 This adjustment allows col-5 to span the space when needed */
 
 .full-width {
-    width: 96%;
+    width: 100%;
     /* top | right | bottom | left */
-    margin: 0 auto 2em auto;
-    padding: 1em;
+    margin: 0 auto 1% auto;
+    padding: 0 2% 0 2%;
     border-radius: 5px;
+}
+
+#callout {
+    margin-right: 0;
+    padding-right: 0;
 }
 
 /* Used specifically for the field divs in the contact form */
@@ -1156,7 +1180,7 @@ textarea {
 //                                //
 //////////////////////////////////*/
 
-/* For hiding elements that should not be shown in the clean reader mode (FireFox)
+/* For hiding elements that should not be shown in the reader mode (FireFox)
 or when screen readers are used - it is deliberately empty as it is only for labelling */
 
 .sr-only {
@@ -1206,10 +1230,6 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         display: none;
     }
 
-    p#question {
-        margin-right: 0;
-    }
-
 }
 /* Correct menu overlap on responsive display */
 @media (max-width: 580px) {
@@ -1226,11 +1246,17 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         font-size: 1.6em;
     }
 
+    #text-wrapper {
+        width: 100%;
+    }
+
     .col.col-4,
-    .col.col-5 {
+    .col.col-5,
+    .col.full-width {
         float: none;
         width: 99%;
         margin-right: 0;
+        margin-left: 0;
     }
 
     .tl_title {
@@ -1255,7 +1281,10 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 
     #data_align {
         /* top | right | bottom | left */
-        margin: 0.5em 3em 0.5em 6em;
+        margin: 0.5em 3em 0.5em -0.8em;
+        transition: .4s;
+        -moz-Transition: .4s;
+        -webkit-Transition: .4s;
     }
 
     #team-area {
@@ -1366,10 +1395,6 @@ or when screen readers are used - it is deliberately empty as it is only for lab
             margin: 1em 0 1em 0;
         }
 
-        #first-goal {
-            margin-left: 0;
-        }
-
         .about-area {
             /* top | right | bottom | left */
             margin: 10% auto 2% auto;
@@ -1387,11 +1412,6 @@ or when screen readers are used - it is deliberately empty as it is only for lab
             margin: auto 2% 2% 0;
 
         }
-
-        #data_align {
-            /* top | right | bottom | left */
-            margin: 0.5em 0 0.5em 0;
-    }
 
 
 }
@@ -1482,13 +1502,6 @@ or when screen readers are used - it is deliberately empty as it is only for lab
             width: 330px;
         }
 
-        #data_align {
-            /* top | right | bottom | left */
-            margin: 0.5em 0 0.5em 0;
-            width: 350px;
-            border: none;
-        }
-
         .tab-container {
             height: 40px;
         }
@@ -1504,19 +1517,18 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 @media (max-width: 320px){
 
     #bar_stacked {
-        width: 250px;
+        width: 280px;
     }
 
     #data_align {
-        /* top | right | bottom | left */
-        margin: 0.2em auto 0.2em auto;
-        width: 100%;
+        margin-left: -0.8em;
+        width: 99%;
         border: none;
         padding: 0;
     }
 
     #device-area {
-        margin: 0.5em auto 0.5em auto;
+        margin: 0.5em auto 1% auto;
 
     }
 
