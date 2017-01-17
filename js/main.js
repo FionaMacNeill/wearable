@@ -47,8 +47,8 @@
  --------------------------------
 
  Written content and images are property of Fiona MacNeill and Dr Theo Fotis unless stated otherwise.
- Copyright (c) 2016 T. Fotis, 2017.
- Copyright (c) 2016 F. MacNeill, 2017.
+ Copyright (c) 2017, T. Fotis.
+ Copyright (c) 2017, F. MacNeill.
  Ownership and licenses for content are indicated in the markup.
  */
 
