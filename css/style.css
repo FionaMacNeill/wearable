@@ -44,40 +44,55 @@ Copyright (C) 2017 Fiona MacNeill
     Ownership and licenses for content are indicated in the markup.
 */
 
+/****** TABLE OF CONTENTS
+*
+* 1.0 - Wrapper
+*   1.1 - Skip link
+* 2.0 - Site header
+*   2.1 - Navigation/Menu
+
+
+*******/
+
+/* 1.0 - Content Wrapper */
+
 * {
     box-sizing: border-box;
 }
 
 .wrapper {
     position: relative;
-    /* top | right | bottom | left */
+    display: block;
     margin-bottom: 10px;
     padding: 0 10px 0 0;
-    display: block;
+
 }
 
+/* 1.1 - Skip link */
 /* element hidden offscreen until tabbed to for those who use screen readers and keyboard nav */
 /* Does not show in Firefox 50+ or Safari but operates as part of the tab-index, will be visible to Chrome users */
 /* referred to http://webaim.org/techniques/css/invisiblecontent/ */
 
 #skip {
-    padding: 4.5em;
     position: absolute;
     top: -20em;
+    padding: 4.5em;
 }
 
 #skip a{
-    background: #ececec;
     position: absolute;
     left: 0;
     right: 0;
     top: auto;
+    background: #ececec;
 
 }
 
 #skip a:focus, a:hover{
     top: 20em;
 }
+
+/* 2.0 - Site header */
 
 .site-header {
     z-index: 3;
@@ -88,6 +103,48 @@ Copyright (C) 2017 Fiona MacNeill
     -webkit-Transition: .4s;
     transition: .4s;
 
+}
+
+/* 2.1 - Navigation/Menu */
+
+nav{
+    z-index: 4;
+    float: right;
+    background: #FFF;
+    top: 0;
+    left: 0;
+}
+
+nav ul{
+    list-style: none;
+    text-align: center;
+    background: #FFFFFF;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+nav li{
+    float: left;
+    font-size: 1.02em;
+    line-height: 1em;
+    background: #0066B9;
+    margin: 0 1px auto;
+}
+
+nav a{
+    display: block;
+    text-decoration: none;
+    color: #FFFFFF;
+    width: 7em;
+    padding: 10px 12px 10px 12px;
+}
+
+nav a:hover, nav a:active {
+    text-decoration: underline;
+    background: #003057;
+    padding: 10px 12px 10px 12px;
+    cursor: pointer;
 }
 
 #menu-btn {
@@ -114,48 +171,7 @@ Copyright (C) 2017 Fiona MacNeill
 }
 
 
-nav{
-    z-index: 4;
-    background: #FFF;
-    top: 0;
-    left: 0;
-    float: right;
-}
 
-nav ul{
-    list-style: none;
-    text-align: center;
-    background: #FFFFFF;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
-nav li{
-    /* top | right | bottom | left */
-    margin: 0 1px auto auto;
-    float: left;
-    font-size: 1.02em;
-    line-height: 1em;
-    background: #0066B9;
-}
-
-nav a{
-    /* top | right | bottom | left */
-    padding: 10px 12px 10px 12px;
-    width: 7em;
-    text-decoration: none;
-    display: block;
-    color: #FFFFFF;
-}
-
-nav a:hover, nav a:active {
-    /* top | right | bottom | left */
-    padding: 10px 12px 10px 12px;
-    text-decoration: underline;
-    background: #003057;
-    cursor: pointer;
-}
 
 .page-nav-spacer {
     height: 3em;
@@ -170,7 +186,7 @@ nav a:hover, nav a:active {
     height: 50px;
     background: #CCCCCC;
     border: none;
-    opacity: .5;
+    opacity: 0.5;
     text-align: center;
     line-height: 4em;
     outline: 0;
@@ -181,6 +197,7 @@ nav a:hover, nav a:active {
     -moz-transition: all .3s ease;
     -webkit-transition: all .3s ease;
     transition: all .3s ease;
+    cursor: pointer;
 }
 
 .return-top-button:hover {
@@ -313,43 +330,22 @@ nav a:hover, nav a:active {
 
 .carousel {
     opacity: 0;
-    background: #FFFFFF;
+    /*background-color: #6B7DFF;*/
 }
 
 .carousel-cell {
-    width: 100%; /*changed this 100% from 66% made more sense for the layout of my timeline cells and content */
-    /*height: 300px;*/
+    width: 100%;
     height: 450px;
     margin-right: 10px;
-    /*border: solid 1px #cccccc;*/
-    background-color: #6B7DFF;
-    /*border-radius: 5px;*/
 }
 
-/* the image that runs along the bottom of the timeline */
-.tl_image_lv{
-    z-index: 3;
-    bottom: 0;
-    position: fixed;
-    left:0;
-    height: 70px;
-    width: 850%;
-    white-space: nowrap;
+/* the image that runs along the bottom of the timeline*/
+.tl_image_lv {
     float: left;
-    background-size: contain;
-    background: url("/css/anxiety.svg") no-repeat;
-
-
+    position: absolute;
+    bottom: -6px;
+    left: 31%;
 }
-/*the very long svg image - it has to live in the css folder due to Flickitys JavaScript expectations*/
-#anxiety{
-    float: left;
-    background-size: contain;
-    background: url("anxiety.svg") no-repeat;
-    margin-left: 160%;
-}
-
-/* removed the cell number pseudo class from original CSS here - no longer needed */
 
 /* -----Timeline line------*/
 
@@ -482,7 +478,7 @@ p {
     text-align: left;
 }
 
-/* p classes */
+/* p classes and ids*/
 
 .reference {
     padding-left: 4em;
@@ -552,24 +548,7 @@ blockquote{
     border-right: 3px solid #333333;
 }
 
-/* list classes */
 
-
-ul {
-    text-align: left;
-    list-style: circle;
-    font-size: 1.05em;
-    line-height: 1.48;
-}
-
-li {
-    /* top | right | bottom | left */
-    margin: 0.9em auto 0 auto;
-}
-
-li:first-child{
-    margin-top: 0;
-}
 
 .color-bk-header{
     /* top | right | bottom | left */
@@ -590,6 +569,25 @@ li:first-child{
 .device-desc{
     text-align: left;
 
+}
+
+/* list classes */
+
+
+ul {
+    text-align: left;
+    list-style: circle;
+    font-size: 1.05em;
+    line-height: 1.48;
+}
+
+li {
+    /* top | right | bottom | left */
+    margin: 0.9em auto 0 auto;
+}
+
+li:first-child{
+    margin-top: 0;
 }
 
 /*////////////////////////////////////////////
@@ -877,14 +875,111 @@ anxiety level graphic to show through slightly */
 
 #bar_stacked {
     overflow: hidden;
-    height: 300px;
     position: relative;
     width: 25em;
+    height: 20em;
     background: transparent;
+    cursor: pointer;
 }
 
 #load_img {
     margin-top: 5em;
+}
+
+
+/*//////////////////////////////////
+//                                //
+//        Accordion element       //
+//       Uses CSS3 Checkboxes     //
+//                                //
+//////////////////////////////////*/
+
+/* CSS based on Accordion with CSS3 by Mary Lou. Source: https://tympanus.net/codrops/2012/02/21/accordion-with-css3 */
+
+.ac-container{
+    margin: 10px auto 30px auto;
+}
+
+.ac-container label{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: left;
+    padding: 0.5em auto 0.5em auto;
+    position: relative;
+    z-index: 20;
+    display: block;
+    height: 30px;
+    cursor: pointer;
+    color: #333333;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+    line-height: 33px;
+    background: linear-gradient(top, #ffffff 1%,#eaeaea 100%);
+    box-shadow:
+            0 0 0 1px rgba(155,155,155,0.3),
+            1px 0 0 0 rgba(255,255,255,0.9) inset,
+            0 2px 2px rgba(0,0,0,0.1);
+}
+
+.ac-container label:hover{
+    background: #fff;
+}
+
+
+.ac-container input:checked + label,
+.ac-container input:checked + label:hover{
+    background: #c6e1ec;
+    color: #3d7489;
+    text-shadow: 0 1px 1px rgba(255,255,255, 0.6);
+    box-shadow:
+            0 0 0 1px rgba(155,155,155,0.3),
+            0 2px 2px rgba(0,0,0,0.1);
+}
+
+.ac-container label:hover:after,
+.ac-container input:checked + label:hover:after{
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 13px;
+    top: 7px;
+    /*background: transparent url(../images/arrow_down.png) no-repeat center center;*/
+}
+
+.ac-container input:checked + label:hover:after{
+    /*background-image: url(../images/arrow_up.png);*/
+}
+
+
+.ac-container input{
+    display: none;
+}
+
+.ac-container article{
+    background: rgba(255, 255, 255, 0.5);
+    margin-top: -1px;
+    overflow: hidden;
+    height: 0;
+    position: relative;
+    z-index: 10;
+    transition:
+            height 0.3s ease-in-out,
+            box-shadow 0.6s linear;
+}
+.ac-container input:checked ~ article{
+    transition:
+            height 0.5s ease-in-out,
+            box-shadow 0.1s linear;
+    box-shadow: 0 0 0 1px rgba(155,155,155,0.3);
+}
+
+.ac-container input:checked ~ article.ac-small{
+    height: 140px;
+}
+.ac-container input:checked ~ article.ac-medium{
+    height: 180px;
+}
+.ac-container input:checked ~ article.ac-large{
+    height: 220px;
 }
 
 
