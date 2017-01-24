@@ -46,29 +46,38 @@ Copyright (C) 2017 Fiona MacNeill
 
 /****** TABLE OF CONTENTS
 *
-* 1.0 - Wrapper
-*   1.1 - Skip link
-* 2.0 - Site header
-*   2.1 - Navigation/Menu
-
+* (1.0) - Box sizing
+* * (1.1) - Skip link
+* (2.0) - Site header
+* (3.0) - Navigation
+* * (3.1) - Toggle menu for mobile
+* (4.0) - Flickity Carousel for patient timeline
+* * (4.1) - Timeline content
+* * (4.2) - Timeline line and dots
+* * (4.3) - Timeline information boxes
+* (5.0) - Typography
+* * (5.1) - Heading level styles
+* * (5.2) - p styles
+* * (5.3) - Call-out styles
+* * (5.4) - List and label styles
+* (6.0) - Content sections
+* (7.0) - Data visualisation
+* (8.0) - Accordion
+* (9.0) - Form
+* (10.0) - Grid
+* (11.0) - Accessibility specific
+* (12.0) - Media queries
 
 *******/
 
-/* 1.0 - Content Wrapper */
+/*----- (1.0) - Box sizing -----*/
 
 * {
     box-sizing: border-box;
 }
 
-.wrapper {
-    position: relative;
-    display: block;
-    margin-bottom: 10px;
-    padding: 0 10px 0 0;
 
-}
-
-/* 1.1 - Skip link */
+/*---- (1.1) - Skip link ----*/
 /* element hidden offscreen until tabbed to for those who use screen readers and keyboard nav */
 /* Does not show in Firefox 50+ or Safari but operates as part of the tab-index, will be visible to Chrome users */
 /* referred to http://webaim.org/techniques/css/invisiblecontent/ */
@@ -77,14 +86,16 @@ Copyright (C) 2017 Fiona MacNeill
     position: absolute;
     top: -20em;
     padding: 4.5em;
+    margin-left: 20%;
 }
 
-#skip a{
+#skip a {
     position: absolute;
-    left: 0;
+    left: 30%;
     right: 0;
     top: auto;
-    background: #ececec;
+    font-size: 1em;
+    background: #ECECEC;
 
 }
 
@@ -92,12 +103,14 @@ Copyright (C) 2017 Fiona MacNeill
     top: 20em;
 }
 
-/* 2.0 - Site header */
+/*---- (2.0) - Site header ----*/
+/* site-header height adjustment is turned on/off by the menu toggle in section 3.1 */
 
 .site-header {
     z-index: 3;
-    overflow: hidden;
+    display: block;
     position: relative;
+    overflow: hidden;
     height: 4em;
     -moz-Transition: .4s;
     -webkit-Transition: .4s;
@@ -105,26 +118,26 @@ Copyright (C) 2017 Fiona MacNeill
 
 }
 
-/* 2.1 - Navigation/Menu */
+/*---- (3.0) - Navigation ----*/
 
-nav{
+nav {
     z-index: 4;
-    float: right;
-    background: #FFF;
     top: 0;
     left: 0;
+    float: right;
+    background: #FFF;
 }
 
-nav ul{
+nav ul {
     list-style: none;
     text-align: center;
-    background: #FFFFFF;
     width: 100%;
+    background: #FFF;
     margin: 0;
     padding: 0;
 }
 
-nav li{
+nav li {
     float: left;
     font-size: 1.02em;
     line-height: 1em;
@@ -132,50 +145,49 @@ nav li{
     margin: 0 1px auto;
 }
 
-nav a{
+nav a {
     display: block;
-    text-decoration: none;
-    color: #FFFFFF;
     width: 7em;
-    padding: 10px 12px 10px 12px;
+    text-decoration: none;
+    color: #FFF;
+    padding: 0.625em 0.75em 0.625em 0.75em;
 }
 
-nav a:hover, nav a:active {
+nav a:hover,
+nav a:active {
     text-decoration: underline;
     background: #003057;
-    padding: 10px 12px 10px 12px;
+    padding: 0.625em 0.75em 0.625em 0.75em;
     cursor: pointer;
 }
+
+
+/*---- (3.1) - Toggle menu button for mobile ----*/
 
 #menu-btn {
     display: none;
 }
 
-.toggle{
+.menu-toggle {
+    float: right;
     display: inline-block;
     width: 5em;
     height: 2.13em;
-    float: right;
-    margin-right: 0.5em;
-    padding: 0;
-    border: none;
+    color: #FFF;
     background: #0066B9;
-    color: #FFFFFF;
+    border: none;
+    padding: 0;
+    margin-right: 0.3em;
 }
 
-.active {
+.menu-active {
     height: 4em;
     -moz-Transition: .4s;
     -webkit-Transition: .4s;
     transition: .4s;
 }
 
-
-
-
-.page-nav-spacer {
-    height: 3em;
-}
+/*---- (3.2) - Return to top button ----*/
 
 .return-top-button {
     display: block;
@@ -184,11 +196,11 @@ nav a:hover, nav a:active {
     right: 0.5em;
     width: 50px;
     height: 50px;
-    background: #CCCCCC;
-    border: none;
-    opacity: 0.5;
     text-align: center;
     line-height: 4em;
+    background: #CCCCCC;
+    opacity: 0.5;
+    border: none;
     outline: 0;
     border-radius: 100%;
     -moz-box-shadow: 1px 1px 1px #333333;
@@ -210,7 +222,7 @@ nav a:hover, nav a:active {
 
 /*/////////////////////////////////////////////////
 //                                               //
-//     Flickity Carousel for patient timeline    //
+// (4.0) Flickity Carousel for patient timeline  //
 //                                               //
 /////////////////////////////////////////////////*/
 
@@ -221,10 +233,11 @@ nav a:hover, nav a:active {
  * Licensed GPLv3 for open source use
  *
  * http://flickity.metafizzy.co
- * Copyright 2016 Metafizzy
+ * Copyright 2016, Metafizzy
  *
  * Modified by F.MacNeill, November 2016.
  */
+
 .flickity-enabled {
     position: relative;
 }
@@ -325,12 +338,11 @@ nav a:hover, nav a:active {
     color: #333333;
 }
 
-/* -----Main carousel content------*/
+/*---- (4.1) - Main carousel content ----*/
 
 
 .carousel {
     opacity: 0;
-    /*background-color: #6B7DFF;*/
 }
 
 .carousel-cell {
@@ -347,7 +359,7 @@ nav a:hover, nav a:active {
     left: 31%;
 }
 
-/* -----Timeline line------*/
+/* ---- (4.2) - Timeline line and dots [Custom styles] ----*/
 
 .timeline-line-end {
     z-index: 1;
@@ -356,16 +368,16 @@ nav a:hover, nav a:active {
     content: "";
     height: 2px;
     width: 100%;
+    background: #8C9AFF;
     bottom: 8.4em;
     left: 0;
     padding: 0;
     margin: 0;
-    background: #8C9AFF;
 }
 
 
-/* ---- page dots - the name hidden is applied via the JavaScript as this item needs to be
-    excluded in Firefox reader mode - this was the only practical means for doing that ---- */
+/* ---- page dots - the dots are generated and added to this hidden container via JavaScript as this item needs to be
+    excluded in Firefox reader mode for accessibility reasons ---- */
 
 
 /* dots container class */
@@ -375,14 +387,13 @@ nav a:hover, nav a:active {
     overflow: hidden;
     width: 100%;
     bottom: 7em;
-    padding: 0;
-    margin: 0 auto;
     list-style: none;
     text-align: center;
     line-height: 0.9;
     white-space: nowrap;
+    margin: 0 auto;
+    padding: 0;
 }
-
 
 .flickity-rtl .hidden {
     direction: rtl;
@@ -401,7 +412,6 @@ nav a:hover, nav a:active {
     counter-increment: flickity-page-dots;
 }
 
-
 .dot::before {
     display: block;
     text-align: center;
@@ -415,234 +425,108 @@ nav a:hover, nav a:active {
     background: #DADEFF;
 }
 
-
-
-/*/////////////////////
-//                   //
-//     Typography    //
-//                   //
-/////////////////////*/
-
-h1 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.8em;
-    line-height: 1em;
-    /* top | right | bottom | left */
-    margin: 0 auto 20px auto;
-    width: 20%;
-    float: left;
-    position: relative;
-    color: #333333;
-}
-
-
-h2 {
-    font-weight: normal;
-    text-align: center;
+.dot:hover {
+    opacity: 0.9;
+    background: #DADEFF;
 }
 
 
 
-h3 {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-}
 
-/* h3 class */
-.publication {
-    text-align: left;
-}
+/*---- (4.3) - Timeline information boxes ----*/
 
-h4 {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    text-align: left;
-    font-weight: normal;
-    font-size: 1.2em;
-}
-
-h5 {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    color: #333333;
-    text-align: center;
-    font-size: 0.9em;
-}
-
-body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333333;
-}
-
-p {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.05em;
-    line-height: 1.48;
-    text-align: left;
-}
-
-/* p classes and ids*/
-
-.reference {
-    padding-left: 4em;
-    text-indent: -4em;
-    font-size: 0.9em;
-}
-
-.imagelist {
-    padding-left: 4em;
-    font-size: 0.9em;
-}
-
-.caption {
-    /* top | right | bottom | left */
-    margin: 0 12% 0 10%;
-    font-size: 0.7em;
-    text-align: left;
-}
-
-.caption-link {
-    color: #4a4bca;
-    text-decoration: none;
-}
-
-/* strong class */
-
-.bignumber{
-    font-size: 3.5em;
-    color: #6B7DFF;
-}
-
-
-.bio-link{
-    font-size: 0.9em;
-}
-
-.justify{
-    text-align: justify;
-}
-
-blockquote{
-    line-height: 1.48;
-    text-align: left;
-}
-
-#cite{
-    text-align: right;
-}
-
-/* callout classes */
-
-.callout {
-    padding: 0.5em;
-    font-size: 1.5em;
-    font-family: "Optima", "Trebuchet MS", serif;
-}
-
-#question {
-    background: #d2ccff;
-    margin-top: 10%;
-    margin-bottom: 4%;
-    border-left: 2px solid #333333;
-}
-
-#stat{
-    text-align: right;
-    border-right: 3px solid #333333;
-}
-
-
-
-.color-bk-header{
-    /* top | right | bottom | left */
-    margin: 0 auto 0 auto;
-    padding: 2% 0 2% 0;
-    width: 100%;
-    text-align: center;
-    color: #FFF;
-}
-
-.goal-text{
-    /* top | right | bottom | left */
-    margin: 0 0.2em 1em auto;
-    font-size: 0.95em;
-
-}
-
-.device-desc{
-    text-align: left;
-
-}
-
-/* list classes */
-
-
-ul {
-    text-align: left;
-    list-style: circle;
-    font-size: 1.05em;
-    line-height: 1.48;
-}
-
-li {
-    /* top | right | bottom | left */
-    margin: 0.9em auto 0 auto;
-}
-
-li:first-child{
-    margin-top: 0;
-}
-
-/*////////////////////////////////////////////
-//                                          //
-//       Timeline Information boxes         //
-//                                          //
-////////////////////////////////////////////*/
 
 /* This timeline is inspired by https://duckduckgo.com/about and uses Flickity.js
 // as the carousel: http://flickity.metafizzy.co/
-// Style below by F. MacNeill */
+// Styling below by F. MacNeill */
 
 
 .tl_grid {
     z-index: 4;
-    /* top | right | bottom | left */
-    margin: 0 auto 10% auto;
-    padding-bottom: 10%;
     position: absolute;
     height: 80%;
     width: 100%;
+    margin: 0 auto 10%;
+    padding-bottom: 10%;
 }
 
 .tl_img {
     z-index: 1;
-    /* top | right | bottom | left */
     position: relative;
     margin: 3% auto 0 auto;
     display: block;
     height: 100px;
     width: 100px;
     border-radius: 100%;
-    background: #FFFFFF;
+    background: #FFF;
 }
 
 #tl_img_resched {
     margin-right: 80%;
 }
 
-/* first and last timeline images need black backgrounds not white */
+/* first and last timeline images need black backgrounds not white
+ pseudo selectors do not work within the carousel as they are all first children*/
+
 .first-last {
-    background: #000000;
+    background: #000;
 }
 
-.tl_logo {
+
+#tl_logo {
     z-index: auto;
-    /* top | right | bottom | left */
-    margin: 6px auto 5px 20px;
     display: block;
     height: 2.5em;
     position: absolute;
+    margin: 6px auto 5px 20px;
+}
+
+#tl_arrowkeys{
+    position: absolute;
+    opacity: 0.6;
+}
+
+/* tooltip based on tutorial from: http://www.w3schools.com/css/css_tooltip.asp */
+
+.tooltip-contain {
+    position: absolute;
+    display: inline-block;
+    right: 20px;
+    top: 10px;
+    opacity: 0.9;
+}
+
+.tooltiptxt {
+    visibility: hidden;
+    width: 120px;
+    text-align: center;
+    font-size: 0.7em;
+    background: #33457E;
+    color: #fff;
+    border-radius: 6px;
+    padding: 2%;
+    margin: 70px 4px 0 4px;
+}
+
+.tooltip-contain:hover .tooltiptxt {
+    visibility: visible;
+}
+
+.tooltip-contain:hover, #tl_arrowkeys:hover{
+    opacity: 0.9;
+}
+
+.tooltip-contain .tooltiptxt::after{
+    content: " ";
+    position: absolute;
+    bottom: 45%;
+    left: 50%;
+    margin-left: -5px;
+    border: 5px solid;
+    border-color: transparent transparent #33457E transparent;
 }
 
 .tl_title {
-    /* top | right | bottom | left */
     margin: 1% auto 0 auto;
     color: #FFFFFF;
     text-align: center;
@@ -656,35 +540,228 @@ li:first-child{
 .tl_desc {
     z-index: 2;
     position: relative;
-    margin: 1% auto;
-    padding: 1% 1% 1% 1%;
     width: 70%;
     font-size: 1em;
     line-height: 1.3;
     text-align: justify;
     border-radius: 2px;
-    background: rgba(194, 206, 255, 0.8);
+    background: #AFC1FD;
+    margin: 1% auto;
+    padding: 1%;
 }
 
 .tl_desc_resched {
     width: 60%;
-    margin: 1% auto;
-    padding: 1% 1% 1% 1%;
-    font-size: 1em;
-    line-height: 1.3;
-    text-align: justify;
-    border-radius: 2px;
-    background: rgba(194, 206, 255, 0.8);
 }
 
-/* handles tl_desc background opacity to allow
-anxiety level graphic to show through slightly */
 
+/*/////////////////////
+//                   //
+// (5.0) Typography  //
+//                   //
+/////////////////////*/
+
+
+/*---- 5.1 - Heading level styles ----*/
+
+h1 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    float: left;
+    position: relative;
+    font-size: 1.8em;
+    line-height: 1;
+    width: 20%;
+    /* This is an important margin and needs to stay in pixels due to header measurements */
+    margin: 0 auto 20px;
+}
+
+
+h2 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 1.25;
+    font-weight: 300;
+}
+
+h2.tl_title {
+    font-size: 1.4em;
+    line-height: 1;
+    font-weight: 300;
+}
+
+
+h3 {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-size: 1.17em;
+    line-height: 1.3;
+}
+
+h4 {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    text-align: left;
+    font-weight: normal;
+    font-size: 1.12em;
+    line-height: 1.35;
+}
+
+h5 {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+h6 {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-size: 0.75em;
+    line-height: 1.6;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: left;
+    font-size: 1.05em;
+    line-height: 1.48;
+    color: #333333;
+}
+
+
+/*---- (5.2) - p styles----*/
+
+p {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: left;
+    font-size: 1.05em;
+    line-height: 1.48;
+}
+
+.accordion {
+    font-size: 1.03em;
+    padding: 0 2%;
+}
+
+.reference {
+    font-size: 0.9em;
+    padding-left: 4em;
+    text-indent: -4em;
+
+}
+
+.imagelist {
+    font-size: 0.9em;
+    padding-left: 4em;
+}
+
+.caption {
+    font-size: 0.7em;
+    margin: 0 12% 0 10%;
+    text-align: left;
+}
+
+.caption-link {
+    color: #4a4bca;
+    text-decoration: none;
+}
+
+.bio-link{
+    font-size: 0.9em;
+}
+
+.justify{
+    text-align: justify;
+}
+
+blockquote{
+    text-align: left;
+    line-height: 1.48;
+}
+
+#cite{
+    text-align: right;
+}
+
+/* strong class */
+
+.bignumber{
+    font-size: 3.5em;
+    color: #6B7DFF;
+}
+
+/* Code snippet for fixing line-height when using superscript
+from https://css-tricks.com/snippets/css/prevent-superscripts-and-subscripts-from-affecting-line-height/ */
+
+sup, sub {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
+}
+sub {
+    top: 0.4em;
+}
+
+/*---- (5.3) - call-out styles----*/
+
+.callout {
+    font-family: "Optima", "Trebuchet MS", serif;
+    font-size: 1.5em;
+    padding: 0.5em;
+}
+
+#question {
+    background: #d2ccff;
+    border-left: 2px solid #333333;
+    margin: 10% 0 4% 0;
+}
+
+#stat {
+    text-align: right;
+    border-right: 3px solid #333333;
+}
+
+.color-bk-header {
+    width: 100%;
+    text-align: center;
+    color: #FFF;
+    margin: 0 auto;
+    padding: 2% 0 2% 0;
+}
+
+.goal-text {
+    font-size: 0.95em;
+    margin: 0 0.2em 1em auto;
+}
+
+.device-desc {
+    text-align: left;
+}
+
+/*---- (5.4) - list and label styles ----*/
+
+
+ul {
+    text-align: left;
+    list-style: circle;
+    font-size: 1.05em;
+    line-height: 1.48;
+}
+
+li {
+    margin: 0.9em auto 0 auto;
+}
+
+li:first-child {
+    margin-top: 0;
+}
+
+label.ac {
+    padding: 0 2%;
+}
 
 
 /*////////////////////////////
 //                          //
-//     Content Sections     //
+//  (6.0) Content Sections  //
 //                          //
 ////////////////////////////*/
 
@@ -701,30 +778,29 @@ anxiety level graphic to show through slightly */
     transition: .4s;
 }
 
+#data_text{
+    margin-right: 7%;
+}
+
 #why-area {
-    margin: 0 5% 2% 5%;
-    padding: 2% 7% 2% 7%;
     position: relative;
     overflow: auto;
     background: #89d8eb;
+    margin: 0 5% 2% 5%;
+    padding: 2% 7%;
 }
 
 #goals-area {
-    /* top | right | bottom | left*/
-    margin: 2% 5% 1% 5%;
     position: relative;
     overflow: hidden;
+    margin: 2% 5% 1% 5%;
 }
 
-#technology-area{
-    margin: 1% 5% 2% 5%;
-    position: relative;
-    overflow: auto;
+.goals{
+    background: #d6e1ff;
 }
 
-
-.about-img {
-    /* top | right | bottom | left */
+.goal-img {
     margin: 1em auto;
     display: block;
     height: 80px;
@@ -733,15 +809,18 @@ anxiety level graphic to show through slightly */
     border-radius: 100%;
 }
 
+#technology-area{
+    position: relative;
+    overflow: auto;
+    margin: 1% 5% 2%;
+}
+
 #team-area {
-    /* top | right | bottom | left */
-    margin: 0 5% 2% 5%;
-    /*padding: 2% 7% 2% 7%;*/
     position: relative;
     overflow: auto;
     background: #5b55b9;
+    margin: 0 5% 2% 5%;
 }
-
 
 .team-img{
     -moz-box-shadow: 0 5px 5px -3px black;
@@ -752,28 +831,28 @@ anxiety level graphic to show through slightly */
     max-width: 120px;
 }
 
+.team-photo {
+    float: left;
+    margin: 7% 4% 2% 0;
+}
 
 #device-area {
-    /* top | right | bottom | left */
-    margin: 0 5% 2% 5%;
-    padding: 2% 0 0 0;
-    border-radius: 5px;
     position: relative;
     overflow: auto;
+    border-radius: 5px;
+    margin: 0 5% 2% 5%;
+    padding: 2% 0 0 0;
 }
 
 #device-factors {
-    /* top | right | bottom | left */
-    margin: 0 auto 0.5em auto;
     background: #563557;
     border: none;
+    margin: 0 auto 0.5em auto;
 }
 
 /* Used pixel values here as they had to be set and not responsive */
 .tab-container{
     z-index: 1;
-    /* top | right | bottom | left */
-    margin: 0.8em 150px auto 130px;
     transform: skewX(40deg);
     position: relative;
     display: block;
@@ -783,93 +862,79 @@ anxiety level graphic to show through slightly */
     width: 50px;
     height: 60px;
     border-radius: 5px;
+    margin: 0.8em 150px auto 130px;
 }
 
 .tab-class::before{
     content: "UX Factors";
     color: #333333;
     font-weight: 400;
-    font-size: 1.5em;
+    font-size: 1.3em;
     line-height: 1;
 }
 
 .tab-class{
     z-index: 2;
-    /* top | right | bottom | left */
-    margin: 0.8em 15em auto 0.5em;
     position: absolute;
     display: block;
     float: left;
     background: #C0B2C7;
-    padding: 0.5em;
     width: 140px;
     height: 60px;
     border-radius: 5px;
+    margin: 0.8em 15em auto 0.5em;
+    padding: 0.5em;
 }
 
 #factors-bk {
     position: relative;
-    /* top | right | bottom | left */
-    margin: 3.5em auto 1em auto;
-    padding: 0.2em 1em 0.2em 1em;
     background: #C0B2C7;
     border-radius: 5px;
+    margin: 3.5em auto 1em auto;
+    padding: 0.2em 1em;
 }
 
 
 #wear-intro {
-    margin: 0 auto 1% auto;
     background: #C0B2C7;
     border: none;
+    margin: 0 auto 1% auto;
 }
-/* This can go
-#wear-bk {
-    position: relative;
-    margin: 0.5em;
-    padding: 0.2em 0.5em 0.2em 0.5em;
-    background: #C0B2C7;
-    border-radius: 5px;
-}
-*/
+
 #contact-area {
-    /* top | right | bottom | left */
-    margin: 0 5% 5% 5%;
-    padding: 2% 5% 2% 5%;
     border-radius: 5px;
     position: relative;
     overflow: auto;
     border: solid 5px rgba(64,95,155, 0.5);
+    margin: 0 5% 5% 5%;
+    padding: 2% 5%;
 }
 
 #links-area {
-    /* top | right | bottom | left */
-    margin: 0 5% 0 5%;
-    padding: 2% 5% 2% 5%;
-    border-radius: 5px;
     position: relative;
     overflow: auto;
-    background: #5b55b9;
+    background: #5B55B9;
+    padding: 0.2em 0.5em;
+    margin: 0;
 }
 
 #links-bk{
-    margin: 0.5em;
-    padding: 0.2em 0.5em 0.2em 0.5em;
-    background: #c0c8eb;
     overflow: auto;
     border-radius: 5px;
+    background: #c0c8eb;
+    padding: 0.2em 1em;
+    margin: 0.5em;
 }
-
 
 /*//////////////////////////////////
 //                                //
-//       Data Visualisation       //
+//   (7.0) Data Visualisation     //
 //                                //
 //////////////////////////////////*/
 
 
 #data_align {
     padding-top: 1.35em;
-    /*width: 26em;*/
     border-radius: 0;
 }
 
@@ -887,55 +952,45 @@ anxiety level graphic to show through slightly */
 }
 
 
-/*//////////////////////////////////
-//                                //
-//        Accordion element       //
-//       Uses CSS3 Checkboxes     //
-//                                //
-//////////////////////////////////*/
+/*/////////////////////////////
+//                           //
+//  (8.0) Accordion          //
+//    Uses CSS3 Checkboxes   //
+//                           //
+/////////////////////////////*/
 
 /* CSS based on Accordion with CSS3 by Mary Lou. Source: https://tympanus.net/codrops/2012/02/21/accordion-with-css3 */
 
-.ac-container{
+.accordion-contain{
     margin: 10px auto 30px auto;
 }
 
-.ac-container label{
+.accordion-contain label{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: left;
-    padding: 0.5em auto 0.5em auto;
     position: relative;
     z-index: 20;
     display: block;
     height: 30px;
     cursor: pointer;
     color: #333333;
-    text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
     line-height: 33px;
-    background: linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-    box-shadow:
-            0 0 0 1px rgba(155,155,155,0.3),
-            1px 0 0 0 rgba(255,255,255,0.9) inset,
-            0 2px 2px rgba(0,0,0,0.1);
+    border: 1px solid #CCC;
 }
 
-.ac-container label:hover{
+.accordion-contain label:hover{
     background: #fff;
 }
 
 
-.ac-container input:checked + label,
-.ac-container input:checked + label:hover{
+.accordion-contain input:checked + label,
+.accordion-contain input:checked + label:hover{
     background: #c6e1ec;
     color: #3d7489;
-    text-shadow: 0 1px 1px rgba(255,255,255, 0.6);
-    box-shadow:
-            0 0 0 1px rgba(155,155,155,0.3),
-            0 2px 2px rgba(0,0,0,0.1);
 }
 
-.ac-container label:hover:after,
-.ac-container input:checked + label:hover:after{
+.accordion-contain label:hover:after,
+.accordion-contain input:checked + label:hover:after{
     content: '';
     position: absolute;
     width: 24px;
@@ -945,16 +1000,16 @@ anxiety level graphic to show through slightly */
     /*background: transparent url(../images/arrow_down.png) no-repeat center center;*/
 }
 
-.ac-container input:checked + label:hover:after{
+.accordion-contain input:checked + label:hover:after{
     /*background-image: url(../images/arrow_up.png);*/
 }
 
 
-.ac-container input{
+.accordion-contain input{
     display: none;
 }
 
-.ac-container article{
+.accordion-contain article{
     background: rgba(255, 255, 255, 0.5);
     margin-top: -1px;
     overflow: hidden;
@@ -965,305 +1020,49 @@ anxiety level graphic to show through slightly */
             height 0.3s ease-in-out,
             box-shadow 0.6s linear;
 }
-.ac-container input:checked ~ article{
+.accordion-contain input:checked ~ article{
     transition:
             height 0.5s ease-in-out,
             box-shadow 0.1s linear;
     box-shadow: 0 0 0 1px rgba(155,155,155,0.3);
 }
 
-.ac-container input:checked ~ article.ac-small{
-    height: 140px;
+.accordion-contain input:checked ~ article.ac-xsmall{
+    height: 4em;
 }
-.ac-container input:checked ~ article.ac-medium{
-    height: 180px;
-}
-.ac-container input:checked ~ article.ac-large{
-    height: 220px;
+.accordion-contain input:checked ~ article.ac-small{
+    height: 8em;
 }
 
+.accordion-contain input:checked ~ article.ac-medium{
+    height: 12em;
+}
 
-/*///////////////
-//             //
-//     Grid    //
-//             //
-///////////////*/
+.accordion-contain input:checked ~ article.ac-large{
+    height: 14em;
+}
 
-
-/* CSS grid handwritten by Fiona MacNeill, inspired by: http://j4n.co/blog/Creating-your-own-css-grid-system
-|| https://github.com/h5bp/html5-boilerplate and Dave Gamache's Skeleton V2.0.4: http://getskeleton.com/
-|| One% CSS Grid: http://onepcssgrid.mattimling.com/ - Nov 2016
-|| 12 column layout - original pixel dimensions column: 65px, gutter: 15px
-|| This grid is used to layout all the text residing in the sections */
-
-/* The complete grid can be turned on for reference in the section just prior to the footer
-|| It is set to display none by default in the html file */
-
-
-#grid-ref {
-    display: none;
+.accordion-contain input:checked ~ article.ac-xlarge{
+    height: 23em;
 }
 
 
-.grid-container {
-    max-width: 1000px;
-    display: block;
-    /* top | right | bottom | left */
-    margin: 0 auto 5% auto;
-    padding: 0 1% 0 1%;
-    box-sizing: border-box;
-}
-
-/* General row alignment for the grid */
-
-.row-align{
-    clear: both;
-    /* top | right | bottom | left */
-    margin: auto 5% auto 5%;
-}
-
-/* used in situations where the height of text columns need to match height */
-
-.single-row {
-    margin: 0 auto 2% auto;
-    float: left;
-    clear: both;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.nofloat {
-    float: none;
-    clear: both;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.col {
-    float: left;
-    /* top | right | bottom | left */
-    margin: 1% auto 1% auto;
-    padding: 1%;
-    text-align: center;
-}
-
-/* Styling for free standing columns */
-.free-columns {
-    /* top | right | bottom | left */
-    margin: 1em auto 2em auto;
-    border: solid 2px #EEEEEE;
-    padding: 2%;
-    border-radius: 5px;
-}
-
-/* One column width = 65px --> (65px x 12) + (15px x 12) = 960px total width
-            This is 12 columns across the screen width             */
-.col.col-0 {
-    width: 6.5%;
-    margin-right: 1.5%;
-
-}
-
-/* Two column widths : (65px x 2) = 130px + 15px = 145px per column
-             This is 6 columns across the screen width             */
-.col.col-1 {
-    width: 14.5%;
-    margin-right: 1.5%;
-
-}
-
-/* Three column widths : (65px x 3) = 195px + (15px x 2) = 225px per column
-                    This is 4 columns across the screen width             */
-.col.col-2 {
-    width: 22.5%;
-    margin-right: 1.5%;
-}
-
-/* based on col-1 */
-.team-photo {
-    float: right;
-    /* top | right | bottom | left */
-    margin: 3% auto 1% 2%;
-}
-
-/* Four column widths : (65px x 4) = 260px + (15px x 3) =  305px per column
-                    This is 3 columns across the screen width             */
-.col.col-3 {
-    width: 30.5%;
-    margin-right: 1.5%;
-
-}
-
-.goals{
-    background: #d6e1ff;
-    border: 2px solid #CCCCCC;
-}
+/*//////////////////
+//                //
+//  (9.0) Form    //
+//                //
+//////////////////*/
 
 
-.col.col-3:first-child{
-    margin-left: 0;
-}
-
-
-.col.col-3:last-child{
-    margin-right: 0;
-}
-
-/* Six column widths : (65px x 6) = 390px + (15px x 5) =  465px per column
-                    This is 2 columns across the screen width             */
-.col.col-4 {
-    width: 46.5%;
-    margin-right: 1.5%;
-}
-
-.col.col-4:first-child{
-    margin-left: 0;
-}
-
-.col.col-4:last-child{
-    margin-right: 0;
-}
-
-.col.col-4#data_text{
-    margin-right: 7%;
-}
-
-/* TO DO Text background that uses col-4 as the basis - this is for consistent styling */
-.bios {
-    padding: 2%;
-    background: #c0c8eb;
-    text-align: left;
-    min-height: 170px;
-    border-radius: 5px;
-}
-
-.col.col-4.bios:first-child {
-    margin-left: 2%;
-}
-
-.col.col-4.bios:last-child {
-    margin-right: 2%;
-}
-
-#device-blurb {
-    padding: 1% 2% 1% 2%;
-}
-
-/* Styling for device image based on col-4*/
-.device-img {
-    padding: 0;
-    overflow: auto;
-    border: solid 2px #EEEEEE;
-    /*object-fit: scale-down;*/
-}
-
-/* Why isn't this a free-column test it later TO DO */
-.device-block {
-    border: solid 2px #EEEEEE;
-    padding: 2%;
-    border-radius: 5px;
-}
-
-
-/* twelve column widths : 960px (total width) - 15px = 945px
-                                   This runs across the entire screen width */
-.col.col-5 {
-    width: 94.5%;
-}
-
-/* Is used for certain children/descendants of col-5 - this is important as the max-width is 1000px not 945px
-This adjustment allows col-5 to span the space when needed */
-
-.full-width {
-    width: 100%;
-    /* top | right | bottom | left */
-    margin: 0 auto 1% auto;
-    padding: 0 2% 0 2%;
-}
-
-#intro{
-    padding-left: 0.5em;
-}
-
-/* Used specifically for the field divs in the contact form */
-.nopadding {
-    /* top | right | bottom | left */
-    padding: 1% 0 1% 0;
-}
-
-/* eleven column widths for combined column plus margins and adjustment
-- Total width: (65 x 11) + (15 x 10 for margin-right value) =  865px
-                    This runs across 11 column widths - use with col-0 */
-
-.col-6.later {
-    width: calc((6.5% * 11) + (1.5% * 10));
-
-}
-
-/* ten column widths for combined column plus margins and adjustment
-                    This runs across 10 column widths - use with col-1 */
-
-.col-7.later {
-    width: calc((6.5% * 10) + (1.5% * 9));
-
-}
-
-/* nine column widths for combined column plus margins and adjustment
-                    This runs across 9 column widths - use with col-2 */
-
-.col-8.later {
-    width: calc((6.5% * 9) + (1.5% * 8));
-
-}
-
-/* eight column widths for combined column plus margins and adjustment
-                    This runs across 8 column widths - use with col-3 */
-
-.col-9.later {
-    width: calc((6.5% * 8) + (1.5% * 7));
-}
-
-/* six column widths for combined column plus margins and adjustment
-                    This runs across 6 column widths - use with col-4
-                    simpler to use 2 x col-4 when this effect is needed */
-
-.col-10.later {
-    width: calc((6.5% * 6) + (1.5% * 5));
-
-}
-
-/* This column is unique and not based on a column ancestor thus it needs it's own margin
- although it is basically identical to col-9.
- This runs across 8 column widths - use with col-3 or col 12 */
-
-.col-11.later {
-    width: calc((6.5% * 8) + (1.5% * 7));
-    margin-right: 1.5%;
-}
-
-/* Essentially the same as col-3, but included in the grid for organisational purposes */
-
-.col-12.later {
-    width: calc((6.5% * 4) + (1.5% * 3));
-
-}
-
-/*////////////////////////////
-//                          //
-//     Buttons & Forms      //
-//                          //
-////////////////////////////*/
-
-
-button{
+button {
     /* top | right | bottom | left*/
     margin: 1% auto 1% 1%;
     font-size: 16px;
     border-radius: 5px;
-    background: #cccccc;
+    background: #CCC;
 }
 
-#contact_form{
+#contact_form {
     display: block;
 }
 
@@ -1289,6 +1088,13 @@ label.form-label {
     height: 3em;
 }
 
+/* Used specifically for the field divs in the contact form TO DO */
+.minpadding {
+    text-align: left;
+    margin-right: 0;
+    padding: 1% 0 1% 0;
+}
+
 input {
     border-radius: 5px;
     border: solid 1px #405F9B;
@@ -1299,6 +1105,14 @@ textarea {
     border: solid 1px #405F9B;
 }
 
+#subject {
+    background: #FFF;
+}
+
+select {
+    border: solid 1px #405F9B;
+}
+
 #message {
     height: 8em;
     text-align: start;
@@ -1306,24 +1120,21 @@ textarea {
 
 #submit {
     width: 100%;
-    margin-top: 1%;
     height: 3em;
     font-size: 1.05em;
+    border: none;
+    background: #6B7DFF;
+    color: #FFF;
+    margin-top: 0.5em;
+    cursor: pointer;
 }
 
-#loading {
-    display: none;
-    text-align: center;
-    padding-top: 10em;
+#submit:hover{
+    background: #4c56ff;
 }
 
-#confirmation {
-    display: none;
-    text-align: center;
-    padding-top: 10em;
-
-}
-
+#loading,
+#confirmation,
 #errmessage {
     display: none;
     text-align: center;
@@ -1331,67 +1142,224 @@ textarea {
 }
 
 #errmessage h3 {
-    color: #ff0000;
+    color: #ff5134;
 }
 
 .hint {
     display: none;
-    color: #ff0000;
+    color: #ff5134;
+}
+
+.hint_focus:focus{
+    display: none;
+    outline: 1px solid #ff5134;
+}
+
+
+/*///////////////
+//             //
+// (10.0) Grid //
+//             //
+///////////////*/
+
+
+/* Gridlandish (the opposite of being outlandish) a CSS grid handwritten by Fiona MacNeill,
+|| inspired by: http://j4n.co/blog/Creating-your-own-css-grid-system
+|| https://github.com/h5bp/html5-boilerplate and Dave Gamache's Skeleton V2.0.4: http://getskeleton.com/
+|| One% CSS Grid: http://onepcssgrid.mattimling.com/ - Nov 2016
+|| 12 column layout - original pixel dimensions column: 65px, gutter: 15px
+|| This grid is used to layout all the text and elements residing in the sections */
+
+/* The complete grid can be turned be reviewed at:
+http://itsuite.it.brighton.ac.uk/fjm19/idm18journal/index.php/gridlandish/ */
+
+
+.grid-container {
+    display: block;
+    max-width: 1000px;
+    box-sizing: border-box;
+    margin: 0 auto 5% auto;
+    padding: 0 1% 0 1%;
+}
+
+/* used where the height of text columns need to match height */
+
+.single-row {
+    display: flex;
+    float: left;
+    clear: both;
+    flex-wrap: wrap;
+    margin: 0 auto 2% auto;
+}
+
+.nofloat {
+    display: flex;
+    float: none;
+    clear: both;
+    flex-wrap: wrap;
+}
+
+.col {
+    float: left;
+    margin: 1% auto 1% auto;
+    padding: 1%;
+    text-align: center;
+}
+
+/* Styling for free standing columns */
+.free-columns {
+    margin: 1% auto 2% auto;
+    border: solid 2px #EEEEEE;
+    padding: 2%;
+    border-radius: 5px;
+}
+
+/* col-0, col-1, col-2 are not in use */
+
+/* col-3 and derivatives */
+
+.col.col-3 {
+    width: 30.5%;
+    margin-right: 1.5%;
+
+}
+
+.col.col-3:first-child {
+    margin-left: 0;
+}
+
+.col.col-3:last-child {
+    margin-right: 0;
+}
+
+/* col-4 and derivatives */
+
+.col.col-4 {
+    width: 46.5%;
+    margin-right: 1.5%;
+}
+
+.col.col-4:first-child {
+    margin-left: 0;
+}
+
+.col.col-4:last-child{
+    margin-right: 0;
+}
+
+.bios {
+    padding: 2%;
+    background: #c0c8eb;
+    text-align: left;
+    min-height: 170px;
+    border-radius: 5px;
+}
+
+.col.col-4.bios:first-child {
+    margin-left: 2%;
+}
+
+.col.col-4.bios:last-child {
+    margin-right: 2%;
+}
+
+.col.col-4.minpadding:first-child {
+    margin-left: 1%;
+}
+
+.col.col-4.minpadding:nth-child(2) {
+    margin-right: 1%;
+}
+
+#device-blurb {
+    padding: 1% 2%;
+}
+
+.device-img {
+    width: 100%;
+    border: none;
+    margin: 2% auto 4%;
+    padding: auto;
+}
+
+/* col-5 and derivatives */
+
+.col.col-5 {
+    width: 94.5%;
+}
+
+/* Is used for certain children/descendants of col-5 - this is important as the max-width is 1000px not 945px
+This adjustment allows col-5 to span the window width when needed */
+
+.full-width {
+    width: 100%;
+    margin: 0 auto 1% auto;
+    padding: 0 2% 0 2%;
+}
+
+#intro {
+    padding-left: 0.5em;
 }
 
 /*//////////////////////////////////
 //                                //
-//     Accessibility specific     //
+// (11.0) Accessibility specific  //
 //                                //
 //////////////////////////////////*/
 
 /* For hiding elements that should not be shown in the reader mode (FireFox)
 or when screen readers are used - it is deliberately empty as it is only for labelling */
 
-.sr-only {
+.invisible {
 }
 
 
-/*//////////////////////////////////
-//                                //
-//         Media Queries          //
-//                                //
-//////////////////////////////////*/
+/*//////////////////////////
+//                        //
+// (12.0) Media queries   //
+//                        //
+//////////////////////////*/
 
 /* Desktop first media queries - this will generally be viewed from a desktop in the work environment */
 
 /* larger than Desktop HD */
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
 
-
+    #skip {
+        margin-left: 35%;
+    }
 }
 
 
 /* larger than a desktop */
-@media (min-width: 1000px) {
+@media screen and (min-width: 1000px) {
 
-    body {
-        font-size: 16px;
+    #skip {
+        margin-left: 30%;
     }
+
 }
 
 /* larger than a tablet */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
     nav a {
         width: 5.5em;
     }
 
     body {
-        font-size: 14px;
-        line-height: 26px;
+        font-size: 0.875em;
     }
 
 }
 
 
 /* Correct menu overlap on responsive display */
-@media (max-width: 580px) {
+@media screen and (max-width: 580px) {
+
+    #skip {
+        display: none;
+    }
 
     nav li {
         font-size: 1em;
@@ -1403,10 +1371,10 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 
     h1 {
         font-size: 1.6em;
+        margin-top: 3px;
     }
 
     .tl_title {
-        /* top | right | bottom | left */
         margin: 2% 5% 2% 5%;
     }
 
@@ -1418,7 +1386,7 @@ or when screen readers are used - it is deliberately empty as it is only for lab
     }
 
     .tl_desc {
-        /* top | right | bottom | left */
+
         margin: 2% 10% 0 15%;
         width: 70%;
         font-size: 1em;
@@ -1437,6 +1405,10 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         display: none;
     }
 
+    .tooltip-contain{
+        display: none;
+    }
+
     #about-area {
         margin: -7em -0.01em auto -0.01em;
         padding-top: 1em;
@@ -1446,7 +1418,7 @@ or when screen readers are used - it is deliberately empty as it is only for lab
     }
 
     #data_align {
-        /* top | right | bottom | left */
+
         margin: 0.5em 3em 0.5em -0.8em;
         -moz-Transition: .4s;
         -webkit-Transition: .4s;
@@ -1477,18 +1449,19 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 }
 
 /* larger phone or phablet */
-@media (max-width: 470px) {
+@media screen and (max-width: 470px) {
 
         h1{
             font-size: 1.5em;
+            margin-top: 3px;
         }
 
         #menu-btn{
             display: inline-block;
         }
 
-        .active {
-            height: 19.5em;
+        .menu-active {
+            height: 18.1em;
             -moz-Transition: .4s;
             -webkit-Transition: .4s;
             transition: .4s;
@@ -1537,9 +1510,9 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 
 
         body {
-            font-size: 13px;
-            line-height: 24px;
+            font-size: 0.814em;
         }
+
         .row-align {
 
         }
@@ -1560,24 +1533,24 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         .col.device-img {
             float: none;
             width: 99%;
-            /* top | right | bottom | left */
+
             margin: 1em 0 1em 0;
         }
 
         .about-area {
-            /* top | right | bottom | left */
+
             margin: 10% auto 2% auto;
 
         }
 
         .free-header{
-            /* top | right | bottom | left */
+
             margin: 0 auto 5% auto;
             padding: 2% 0 2% 4%;
         }
 
         .on-color-text {
-            /* top | right | bottom | left */
+
             margin: auto 2% 2% 0;
 
         }
@@ -1586,11 +1559,18 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 }
 
 /* larger than a mobile phone */
-@media (max-width: 414px) {
+@media screen and (max-width: 414px) {
+
+        .menu-active {
+            height: 19.5em;
+            -moz-Transition: .4s;
+            -webkit-Transition: .4s;
+            transition: .4s;
+        }
 
         body {
-            font-size: 12px;
-            line-height: 14px;
+            font-size: 0.750em;
+            line-height: 1.6;
         }
 
         .flickity-prev-next-button {
@@ -1603,7 +1583,7 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         }
 
         .tl_grid {
-            /* top | right | bottom | left */
+
             margin: 5% auto 10% auto;
             height: 80%;
 
@@ -1623,14 +1603,14 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         }
 
         .tl_title {
-            /* top | right | bottom | left */
+
             margin: 2% 5% 5% 5%;
             padding: 0 5% 0 5%;
             font-size: 16px;
         }
 
         .tl_desc {
-            /* top | right | bottom | left */
+
             margin: 5% 5% 0 5%;
             padding: 1% 1% 1% 1%;
             width: 90%;
@@ -1643,12 +1623,12 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 
 
         .about-area {
-            /* top | right | bottom | left */
+
             margin: 0 auto 2% auto;
         }
 
         .free-header {
-            /* top | right | bottom | left */
+
             margin: 0 auto 5% auto;
             padding: 2% 0 2% 4%;
         }
@@ -1669,7 +1649,7 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 
 
 /* larger than a mobile phone */
-@media (max-width: 320px){
+@media screen and (max-width: 320px){
 
     #bar_stacked {
         width: 280px;
@@ -1687,39 +1667,37 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 
     }
 
-    #device-factors{
-        /* top | right | bottom | left */
+    #device-factors {
+
         margin: 0 auto 0.5em auto;
         background: #563557;
         border: none;
     }
 
     #factors-bk {
-        /* top | right | bottom | left */
+
         margin: 0.5em 0.5em 1em 0.5em;
     }
 
-
-    .tab-container{
+    .tab-container {
        display: none;
     }
 
-    .tab-class::before{
+    .tab-class::before {
         display: none;
     }
 
-    .tab-class{
+    .tab-class {
         display: none;
     }
 
-    #links-area{
-        margin: 0 2% 2% 2%;
-        padding: 2% auto 2% auto;
+    #links-area {
+        margin: 0 2% 2%;
+        padding: 2% auto;
     }
 
-    .links-bk{
-        width: 90%;
-        margin: 5%;
+    .links-bk {
+        margin: 2%;
         padding: 2%;
     }
 
