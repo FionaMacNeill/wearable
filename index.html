@@ -49,15 +49,13 @@ Copyright (C) 2017  Fiona MacNeill
     Copyright (c) 2017, F. MacNeill.
     Ownership and licenses for content are indicated in the markup.
 -->
-
-<div id="skip"><a href="#nav" tabindex="1" title="skip to navigation">skip to navigation</a></div>
+<body id="top">
+<div id="skip"><a href="#nav" tabindex="1" aria-label="skip to navigation">skip to navigation</a></div>
 <!-- target for return-top-button -->
-<body id ="top">
 <div class="grid-container">
     <div class="site-header">
         <header role="banner">
             <h1>Perioperative Wearable</h1>
-        </header>
         <nav data-scroll-header role="navigation" aria-label="Primary Menu">
             <button class="menu-toggle" id="menu-btn" role="button" aria-label="Mobile Menu">Menu</button>
             <ul role="menubar">
@@ -67,13 +65,13 @@ Copyright (C) 2017  Fiona MacNeill
                 <li role="menuitem"><a data-scroll href="#contact" tabindex="5" aria-label="contact">Contact</a></li>
             </ul>
         </nav>
+    </header>
     </div>
-
 <main id="main" role="main">
         <!-- Flickity Carousel HTML init -->
         <div class="carousel"
             data-flickity='{ "cellSelector": ".carousel-cell", "freeScroll": true, "setGallerySize": false }' role="presentation">
-            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel">
+            <div class="carousel-cell" role="presentation">
                 <div class="tl_grid" id="slide01">
                     <img class="invisible" id="tl_logo" src="img/timeline/uobwhite2.png" alt="University of Brighton logo" aria-hidden="true">
                     <img class="tl_img first-last" src="img/timeline/01hipimg_opt.png" alt="Illustration of hip x-ray">
@@ -87,7 +85,7 @@ Copyright (C) 2017  Fiona MacNeill
                         <div class="tooltiptxt" role="tooltip">Arrow keys can be used for navigation of the timeline</div></div>
                 </div>
             </div>
-            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel">
+            <div class="carousel-cell" role="presentation">
                 <div class="tl_grid" id="slide02">
                     <img class="tl_img" src="img/timeline/02Woman.png" alt="Illustration of patient (Carol Greenway in the narrative)">
                     <h2 class="tl_title">Patient: Carol Greenway</h2>
@@ -99,7 +97,7 @@ Copyright (C) 2017  Fiona MacNeill
                 </div>
             </div>
             <!-- Anxiety level image that runs along the base of the carousel on displays >470px width -->
-            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel">
+            <div class="carousel-cell" role="presentation">
                 <div class="tl_grid" id="slide03">
                     <img class="tl_img" src="img/timeline/03Referral.png" alt="Illustration of a doctor's desk">
                     <h2 class="tl_title">Referral to specialist</h2>
@@ -110,7 +108,7 @@ Copyright (C) 2017  Fiona MacNeill
                     </p>
                 </div>
             </div>
-            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel">
+            <div class="carousel-cell" role="presentation">
                 <div class="tl_grid" id="slide04">
                     <img class="tl_img" src="img/timeline/04Wearable.png" alt="Illustration of a Wearable device (watch type)">
                     <h2 class="tl_title">Wearable device</h2>
@@ -122,21 +120,21 @@ Copyright (C) 2017  Fiona MacNeill
                     decides that she will wear the device as part of her care plan.
                     </p>
                 </div>
-                <img class="tl_image_lv invisible" src="img/anxietylong.svg" alt="A visualisation of the patient's stress levels" height="70px" width="6900px" aria-hidden="true">
+                <img class="tl_image_lv invisible" src="img/anxietylong.svg" alt="A visualisation of the patient's stress levels" aria-hidden="true">
             </div>
-            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel">
+            <div class="carousel-cell" role="presentation">
                 <div class="tl_grid" id="slide05">
                     <img class="tl_img" src="img/timeline/05Specialist.png" alt="Illustration of hands using a tablet device">
                     <h2 class="tl_title">Consultation with specialist</h2>
                     <p class="tl_desc">
-                    Carol is examined by the consultant for the hip replacement. She also meets her perioperative nurse,
-                    Brian who will monitor her vitals and anxiety levels through the wearable system. Brian asks how
-                    Carol is getting on with the wearable device, has she tried the app yet? Carol and Brian agree on
+                    Carol is examined by the hip replacement specialist, who determines that she will need the operation.
+                        She also meets her perioperative nurse, Brian who will monitor her vitals and anxiety levels through the wearable system.
+                        Brian asks how Carol is getting on with the wearable device, has she tried the app yet? Carol and Brian agree on
                     her preferred method of contact as part of her pre-operative care plan.
                     </p>
                 </div>
             </div>
-            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel">
+            <div class="carousel-cell" role="presentation">
                 <div class="tl_grid" id="slide06">
                     <img class="tl_img" src="img/timeline/06clinic.png" alt="Illustration of a nurse (Brian in the narrative)">
                     <h2 class="tl_title">Pre-operative assessment clinic</h2>
@@ -149,20 +147,20 @@ Copyright (C) 2017  Fiona MacNeill
                     </p>
                 </div>
             </div>
-            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel">
+            <div class="carousel-cell" role="presentation">
                 <div class="tl_grid" id="slide07">
                     <img class="tl_img" src="img/timeline/07letter.png" alt="Illustration of a letter received in the mail">
                     <h2 class="tl_title">Letter for date of operation</h2>
                     <p class="tl_desc">
                     Carol receives a letter informing her of the date for her operation; this is both reassuring and
-                    worrying. She feels underprepared for the operation and recovery. Brian notices a spike in
+                    worrying. She feels under-prepared for the operation and recovery. Brian notices a spike in
                     her vitals and as previously agreed, sends a text message to check-in with her. After a follow-up
                     call with Brian explaining things to arrange for her hospital visit and after care, she feels a lot
                     better.
                     </p>
                 </div>
             </div>
-            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel">
+            <div class="carousel-cell" role="presentation">
                 <div class="tl_grid" id="slide08">
                     <img class="tl_img" id="tl_img_resched" src="img/timeline/08reschedule.png" alt="Illustration of a paper calendar">
                     <h2 class="tl_title" id="tl_title_resched">Outcome 1: Cancellation</h2>
@@ -178,19 +176,19 @@ Copyright (C) 2017  Fiona MacNeill
                     </p>
                 </div>
             </div>
-            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel">
+            <div class="carousel-cell" role="presentation">
                 <div class="tl_grid" id="slide09">
                     <img class="tl_img" src="img/timeline/09operation.png" alt="Illustration showing close-up of a hospital bed on a ward">
                     <h2 class="tl_title">Day of operation</h2>
                     <p class="tl_desc">
                     Carol feels ready for her operation, although a fire drill at the flats next door the night
                     before causes her additional anxiety. Brian is concerned about Carol's levels and decides to move her
-                    operation to be first in the day. This will minimise her waiting time and to allow her daughter to pick
+                    operation to be first in the day. This will minimise her waiting time and will allow her daughter to pick
                     her up and take her home as soon as she is cleared to leave.
                     </p>
                 </div>
             </div>
-            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel">
+            <div class="carousel-cell" role="presentation">
                 <div class="tl_grid" id="slide10">
                     <img class="tl_img first-last" src="img/timeline/10recovery.png" alt="Illustration of tea on a tray in a bed in a home to represent recovery">
                     <h2 class="tl_title">Recovery and device return</h2>
@@ -198,7 +196,7 @@ Copyright (C) 2017  Fiona MacNeill
                     Carol's daughter took time off work to support Carol's recovery and Brian continued to monitor her
                     vitals, contacting her when needed. Initially, Carol was starting to move around too soon, but she
                     could tell from the wearable app that this was contributing to increased heart and breathing rates.
-                    As a result, she took more time to recover and feels positive about care that she received.
+                    As a result, she took more time to recover and feels positive about the care that she received.
                     </p>
                 </div>
             </div>
@@ -207,14 +205,13 @@ Copyright (C) 2017  Fiona MacNeill
         <div class="timeline-line-end" id="timeline"></div>
 
 
-<!-- CONTENT BELOW WRITTEN BY F. MacNeill with the exception of the T. Fotis bio. Citations provided above footer -->
+    <!-- CONTENT BELOW WRITTEN BY F. MacNeill with the exception of the T. Fotis bio. References provided above footer -->
 
-<!---------------- Section 1 - About ----------------------->
-    <section id="about-area" tabindex="6">
+    <!--Section 1 - About-->
+    <section id="about-area" aria-label="introduction" tabindex="6">
             <!--span exists in each section as the position to scroll to with the smoothscroll() function-->
         <span id="about"></span>
-            <h2>About</h2>
-        <article role="article" aria-label="introduction" tabindex="7">
+            <h2 class="print">About</h2>
             <div class="col full-width" id="intro">
                 <p class="justify">
                 This site outlines a future service design and user experience project to be undertaken by
@@ -223,134 +220,120 @@ Copyright (C) 2017  Fiona MacNeill
             </p>
             </div>
 
-            <div class="col col-4 data_text" tabindex="8">
+            <div class="col col-4 data_text" tabindex="7">
                 <p class="justify">
-                In 2016, Ofcom reported that 71% of UK adults owned a smartphone<a data-scroll href="#2" class="ref"><sup>2</sup></a>.
+                In 2016, Ofcom reported that 71% of UK adults owned a smartphone<a data-scroll href="#1" class="ref"><sup>1</sup></a>.
                 This can be viewed alongside smart watch ownership, which based on Ofcom's sample, are owned by 5% of UK
-                adults<a data-scroll href="#3" class="ref"><sup>3</sup></a>. When we look at these statistics
+                adults<a data-scroll href="#1" class="ref"><sup>2</sup></a>. When we look at these statistics
                 in relation to our patient story above, the demographics do not quite match-up. Our patient is 58 years
-                old and according to Ofcom the highest proportion of Smartphone owners are those under 55.
+                old and according to Ofcom the highest proportion of Smartphone owners are those under 55<a data-scroll href="#1" class="ref"><sup>3</sup></a>.
                 This is intentional as our story is designed to pose a question, what will this adult
                 population of under 55s need and expect in future years?
                 </p>
-                <p class="callout" id="question" tabindex="9"><em>How will patients'
+                <p class="callout" id="question" tabindex="8"><em>How will patients'
                 experiences have been shaped by their use of wearable technologies and the mobile applications they use
                 to manage many essential services as part of their lifestyle, such as banking and work?</em>
                 </p>
             </div>
-        </article>
-        <!----------data visualisation---------->
-        <div class="col col-4 data_align" tabindex="-1">
+        <!-- data visualisation -->
+        <div class="col col-4 data_align">
             <div id="bar_stacked" aria-label="A tabular representation of the data from Ofcom (2016) in a stacked chart.">
                 <img src="img/loading.gif" id="bar" class="load_img invisible" alt="loading image">
             </div>
-        <p class="caption">Source: Ofcom Technology Tracker, H1 2016<a data-scroll href="#11" class="ref"><sup>11</sup></a>.
-            <br>Base: Adults aged 16+, 16-24 n = 519, 25-34 n = 604, 35-54 n = 1172, 55+ n = 1442</p>
-            <p class="callout" id="stat"><strong class="bignumber">43%</strong> <br>of UK Adults look up health
-                information online[#ref]
-            </p>
+        <p class="caption" tabindex="-1">Source: Ofcom Technology Tracker, H1 2016<a data-scroll href="#1" class="ref"><sup>4</sup></a>.
+            <br>Base: Adults aged 16+, 16-24 n = 519, 25-34 n = 604, 35-54 n = 1172, 55+ n = 1442.<br>
+            <input type="button" role="button" value="Refresh Data" onclick="window.location.reload()"></p>
+            <p class="callout" id="stat"><strong class="bignumber">44%</strong> <br>of UK Adults look up health
+                information online<a data-scroll href="#1" class="ref"><sup>5</sup></a>.
         </div>
     </section>
 
-    <!---------------- Section 2 - Why Perioperative Care ----------------------->
-    <section id="why-area" tabindex="9">
-        <h2>Why Perioperative Care?</h2>
-        <article role="article" aria-label="Why Perioperative Care?" tabindex="10">
-        <div class="col full-width">
-        <p class="justify">
-        The rationale for this investigation into the use of a wearable devices to support pre-operative, also termed as
-            perioperative, care is specifically is supported by the following drivers:
-        </p>
-            <ul tabindex="11">
-                <li>Perioperative anxiety is experienced by a high proportion of patients [#ref; #ref; #ref].</li>
+    <!-- Section 2 - Why Perioperative Care -->
+    <section id="why-area" aria-label="Why Perioperative Care?" tabindex="9">
+            <h2>Why Perioperative Care?</h2>
+            <div class="col full-width">
+             <p class="justify">
+                The rationale for this investigation into the use of a wearable devices to support pre-operative care,
+                 also termed as perioperative care, is supported by the following drivers:
+             </p>
+            <ul tabindex="10">
+                <li>Perioperative anxiety is experienced by a high proportion of patients
+                    <a data-scroll href="#6" class="ref"><sup>6</sup></a>
+                    <a data-scroll href="#6" class="ref"><sup>7</sup></a>
+                    <a data-scroll href="#6" class="ref"><sup>8</sup></a>
+                    <a data-scroll href="#6" class="ref"><sup>9</sup></a>.
+                </li>
+
                 <li>
-                Perioperative anxiety can pose serious risks, such as causing the patient to need more anaesthetic,
-                which holds it own risks. It can also result in greater post-operative pain for the patients,
-                lengthening recovery and may increase the need for pain management medication. Furthermore, anxiety can
-                contribute to a weakened immune system and therefore lead to a greater incidence of infection
-                (#ref Bailey, 2010).
+                Perioperative anxiety can pose serious risks, such as causing the patient to need more anaesthetic.
+                    It can also result in greater post-operative pain for patients,
+                lengthened recovery and may increase the need for pain management medication. Furthermore, anxiety can
+                contribute to a weakened immune system and therefore lead to a greater incidence of infection<a data-scroll href="#10" class="ref"><sup>10</sup></a>.
                 </li>
             </ul>
             </div>
-                <div class="full-width data_align"  tabindex="-1">
+            <!-- data visualisation -->
+                <div class="full-width data_align">
                     <div id="tree_map" aria-label="A tree map showing reasons by percentage for patient anxiety">
                         <img src="img/loading.gif" id="tree" class="load_img invisible" alt="loading image">
                     </div>
-                    <p class="caption" id="tree-src">Source: add here</p>
+                    <p class="caption" id="tree-src" tabindex="-1">Source: Ebirim, L., & Tobin, M. (2011).
+                        Factors responsible for Pre-Operative anxiety in elective surgical patients at A university teaching hospital: A pilot study<a data-scroll href="#6" class="ref"><sup>11</sup></a>.
+                        <br>Base: Participants aged 15-80, number of patients n = 129, male n = 59, female n = 66.<br>
+                        <input type="button" role="button" value="Refresh Data" onclick="window.location.reload()"></p>
                 </div>
             <div class="col full-width">
-            <ul>
+            <ul tabindex="11">
                 <li>
-                Patients spend less time in hospital, both in terms of the pre-operative period and upon discharge for
-                recovery. This means that nurse to patient contact time is reduced making it harder to monitor the
-                patient's anxiety and overall physical health; a wearable could help to support an active remote
-                dialogue between patient and nurse and support diagnosis.
+                Patients spend less time in hospital than historically<a data-scroll href="#12" class="ref"><sup>12</sup></a>,
+                    both in terms of the pre-operative period and upon discharge for recovery.
+                    This means that nurse to patient contact time is reduced making it harder to
+                    monitor the patient's anxiety and overall physical health; a wearable could
+                    help to support an active remote dialogue between patient and nurse and support diagnosis.
                 </li>
                 <li>
-                 As a use case, this application of a wearable device offers clear benefits and a tangible path for
-                 investigation.
+                 As a use case, the application of a wearable device to monitor perioperative anxiety and overall health
+                    offers clear benefits and a tangible path for investigation.
                 </li>
             </ul>
             </div>
-        </article>
     </section>
-    <!---------------- Section 3 - Goals----------------------->
-    <section id="goals-area">
+    <!-- Section 3 - Goals -->
+    <section id="goals-area" aria-label="Project goals">
         <div class="single-row">
         <div class="col col-3 free-columns goals" tabindex="12">
-            <img class="goal-img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80" alt="add alt here later">
-            <h3>Goal 1 : Explore</h3>
-                <p class="goal-text"><strong>To find out</strong> if a consumer-level wearable device could be used as
-                    part of a perioperative care plan. The device and an accompanying service would be used to monitor a
-                    patient's vital signs, as a means to identify symptoms of anxiety and monitor overall health from
-                    the preoperative phase through to recovery.
-                    What issues might be raised through the introduction of this disruptive technology? What problems
-                    could be solved? If this technology is introduced is there potential for improvement to service and
-                    care?
+            <div class="goal-img goal1-img" aria-label="icon for goal 1"></div>
+            <!--White-space pre-line layout for goals--><h3>Goal 1 : Explore</h3><p class="goal-text"><strong>To find out</strong> if a consumer-level wearable device could be used as part of a perioperative care plan. The device and an accompanying service<a data-scroll href="#13" class="ref"><sup>13</sup></a> would be used to monitor a patient's vital signs, as a means to identify symptoms of anxiety and monitor overall health from the pre-operative phase through to recovery. What issues might be raised through the introduction of this disruptive technology? What problems could be solved? If this technology is introduced is there potential for improvement to service and care?
                 </p>
         </div>
 
         <div class="col col-3 free-columns goals" tabindex="13">
-            <img class="goal-img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80" alt="add alt here later">
-            <h3>Goal 2 : Creation</h3>
-                <p class="goal-text"><strong>To conceive</strong> how a hypothetical wearable device could be used as
-                    part of a patient care plan during the lead up to an operative procedure. In the first instance we
-                    strive to understand the perspective of nurses; do they believe that consumer-level wearable devices
-                    have potential to be used and what are their reservations? Through user-focused co-design with nurses
-                    and other medical professionals we hope to define base requirements for such a system from the care
-                    provider's perspective.
+            <div class="goal-img goal2-img" aria-label="icon for goal 2"></div>
+            <h3>Goal 2 : Create</h3><p class="goal-text"><strong>To conceive</strong> how a hypothetical wearable device could be used as part of a patient care plan during the lead up to an operative procedure. In the first instance we strive to understand the perspective of nurses; do they believe that consumer-level wearable devices have potential to be used and what are their reservations? Through user-focused co-design with nurses and other medical professionals we hope to define base requirements for such a system from the care provider's perspective.
                 </p>
         </div>
 
         <div class="col col-3 free-columns goals" tabindex="14">
-            <img class="goal-img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80" alt="add alt here later">
-            <h3>Goal 3 : Requirements</h3>
-                <p class="goal-text"><strong>To define</strong> a set of requirements for a wearable device and service
-                    designed to monitor perioperative anxiety. The requirements, accompanying research and recommendations
-                    will provide a compelling resource as NHS Trusts move towards the "user-centered" goals put forth
-                    in the recent National Advisory Group report, <em>Making IT Work...</em>
-                    <a data-scroll href="#9" class="ref"><sup>9</sup></a>.
-                    It will also provide user-focused insight for device manufacturers and application developers who
-                    wish to create solutions for health contexts.
+            <div class="goal-img goal3-img" aria-label="icon for goal 3"></div>
+            <h3>Goal 3 : Requirements</h3><p class="goal-text"><strong>To define</strong> a set of requirements for a wearable device and service designed to monitor perioperative anxiety. The requirements, accompanying research and recommendations will provide a compelling resource as NHS Trusts move towards the "user-centered" goals put forth in the recent National Advisory Group report, <em>Making IT Work...</em><a data-scroll href="#14" class="ref"><sup>14</sup></a>. It will also provide user-focused insight for device manufacturers and application developers who wish to create solutions for health contexts.
                 </p>
         </div>
         </div>
     </section>
-    <!---------------- Section 4 - Technology in Health in UK----------------------->
-    <section id="technology-area" tabindex="15">
+    <!-- Section 4 - Technology in Health in UK -->
+    <section id="technology-area" aria-label="technology in health in UK" tabindex="15">
         <div class="single-row">
         <div class="col full-width">
             <h2>Technology in Health in the UK</h2>
-            <article role="article" aria-label="technology in health in UK" tabindex="16">
-        <p>
-            This can also be considered alongside the recent influx of funding
-            announced to establish 12 NHS trusts as global centres of digital excellence<a data-scroll href="#8" class="ref"><sup>8</sup></a>.
-            The funding was announced in the wake of an independent review and report by the National Advisory Group,
-            entitled <em>Making IT Work: Harnessing the Power of Health Information Technology to Improve Care in
-            England</em>, of the many recommendations outlined in the document the following quote is particularly
-            relevant to this project.<a data-scroll href="#9" class="ref"><sup>9</sup></a>
-        </p>
-        <blockquote>
+            <p>
+                This can also be considered alongside the recent influx of funding
+                announced to establish 12 NHS trusts as global centres of digital excellence<a data-scroll href="#15" class="ref"><sup>15</sup></a>.
+                The funding was announced in the wake of an independent review and report by the National Advisory Group,
+                entitled <em>Making IT Work: Harnessing the Power of Health Information Technology to Improve Care in
+                England</em>, of the many recommendations outlined in the document the following quote is particularly
+                relevant to this project.<a data-scroll href="#14" class="ref"><sup>16</sup></a>
+            </p>
+            <blockquote>
             <cite>"...we endorse giving patients full access to their
                 electronic data... We also favour creating easy ways
                 for patients to download such data (in a
@@ -360,30 +343,29 @@ Copyright (C) 2017  Fiona MacNeill
                 measures, and data from other apps) into their
                 electronic record."
             </cite>
-            <p id = "cite">(Wachter, 2016<a data-scroll href="#7" class="ref"><sup>7</sup></a>, p. 30).</p><br>
-        </blockquote>
-        <p>
-            With the adoption of both wearable devices and mobile health applications forecast to increase<a data-scroll href="#10" class="ref"><sup>10</sup></a>,
+            <p id = "cite">(National Advisory Group, 2016, p. 30)<a data-scroll href="#14" class="ref"><sup>17</sup></a>.</p><br>
+            </blockquote>
+            <p>
+            With the adoption of both wearable devices and mobile health applications forecast to increase<a data-scroll href="#18" class="ref"><sup>18</sup></a>,
             in spite of the significant technical challenges these disruptive technologies present, these trends cannot
             afford to be ignored.
-        </p>
-            </article>
+            </p>
         </div>
         </div>
     </section>
-<!---------------- Section 5 - The Research Team ----------------------->
 
-    <section id="team-area" tabindex="17">
+    <!-- Section 5 - The Research Team -->
+    <section id="team-area" aria-label="Research team" tabindex="16">
         <span id="team"></span>
         <h2 class="color-bk-header">Introducing the Research Team</h2>
         <div class="single-row">
-            <div class="col col-4 bios" tabindex="18" aria-label="Theofanis Fotis Bio">
+            <div class="col col-4 bios" tabindex="17" aria-label="Theofanis Fotis Bio">
                 <div class="team-photo">
                     <img class="team-img" alt="photo of Dr Theo Fotis" title="Dr Theo Fotis" src="img/team/theo_fotis.jpg">
                 </div>
                     <!-- bio written by T.Fotis - source: provided by T. Fotis -->
-                <article role="article">
-                        <p><strong>Dr. Theo Fotis</strong> is a Nurse, Futurist and Digital Nursing evangelist. He is
+                        <p><strong>Dr. Theo Fotis</strong><a data-scroll href="#19" class="ref"><sup>19</sup></a>
+                            is a Nurse, Futurist and Digital Nursing evangelist. He is
                         currently a Principal Lecturer at the School of Health Sciences, University of Brighton,
                         Visiting Lecturer at the Polytechnic University of Hong Kong and Associate Lecturer at the
                         Open University UK.
@@ -398,19 +380,18 @@ Copyright (C) 2017  Fiona MacNeill
                             <p class="bio-link">
                             <a href="https://about.brighton.ac.uk/staff/details.php?uid=tf75" title="Link to T. Fotis profile page">View Theo's profile at the University of Brighton website</a>
                         </p>
-                </article>
             </div>
 
-            <div class="col col-4 bios" tabindex="19" aria-label="Fiona MacNeill Bio">
+            <div class="col col-4 bios" id="fm" tabindex="18" aria-label="Fiona MacNeill Bio">
                 <div class="team-photo">
                     <img class="team-img" alt="photo of Fiona MacNeill" title="Fiona MacNeill" src="img/team/fiona_macneill.jpg">
                 </div>
                     <!-- bio written by F.MacNeill - based on bio at SenSe Research Cluster website,
                         University of Brighton - http://www.sense-brighton.eu/our-team/macneill/ -->
-                <article role="article">
-                        <p><strong>Fiona MacNeill</strong> is a part-time MSc User Experience
-                        Design student and a learning technologist. Her research focuses on the variance between users’
-                        perceptual experience of technology and the operational nature of its use.
+                        <p><strong>Fiona MacNeill<a data-scroll href="#20" class="ref"><sup>20</sup></a></strong>
+                        is a part-time MSc User Experience Design student and a learning technologist. Her research
+                        focuses on the variance between users’ perceptual experience of technology and the operational
+                            nature of its use.
                         She received her BA(hons) Fine Art from University of Kent in 2005, moving into creative digital
                         media and then computing in 2009.
                         MacNeill’s professional practice is founded on user-focused, design-grounded theory, coupled
@@ -422,27 +403,24 @@ Copyright (C) 2017  Fiona MacNeill
                             <p class="bio-link">
                             <a href="https://blogs.brighton.ac.uk/fjm15" title="Link to T. Fotis profile page">Visit Fiona's University of Brighton work/research blog</a>
                         </p>
-                </article>
             </div>
         </div>
     </section>
 
-<!---------------- Section 6 - Devices ----------------------->
-
-    <section id="device-area">
+    <!-- Section 6 - Devices -->
+    <section id="device-area" aria-label="About the wearable devices">
         <span id="device"></span>
         <div class="single-row">
-            <div class="col full-width free-columns" id="device-blurb" tabindex="20">
+            <div class="col full-width free-columns" id="device-blurb" tabindex="19">
 
-                <h2 title="Devices">Devices</h2>
-                <article role="article">
+                <h2>Devices</h2>
                 <p>
                     As a means to explore future service models we acknowledge, yet temporarily set aside IT infrastructure
-                    limitations[#] as suitable information derived from wearable devices would ideally contribute to a
-                    patient electronic records system which may not yet be available.
+                    limitations<a data-scroll href="#20" class="ref"><sup>21</sup></a> as suitable information derived
+                    from wearable devices would ideally contribute to a patient electronic records system which may not yet be available.
                     There is however precedent for independent developers to build applications and services which can
                     have interoperability with existing systems where they are available, for example the
-                    <a href="https://www.echo.co.uk/company" title="echo company site link">echo app</a> for repeat
+                    echo app<a data-scroll href="#22" class="ref"><sup>22</sup></a> for repeat
                     prescriptions and medication management, at the primary care level.
                 </p>
                 <p>
@@ -458,16 +436,16 @@ Copyright (C) 2017  Fiona MacNeill
                         have to synchronise via Bluetooth and cannot operate independently.
                     </li>
                     <li>
-                        <strong>B.Y.O.D.:</strong> A Bring Your Own Device (B.Y.O.D.) approach, which could be facilitated
+                        <strong>B.Y.O.D.:</strong> A Bring Your Own Device (B.Y.O.D.) approach<a data-scroll href="#23" class="ref"><sup>23</sup></a>
+                        , which could be facilitated
                         through a bridging mobile application on the patients' smartphone that would allow the
                         information from a variety of devices to be ported to a compatible format. This requires that
                         the patient owns a compatible wearable device and a smartphone or tablet.
                     </li>
                 </ul>
-                </article>
                 </div>
             </div>
-        <div class="single-row" tabindex="21">
+        <div class="single-row" tabindex="20">
                 <div class="col full-width" id="device-factors">
                     <div class="tab-class">
                     </div>
@@ -475,15 +453,14 @@ Copyright (C) 2017  Fiona MacNeill
                         <path d="M183 42.2l-16-18.1c-9.8-12.3-18.3-22.6-20.3-23.3 -0.5-0.2-1-0.2-1.6-0.2H5.3c-2.8 0-5 2.2-5 5v36.6H183z" fill="#C0B2C7"></path>
                     </svg>
                 <div id="factors-bk">
-                    <article role="article" tabindex="22">
                 <p>
                     <br>
                     These scenarios will also consider the following factors of user experience from a nursing
                     perspective.
                         </p>
-                        <h4>
+                        <h3 class="factors">
                         <strong>Workflow in a clinical environment</strong>, such as but not limited to:
-                        </h4>
+                        </h3>
                             <ul>
                                 <li>perceived benefits and barriers</li>
                                 <li>impact on staff workload</li>
@@ -493,26 +470,25 @@ Copyright (C) 2017  Fiona MacNeill
                                 <li>device disposal to be inline with sustainability goals</li>
                             </ul>
                                 <br>
-                        <h4>
+                        <h3 class="factors">
                         <strong>The nursing perspective of the patient user experience</strong>, such as but not limited to:
-                        </h4>
+                        </h3>
                             <ul>
                                 <li>benefits and barriers for the patient</li>
                                 <li>training and learning model for the patient for the device/system</li>
                                 <li>trust: in the accuracy of information due to device/system limitations or user error</li>
-                                <li>privacy: complies with the Data Protection Act 1998 (#ref) and the Caldicott principles (#ref)</li>
+                                <li>privacy: complies with the Data Protection Act 1998<a data-scroll href="#24" class="ref"><sup>24</sup></a> and the Caldicott principles<a data-scroll href="#25" class="ref"><sup>25</sup></a></li>
                             </ul>
                                 <br>
                         <p>
                             It will be important to observe how/if the definition of responsibilities differ between the <strong>Supplied</strong>
-                            scenario and the <strong>BYOD scenario</strong>.
+                            scenario and the <strong>B.Y.O.D. scenario</strong>.
                         </p>
-                    </article>
                     </div>
             </div>
         </div>
 
-        <div class="single-row" tabindex="23">
+        <div class="single-row" tabindex="21">
             <div class="col full-width free-columns" id="wear-intro">
                 <div id="wear-bk">
                 <p>
@@ -527,59 +503,54 @@ Copyright (C) 2017  Fiona MacNeill
             </div>
         </div>
         <div class="single-row">
-            <div class="col col-4 free-columns" tabindex="24">
+            <div class="col col-4 free-columns" tabindex="22">
                     <div class="device-wrist" aria-label="Illustration of wrist or hand worn devices"></div>
                 <table role="grid">
                     <thead>
-                    <tr>
-                        <th class="table-head" role="columnheader"><h3 class="table-title">Device form: Hand/Wrist Type</h3></th>
+                    <tr role="row">
+                        <th class="table-head" role="columnheader"><p class="table-title">Hand/Wrist Type</p></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
+                    <tr role="row">
                         <td role="gridcell">Devices worn on the hand or wrist. Devices worn on the wrist typically make contact with the
                             inside of the wrist in order to take sensor readings. Some devices look similar to digital
                             watches and others are more like pieces of jewellery, so there is an aesthetic aspect with
                             wearables which must be considered.</td>
                     </tr>
-                    </tbody>
-                    <thead>
-                    <tr>
-                        <th role="columnheader">Specific examples:</th>
+                    <tr role="row">
+                        <th role="columnheader">Specific examples:<a data-scroll href="#26" class="ref"><sup>26</sup></a>
+                        </th>
                     </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
+                    <tr role="row">
                         <td role="gridcell">Apple Watch; Fitbit's Charge HR and Surge; Android Wear watches; Samsung Gear S2;
                             Jawbone UP3; WellBe; Embrace Watch; Moodmetric Ring; Garmin Vivoactive.</td>
                     </tr>
                     </tbody>
-                    <thead>
-                    <tr>
+                    <tr role="row">
                         <th role="columnheader">Sensors:</th>
                     </tr>
-                    </thead>
                     <tbody>
-                    <tr>
+                    <tr role="row">
                         <td role="gridcell">Sensors contained vary per device.<br>
                             <strong>General</strong>: Heart rate sensor; accelerometer; gyroscope; ambient light sensor<br>
-                            <strong>Mood-specific devices</strong>: peripheral temperature sensor; electro dermal activity sensor.
+                            <strong>Mood-specific devices</strong>: peripheral temperature sensor; electro dermal activity sensor.<br>
                             <strong>Analytical features</strong>: activity, sleep and stress tracking.</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="col col-4 free-columns" tabindex="25">
+            <div class="col col-4 free-columns" tabindex="23">
                     <div class="device-clip" aria-label="Illustation of clip or fasten devices"></div>
                 <table role="grid">
                     <thead>
-                    <tr>
-                        <th class="table-head" role="columnheader"><h3 class="table-title">Clip-on/Fasten Type</h3></th>
+                    <tr role="row">
+                        <th class="table-head" role="columnheader"><p class="table-title">Clip-on/Fasten Type</p></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
+                    <tr role="row">
                     <td role="gridcell">
                         Devices clipped or fastened onto clothing, in some cases touching the skin (e.g.
                         inside trouser waistband). Another variation which falls into this category are necklaces
@@ -587,26 +558,19 @@ Copyright (C) 2017  Fiona MacNeill
                         as clips.
                     </td>
                     </tr>
-                    </tbody>
-                    <thead>
-                    <tr>
-                        <th role="columnheader">Specific examples:</th>
+                    <tr role="row">
+                        <th role="columnheader">Specific examples:<a data-scroll href="#27" class="ref"><sup>27</sup></a>
+                        </th>
                     </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td role="gridcell">Spire, Leaf Nature and Urban, Misfit Shine (due to its versatility as a watch or a clip).
-                            Withings Pulse Ox can also be worn as a watch or a clip.</td>
+                    <tr role="row">
+                        <td role="gridcell">Spire, Leaf Nature and Urban, Misfit Shine 2 (due to its versatility as a watch or a clip).
+                            Withings Pulse O<sub>x</sub> can also be worn as a watch or a clip.</td>
                     </tr>
-                    </tbody>
-                    <thead>
-                    <tr>
+                    <tr role="row">
                         <th role="columnheader">Sensors:</th>
                     </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td role="gridcell">Sensors contained vary by device.<br>
+                    <tr role="row">
+                        <td role="gridcell">Sensors contained vary per device.<br>
                             Breathing pattern monitor; heart rate monitor; accelerometer; gyroscope; blood-oxygen level.
                             <br><strong>Analytical features:</strong> activity, sleep and stress tracking.<br><br><br></td>
                     </tr>
@@ -616,13 +580,12 @@ Copyright (C) 2017  Fiona MacNeill
             </div>
     </section>
 
-<!---------------- Section 7 - Contact us ----------------------->
-
-    <section id="contact-area" tabindex="26">
+    <!--Section 7 - Contact us-->
+    <section id="contact-area" aria-label="Contact us" tabindex="24">
         <span id="contact"></span>
         <div id="contact_form">
             <h2 id="contactfm">Contact</h2>
-                <form role="form" aria-labelledby="contactfm">
+                <form role="form" aria-label="contact form">
                     <fieldset>
                         <legend>Contact us to learn more about the project or join our very occasional mailing list
                         </legend>
@@ -630,11 +593,11 @@ Copyright (C) 2017  Fiona MacNeill
                         <div class="col col-4 minpadding" id="email-entry">
                             <label for="email" class="form-label">Enter your email address*</label>
                             <span id="hint_email" class="hint" role="alert" aria-relevant="all">please enter your email address</span>
-                            <input id="email" class="i-full-width" type="email" placeholder=" j.anon@aplace.com" aria-required="true" tabindex="27">
+                            <input id="email" class="i-full-width" type="email" placeholder=" j.anon@aplace.com" aria-required="true" tabindex="25">
                         </div>
                         <div class="col col-4 minpadding">
                             <label for="subject" class="form-label">I am interested in...</label>
-                            <select role="listbox" id="subject" class="i-full-width" name="subject" tabindex="28">
+                            <select role="listbox" id="subject" class="i-full-width" name="subject" tabindex="26">
                                 <option role="option" value="mailing list" selected>joining the occasional mailing list</option>
                                 <option role="option" value="learn more about project">learning more about the project</option>
                                 <option role="option" value="collaborate">collaborating with you</option>
@@ -644,8 +607,8 @@ Copyright (C) 2017  Fiona MacNeill
                         <div class="full-width minpadding">
                             <label for="message" class="form-label">Write your message*</label>
                             <span id="hint_message" class="hint" role="alert" aria-relevant="all">please enter a message</span>
-                            <textarea class="i-full-width" id="message" name="message" placeholder="Hi, I am interested in your project..." aria-multiline="true" aria-required="true" tabindex="29"></textarea>
-                            <input id="submit" type="button" value="submit" tabindex="30" onclick="sendmail()" />
+                            <textarea class="i-full-width" id="message" name="message" placeholder="Hi, I am interested in your project..." aria-multiline="true" aria-required="true" tabindex="27"></textarea>
+                            <input id="submit" type="button" value="submit" tabindex="28" onclick="sendmail()" />
                             </div>
                         </div>
                     </fieldset>
@@ -664,90 +627,278 @@ Copyright (C) 2017  Fiona MacNeill
         </div>
     </section>
 
-<!---------------- Section 8 - Links/References ----------------------->
-
-    <section id="links-area" tabindex="31">
+    <!--Section 8 - Links/References-->
+    <section id="links-area" class="print" aria-label="References and links" tabindex="29">
             <span id="links"></span>
         <div class="single-row">
-            <h2 class="color-bk-header">References/Links</h2>
-                <div class="col-5" id="links-bk">
-                    <h3>Timeline References</h3>
-                    <p class="reference">Stait Trait Anxiety Inventory</p>
-                    <p class="imagelist">Slide 01: Illustration based on original photo -
-                        <a href="https://flic.kr/p/7p3mai" title="Link to image at Flickr.com">"IMAG0039"</a> by
-                        <a href="https://www.flickr.com/photos/phalinn/" title="Link to photographer page at Flickr.com">
-                            Phalinn Ooi</a> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/"
-                                                                     title="Link to CC license">CC BY 2.0</a></p>
+            <h2 class="color-bk-header"><a href="http://itsuite.it.brighton.ac.uk/fjm19/wearable/references.html" title="Link to references on separate page">References/Links</a></h2>
+                <div class="col col-5" id="links-bk">
+                    <!-- White-space pre-line formatting below -->
+                    <h3>Timeline and Image References</h3>
+                    <p class="two-col">
+                    <span class="reference-two-col">
+                        Slide 01: Illustration based on original photo - <a href="https://flic.kr/p/7p3mai" title="Link to image at Flickr.com">"IMAG0039"</a> by <a href="https://www.flickr.com/photos/phalinn/" title="Link to photographer page at Flickr.com"> Phalinn Ooi</a> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/" title="Link to CC license">CC BY 2.0</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                        Slide 02: Illustration based on original photo - <a href="https://flic.kr/p/bERxKW" title="Link to image at Flickr.com">"Portrait 17"</a> by <a href="https://www.flickr.com/photos/willdendis/" title="Link to photographer page at Flickr.com">Will Dendis</a> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/" title="Link to CC license">CC BY 2.0</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                        Slide 05: Illustration based on original photo - <a href="https://flic.kr/p/o1vDW1" title="Link to image at Flickr.com">"NEC-Medical-137"</a> by <a href="https://www.flickr.com/photos/neccorp/" title="Link to photographer page at Flickr.com">NEC Corporation of America</a> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/" title="Link to CC license">CC BY 2.0</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                        Slide 06: Illustration based on original photo - <a href="https://flic.kr/p/eXwRP" title="Link to image at Flickr.com">"A very young looking Sam"</a> by <a href="https://www.flickr.com/photos/beglen/" title="Link to photographer page at Flickr.com">David, Bergin, Emmett and Elliott</a> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/" title="Link to CC license">CC BY 2.0</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                        Icon for goal 1 - <a href="https://thenounproject.com/term/map/612074/" title="Link to icon at Noun project">"Map"</a> by <a href="https://thenounproject.com/cpenny/" title="Link to Chris Penny page at Noun Project">Chris Penny</a> from the Noun Project is licensed under <a href="https://creativecommons.org/licenses/by/3.0/us/" title="Link to CC license">CC BY 3.0 US</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                        Icon for goal 2 - <a href="https://thenounproject.com/term/unarmed-cube/107382/" title="Link to icon at Noun project">"Unarmed Cube"</a> by <a href="https://thenounproject.com/bravo/" title="Link to Juan Pablo Bravo page at Noun Project">Juan Pablo Bravo</a> from the Noun Project is licensed under <a href="https://creativecommons.org/licenses/by/3.0/us/" title="Link to CC license">CC BY 3.0 US</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                        Icon for goal 3 - <a href="https://thenounproject.com/search/?q=assemble&i=268778" title="Link to icon at Noun project">"Instruction Manual"</a> by <a href="https://thenounproject.com/marie49/" title="Link to Marie Van den Broeck page at Noun Project">Marie Van den Broeck</a> from the Noun Project is licensed under <a href="https://creativecommons.org/licenses/by/3.0/us/" title="Link to CC license">CC BY 3.0 US</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                        Photograph used as the basis for illustration of fasten/clip wearable - <a href="https://flic.kr/p/5Rtzsu" title="Link to image at Flickr.com">"My fave jeans copied"</a> by <a href="https://www.flickr.com/photos/ingermaaike2/" title="Link to photographer page at Flickr.com"> inger maaike</a> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/" title="Link to CC license">CC BY 2.0</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                        University of Brighton logo, Copyright 2017, © University of Brighton.
+                    </span>
+
+                    <span class="reference-two-col">
+                        All other images featured in the timeline are licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en" title="Link to CC0 dedication">CC0 1.0</a>
+                        and are in the public domain.
+                    </span>
+
+                    <span class="reference-two-col">
+                        American Psychological Association. (2017). The state-trait anxiety inventory (STAI). Retrieved January 20, 2017, from <a href="http://www.apa.org/pi/about/publications/caregivers/practice-settings/assessment/tools/trait-state.aspx" title="Link to APA information about STAI">
+                        http://www.apa.org/pi/about/publications/caregivers/practice-settings/assessment/tools/trait-state.aspx</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                        Dolatabadi, E., Babak, T., & Alex, M. (2014). Vision-based approach for long-term mobility monitoring: Single case study following total hip replacement. <em>Journal of Rehabilitation Research and Development, 51</em>(7), 1165–76.
+                    </span>
+
+                    <span class="reference-two-col">
+                        Institute for Quality and Efficiency in Health Care (2014). What can help relieve anxiety before surgery? <em>PubMed health - national library of medicine</em>. Retrieved from <a href="https://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0072741/?report=classic" title="Link to PubMed">https://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0072741/?report=classic</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                        Johansson Stark, Å., Charalambous, A., Istomina, N., Salanterä, S., Sigurdardottir, A. K., Sourtzi, P., … Bachrach-Lindström, M. (2016). The quality of recovery on discharge from hospital, a comparison between patients undergoing hip and knee replacement - a European study. <em>Journal of Clinical Nursing, 25</em>(17-18), 2489–2501. doi:10.1111/jocn.13278
+                    </span>
+
+                    <span class="reference-two-col">
+                        Nasr, N., & Enderby, P. (2014). Redefinition of life experience following total hip replacement: Analysis of narrative as performance. <em>International Journal of Orthopaedic and Trauma Nursing, 18</em>(2), 89–98. doi:10.1016/j.ijotn.2013.07.005
+                    </span>
+
+                    <span class="reference-two-col">
+                        National Joint Registry. (2016). 13th Annual Report 2016 National Joint Registry for England, Wales, Northern Ireland and the Isle of Man Surgical data to 31 December 2015. Retrieved from <a href="http://www.njrcentre.org.uk/njrcentre/Reports,PublicationsandMinutes/Annualreports/tabid/86/Default.aspx" title="Link to National Joint Registry site">http://www.njrcentre.org.uk/njrcentre/Reports,PublicationsandMinutes/Annualreports/tabid/86/Default.aspx</a>
+                    </span>
+                    </p>
                     <h3>Relevant Publications</h3>
-                    <p class="reference">
-                        Fotis, T. (2016). The era of the robots is now? Association for Perioperative Practice, <em>Journal of
-                        Perioperative Practice</em>.
-                    </p>
-                    <p class="reference">
-                        Fotis, T. (2015). Malignant Hyperthermia: Nursing Implications for Care. <em>British Journal of
-                        Anaesthetic and Recovery Nursing, 15</em> (4). pp. 15-17. ISSN 1742-6456
-                    </p>
-                    <p class="reference">
-                        Latessa, V. and Fotis, T. (2013). Ultrasound-guided thrombin injection for treatment of iatrogenic
-                        femoral pseudo-aneurysm: a nursing protocol. <em>Journal of Vascular Nursing, 31</em> (4). pp. 165-171.
-                        ISSN 1062-0303
-                    </p>
-                    <p class="reference">
-                        Macneill, F. (2015). Approaching apps for learning, teaching and research. In: Middleton, A., ed.
-                        <em>Smart learning: teaching and learning with smartphones and tablets in post compulsory education.</em>
-                        Media-Enhanced Learning Special Interest Group and Sheffield Hallam University, Sheffield, UK,
-                        pp. 238-264. ISBN 1843873834
+                    <p class="two-col">
+                    <span class="reference-two-col">
+                        Fotis, T. (2016). The era of the robots is now? Association for Perioperative Practice, <em>Journal of Perioperative Practice</em>.
+                    </span>
+                    <span class="reference-two-col">
+                        Frampton, L. (2016). Digital nursing and the 'human touch'. <em>The Clinical Services Journal</em>. Retrieved from <a href="http://www.clinicalservicesjournal.com/story/19490/digital-nursing-and-the-human-touch" title="Link to the Clinical Services Journal website"> http://www.clinicalservicesjournal.com/story/19490/digital-nursing-and-the-human-touch</a>
+                    </span>
                     </p>
 
                     <h3>References</h3>
-                    <p class="reference">
-                    <span id="1">[1]</span> Ofcom report page number is needed
-                    </p>
-                    <p class="reference">
-                    <span id="2">[2]</span> Ofcom report page number is needed
-                    </p>
-                    <p class="reference">
-                    <span id="3">[3]</span>
-                    </p>
-                    <p class="reference">
-                    <span id="7">[7]</span>
+                    <p class="two-col">
+                        <span class="reference-two-col">
+                        <span id="1">[1, 2, 3, 4, & 5]</span>
+                        Ofcom. (2016). <em>Report of Ofcom on the Communications Market 2016: 5 Internet and online content.</em> Retrieved from <a href="https://www.ofcom.org.uk/research-and-data/cmr/cmr16/downloads" title="Ofcom downloads page">https://www.ofcom.org.uk/research-and-data/cmr/cmr16/downloads</a>
+                        pp. 190-191
+                    </span>
+
+                    <span class="reference-two-col">
+                        <span id="6">[6 & 11]</span>
+                        Ebirim, L., & Tobin, M. (2011). Factors responsible for Pre-Operative anxiety in elective surgical patients at A university teaching hospital: A pilot study. <em>The Internet Journal of Anesthesiology, 29</em>(2). doi:10.5580/1584
+                    </span>
+
+                    <!-- uses the link for [6] for efficiency -->
+                    <span class="reference-two-col">
+                        [7]
+                        Hicks, J. A., & Jenkins, J. G. (1989). The measurement of Preoperative anxiety. <em>Survey of Anesthesiology, 3</em>(2), 179. doi:10.1097/00132586-198906000-00056
+                    </span>
+
+                    <!-- uses the link for [6] for efficiency -->
+                    <span class="reference-two-col">
+                        [8]
+                        Pritchard, M. J. (2009). Identifying and assessing anxiety in pre-operative patients. <em>Nursing Standard, 23</em>(51), 35–40. doi:10.7748/ns2009.08.23.51.35.c7222
+                    </span>
+
+                    <!-- uses the link for [6] for efficiency -->
+                    <span class="reference-two-col">
+                        [9]
+                        Wilson, C. J., Mitchelson, A. J., Tzeng, T. H., El-Othmani, M. M., Saleh, J., Vasdev, S., … Saleh, K. J. (2015). Caring for the surgically anxious patient: A review of the interventions and a guide to optimizing surgical outcomes.
+                        <em>The American Journal of Surgery 212</em>(1), 151-159. doi:10.1016/j.amjsurg.2015.03.023
+                    </span>
+
+                    <span class="reference-two-col">
+                    <span id="10">[10]</span>
                         Bailey, L. (2010). Strategies for decreasing patient anxiety in the perioperative setting.
-                        <em>Association of Operating Room Nurses. AORN Journal, 92</em>(4), 445-57; quiz 458-60.
-                        doi:10.1016/j.aorn.2010.04.017
-                    </p>
-                    <p class="reference">
-                    <span id="8">[8]</span> Centres for National excellence: https://www.england.nhs.uk
-                            /2016/09/digital-revolution/
-                    </p>
-                    <p class="reference">
-                    <span id="9">[9]</span> Wachter, R. M. (2016, September 7). Making IT work: Harnessing the power
-                        of health information technology to improve care in England. Retrieved 12, 2016,
-                        from https://www.gov.uk/government
-                        /publications/using-information-technology-to-improve-the-nhs
-                    </p>
-                    <p class="reference">
-                    <span id="10">[10]</span> Standing & Hampson (2015)
-                    </p>
-                    <p class="reference">
-                    <span id="11">[11]</span> Ofcom. (2016). Internet and online content data. Retrieved from
-                        <a href="https://www.ofcom.org.uk/research-and-data/cmr/cmr16/downloads" title="link to Ofcom Data downloads">https://www.ofcom.org.uk/research-and-data/cmr/cmr16/downloads</a>
+                        <em>Association of Operating Room Nurses. AORN Journal, 92</em>(4), 445-57. doi:10.1016/j.aorn.2010.04.017
+                    </span>
+
+                    <span class="reference-two-col">
+                         <span id="12">[12]</span>
+                        Pritchard, M. J. (2009). Identifying and assessing anxiety in pre-operative patients. <em>Nursing Standard, 23</em>(51), 35–40. doi:10.7748/ns2009.08.23.51.35.c7222
+                    </span>
+
+                    <span class="reference-two-col">
+                         <span id="13">[13]</span>
+                        Stickdorn, M. (2011). It is an iterative process. In M. Stickdorn & J. Schneider (Eds.), <em>This is service design thinking: Basics - tools - cases</em> (5th ed.) (pp. 122–135). Amsterdam: Book Industry Services.
+                    </span>
+
+                    <span class="reference-two-col">
+                        <span id="14">[14, 16, & 17]</span>
+                        National Advisory Group on Health Information Technology in England. (2016). Report of the National Advisory Group on <em>Making IT work: Harnessing the power of health information technology to improve care in England.</em> Retrieved 12, 2016, from <a href="https://www.gov.uk/government/publications/using-information-technology-to-improve-the-nhs" title="Link to Making IT work report">https://www.gov.uk/government/publications/using-information-technology-to-improve-the-nhs</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                    <span id="15">[15]</span>
+                        NHS England. (2016, September 7). 12 NHS Hospital trusts to trail blaze NHS’s Digital Revolution. Retrieved January 19, 2017, from NHS England, <a href="https://www.england.nhs.uk/2016/09/digital-revolution/" title="Link to article on NHS England website">https://www.england.nhs.uk/2016/09/digital-revolution/</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                    <span id="18">[18]</span>
+                        Standing & Hampson (2015). <em>Digital health in the UK: An industry study for the Office of Life Sciences</em> (Monitor Deloitte report). Retrieved from GOV.UK website: <a href="https://www.gov.uk/government/publications/digital-health-industry-uk-market-analysis" title="Link to GOV.UK website">https://www.gov.uk/government/publications/digital-health-industry-uk-market-analysis</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                    <span id="19">[19]</span>
+                        T. Fotis provided this biography.
+                    </span>
+
+                    <span class="reference-two-col">
+                    <span id="20">[20]</span>
+                        MacNeill, F. (2016). Our team. Retrieved January 19, 2017, from SenSe research cluster, <a href="http://www.sense-brighton.eu/our-team/macneill/" title="Link to bio on SenSe Research cluster website">http://www.sense-brighton.eu/our-team/macneill/</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                    <span id="21">[21]</span>
+                        Press Association (2016, September 7). NHS to have one website for appointments, prescriptions and advice. <em>The Guardian</em>. Retrieved from <a href="https://www.theguardian.com/society/2016/sep/07/nhs-one-website-appointments-prescriptions-advice" title="Link to article on The Guardian website">https://www.theguardian.com/society/2016/sep/07/nhs-one-website-appointments-prescriptions-advice</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                    <span id="22">[22]</span>
+                        Echo. (2016). About. Retrieved January 20, 2017, from Echo website: <a href="https://www.echo.co.uk/company" title="link to company website">https://www.echo.co.uk/company</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                    <span id="23">[23]</span>
+                        Macneill, F. (2015). Approaching apps for learning, teaching and research. In: Middleton, A., ed. <em>Smart learning: teaching and learning with smartphones and tablets in post compulsory education.</em> Media-Enhanced Learning Special Interest Group and Sheffield Hallam University, Sheffield, UK, pp. 238-264.
+                    </span>
+
+                    <span class="reference-two-col">
+                    <span id="24">[24]</span>
+                        Data Protection Act 1998 (1998). Retrieved from the legislation.gov.uk website: <a href="http://www.legislation.gov.uk/ukpga/1998/29/contents" title="Link to legislation.gov.uk website">http://www.legislation.gov.uk/ukpga/1998/29/contents</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                    <span id="25">[25]</span>
+                        University of Dundee. Caldicott guardian principles. Retrieved January 22, 2017, from University of Dundee’s School of Medicine website: <a href="http://medicine.dundee.ac.uk/caldicott-guardian-principles" title="Link to Caldicott Principles outline">http://medicine.dundee.ac.uk/caldicott-guardian-principles</a>
+                    </span>
+
+                        <span class="reference-two-col">
+                    <span id="26">[26]</span>
+                    <strong>Devices listed.</strong><br></span>
+                    <span class="reference-two-col">Apple. (2016, November 7). Apple watch series 2 - technical
+                            specifications. Retrieved January 22, 2017, from Apple website:
+                    <a href="https://support.apple.com/kb/SP746?locale=en_US" title="Link to Apple website">https://support.apple.com/kb/SP746?locale=en_US</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                            Empatica. (2017). Monitor stress, seizures, activity, sleep.
+                            Retrieved January 22, 2017, from Empatica website:
+                            <a href="https://www.empatica.com/product-embrace" title="Link to Empatica website">https://www.empatica.com/product-embrace</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                            Fitbit. (2017a). Fitbit charge HR™ wireless heart rate + activity
+                            Wristband. Retrieved January 22, 2017, from Fitbit website:
+                            <a href="https://www.fitbit.com/uk/chargehr#specs" title="Link to Fitbit website">https://www.fitbit.com/uk/chargehr#specs</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                            Fitbit. (2017b). Fitbit Surge™ fitness super watch. Retrieved
+                            January 22, 2017, from Fitbit website: <a href="https://www.fitbit.com/uk/surge#specs" title="Link to Fitbit website">https://www.fitbit.com/uk/surge#specs</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                        Garmin. (2016). Vivoactive. Retrieved January 22, 2017, from
+                        Garmin website: <a href="https://buy.garmin.com/en-GB/GB/p/150767#specs" title="Link to Garmin website">https://buy.garmin.com/en-GB/GB/p/150767#specs</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                        Google. (2014). Android wear. Retrieved January 22, 2017, from
+                        Android wear website: <a href="https://www.android.com/intl/en_uk/wear/" title="Link to android wear website">https://www.android.com/intl/en_uk/wear/</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                        Jawbone. (2017). UP3 by jawbone: A smarter activity tracker for
+                        a fitter you. Retrieved January 22, 2017, from Jawbone website: <a href="https://jawbone.com/fitness-tracker/up3" title="Link to Jawbone website">https://jawbone.com/fitness-tracker/up3</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                        Moodmetric. (2014). Simplest solution to measure stress and
+                        recovery. Retrieved January 22, 2017, from Moodmetric website: <a href="http://www.moodmetric.com/" title="Link to Moodmetric website">http://www.moodmetric.com/</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                        Samsung. (2015, July 31). Samsung gear S2 & gear S2 classic:
+                        Specs. Retrieved January 22, 2017, from Samsung website: <a href="http://www.samsung.com/uk/gear-s2/specs/" title="Link to Samsung website">http://www.samsung.com/uk/gear-s2/specs/</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                    <span id="27">[27]</span>
+                    <strong>Devices listed.</strong><br></span>
+                    <span class="reference-two-col">Bellabeat. (2016a). Leaf nature. Retrieved January 22, 2017,
+                        from Bellabeat website: <a href="https://webshop.bellabeat.com/pages/leaf" title="Link to Bellabeat website">https://webshop.bellabeat.com/pages/leaf</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                        Bellabeat. (2016b). Leaf urban. Retrieved January 22, 2017, from Bellabeat website: <a href="https://webshop.bellabeat.com/pages/leaf-urban" title="Link to Bellabeat website">https://webshop.bellabeat.com/pages/leaf-urban</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                        Misfit. (2017, January 17). Misfit shine 2. Retrieved January 22, 2017, from Misfit website: <a href="https://misfit.com/uk_en/products/misfit-shine-2?color=carbon-black#learn-more" title="Link to Misfit website">https://misfit.com/uk_en/products/misfit-shine-2?color=carbon-black#learn-more</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                        Spire. (2017). Spire. Retrieved January 22, 2017, from Spire website: <a href="https://spire.io/products/spire" title="Link to Spire website">https://spire.io/products/spire</a>
+                    </span>
+
+                    <span class="reference-two-col">
+                        Withings. (2017). Pulse Ox. Retrieved January 22, 2017, from Withings website: <a href="http://www.withings.com/uk/en/products/pulse" title="Link to Withings website">http://www.withings.com/uk/en/products/pulse</a>
+                    </span>
                     </p>
                     </div>
         </div>
     </section>
 </main>
 </div>
-</body>
-<footer role="contentinfo" tabindex="32">
-    <div class="col full-width">
-        <h5>Copyright © 2017, Fiona MacNeill. <br>Wearable concept. Copyright © 2017, Theofanis Fotis.</h5>
+<footer>
+    <div class="col full-width" role="contentinfo" aria-label="Site information" tabindex="30">
+        <h4>Copyright © 2017, Fiona MacNeill. <br>Perioperative wearable device concept. Copyright © 2017, Theofanis Fotis.</h4>
     </div>
-    <button class="return-top-button" title="Return to the top of the page">
-        <svg xmlns="http://www.w3.org/2000/svg" width="48" height= "48" viewBox="6 85 110 120"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow-up" transform="translate(100, 100) rotate(90) ">
-        </path>
-        </svg>
-    </button>
 </footer>
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<button class="return-top-button" title="Return to the top of the page" aria-label="return to top of page" role="button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height= "48" viewBox="6 85 110 120"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow-up" transform="translate(100, 100) rotate(90) ">
+    </path>
+    </svg>
+</button>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</body>
 </html>

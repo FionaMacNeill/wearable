@@ -353,7 +353,9 @@ nav a:active {
 /* the image that runs along the bottom of the timeline*/
 .tl_image_lv {
     float: left;
+    overflow: visible;
     position: absolute;
+    height: 70px;
     bottom: -6px;
     left: 31%;
 }
@@ -529,7 +531,7 @@ nav a:active {
 .tl_title {
     z-index: 3;
     margin: 1% auto 0 auto;
-    color: #FFFFFF;
+    color: #1B1B1B;
     text-align: center;
 }
 
@@ -564,7 +566,7 @@ nav a:active {
 /////////////////////*/
 
 
-/*---- 5.1 - Heading level styles ----*/
+/*---- (5.1) - Heading level styles ----*/
 
 h1 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -575,6 +577,11 @@ h1 {
     width: 20%;
     /* This is an important margin and needs to stay in pixels due to header measurements */
     margin: 0 auto 20px;
+}
+
+#site-header a{
+    text-decoration: none;
+    color: #000;
 }
 
 
@@ -599,17 +606,36 @@ h3 {
     line-height: 1.3;
 }
 
-h3.table-title {
+h3.back-title {
     text-align: center;
     margin: 1%;
 }
 
+/* like h3 that lives as a p class in a table */
+.table-title{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-size: 14pt;
+    line-height: 1.3;
+    text-align: center;
+    margin: 1%;
+}
+
+h3.factors{
+    text-align: left;
+}
+
 h4 {
     font-family: Avenir, Helvetica, Arial, sans-serif;
-    text-align: left;
+    text-align: center;
     font-weight: normal;
     font-size: 1.12em;
     line-height: 1.35;
+}
+
+#ref-sz {
+    font-size: 1.17em;
+    line-height: 1.3;
+    font-weight: 600;
 }
 
 h5 {
@@ -644,14 +670,45 @@ p {
 }
 
 .reference {
-    font-size: 0.9em;
+    font-size: 0.8em;
     padding-left: 4em;
     text-indent: -4em;
 }
 
+.reference a, .reference-two-col a {
+    color: #4800c4;
+}
+
+.reference a:visited, .reference-two-col a:visited {
+    color: #41298e;
+}
+
+.reference-two-col{
+    font-size: 0.8em;
+    padding-bottom: 0.3em;
+    white-space: pre-line;
+}
+
+.two-col{
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    -moz-column-gap: 10px;
+    -webkit-column-gap: 10px;
+    column-gap: 10px;
+    margin-top: -1em;
+}
+
 .imagelist {
-    font-size: 0.9em;
-    padding-left: 4em;
+    font-size: 0.8em;
+}
+
+.imagelist a {
+    color: #4800c4;
+}
+
+.imagelist a:visited {
+    color: #41298e;
 }
 
 .caption {
@@ -734,6 +791,16 @@ sub {
     padding: 2% 0 2% 0;
 }
 
+.color-bk-header a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.color-bk-header a:hover {
+    color: #89d8eb;
+    text-decoration: none;
+}
+
 .goal-text {
     font-size: 0.95em;
     margin: 0 0.2em 1em auto;
@@ -793,12 +860,13 @@ label.ac {
 #why-area {
     position: relative;
     overflow: auto;
-    background: #89d8eb;
+    background: #bee9f6;
     margin: 0 5% 2% 5%;
     padding: 2% 7%;
 }
 
 #goals-area {
+    white-space: pre-line;
     position: relative;
     overflow: hidden;
     margin: 2% 5% 1% 5%;
@@ -816,6 +884,29 @@ label.ac {
     background: #FFF;
     border-radius: 100%;
 }
+
+.goal1-img, .goal2-img, .goal3-img {
+    background: url("/fjm19/wearable/img/iconssprite.png") no-repeat;
+}
+
+.goal1-img{
+    height: 80px;
+    width: 80px;
+    background-position: 0 0;
+}
+
+.goal2-img{
+    height: 80px;
+    width: 80px;
+    background-position: 0 -80px;
+}
+
+.goal3-img{
+    height: 80px;
+    width: 80px;
+    background-position: 0 -160px;
+}
+
 
 #technology-area{
     position: relative;
@@ -921,25 +1012,28 @@ label.ac {
     border-radius: 5px;
     position: relative;
     overflow: auto;
-    border: solid 5px rgba(64,95,155, 0.5);
+    border: solid 3px rgba(64,95,155, 0.5);
     margin: 0 5% 5% 5%;
     padding: 2% 5%;
 }
 
-#links-area {
+#links-area, #links-area-inde {
     position: relative;
     overflow: auto;
+    max-width: 52em;
     background: #5B55B9;
     padding: 0.2em 0.5em;
     margin: 0 5%;
 }
 
-#links-bk{
+#links-bk, #links-bk-inde{
     overflow-wrap: break-word;
+    position: relative;
     border-radius: 5px;
+    max-width: 40em;
     background: #c0c8eb;
     padding: 0.2em 1em;
-    margin: 0.5em;
+    margin: 0 auto 1em auto;
 }
 
 /*//////////////////////////////////
@@ -1043,7 +1137,7 @@ label.form-label {
     height: 3em;
 }
 
-/* Used specifically for the field divs in the contact form TO DO */
+/* Used specifically for the field divs in the contact form */
 .minpadding {
     text-align: left;
     margin-right: 0;
@@ -1087,7 +1181,7 @@ select {
 }
 
 #submit:hover{
-    background: #0e12eb;
+    background: #454ee7;
 }
 
 #loading,
@@ -1265,8 +1359,8 @@ This adjustment allows col-5 to span the window width when needed */
 //                                //
 //////////////////////////////////*/
 
-/* For hiding elements that should not be shown in the reader mode (FireFox)
-or when screen readers are used - it is deliberately empty as it is only for labelling */
+/* For hiding elements that should not be shown in the reader mode (FireFox), screen readers and print
+- it is deliberately empty as it is only for labelling */
 
 .invisible {
 }
@@ -1280,7 +1374,7 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 
 /* Desktop first media queries - this will generally be viewed from a desktop in the work environment */
 
-/* larger than Desktop HD */
+
 @media screen and (min-width: 1200px) {
 
     #skip {
@@ -1289,7 +1383,7 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 }
 
 
-/* larger than a desktop */
+
 @media screen and (min-width: 1000px) {
 
     #skip {
@@ -1298,15 +1392,72 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 
 }
 
-/* larger than a tablet */
+
 @media screen and (max-width: 768px) {
+
+
+    body {
+        font-size: 0.875em;
+    }
 
     nav a {
         width: 5.5em;
     }
 
-    body {
-        font-size: 0.875em;
+    .return-top-button {
+        display: none;
+    }
+
+    #tl_arrowkeys{
+        display: none;
+    }
+
+    .tooltip-contain {
+        display: none;
+    }
+
+    /* becomes 1 column for legibility */
+    .two-col{
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+        -moz-column-gap: 10px;
+        -webkit-column-gap: 10px;
+        column-gap: 10px;
+    }
+
+    #links-bk {
+        display: none;
+    }
+
+    .color-bk-header a {
+        color: #FFF;
+        text-decoration: underline;
+    }
+
+    /*Becomes a link to a new page due to size of ref list*/
+    #links-area {
+        height: 50px;
+        margin: 0 5% 2% 5%;
+        -moz-Transition: .2s;
+        -webkit-Transition: .2s;
+        transition: .2s;
+    }
+
+    #links-area-inde {
+        max-width: 40em;
+        margin: 2% 5% 2% 5%;
+        -moz-Transition: .2s;
+        -webkit-Transition: .2s;
+        transition: .2s;
+    }
+
+    #links-bk-inde {
+        max-width: 37em;
+        margin: 2.5%;
+        -moz-Transition: .2s;
+        -webkit-Transition: .2s;
+        transition: .2s;
     }
 
 }
@@ -1325,10 +1476,6 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 
     nav a {
         width: 5em;
-    }
-
-    .return-top-button {
-        display: none;
     }
 
     .timeline-line-end {
@@ -1393,10 +1540,16 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         padding: 2% 2% 2% 3%;
     }
 
+    #contact-area {
+        margin: 0 5.9% 5% 5%;
+    }
 
-    #links-area {
-        margin: 0 5% 2% 5%;
-        padding: 2% 3% 2% 3%;
+    #links-area-inde {
+        max-width: 31em;
+    }
+
+    #links-bk-inde {
+        max-width: 28em;
     }
 
     .col.col-3,
@@ -1420,7 +1573,7 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 
 }
 
-/* larger phone or phablet */
+
 @media screen and (max-width: 470px) {
 
 
@@ -1483,13 +1636,16 @@ or when screen readers are used - it is deliberately empty as it is only for lab
             width: 25em;
         }
 
-
         #factors-bk {
             margin: -1.6em 0.5em 1em 0.5em;
         }
 
-        #contact-area {
-            margin: 0 5% 5% 5%;
+        #links-area-inde {
+            max-width: 28em;
+        }
+
+        #links-bk-inde{
+            max-width: 26em;
         }
 
         .col.col-0,
@@ -1564,6 +1720,14 @@ or when screen readers are used - it is deliberately empty as it is only for lab
             margin: -1.7em 0.5em 1em 0.5em;
         }
 
+        #links-area-inde {
+            max-width: 26em;
+        }
+
+        #links-bk-inde{
+            max-width: 24em;
+        }
+
         #bar_stacked {
             width: 330px;
         }
@@ -1607,25 +1771,282 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         padding: 0;
     }
 
+    #team-area {
+        margin: 0 1% 2% 0;
+        padding: 2% 2% 2% 3%;
+    }
+
     #device-area {
         margin: 0.5em auto 1% auto;
 
     }
 
     #device-factors {
-
         margin: 0 auto 0.5em auto;
         background: #563557;
         border: none;
     }
 
     #factors-bk {
-
         margin: -1.7em 0.5em 1em 0.5em;
     }
 
-    #links-area {
-        margin: 0 2% 2%;
-        padding: 2% auto;
+    #contact-area {
+        margin: 0 1% 5% 0;
+    }
+
+    #links-area-inde {
+        max-width: 22em;
+    }
+
+    #links-bk-inde{
+        max-width: 20em;
+    }
+}
+
+
+/* Device specific media queries for hiding computer specific help information on the
+most prevalent tablet devices in workplace settings for website's intended audience
+ Source: https://css-tricks.com/snippets/css/media-queries-for-standard-devices/ */
+
+/* ----------- iPad mini ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+ {
+
+    #tl_arrowkeys{
+        display: none;
+    }
+
+    .tooltip-contain {
+        display: none;
+    }
+
+    .return-top-button{
+        display: none;
+    }
+
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: portrait)
+ {
+
+    #tl_arrowkeys{
+        display: none;
+    }
+
+    .tooltip-contain {
+        display: none;
+    }
+
+    .return-top-button{
+        display: none;
+    }
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: landscape)
+ {
+
+    #tl_arrowkeys{
+        display: none;
+    }
+
+    .tooltip-contain {
+        display: none;
+    }
+
+    .return-top-button{
+        display: none;
+    }
+}
+
+/* ----------- iPad 1 and 2 ----------- */
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+ {
+
+    #tl_arrowkeys{
+        display: none;
+    }
+
+    .tooltip-contain {
+        display: none;
+    }
+
+    .return-top-button{
+        display: none;
+    }
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: portrait)
+ {
+
+    #tl_arrowkeys {
+        display: none;
+    }
+
+    .tooltip-contain {
+        display: none;
+    }
+
+    .return-top-button {
+        display: none;
+    }
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: landscape)
+ {
+
+    #tl_arrowkeys {
+        display: none;
+    }
+
+    .tooltip-contain {
+        display: none;
+    }
+
+    .return-top-button {
+        display: none;
+    }
+}
+
+/* ----------- iPad 3 and 4 ----------- */
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+ {
+
+    #tl_arrowkeys {
+        display: none;
+    }
+
+    .tooltip-contain {
+        display: none;
+    }
+
+    .return-top-button {
+        display: none;
+    }
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: portrait)
+ {
+
+    #tl_arrowkeys {
+        display: none;
+    }
+
+    .tooltip-contain {
+        display: none;
+    }
+
+    .return-top-button {
+        display: none;
+    }
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: landscape)
+ {
+
+    #tl_arrowkeys {
+        display: none;
+    }
+
+    .tooltip-contain {
+        display: none;
+    }
+
+    .return-top-button {
+        display: none;
+    }
+}
+
+/* ----------- Asus Nexus 7 ----------- */
+
+/* Portrait and Landscape */
+@media screen
+and (device-width: 601px)
+and (device-height: 906px)
+ {
+
+    #tl_arrowkeys {
+        display: none;
+    }
+
+    .tooltip-contain {
+        display: none;
+    }
+
+    .return-top-button {
+        display: none;
+    }
+
+}
+
+/* Portrait */
+@media screen
+and (device-width: 601px)
+and (device-height: 906px)
+and (orientation: portrait) {
+
+    #tl_arrowkeys {
+        display: none;
+    }
+
+    .tooltip-contain {
+        display: none;
+    }
+
+    .return-top-button {
+        display: none;
+    }
+}
+
+/* Landscape */
+@media screen
+and (device-width: 601px)
+and (device-height: 906px)
+and (orientation: landscape) {
+
+    #tl_arrowkeys {
+        display: none;
+    }
+
+    .tooltip-contain {
+        display: none;
+    }
+
+    .return-top-button {
+        display: none;
     }
 }

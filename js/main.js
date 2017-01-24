@@ -5285,8 +5285,7 @@ function drawAnxietyChart() {
             '</strong>, ' + data.getColumnLabel(2) + '&#58; &#32;' + data.getValue(row, 2) + '&#37;' + '<br>' +
         'Datatable row: ' + row + '<br>' +
             ' Out of one hundred and twenty five patients' + '<br>' +
-            ' participating in study on preoperative anxiety' + '<br>' +
-            '(Ebirim & Tobin, 2010). ' +
+            ' participating in study on preoperative anxiety.' +
             '<br>' + '59 Male : 66 Female' + '<br>' + '<strong>' + 'Right-click to exit node view' + '</strong>' + '</span><br>' + '</div>';
     }
 
