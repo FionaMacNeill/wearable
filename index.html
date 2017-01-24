@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" media="screen" href="css/style.css" />
+    <link rel="stylesheet" href="css/print.css" />
 </head>
     <!--
 Website for perioperative wearable device - an interactive site explaining a project
@@ -72,12 +73,12 @@ Copyright (C) 2017  Fiona MacNeill
         <!-- Flickity Carousel HTML init -->
         <div class="carousel"
             data-flickity='{ "cellSelector": ".carousel-cell", "freeScroll": true, "setGallerySize": false }' role="presentation">
-            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel" aria-describedby="slide01">
-                <div class="tl_grid">
+            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel">
+                <div class="tl_grid" id="slide01">
                     <img class="invisible" id="tl_logo" src="img/timeline/uobwhite2.png" alt="University of Brighton logo" aria-hidden="true">
                     <img class="tl_img first-last" src="img/timeline/01hipimg_opt.png" alt="Illustration of hip x-ray">
                     <h2 class="tl_title">A Perioperative Timeline</h2>
-                    <p class="tl_desc" id="slide01">
+                    <p class="tl_desc">
                     This timeline outlines the story of a fictional patient who is preparing for a hip replacement
                     operation. The journey of our patient is used to explore how a wearable device could be introduced
                     to monitor the patient's anxiety prior to the operation.
@@ -86,11 +87,11 @@ Copyright (C) 2017  Fiona MacNeill
                         <div class="tooltiptxt" role="tooltip">Arrow keys can be used for navigation of the timeline</div></div>
                 </div>
             </div>
-            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel" aria-describedby="slide02">
-                <div class="tl_grid">
+            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel">
+                <div class="tl_grid" id="slide02">
                     <img class="tl_img" src="img/timeline/02Woman.png" alt="Illustration of patient (Carol Greenway in the narrative)">
                     <h2 class="tl_title">Patient: Carol Greenway</h2>
-                    <p class="tl_desc" id="slide02">Carol is 58 years old, with a well-established career as a property manager
+                    <p class="tl_desc">Carol is 58 years old, with a well-established career as a property manager
                     and a portfolio of properties across Sussex and Surrey. Her job is important to her and she travels
                     to properties two days a week by car in addition to her normal daily commute. Carol is an
                     enthusiastic runner and has completed several marathons.
@@ -98,22 +99,22 @@ Copyright (C) 2017  Fiona MacNeill
                 </div>
             </div>
             <!-- Anxiety level image that runs along the base of the carousel on displays >470px width -->
-            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel" aria-describedby="slide03">
-                <div class="tl_grid">
+            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel">
+                <div class="tl_grid" id="slide03">
                     <img class="tl_img" src="img/timeline/03Referral.png" alt="Illustration of a doctor's desk">
                     <h2 class="tl_title">Referral to specialist</h2>
-                    <p class="tl_desc" id="slide03">8 months ago, Carol started to experience pain and discomfort in her left hip
+                    <p class="tl_desc">8 months ago, Carol started to experience pain and discomfort in her left hip
                     while running and reported this to her doctor. She attended sports physiotherapy sessions and tried
                     swimming as an alternative to running, but found that the pain increased and the movement in her hip
                     became restricted. Her doctor referred her to a hip replacement specialist.
                     </p>
                 </div>
             </div>
-            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel" aria-describedby="slide04">
-                <div class="tl_grid">
+            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel">
+                <div class="tl_grid" id="slide04">
                     <img class="tl_img" src="img/timeline/04Wearable.png" alt="Illustration of a Wearable device (watch type)">
                     <h2 class="tl_title">Wearable device</h2>
-                    <p class="tl_desc" id="slide04">
+                    <p class="tl_desc">
                     Once Carol's appointment with the specialist is confirmed, she is invited for a follow-up with a
                     nurse at her doctors surgery. The nurse provides an overview of Carol's care plan including the
                     choice to opt-in to the use of a wearable device for monitoring heart rate, breathing and
@@ -123,11 +124,11 @@ Copyright (C) 2017  Fiona MacNeill
                 </div>
                 <img class="tl_image_lv invisible" src="img/anxietylong.svg" alt="A visualisation of the patient's stress levels" height="70px" width="6900px" aria-hidden="true">
             </div>
-            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel" aria-describedby="slide05">
-                <div class="tl_grid">
+            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel">
+                <div class="tl_grid" id="slide05">
                     <img class="tl_img" src="img/timeline/05Specialist.png" alt="Illustration of hands using a tablet device">
                     <h2 class="tl_title">Consultation with specialist</h2>
-                    <p class="tl_desc" id="slide05">
+                    <p class="tl_desc">
                     Carol is examined by the consultant for the hip replacement. She also meets her perioperative nurse,
                     Brian who will monitor her vitals and anxiety levels through the wearable system. Brian asks how
                     Carol is getting on with the wearable device, has she tried the app yet? Carol and Brian agree on
@@ -135,11 +136,11 @@ Copyright (C) 2017  Fiona MacNeill
                     </p>
                 </div>
             </div>
-            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel" aria-describedby="slide06">
-                <div class="tl_grid">
+            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel">
+                <div class="tl_grid" id="slide06">
                     <img class="tl_img" src="img/timeline/06clinic.png" alt="Illustration of a nurse (Brian in the narrative)">
                     <h2 class="tl_title">Pre-operative assessment clinic</h2>
-                    <p class="tl_desc" id="slide06">
+                    <p class="tl_desc">
                     Brian asks Carol to complete the State-Trait Anxiety Inventory.
                     Carol is concerned about the operation and how recovery might affect her work and independence.
                     Brian notes that the wearable system has shown that Carol's anxiety has increased. Brian talks
@@ -148,11 +149,11 @@ Copyright (C) 2017  Fiona MacNeill
                     </p>
                 </div>
             </div>
-            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel" aria-describedby="slide07">
-                <div class="tl_grid">
+            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel">
+                <div class="tl_grid" id="slide07">
                     <img class="tl_img" src="img/timeline/07letter.png" alt="Illustration of a letter received in the mail">
                     <h2 class="tl_title">Letter for date of operation</h2>
-                    <p class="tl_desc" id="slide07">
+                    <p class="tl_desc">
                     Carol receives a letter informing her of the date for her operation; this is both reassuring and
                     worrying. She feels underprepared for the operation and recovery. Brian notices a spike in
                     her vitals and as previously agreed, sends a text message to check-in with her. After a follow-up
@@ -161,11 +162,11 @@ Copyright (C) 2017  Fiona MacNeill
                     </p>
                 </div>
             </div>
-            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel" aria-describedby="slide08">
-                <div class="tl_grid">
+            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel">
+                <div class="tl_grid" id="slide08">
                     <img class="tl_img" id="tl_img_resched" src="img/timeline/08reschedule.png" alt="Illustration of a paper calendar">
                     <h2 class="tl_title" id="tl_title_resched">Outcome 1: Cancellation</h2>
-                    <p class="tl_desc tl_desc_resched" id="slide08">
+                    <p class="tl_desc tl_desc_resched">
                     Due to unforeseen circumstances at the hospital Carol's operation has to be cancelled and rescheduled.
                     Unfortunately, the new date occurs when Carol will be abroad and the only other date is several months
                     away. Carol is concerned about the level of pain that she will experience during the longer
@@ -177,11 +178,11 @@ Copyright (C) 2017  Fiona MacNeill
                     </p>
                 </div>
             </div>
-            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel" aria-describedby="slide09">
-                <div class="tl_grid">
+            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel">
+                <div class="tl_grid" id="slide09">
                     <img class="tl_img" src="img/timeline/09operation.png" alt="Illustration showing close-up of a hospital bed on a ward">
                     <h2 class="tl_title">Day of operation</h2>
-                    <p class="tl_desc" id="slide09">
+                    <p class="tl_desc">
                     Carol feels ready for her operation, although a fire drill at the flats next door the night
                     before causes her additional anxiety. Brian is concerned about Carol's levels and decides to move her
                     operation to be first in the day. This will minimise her waiting time and to allow her daughter to pick
@@ -189,11 +190,11 @@ Copyright (C) 2017  Fiona MacNeill
                     </p>
                 </div>
             </div>
-            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel" aria-describedby="slide10">
-                <div class="tl_grid">
+            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel">
+                <div class="tl_grid" id="slide10">
                     <img class="tl_img first-last" src="img/timeline/10recovery.png" alt="Illustration of tea on a tray in a bed in a home to represent recovery">
                     <h2 class="tl_title">Recovery and device return</h2>
-                    <p class="tl_desc" id="slide10">
+                    <p class="tl_desc">
                     Carol's daughter took time off work to support Carol's recovery and Brian continued to monitor her
                     vitals, contacting her when needed. Initially, Carol was starting to move around too soon, but she
                     could tell from the wearable app that this was contributing to increased heart and breathing rates.
@@ -224,9 +225,9 @@ Copyright (C) 2017  Fiona MacNeill
 
             <div class="col col-4 data_text" tabindex="8">
                 <p class="justify">
-                In 2016, Ofcom reported that 71% of UK adults owned a smartphone<a data-scroll href="#2" class="caption-link"><sup>2</sup></a>.
+                In 2016, Ofcom reported that 71% of UK adults owned a smartphone<a data-scroll href="#2" class="ref"><sup>2</sup></a>.
                 This can be viewed alongside smart watch ownership, which based on Ofcom's sample, are owned by 5% of UK
-                adults<a data-scroll href="#3" class="caption-link"><sup>3</sup></a>. When we look at these statistics
+                adults<a data-scroll href="#3" class="ref"><sup>3</sup></a>. When we look at these statistics
                 in relation to our patient story above, the demographics do not quite match-up. Our patient is 58 years
                 old and according to Ofcom the highest proportion of Smartphone owners are those under 55.
                 This is intentional as our story is designed to pose a question, what will this adult
@@ -241,9 +242,9 @@ Copyright (C) 2017  Fiona MacNeill
         <!----------data visualisation---------->
         <div class="col col-4 data_align" tabindex="-1">
             <div id="bar_stacked" aria-label="A tabular representation of the data from Ofcom (2016) in a stacked chart.">
-                <img src="img/loading.gif" class="load_img invisible" alt="loading image">
+                <img src="img/loading.gif" id="bar" class="load_img invisible" alt="loading image">
             </div>
-        <p class="caption">Source: Ofcom Technology Tracker, H1 2016<a data-scroll href="#11" class="caption-link"><sup>11</sup></a>.
+        <p class="caption">Source: Ofcom Technology Tracker, H1 2016<a data-scroll href="#11" class="ref"><sup>11</sup></a>.
             <br>Base: Adults aged 16+, 16-24 n = 519, 25-34 n = 604, 35-54 n = 1172, 55+ n = 1442</p>
             <p class="callout" id="stat"><strong class="bignumber">43%</strong> <br>of UK Adults look up health
                 information online[#ref]
@@ -273,9 +274,9 @@ Copyright (C) 2017  Fiona MacNeill
             </div>
                 <div class="full-width data_align"  tabindex="-1">
                     <div id="tree_map" aria-label="A tree map showing reasons by percentage for patient anxiety">
-                        <img src="img/loading.gif" class="load_img invisible" alt="loading image">
+                        <img src="img/loading.gif" id="tree" class="load_img invisible" alt="loading image">
                     </div>
-                    <p class="caption" id="tree">Source: add here</p>
+                    <p class="caption" id="tree-src">Source: add here</p>
                 </div>
             <div class="col full-width">
             <ul>
@@ -328,7 +329,7 @@ Copyright (C) 2017  Fiona MacNeill
                     designed to monitor perioperative anxiety. The requirements, accompanying research and recommendations
                     will provide a compelling resource as NHS Trusts move towards the "user-centered" goals put forth
                     in the recent National Advisory Group report, <em>Making IT Work...</em>
-                    <a data-scroll href="#9" class="caption-link"><sup>9</sup></a>.
+                    <a data-scroll href="#9" class="ref"><sup>9</sup></a>.
                     It will also provide user-focused insight for device manufacturers and application developers who
                     wish to create solutions for health contexts.
                 </p>
@@ -343,11 +344,11 @@ Copyright (C) 2017  Fiona MacNeill
             <article role="article" aria-label="technology in health in UK" tabindex="16">
         <p>
             This can also be considered alongside the recent influx of funding
-            announced to establish 12 NHS trusts as global centres of digital excellence<a data-scroll href="#8" class="caption-link"><sup>8</sup></a>.
+            announced to establish 12 NHS trusts as global centres of digital excellence<a data-scroll href="#8" class="ref"><sup>8</sup></a>.
             The funding was announced in the wake of an independent review and report by the National Advisory Group,
             entitled <em>Making IT Work: Harnessing the Power of Health Information Technology to Improve Care in
             England</em>, of the many recommendations outlined in the document the following quote is particularly
-            relevant to this project.<a data-scroll href="#9" class="caption-link"><sup>9</sup></a>
+            relevant to this project.<a data-scroll href="#9" class="ref"><sup>9</sup></a>
         </p>
         <blockquote>
             <cite>"...we endorse giving patients full access to their
@@ -359,10 +360,10 @@ Copyright (C) 2017  Fiona MacNeill
                 measures, and data from other apps) into their
                 electronic record."
             </cite>
-            <p id = "cite">(Wachter, 2016<a data-scroll href="#7" class="caption-link"><sup>7</sup></a>, p. 30).</p><br>
+            <p id = "cite">(Wachter, 2016<a data-scroll href="#7" class="ref"><sup>7</sup></a>, p. 30).</p><br>
         </blockquote>
         <p>
-            With the adoption of both wearable devices and mobile health applications forecast to increase<a data-scroll href="#10" class="caption-link"><sup>10</sup></a>,
+            With the adoption of both wearable devices and mobile health applications forecast to increase<a data-scroll href="#10" class="ref"><sup>10</sup></a>,
             in spite of the significant technical challenges these disruptive technologies present, these trends cannot
             afford to be ignored.
         </p>
@@ -470,7 +471,7 @@ Copyright (C) 2017  Fiona MacNeill
                 <div class="col full-width" id="device-factors">
                     <div class="tab-class">
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 182.9 42" width="12em" height="5em" id="tab">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 182.9 42" width="12em" height="5em" id="tab" class="invisible">
                         <path d="M183 42.2l-16-18.1c-9.8-12.3-18.3-22.6-20.3-23.3 -0.5-0.2-1-0.2-1.6-0.2H5.3c-2.8 0-5 2.2-5 5v36.6H183z" fill="#C0B2C7"></path>
                     </svg>
                 <div id="factors-bk">
@@ -738,7 +739,7 @@ Copyright (C) 2017  Fiona MacNeill
 </div>
 </body>
 <footer role="contentinfo" tabindex="32">
-    <div class="full-width">
+    <div class="col full-width">
         <h5>Copyright © 2017, Fiona MacNeill. <br>Wearable concept. Copyright © 2017, Theofanis Fotis.</h5>
     </div>
     <button class="return-top-button" title="Return to the top of the page">

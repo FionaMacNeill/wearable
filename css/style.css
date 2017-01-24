@@ -647,7 +647,6 @@ p {
     font-size: 0.9em;
     padding-left: 4em;
     text-indent: -4em;
-
 }
 
 .imagelist {
@@ -664,11 +663,6 @@ p {
 .caption#tree {
     margin: 0 auto;
     text-align: center;
-}
-
-.caption-link {
-    color: #4a4bca;
-    text-decoration: none;
 }
 
 .bio-link{
@@ -703,8 +697,14 @@ sup, sub {
     position: relative;
     top: -0.4em;
 }
+
 sub {
     top: 0.4em;
+}
+
+.ref{
+    color: #4a4bca;
+    text-decoration: none;
 }
 
 /*---- (5.3) - call-out styles----*/
@@ -967,10 +967,18 @@ label.ac {
 #tree_map {
     overflow: hidden;
     position: relative;
-    width: 20em;
+    width: 40em;
     height: 20em;
     background: #FFFFFF;
     margin: 2% auto 2% auto;
+}
+
+.load_img#bar {
+    margin-left: 0;
+}
+
+.load_img#tree {
+    margin-left: 40%;
 }
 
 
@@ -1070,16 +1078,16 @@ select {
 #submit {
     width: 100%;
     height: 3em;
-    font-size: 1.05em;
+    font-size: 1.07em;
     border: none;
-    background: #6B7DFF;
+    background: #4C56FF;
     color: #FFF;
     margin-top: 0.5em;
     cursor: pointer;
 }
 
 #submit:hover{
-    background: #4c56ff;
+    background: #0e12eb;
 }
 
 #loading,
@@ -1300,6 +1308,7 @@ or when screen readers are used - it is deliberately empty as it is only for lab
     body {
         font-size: 0.875em;
     }
+
 }
 
 
@@ -1369,6 +1378,10 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         -webkit-Transition: .4s;
         transition: .4s;
         margin: 0.5em 3em 0.5em -0.8em;
+    }
+
+    #tree_map {
+        width: 30em;
     }
 
     .load_img {
@@ -1466,6 +1479,10 @@ or when screen readers are used - it is deliberately empty as it is only for lab
             font-size: 0.814em;
         }
 
+        #tree_map {
+            width: 25em;
+        }
+
 
         #factors-bk {
             margin: -1.6em 0.5em 1em 0.5em;
@@ -1549,6 +1566,10 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 
         #bar_stacked {
             width: 330px;
+        }
+
+        #tree_map {
+            width: 20em;
         }
 }
 
