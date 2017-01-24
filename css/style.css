@@ -46,27 +46,37 @@ Copyright (C) 2017 Fiona MacNeill
 
 /****** TABLE OF CONTENTS
 *
-* 1.0 - Box sizing
-* * 1.1 - Skip link
-* 2.0 - Site header
-* 3.0 - Navigation
-* * 3.1 - Toggle menu for mobile
-* 4.0 - Flickity Carousel for patient timeline
-* * 4.1 - Timeline content
-* * 4.2 - Timeline line and dots
-* * 4.3 - Timeline Information boxes
-* 5.0 - Typography
+* (1.0) - Box sizing
+* * (1.1) - Skip link
+* (2.0) - Site header
+* (3.0) - Navigation
+* * (3.1) - Toggle menu for mobile
+* (4.0) - Flickity Carousel for patient timeline
+* * (4.1) - Timeline content
+* * (4.2) - Timeline line and dots
+* * (4.3) - Timeline information boxes
+* (5.0) - Typography
+* * (5.1) - Heading level styles
+* * (5.2) - p styles
+* * (5.3) - Call-out styles
+* * (5.4) - List and label styles
+* (6.0) - Content sections
+* (7.0) - Data visualisation and table styles
+* (8.0) - Form
+* (9.0) - Grid
+* (10.0) - Accessibility specific
+* (11.0) - Media queries
 
 *******/
 
-/*----- 1.0 - Box sizing -----*/
+/*----- (1.0) - Box sizing -----*/
 
 * {
     box-sizing: border-box;
 }
 
 
-/*---- 1.1 - Skip link ----*/
+/*---- (1.1) - Skip link ----*/
 /* element hidden offscreen until tabbed to for those who use screen readers and keyboard nav */
 /* Does not show in Firefox 50+ or Safari but operates as part of the tab-index, will be visible to Chrome users */
 /* referred to http://webaim.org/techniques/css/invisiblecontent/ */
@@ -74,16 +84,17 @@ Copyright (C) 2017 Fiona MacNeill
 #skip {
     position: absolute;
     top: -20em;
-    margin-left: 15em;
     padding: 4.5em;
+    margin-left: 20%;
 }
 
 #skip a {
     position: absolute;
-    left: 0;
+    left: 30%;
     right: 0;
     top: auto;
-    background: #ececec;
+    font-size: 1em;
+    background: #ECECEC;
 
 }
 
@@ -91,7 +102,7 @@ Copyright (C) 2017 Fiona MacNeill
     top: 20em;
 }
 
-/*---- 2.0 - Site header ----*/
+/*---- (2.0) - Site header ----*/
 /* site-header height adjustment is turned on/off by the menu toggle in section 3.1 */
 
 .site-header {
@@ -106,7 +117,7 @@ Copyright (C) 2017 Fiona MacNeill
 
 }
 
-/*---- 3.0 - Navigation ----*/
+/*---- (3.0) - Navigation ----*/
 
 nav {
     z-index: 4;
@@ -150,7 +161,7 @@ nav a:active {
 }
 
 
-/*---- 3.1 - Toggle menu button for mobile ----*/
+/*---- (3.1) - Toggle menu button for mobile ----*/
 
 #menu-btn {
     display: none;
@@ -175,7 +186,7 @@ nav a:active {
     transition: .4s;
 }
 
-/*---- 3.2 - Return to top button ----*/
+/*---- (3.2) - Return to top button ----*/
 
 .return-top-button {
     display: block;
@@ -210,7 +221,7 @@ nav a:active {
 
 /*/////////////////////////////////////////////////
 //                                               //
-//  4.0 Flickity Carousel for patient timeline   //
+// (4.0) Flickity Carousel for patient timeline  //
 //                                               //
 /////////////////////////////////////////////////*/
 
@@ -326,7 +337,7 @@ nav a:active {
     color: #333333;
 }
 
-/*---- 4.1 - Main carousel content ----*/
+/*---- (4.1) - Main carousel content ----*/
 
 
 .carousel {
@@ -347,7 +358,7 @@ nav a:active {
     left: 31%;
 }
 
-/* ---- 4.2 - Timeline line and dots [Custom styles] ----*/
+/* ---- (4.2) - Timeline line and dots [Custom styles] ----*/
 
 .timeline-line-end {
     z-index: 1;
@@ -361,7 +372,6 @@ nav a:active {
     left: 0;
     padding: 0;
     margin: 0;
-
 }
 
 
@@ -384,7 +394,6 @@ nav a:active {
     padding: 0;
 }
 
-
 .flickity-rtl .hidden {
     direction: rtl;
 }
@@ -401,7 +410,6 @@ nav a:active {
     cursor: pointer;
     counter-increment: flickity-page-dots;
 }
-
 
 .dot::before {
     display: block;
@@ -424,7 +432,7 @@ nav a:active {
 
 
 
-/*---- 4.3 - Timeline Information boxes ----*/
+/*---- (4.3) - Timeline information boxes ----*/
 
 
 /* This timeline is inspired by https://duckduckgo.com/about and uses Flickity.js
@@ -433,7 +441,7 @@ nav a:active {
 
 
 .tl_grid {
-    z-index: 4;
+    z-index: 1;
     position: absolute;
     height: 80%;
     width: 100%;
@@ -442,27 +450,30 @@ nav a:active {
 }
 
 .tl_img {
-    z-index: 1;
+    z-index: 2;
     position: relative;
     margin: 3% auto 0 auto;
     display: block;
     height: 100px;
     width: 100px;
     border-radius: 100%;
-    background: #FFFFFF;
+    background: #FFF;
 }
 
 #tl_img_resched {
-    margin-right: 80%;
+    z-index: 2;
+    margin-left: 75%;
 }
 
 /* first and last timeline images need black backgrounds not white
- pseudo selectors do not work within the carousel*/
+ pseudo selectors do not work within the carousel as they are all first children*/
+
 .first-last {
-    background: #000000;
+    background: #000;
 }
 
-.tl_logo {
+
+#tl_logo {
     z-index: auto;
     display: block;
     height: 2.5em;
@@ -470,26 +481,73 @@ nav a:active {
     margin: 6px auto 5px 20px;
 }
 
+#tl_arrowkeys{
+    position: absolute;
+    opacity: 0.6;
+}
+
+/* tooltip based on tutorial from: http://www.w3schools.com/css/css_tooltip.asp */
+
+.tooltip-contain {
+    position: absolute;
+    display: inline-block;
+    right: 20px;
+    top: 10px;
+    opacity: 0.9;
+}
+
+.tooltiptxt {
+    visibility: hidden;
+    width: 120px;
+    text-align: center;
+    font-size: 0.7em;
+    background: #33457E;
+    color: #fff;
+    border-radius: 6px;
+    padding: 2%;
+    margin: 70px 4px 0 4px;
+}
+
+.tooltip-contain:hover .tooltiptxt {
+    visibility: visible;
+}
+
+.tooltip-contain:hover, #tl_arrowkeys:hover{
+    opacity: 0.9;
+}
+
+.tooltip-contain .tooltiptxt::after{
+    content: " ";
+    position: absolute;
+    bottom: 45%;
+    left: 50%;
+    margin-left: -5px;
+    border: 5px solid;
+    border-color: transparent transparent #33457E transparent;
+}
+
 .tl_title {
+    z-index: 3;
     margin: 1% auto 0 auto;
     color: #FFFFFF;
     text-align: center;
 }
 
 #tl_title_resched {
+    z-index: 3;
     margin-top: -3em;
-    width: 80%;
+    width: 70%;
 }
 
 .tl_desc {
-    z-index: 2;
+    z-index: 4;
     position: relative;
     width: 70%;
     font-size: 1em;
     line-height: 1.3;
     text-align: justify;
     border-radius: 2px;
-    background: rgba(194, 206, 255, 0.8);
+    background: #AFC1FD;
     margin: 1% auto;
     padding: 1%;
 }
@@ -501,10 +559,12 @@ nav a:active {
 
 /*/////////////////////
 //                   //
-//  5.0 Typography   //
+// (5.0) Typography  //
 //                   //
 /////////////////////*/
 
+
+/*---- 5.1 - Heading level styles ----*/
 
 h1 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -526,11 +586,22 @@ h2 {
     font-weight: 300;
 }
 
+h2.tl_title {
+    font-size: 1.4em;
+    line-height: 1;
+    font-weight: normal;
+}
+
 
 h3 {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     font-size: 1.17em;
     line-height: 1.3;
+}
+
+h3.table-title {
+    text-align: center;
+    margin: 1%;
 }
 
 h4 {
@@ -562,14 +633,15 @@ body {
     color: #333333;
 }
 
+
+/*---- (5.2) - p styles----*/
+
 p {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: left;
     font-size: 1.05em;
     line-height: 1.48;
 }
-
-/* p classes and ids*/
 
 .reference {
     font-size: 0.9em;
@@ -589,18 +661,15 @@ p {
     text-align: left;
 }
 
+.caption#tree {
+    margin: 0 auto;
+    text-align: center;
+}
+
 .caption-link {
     color: #4a4bca;
     text-decoration: none;
 }
-
-/* strong class */
-
-.bignumber{
-    font-size: 3.5em;
-    color: #6B7DFF;
-}
-
 
 .bio-link{
     font-size: 0.9em;
@@ -619,6 +688,13 @@ blockquote{
     text-align: right;
 }
 
+/* strong class */
+
+.bignumber{
+    font-size: 3.5em;
+    color: #6B7DFF;
+}
+
 /* Code snippet for fixing line-height when using superscript
 from https://css-tricks.com/snippets/css/prevent-superscripts-and-subscripts-from-affecting-line-height/ */
 
@@ -631,7 +707,7 @@ sub {
     top: 0.4em;
 }
 
-/* callout classes */
+/*---- (5.3) - call-out styles----*/
 
 .callout {
     font-family: "Optima", "Trebuchet MS", serif;
@@ -645,12 +721,12 @@ sub {
     margin: 10% 0 4% 0;
 }
 
-#stat{
+#stat {
     text-align: right;
     border-right: 3px solid #333333;
 }
 
-.color-bk-header{
+.color-bk-header {
     width: 100%;
     text-align: center;
     color: #FFF;
@@ -658,16 +734,18 @@ sub {
     padding: 2% 0 2% 0;
 }
 
-.goal-text{
+.goal-text {
     font-size: 0.95em;
     margin: 0 0.2em 1em auto;
+
 }
 
-.device-desc{
+.device-desc {
     text-align: left;
+    white-space: pre-line;
 }
 
-/* list classes */
+/*---- (5.4) - list and label styles ----*/
 
 
 ul {
@@ -681,31 +759,34 @@ li {
     margin: 0.9em auto 0 auto;
 }
 
-li:first-child{
+li:first-child {
     margin-top: 0;
+}
+
+label.ac {
+    padding: 0 2%;
 }
 
 
 /*////////////////////////////
 //                          //
-//     Content Sections     //
+//  (6.0) Content Sections  //
 //                          //
 ////////////////////////////*/
 
 
 #about-area {
-    /* top | right | bottom | left*/
-    margin: 1% auto 0 auto;
-    padding: 0 5% 2% 5%;
     position: relative;
     overflow: auto;
     background: #FFFFFF;
     -moz-Transition: .4s;
     -webkit-Transition: .4s;
     transition: .4s;
+    margin: 1% auto 0 auto;
+    padding: 0 5% 2% 5%;
 }
 
-#data_text{
+.data_text{
     margin-right: 7%;
 }
 
@@ -725,7 +806,6 @@ li:first-child{
 
 .goals{
     background: #d6e1ff;
-    border: none;
 }
 
 .goal-img {
@@ -760,13 +840,12 @@ li:first-child{
 }
 
 .team-photo {
-    float: right;
-    margin: 3% auto 1% 2%;
+    float: left;
+    margin: 7% 4% 2% 0;
 }
 
 #device-area {
     position: relative;
-    overflow: auto;
     border-radius: 5px;
     margin: 0 5% 2% 5%;
     padding: 2% 0 0 0;
@@ -779,25 +858,12 @@ li:first-child{
 }
 
 /* Used pixel values here as they had to be set and not responsive */
-.tab-container{
-    z-index: 1;
-    transform: skewX(40deg);
-    position: relative;
-    display: block;
-    float: left;
-    background: #C0B2C7;
-    padding: 0.5em;
-    width: 50px;
-    height: 60px;
-    border-radius: 5px;
-    margin: 0.8em 150px auto 130px;
-}
 
 .tab-class::before{
     content: "UX Factors";
     color: #333333;
     font-weight: 400;
-    font-size: 1.5em;
+    font-size: 1.3em;
     line-height: 1;
 }
 
@@ -805,29 +871,51 @@ li:first-child{
     z-index: 2;
     position: absolute;
     display: block;
-    float: left;
-    background: #C0B2C7;
-    width: 140px;
-    height: 60px;
-    border-radius: 5px;
-    margin: 0.8em 15em auto 0.5em;
-    padding: 0.5em;
+    width: 10em;
+    height: 4em;
+    margin: 1.5em auto;
+    padding: 0.4em;
+}
+
+#tab{
+    z-index: 3;
+    bottom: 0;
+    margin: 0 90% 0 10px;
 }
 
 #factors-bk {
     position: relative;
     background: #C0B2C7;
     border-radius: 5px;
-    margin: 3.5em auto 1em auto;
+    border-top: solid 1px #563557;
+    margin: -1.5em auto 1em auto;
     padding: 0.2em 1em;
 }
-
 
 #wear-intro {
     background: #C0B2C7;
     border: none;
     margin: 0 auto 1% auto;
 }
+
+.device-wrist, .device-clip {
+    background: url("/fjm19/wearable/img/devicediagrams.png") no-repeat;
+    border: solid 2px #333;
+    margin: 0 auto 2% auto;
+}
+
+.device-wrist{
+    height: 162px;
+    width: 200px;
+    background-position: 0 0;
+}
+
+.device-clip {
+    height: 162px;
+    width: 200px;
+    background-position: 0 -162px;
+}
+
 
 #contact-area {
     border-radius: 5px;
@@ -843,11 +931,11 @@ li:first-child{
     overflow: auto;
     background: #5B55B9;
     padding: 0.2em 0.5em;
-    margin: 0;
+    margin: 0 5%;
 }
 
 #links-bk{
-    overflow: auto;
+    overflow-wrap: break-word;
     border-radius: 5px;
     background: #c0c8eb;
     padding: 0.2em 1em;
@@ -856,12 +944,13 @@ li:first-child{
 
 /*//////////////////////////////////
 //                                //
-//       Data Visualisation       //
+//   (7.0) Data visualisation     //
+//         & table styles         //
 //                                //
 //////////////////////////////////*/
 
 
-#data_align {
+.data_align {
     padding-top: 1.35em;
     border-radius: 0;
 }
@@ -875,110 +964,150 @@ li:first-child{
     cursor: pointer;
 }
 
-#load_img {
-    margin-top: 5em;
-}
-
-
-/*//////////////////////////////////
-//                                //
-//        Accordion element       //
-//       Uses CSS3 Checkboxes     //
-//                                //
-//////////////////////////////////*/
-
-/* CSS based on Accordion with CSS3 by Mary Lou. Source: https://tympanus.net/codrops/2012/02/21/accordion-with-css3 */
-
-.ac-container{
-    margin: 10px auto 30px auto;
-}
-
-.ac-container label{
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-align: left;
-    position: relative;
-    z-index: 20;
-    display: block;
-    height: 30px;
-    cursor: pointer;
-    color: #333333;
-    padding: 0.5em auto 0.5em auto;
-    text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
-    line-height: 33px;
-    background: linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-    box-shadow:
-            0 0 0 1px rgba(155,155,155,0.3),
-            1px 0 0 0 rgba(255,255,255,0.9) inset,
-            0 2px 2px rgba(0,0,0,0.1);
-}
-
-.ac-container label:hover{
-    background: #fff;
-}
-
-
-.ac-container input:checked + label,
-.ac-container input:checked + label:hover{
-    background: #c6e1ec;
-    color: #3d7489;
-    text-shadow: 0 1px 1px rgba(255,255,255, 0.6);
-    box-shadow:
-            0 0 0 1px rgba(155,155,155,0.3),
-            0 2px 2px rgba(0,0,0,0.1);
-}
-
-.ac-container label:hover:after,
-.ac-container input:checked + label:hover:after{
-    content: '';
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    right: 13px;
-    top: 7px;
-    /*background: transparent url(../images/arrow_down.png) no-repeat center center;*/
-}
-
-.ac-container input:checked + label:hover:after{
-    /*background-image: url(../images/arrow_up.png);*/
-}
-
-
-.ac-container input{
-    display: none;
-}
-
-.ac-container article{
-    background: rgba(255, 255, 255, 0.5);
-    margin-top: -1px;
+#tree_map {
     overflow: hidden;
-    height: 0;
     position: relative;
-    z-index: 10;
-    transition:
-            height 0.3s ease-in-out,
-            box-shadow 0.6s linear;
-}
-.ac-container input:checked ~ article{
-    transition:
-            height 0.5s ease-in-out,
-            box-shadow 0.1s linear;
-    box-shadow: 0 0 0 1px rgba(155,155,155,0.3);
+    width: 20em;
+    height: 20em;
+    background: #FFFFFF;
+    margin: 2% auto 2% auto;
 }
 
-.ac-container input:checked ~ article.ac-small{
-    height: 140px;
+
+table {
+    top: 0;
+    border-collapse: collapse;
+    width: 100%;
 }
-.ac-container input:checked ~ article.ac-medium{
-    height: 180px;
+
+td, th {
+    padding: 2%;
+    text-align: left;
 }
-.ac-container input:checked ~ article.ac-large{
-    height: 220px;
+
+th {
+    background-color: #c5b8c7;
+}
+
+.table-head {
+    background: #d6ddf7;
+}
+
+
+
+/*//////////////////
+//                //
+//  (8.0) Form    //
+//                //
+//////////////////*/
+
+
+button {
+    margin: 1% auto 1% 1%;
+    font-size: 1em;
+    border-radius: 5px;
+    background: #CCC;
+}
+
+#contact_form {
+    display: block;
+}
+
+legend {
+    text-align: center;
+}
+
+fieldset {
+    border: 0;
+}
+
+label.form-label {
+    margin-bottom: 3px;
+    text-align: left;
+    display: block;
+    font-weight: 600;
+    position: relative;
+}
+
+/* short hand for styling form elements to take up full width of containing grid column */
+.i-full-width {
+    width: 100%;
+    height: 3em;
+}
+
+/* Used specifically for the field divs in the contact form TO DO */
+.minpadding {
+    text-align: left;
+    margin-right: 0;
+    padding: 1% 0 1% 0;
+}
+
+input {
+    border-radius: 5px;
+    border: solid 1px #405F9B;
+    padding: 0 2%;
+    font-size: 1.02em;
+}
+
+textarea,
+select {
+    border-radius: 5px;
+    border: solid 1px #405F9B;
+    padding: 1% 1%;
+    font-size: 1.02em;
+}
+
+#subject {
+    background: #FFF;
+}
+
+
+#message {
+    height: 8em;
+    text-align: start;
+}
+
+#submit {
+    width: 100%;
+    height: 3em;
+    font-size: 1.05em;
+    border: none;
+    background: #6B7DFF;
+    color: #FFF;
+    margin-top: 0.5em;
+    cursor: pointer;
+}
+
+#submit:hover{
+    background: #4c56ff;
+}
+
+#loading,
+#confirmation,
+#errmessage {
+    display: none;
+    text-align: center;
+    padding-top: 10em;
+}
+
+#errmessage h3 {
+    color: #ff5134;
+}
+
+.hint {
+    display: none;
+    color: #ff5134;
+}
+
+.hint_focus:focus{
+    display: none;
+    outline: 1px solid #ff5134;
 }
 
 
 /*///////////////
 //             //
-//     Grid    //
+// (9.0) Grid //
 //             //
 ///////////////*/
 
@@ -1029,7 +1158,7 @@ http://itsuite.it.brighton.ac.uk/fjm19/idm18journal/index.php/gridlandish/ */
 /* Styling for free standing columns */
 .free-columns {
     margin: 1% auto 2% auto;
-    border: solid 2px #EEEEEE;
+    border: solid 3px #CCC;
     padding: 2%;
     border-radius: 5px;
 }
@@ -1067,6 +1196,10 @@ http://itsuite.it.brighton.ac.uk/fjm19/idm18journal/index.php/gridlandish/ */
     margin-right: 0;
 }
 
+.col.col-4.list{
+    margin: -0.4em 0 1em 0;
+}
+
 .bios {
     padding: 2%;
     background: #c0c8eb;
@@ -1075,19 +1208,28 @@ http://itsuite.it.brighton.ac.uk/fjm19/idm18journal/index.php/gridlandish/ */
     border-radius: 5px;
 }
 
-.col.col-4.bios:first-child,
- .col.col-4.bios:last-child {
+.col.col-4.bios:first-child {
     margin-left: 2%;
+}
+
+.col.col-4.bios:last-child {
+    margin-right: 2%;
+}
+
+.col.col-4.minpadding:first-child {
+    margin-left: 1%;
+}
+
+.col.col-4.minpadding:nth-child(2) {
+    margin-right: 1%;
 }
 
 #device-blurb {
     padding: 1% 2%;
 }
 
-.device-img {
-    overflow: auto;
-    border: solid 2px #EEEEEE;
-    padding: 0;
+#email-entry {
+    text-align: left;
 }
 
 /* col-5 and derivatives */
@@ -1097,11 +1239,10 @@ http://itsuite.it.brighton.ac.uk/fjm19/idm18journal/index.php/gridlandish/ */
 }
 
 /* Is used for certain children/descendants of col-5 - this is important as the max-width is 1000px not 945px
-This adjustment allows col-5 to span the space when needed */
+This adjustment allows col-5 to span the window width when needed */
 
 .full-width {
     width: 100%;
-    /* top | right | bottom | left */
     margin: 0 auto 1% auto;
     padding: 0 2% 0 2%;
 }
@@ -1110,117 +1251,9 @@ This adjustment allows col-5 to span the space when needed */
     padding-left: 0.5em;
 }
 
-/*////////////////////////////
-//                          //
-//     Buttons & Forms      //
-//                          //
-////////////////////////////*/
-
-
-button {
-    /* top | right | bottom | left*/
-    margin: 1% auto 1% 1%;
-    font-size: 16px;
-    border-radius: 5px;
-    background: #CCC;
-}
-
-#contact_form {
-    display: block;
-}
-
-legend {
-    text-align: center;
-}
-
-fieldset {
-    border: 0;
-}
-
-label.form-label {
-    margin-bottom: 3px;
-    text-align: left;
-    display: block;
-    font-weight: 600;
-    position: relative;
-}
-
-/* short hand for styling form elements to take up full width of containing grid column */
-.i-full-width {
-    width: 100%;
-    height: 3em;
-}
-
-/* Used specifically for the field divs in the contact form */
-.minpadding {
-    text-align: left;
-    margin-right: 0;
-    padding: 1% 0 1% 0;
-}
-
-input {
-    border-radius: 5px;
-    border: solid 1px #405F9B;
-}
-
-textarea {
-    border-radius: 5px;
-    border: solid 1px #405F9B;
-}
-
-#subject-entry {
-    margin-right: 0;
-}
-
-#subject {
-    background: #FFF;
-}
-
-#message {
-    height: 8em;
-    text-align: start;
-}
-
-#submit {
-    width: 100%;
-    height: 3em;
-    font-size: 1.05em;
-    border: none;
-    background: #6B7DFF;
-    color: #FFF;
-    margin-top: 0.5em;
-    cursor: pointer;
-}
-
-#submit:hover{
-    background: #4c56ff;
-}
-
-#loading,
-#confirmation,
-#errmessage {
-    display: none;
-    text-align: center;
-    padding-top: 10em;
-}
-
-#errmessage h3 {
-    color: #ff5134;
-}
-
-.hint {
-    display: none;
-    color: #ff5134;
-}
-
-.hint_focus:focus{
-    display: none;
-    outline: 1px solid #ff5134;
-}
-
 /*//////////////////////////////////
 //                                //
-//     Accessibility specific     //
+// (10.0) Accessibility specific  //
 //                                //
 //////////////////////////////////*/
 
@@ -1231,22 +1264,29 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 }
 
 
-/*//////////////////////////////////
-//                                //
-//         Media Queries          //
-//                                //
-//////////////////////////////////*/
+/*//////////////////////////
+//                        //
+// (11.0) Media queries   //
+//                        //
+//////////////////////////*/
 
 /* Desktop first media queries - this will generally be viewed from a desktop in the work environment */
 
 /* larger than Desktop HD */
 @media screen and (min-width: 1200px) {
 
+    #skip {
+        margin-left: 35%;
+    }
 }
 
 
 /* larger than a desktop */
 @media screen and (min-width: 1000px) {
+
+    #skip {
+        margin-left: 30%;
+    }
 
 }
 
@@ -1260,12 +1300,15 @@ or when screen readers are used - it is deliberately empty as it is only for lab
     body {
         font-size: 0.875em;
     }
-
 }
 
 
 /* Correct menu overlap on responsive display */
 @media screen and (max-width: 580px) {
+
+    #skip {
+        display: none;
+    }
 
     nav li {
         font-size: 1em;
@@ -1273,30 +1316,6 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 
     nav a {
         width: 5em;
-    }
-
-    h1 {
-        font-size: 1.6em;
-        margin-top: 3px;
-    }
-
-    .tl_title {
-        /* top | right | bottom | left */
-        margin: 2% 5% 2% 5%;
-    }
-
-    .tl_img {
-        /* top | right | bottom | left*/
-        margin: 5% auto 2% auto;
-        height: 80px;
-        width: 80px;
-    }
-
-    .tl_desc {
-        /* top | right | bottom | left */
-        margin: 2% 10% 0 15%;
-        width: 70%;
-        font-size: 1em;
     }
 
     .return-top-button {
@@ -1307,46 +1326,83 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         display: none;
     }
 
+    .tl_title {
+        margin: 2% 5% 2% 5%;
+    }
+
+    .tl_img {
+        height: 80px;
+        width: 80px;
+        margin: 5% auto 2% auto;
+    }
+
+    .tl_desc {
+        width: 70%;
+        font-size: 1em;
+        margin: 2% 10% 0 15%;
+    }
 
     .dot {
         display: none;
     }
 
+    .tooltip-contain{
+        display: none;
+    }
+
+    h1 {
+        font-size: 1.6em;
+        margin-top: 3px;
+    }
+
     #about-area {
-        margin: -7em -0.01em auto -0.01em;
         padding-top: 1em;
         -moz-Transition: .4s;
         -webkit-Transition: .4s;
         transition: .4s;
+        /* ems here due to negative decimals */
+        margin: -7em -0.05em auto -0.05em;
     }
 
-    #data_align {
-        /* top | right | bottom | left */
-        margin: 0.5em 3em 0.5em -0.8em;
+    .data_align {
         -moz-Transition: .4s;
         -webkit-Transition: .4s;
         transition: .4s;
+        margin: 0.5em 3em 0.5em -0.8em;
+    }
+
+    .load_img {
+        margin-left: 5%;
     }
 
     #team-area {
-        /* top | right | bottom | left*/
-        margin: 0 5% 2% 5%;
-        padding: 2% 3% 2% 3%;
+        margin: 0 6% 2% 5%;
+        padding: 2% 2% 2% 3%;
     }
+
 
     #links-area {
-        /* top | right | bottom | left*/
         margin: 0 5% 2% 5%;
         padding: 2% 3% 2% 3%;
     }
 
+    .col.col-3,
     .col.col-4,
     .col.col-5,
-    .col.full-width {
+    .col.full-width,
+    .col.col-9.later{
         float: none;
         width: 99%;
         margin-right: 0;
         margin-left: 0;
+    }
+
+    .col.col-4.bios:first-child {
+        margin: 2% 0 2%;
+    }
+
+    .col.col-4.bios:last-child {
+        margin: 2% 0 2%;
     }
 
 }
@@ -1354,30 +1410,21 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 /* larger phone or phablet */
 @media screen and (max-width: 470px) {
 
-        h1{
-            font-size: 1.5em;
-            margin-top: 3px;
-        }
 
-        #menu-btn{
+        #menu-btn {
             display: inline-block;
         }
 
         .menu-active {
-            height: 18.1em;
+            height: 18.3em;
             -moz-Transition: .4s;
             -webkit-Transition: .4s;
             transition: .4s;
         }
 
-        nav{
+        nav {
             float: none;
         }
-
-        nav ul{
-
-        }
-
 
         nav li {
             display: inline-block;
@@ -1388,7 +1435,7 @@ or when screen readers are used - it is deliberately empty as it is only for lab
             background: #0066B9;
         }
 
-        nav a{
+        nav a {
             display: inline-block;
             font-size: 16px;
             width: 100%;
@@ -1405,19 +1452,27 @@ or when screen readers are used - it is deliberately empty as it is only for lab
             background: #003057;
         }
 
-
         /* The anxiety level graphic */
         .tl_image_lv {
             display: none;
         }
 
+        h1{
+            font-size: 1.5em;
+            margin-top: 3px;
+        }
 
         body {
             font-size: 0.814em;
         }
 
-        .row-align {
 
+        #factors-bk {
+            margin: -1.6em 0.5em 1em 0.5em;
+        }
+
+        #contact-area {
+            margin: 0 5% 5% 5%;
         }
 
         .col.col-0,
@@ -1425,37 +1480,10 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         .col.col-2,
         .col.col-3,
         .col.col-4,
-        .col.col-5,
-        .col.col-6.later,
-        .col.col-7.later,
-        .col.col-8.later,
-        .col.col-9.later,
-        .col.col-10.later,
-        .col.col-11.later,
-        .col.col-12.later,
-        .col.device-img {
+        .col.col-5 {
             float: none;
             width: 99%;
-            /* top | right | bottom | left */
             margin: 1em 0 1em 0;
-        }
-
-        .about-area {
-            /* top | right | bottom | left */
-            margin: 10% auto 2% auto;
-
-        }
-
-        .free-header{
-            /* top | right | bottom | left */
-            margin: 0 auto 5% auto;
-            padding: 2% 0 2% 4%;
-        }
-
-        .on-color-text {
-            /* top | right | bottom | left */
-            margin: auto 2% 2% 0;
-
         }
 
 
@@ -1465,15 +1493,10 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 @media screen and (max-width: 414px) {
 
         .menu-active {
-            height: 19.5em;
+            height: 19.7em;
             -moz-Transition: .4s;
             -webkit-Transition: .4s;
             transition: .4s;
-        }
-
-        body {
-            font-size: 0.750em;
-            line-height: 1.6;
         }
 
         .flickity-prev-next-button {
@@ -1482,70 +1505,50 @@ or when screen readers are used - it is deliberately empty as it is only for lab
             -moz-Transition: .4s;
             -webkit-Transition: .4s;
             transition: .4s;
-
         }
 
         .tl_grid {
-            /* top | right | bottom | left */
             margin: 5% auto 10% auto;
             height: 80%;
-
         }
 
         .tl_img {
-            /* top | right | bottom | left*/
             margin: 2% auto 5% auto;
             height: 80px;
             width: 80px;
         }
 
-        .tl_logo {
+        #tl_logo {
             margin-top: 1%;
             height: 2em;
             width: 7em;
         }
 
         .tl_title {
-            /* top | right | bottom | left */
+
             margin: 2% 5% 5% 5%;
             padding: 0 5% 0 5%;
             font-size: 16px;
         }
 
         .tl_desc {
-            /* top | right | bottom | left */
+
             margin: 5% 5% 0 5%;
             padding: 1% 1% 1% 1%;
             width: 90%;
         }
 
-
-        .bk {
-            background: #c2ceff;
+        body {
+            font-size: 0.750em;
+            line-height: 1.6;
         }
 
-
-        .about-area {
-            /* top | right | bottom | left */
-            margin: 0 auto 2% auto;
-        }
-
-        .free-header {
-            /* top | right | bottom | left */
-            margin: 0 auto 5% auto;
-            padding: 2% 0 2% 4%;
+        #factors-bk {
+            margin: -1.7em 0.5em 1em 0.5em;
         }
 
         #bar_stacked {
             width: 330px;
-        }
-
-        .tab-container {
-            height: 40px;
-        }
-
-        .tab-class {
-            height: 40px;
         }
 }
 
@@ -1554,11 +1557,29 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 /* larger than a mobile phone */
 @media screen and (max-width: 320px){
 
+
+    #tl_img_resched {
+        margin-left: 70%;
+    }
+
+    .tl_title#outcome2 {
+        margin-bottom: 2%;
+    }
+
+    .tl_desc_resched#outcome2desc {
+        margin-top: 1%;
+    }
+
     #bar_stacked {
         width: 280px;
     }
 
-    #data_align {
+    /* Legibility is affected by justifcation at this size of screen */
+    .justify {
+        text-align: left;
+    }
+
+    .data_align {
         margin-left: -0.8em;
         width: 99%;
         border: none;
@@ -1571,38 +1592,19 @@ or when screen readers are used - it is deliberately empty as it is only for lab
     }
 
     #device-factors {
-        /* top | right | bottom | left */
+
         margin: 0 auto 0.5em auto;
         background: #563557;
         border: none;
     }
 
     #factors-bk {
-        /* top | right | bottom | left */
-        margin: 0.5em 0.5em 1em 0.5em;
-    }
 
-    .tab-container {
-       display: none;
-    }
-
-    .tab-class::before {
-        display: none;
-    }
-
-    .tab-class {
-        display: none;
+        margin: -1.7em 0.5em 1em 0.5em;
     }
 
     #links-area {
         margin: 0 2% 2%;
         padding: 2% auto;
     }
-
-    .links-bk {
-        margin: 2%;
-        padding: 2%;
-    }
-
-
 }
