@@ -64,12 +64,11 @@ function init() {
 window.addEventListener("load", chartLoad);
 
 function chartLoad() {
-    google.charts.load('current', {packages: ['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
+    google.charts.load('current', {packages: ['corechart', 'treemap']});
+    google.charts.setOnLoadCallback(drawOfcomChart);
+    google.charts.setOnLoadCallback(drawAnxietyChart);
+
 }
-
-
-
 
 /*!---------------------------------------------------------------------------------------------------------------------
 * CUSTOM Script by F. MacNeill for responsive nav/menu button
@@ -5186,7 +5185,7 @@ function reset() {
  * * Licensed under http://www.apache.org/licenses/LICENSE-2.0
  ---------------------------------------------------------------------------------------------------------------------*/
 
-function drawChart() {
+function drawOfcomChart() {
     var data = google.visualization.arrayToDataTable([
         ['Device', 'Smartphone', 'Smart Watch', 'Tablet', { role: 'annotation' } ],
         ['16-24', 90, 7, 63, '' ],
@@ -5228,3 +5227,67 @@ function drawChart() {
     var chart = new google.visualization.BarChart(document.getElementById('bar_stacked'));
     chart.draw(data, options_fullStacked);
 }
+
+function drawAnxietyChart() {
+    var data = google.visualization.arrayToDataTable([
+        ['Reason',                  'Possibilities causing anxiety', 	      'Percentage'],
+        ['Possibilities causing anxiety',                      null,                     0],
+        ['Having surgery postponed', 'Possibilities causing anxiety',                 69.6],
+        ['Mistake during surgery',   'Possibilities causing anxiety',                   64],
+        ['Insufficient attention/care',    'Possibilities causing anxiety',           63.2],
+        ['Not waking up after surgery',      'Possibilities causing anxiety',         58.4],
+        ['Anasthetic ineffective',    'Possibilities causing anxiety',                  56],
+        ['Unsuccessful operation',    'Possibilities causing anxiety',                53.6],
+        ['Financial loss due to hospitalisation', 'Possibilities causing anxiety',    34.4]
+    ]);
+
+    var visualization = new google.visualization.TreeMap(document.getElementById('tree_map'));
+
+    var treeMap = document.getElementById('tree_map');
+    var anxietyChart = new google.visualization.TreeMap(treeMap);
+
+    google.visualization.events.addListener(anxietyChart, 'ready', function () {
+        treeMap.innerHTML = '<img src="' + anxietyChart.getImageURI() + '">';
+        console.log(treeMap.innerHTML);
+    });
+
+    anxietyChart.draw(data);
+
+    var options_treeMap = {
+        highlightOnMouseOver: true,
+        title: 'Factors responsible for preoperative anxiety',
+        chartArea: {width: '100%', height: '100%'},
+        minColor: '#D6E1FF',
+        midColor: '#A0B8FF',
+        maxColor: '#6E9FEB',
+        headerHeight: 15,
+        showScale: false,
+        generateTooltip: showFullTooltip,
+        titleTextStyle: {
+            bold: true,
+            fontSize: 11.5,
+            color: '#333333'
+        },
+        textStyle: {
+            fontSize: 12,
+        }
+    };
+
+    visualization.draw(data, options_treeMap);
+
+    function showFullTooltip(row, size, value) {
+        return '<div style="background:#fd9; padding:10px; border-style:solid">' +
+            '<span style="font-family:Arial; font-size:12px"><strong>' + data.getValue(row, 0) +
+            '</strong>, ' + data.getColumnLabel(2) + '&#58; &#32;' + data.getValue(row, 2) + '&#37;' + '<br>' +
+        'Datatable row: ' + row + '<br>' +
+            ' Out of one hundred and twenty five patients' + '<br>' +
+            ' participating in study on preoperative anxiety' + '<br>' +
+            '(Ebirim & Tobin, 2010). ' +
+            '<br>' + '59 Male : 66 Female' + '<br>' + '<strong>' + 'Right-click to exit node view' + '</strong>' + '</span><br>' + '</div>';
+    }
+
+}
+
+
+
+
