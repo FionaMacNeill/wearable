@@ -80,7 +80,7 @@ function chartLoad() {
 ----------------------------------------------------------------------------------------------------------------------*/
 
 
-    var toggle = document.querySelector(".toggle");
+    var toggle = document.querySelector(".menu-toggle");
     var hdHeight = document.querySelector(".site-header");
 
 
@@ -88,7 +88,7 @@ function chartLoad() {
     toggle.addEventListener('click', function() {
         // toggle applies the class called "active" on the site-header
         // active primarily contains a different height value
-        hdHeight.classList.toggle("active");
+        hdHeight.classList.toggle("menu-active");
     }, false );
 
 /*!---------------------------------------------------------------------------------------------------------------------
@@ -2494,7 +2494,7 @@ function chartLoad() {
             var leftMethod = this.options.rightToLeft ? 'next' : 'previous';
             this.uiChange();
             this[ leftMethod ]();
-        } else if ( event.keyCode == 39 ) {
+        } else if ( event.keyCode == 39 || event.keyCode == 9 ) {
             // go right
             var rightMethod = this.options.rightToLeft ? 'previous' : 'next';
             this.uiChange();
