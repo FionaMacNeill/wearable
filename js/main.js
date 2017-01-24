@@ -5238,7 +5238,11 @@ function drawAnxietyChart() {
         ['Not waking up after surgery',      'Possibilities causing anxiety',         58.4],
         ['Anasthetic ineffective',    'Possibilities causing anxiety',                  56],
         ['Unsuccessful operation',    'Possibilities causing anxiety',                53.6],
-        ['Financial loss due to hospitalisation', 'Possibilities causing anxiety',    34.4]
+        ['Financial loss due to hospitalisation', 'Possibilities causing anxiety',    34.4],
+        ['Unfamiliar surroundings', 'Possibilities causing anxiety',                  24.8],
+        ['Complications anaesthetics', 'Possibilities causing anxiety',               23.2],
+        ['Blood transfusion', 'Possibilities causing anxiety',                        11.4],
+        ['Nausea after the operation', 'Possibilities causing anxiety',                8.0]
     ]);
 
     var visualization = new google.visualization.TreeMap(document.getElementById('tree_map'));
