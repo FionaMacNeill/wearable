@@ -48,48 +48,48 @@ Copyright (C) 2017  Fiona MacNeill
 
     <link rel="stylesheet" media="screen" href="css/style.css" />
    </head>
-<div id="skip"><a href="#content" tabindex="1" title="skip to content">skip to main content</a></div>
-<!-- target for return to top button -->
+<div id="skip"><a href="#nav" tabindex="1" title="skip to navigation">skip to navigation</a></div>
+<!-- target for return-top-button -->
 <body id ="top">
 <div class="grid-container">
-    <div id="wrapper">
-        <div class="site-header">
-            <header>
-                <h1>Perioperative Wearable</h1>
-            </header>
-            <nav data-scroll-header>
-                <button class="toggle" id="menu-btn">Menu</button>
-            <ul>
-                <li ><a data-scroll href="#about">About</a></li>
-                <li><a data-scroll href="#team">Team</a></li>
-                <li><a data-scroll href="#device">Devices</a></li>
-                <li><a data-scroll href="#contact">Contact</a></li>
+    <div class="site-header">
+        <header role="banner">
+            <h1>Perioperative Wearable</h1>
+        </header>
+        <nav data-scroll-header role="navigation" aria-label="Primary Menu">
+            <button class="menu-toggle" id="menu-btn" role="button" aria-label="Mobile Menu">Menu</button>
+            <ul role="menubar">
+                <li id="nav" role="menuitem"><a data-scroll href="#about" tabindex="2" aria-label="about">About</a></li>
+                <li role="menuitem"><a data-scroll href="#team" tabindex="3" aria-label="team">Team</a></li>
+                <li role="menuitem"><a data-scroll href="#device" tabindex="4" aria-label="device">Devices</a></li>
+                <li role="menuitem"><a data-scroll href="#contact" tabindex="5" aria-label="contact">Contact</a></li>
             </ul>
-            </nav>
-        </div>
+        </nav>
     </div>
-<!-- Flickity Carousel HTML init -->
-    <main id="main">
-        <div class="carousel"
-            data-flickity='{ "cellSelector": ".carousel-cell", "freeScroll": true, "setGallerySize": false }'>
 
-            <div class="carousel-cell" id="content">
+<main id="main" role="main">
+        <!-- Flickity Carousel HTML init -->
+        <div class="carousel"
+            data-flickity='{ "cellSelector": ".carousel-cell", "freeScroll": true, "setGallerySize": false }' role="presentation">
+            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel" aria-describedby="slide01">
                 <div class="tl_grid">
-                    <img class="tl_logo sr-only" src="img/uobwhite2.png" alt="University of Brighton logo">
+                    <img class="invisible" id="tl_logo" src="img/timeline/uobwhite2.png" alt="University of Brighton logo" aria-hidden="true">
                     <img class="tl_img first-last" src="img/timeline/01hipimg_opt.png" alt="Illustration of hip x-ray">
                     <h2 class="tl_title">A Perioperative Timeline</h2>
-                    <p class="tl_desc bk">
+                    <p class="tl_desc bk" id="slide01">
                     This timeline outlines the story of a fictional patient who is preparing for a hip replacement
                     operation. The journey of our patient is used to explore how a wearable device could be introduced
                     to monitor the patient's anxiety prior to the operation.
                     </p>
+                    <div class="tooltip-contain invisible"><img id="tl_arrowkeys" src="img/timeline/arrowkeys.png" alt="Image showing arrow keyboard keys">
+                        <div class="tooltiptxt" role="tooltip">Arrow keys can be used for navigation of the timeline</div></div>
                 </div>
             </div>
-            <div class="carousel-cell">
+            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel" aria-describedby="slide02">
                 <div class="tl_grid">
                     <img class="tl_img" src="img/timeline/02Woman.png" alt="Illustration of patient (Carol Greenway in the narrative)">
                     <h2 class="tl_title">Patient: Carol Greenway</h2>
-                    <p class="tl_desc bk">Carol is 58 years old, with a well-established career as a property manager
+                    <p class="tl_desc bk" id="slide02">Carol is 58 years old, with a well-established career as a property manager
                     and a portfolio of properties across Sussex and Surrey. Her job is important to her and she travels
                     to properties two days a week by car in addition to her normal daily commute. Carol is an
                     enthusiastic runner and has completed several marathons.
@@ -97,22 +97,22 @@ Copyright (C) 2017  Fiona MacNeill
                 </div>
             </div>
             <!-- Anxiety level image that runs along the base of the carousel on displays >470px width -->
-            <div class="carousel-cell">
+            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel" aria-describedby="slide03">
                 <div class="tl_grid">
                     <img class="tl_img" src="img/timeline/03Referral.png" alt="Illustration of a doctor's desk">
                     <h2 class="tl_title">Referral to specialist</h2>
-                    <p class="tl_desc bk">8 months ago, Carol started to experience pain and discomfort in her left hip
+                    <p class="tl_desc bk" id="slide03">8 months ago, Carol started to experience pain and discomfort in her left hip
                     while running and reported this to her doctor. She attended sports physiotherapy sessions and tried
                     swimming as an alternative to running, but found that the pain increased and the movement in her hip
                     became restricted. Her doctor referred her to a hip replacement specialist.
                     </p>
                 </div>
             </div>
-            <div class="carousel-cell">
+            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel" aria-describedby="slide04">
                 <div class="tl_grid">
                     <img class="tl_img" src="img/timeline/04Wearable.png" alt="Illustration of a Wearable device (watch type)">
                     <h2 class="tl_title">Wearable device</h2>
-                    <p class="tl_desc">
+                    <p class="tl_desc" id="slide04">
                     Once Carol's appointment with the specialist is confirmed, she is invited for a follow-up with a
                     nurse at her doctors surgery. The nurse provides an overview of Carol's care plan including the
                     choice to opt-in to the use of a wearable device for monitoring heart rate, breathing and
@@ -120,13 +120,13 @@ Copyright (C) 2017  Fiona MacNeill
                     decides that she will wear the device as part of her care plan.
                     </p>
                 </div>
-                <img class="tl_image_lv" src="img/anxietylong.svg" height="70px" width="6900px">
+                <img class="tl_image_lv invisible" src="img/anxietylong.svg" height="70px" width="6900px" aria-hidden="true">
             </div>
-            <div class="carousel-cell">
+            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel" aria-describedby="slide05">
                 <div class="tl_grid">
                     <img class="tl_img" src="img/timeline/05Specialist.png" alt="Illustration of hands using a tablet device">
                     <h2 class="tl_title">Consultation with specialist</h2>
-                    <p class="tl_desc">
+                    <p class="tl_desc" id="slide05">
                     Carol is examined by the consultant for the hip replacement. She also meets her perioperative nurse,
                     Brian who will monitor her vitals and anxiety levels through the wearable system. Brian asks how
                     Carol is getting on with the wearable device, has she tried the app yet? Carol and Brian agree on
@@ -134,12 +134,12 @@ Copyright (C) 2017  Fiona MacNeill
                     </p>
                 </div>
             </div>
-            <div class="carousel-cell">
+            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel" aria-describedby="slide06">
                 <div class="tl_grid">
                     <img class="tl_img" src="img/timeline/06clinic.png" alt="Illustration of a nurse (Brian in the narrative)">
                     <h2 class="tl_title">Pre-operative assessment clinic</h2>
-                    <p class="tl_desc">
-                    Brian asks Carol to complete the State-Trait Anxiety Inventory<a data-scroll href="#1" class="caption-link"><sup>1</sup></a>.
+                    <p class="tl_desc" id="slide06">
+                    Brian asks Carol to complete the State-Trait Anxiety Inventory.
                     Carol is concerned about the operation and how recovery might affect her work and independence.
                     Brian notes that the wearable system has shown that Carol's anxiety has increased. Brian talks
                     through the operative procedure with her and they agree that he will contact if her anxiety levels
@@ -147,11 +147,11 @@ Copyright (C) 2017  Fiona MacNeill
                     </p>
                 </div>
             </div>
-            <div class="carousel-cell">
+            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel" aria-describedby="slide07">
                 <div class="tl_grid">
                     <img class="tl_img" src="img/timeline/07letter.png" alt="Illustration of a letter received in the mail">
                     <h2 class="tl_title">Letter for date of operation</h2>
-                    <p class="tl_desc">
+                    <p class="tl_desc" id="slide07">
                     Carol receives a letter informing her of the date for her operation; this is both reassuring and
                     worrying. She feels underprepared for the operation and recovery. Brian notices a spike in
                     her vitals and as previously agreed, sends a text message to check-in with her. After a follow-up
@@ -160,39 +160,39 @@ Copyright (C) 2017  Fiona MacNeill
                     </p>
                 </div>
             </div>
-            <div class="carousel-cell">
+            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel" aria-describedby="slide08">
                 <div class="tl_grid">
                     <img class="tl_img" id="tl_img_resched" src="img/timeline/08reschedule.png" alt="Illustration of a paper calendar">
                     <h2 class="tl_title" id="tl_title_resched">Outcome 1: Cancellation</h2>
-                    <p class="tl_desc" id="tl_desc_resched1">
+                    <p class="tl_desc tl_desc_resched" id="slide08">
                     Due to unforeseen circumstances at the hospital Carol's operation has to be cancelled and rescheduled.
                     Unfortunately, the new date occurs when Carol will be abroad and the only other date is several months
                     away. Carol is concerned about the level of pain that she will experience during the longer
                     wait. The specialist and Brian consider pain management for the waiting period.
                     </p>
                     <h2 class="tl_title">Outcome 2: As planned</h2>
-                    <p class="tl_desc">
+                    <p class="tl_desc tl_desc_resched">
                     The operation will take place as scheduled.
                     </p>
                 </div>
             </div>
-            <div class="carousel-cell">
-            <div class="tl_grid">
-                <img class="tl_img" src="img/timeline/09operation.png" alt="Illustration showing close-up of a hospital bed on a ward">
-                <h2 class="tl_title">Day of operation</h2>
-                <p class="tl_desc_resched">
-                Carol feels ready for her operation, although a fire drill at the flats next door the night
-                before causes her additional anxiety. Brian is concerned about Carol's levels and decides to move her
-                operation to be first in the day. This will minimise her waiting time and to allow her daughter to pick
-                her up and take her home as soon as she is cleared to leave.
-                </p>
+            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel" aria-describedby="slide09">
+                <div class="tl_grid">
+                    <img class="tl_img" src="img/timeline/09operation.png" alt="Illustration showing close-up of a hospital bed on a ward">
+                    <h2 class="tl_title">Day of operation</h2>
+                    <p class="tl_desc" id="slide09">
+                    Carol feels ready for her operation, although a fire drill at the flats next door the night
+                    before causes her additional anxiety. Brian is concerned about Carol's levels and decides to move her
+                    operation to be first in the day. This will minimise her waiting time and to allow her daughter to pick
+                    her up and take her home as soon as she is cleared to leave.
+                    </p>
+                </div>
             </div>
-        </div>
-            <div class="carousel-cell">
+            <div class="carousel-cell" role="presentation" aria-labelledby="slide carousel" aria-describedby="slide10">
                 <div class="tl_grid">
                     <img class="tl_img first-last" src="img/timeline/10recovery.png" alt="Illustration of tea on a tray in a bed in a home to represent recovery">
                     <h2 class="tl_title">Recovery and device return</h2>
-                    <p class="tl_desc_resched">
+                    <p class="tl_desc" id="slide10">
                     Carol's daughter took time off work to support Carol's recovery and Brian continued to monitor her
                     vitals, contacting her when needed. Initially, Carol was starting to move around too soon, but she
                     could tell from the wearable app that this was contributing to increased heart and breathing rates.
@@ -205,13 +205,10 @@ Copyright (C) 2017  Fiona MacNeill
         <div class="timeline-line-end" id="timeline"></div>
 
 
-
-
-
 <!-- CONTENT BELOW WRITTEN BY F. MacNeill with the exception of the T. Fotis bio. Citations provided above footer -->
 
 <!---------------- Section ? - About ----------------------->
-    <section id="about-area">
+    <section id="about-area" tabindex="6">
             <!--span exists in each section as the position to scroll to with the smoothscroll() function-->
         <span id="about"></span>
             <h2 title="About site">About</h2>
@@ -222,7 +219,8 @@ Copyright (C) 2017  Fiona MacNeill
                 into the use of wearable devices and other technologies in the perioperative environment.
             </p>
             </div>
-            <div class="col col-4" id="data_text">
+
+            <div class="col col-4" id="data_text" tabindex="7">
                 <p class="justify">
                 In 2016, Ofcom reported that 71% of UK adults owned a smartphone<a data-scroll href="#2" class="caption-link"><sup>2</sup></a>.
                 This can be viewed alongside smart watch ownership, which based on Ofcom's sample, are owned by 5% of UK
@@ -232,25 +230,26 @@ Copyright (C) 2017  Fiona MacNeill
                 This is intentional as our story is designed to pose a question, what will this adult
                 population of under 55s need and expect in future years?
                 </p>
-                <p class="callout" id="question"><em>How will patients'
+                <p class="callout" id="question" tabindex="8"><em>How will patients'
                 experiences have been shaped by their use of wearable technologies and the mobile applications they use
                 to manage many essential services as part of their lifestyle, such as banking and work?</em>
                 </p>
             </div>
+        <!----------data visualisation---------->
         <div class="col col-4" id="data_align">
             <div id="bar_stacked" aria-label="A tabular representation of the data from Ofcom (2016) in a stacked chart.">
-                <img src="img/loading.gif" class="sr-only" alt="loading image" id="load_img">
+                <img src="img/loading.gif" class="invisible" alt="loading image" id="load_img">
             </div>
         <p class="caption">Source: Ofcom Technology Tracker, H1 2016<a data-scroll href="#11" class="caption-link"><sup>11</sup></a>.
             <br>Base: Adults aged 16+, 16-24 n = 519, 25-34 n = 604, 35-54 n = 1172, 55+ n = 1442</p>
-            <p class="callout" id="stat"><strong class="bignumber">43%</strong> <br>of UK Adults look up health
+            <p class="callout" id="stat"><strong class="bignumber">43%</strong>[#ref] <br>of UK Adults look up health
                 information online
             </p>
         </div>
     </section>
 
     <!---------------- Section ? - Why Perioperative Care ----------------------->
-    <section id="why-area">
+    <section id="why-area" tabindex="9">
         <h2>Why Perioperative Care?</h2>
         <p class="justify">
         The rationale for this investigation into the use of a wearable devices to support pre-operative, also termed as
@@ -280,20 +279,21 @@ Copyright (C) 2017  Fiona MacNeill
     <!---------------- Section ? - Goals----------------------->
     <section id="goals-area">
         <div class="single-row">
-        <div class="col col-3 free-columns goals">
-            <img class="about-img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
+        <div class="col col-3 free-columns goals" tabindex="10">
+            <img class="goal-img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
             <h3>Goal 1 : Explore</h3>
                 <p class="goal-text"><strong>To find out</strong> if a consumer-level wearable device could be used as
                     part of a perioperative care plan. The device and an accompanying service would be used to monitor a
-                    patient's vital signs, as a means to identify symptoms of anxiety from the pre-operative phase
+                    patient's vital signs, as a means to identify symptoms of anxiety from the preoperative phase
                     through to recovery.
                     What issues might be raised through the introduction of this disruptive technology? What problems
                     could be solved? If this technology is introduced is there potential for improvement to service and
                     care?
                 </p>
         </div>
-        <div class="col col-3 free-columns goals">
-            <img class="about-img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
+
+        <div class="col col-3 free-columns goals" tabindex="11">
+            <img class="goal-img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
             <h3>Goal 2 : Creation</h3>
                 <p class="goal-text"><strong>To conceive</strong> how a hypothetical wearable device could be used as
                     part of a patient care plan during the lead up to an operative procedure. In the first instance we
@@ -302,9 +302,10 @@ Copyright (C) 2017  Fiona MacNeill
                     and other medical professionals we hope to define base requirements for such a system from the care
                     provider's perspective.
                 </p>
-               </div>
-        <div class="col col-3 free-columns goals">
-            <img class="about-img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
+        </div>
+
+        <div class="col col-3 free-columns goals" tabindex="12">
+            <img class="goal-img" src="https://placeholdit.imgix.net/~text?txtsize=20&txt=80%C3%9780&w=80&h=80">
             <h3>Goal 3 : Requirements</h3>
                 <p class="goal-text"><strong>To define</strong> a set of requirements for a wearable device and service
                     designed to monitor perioperative anxiety. The requirements, accompanying research and recommendations
@@ -318,7 +319,7 @@ Copyright (C) 2017  Fiona MacNeill
         </div>
     </section>
     <!---------------- Section ? - Technology in Health in UK----------------------->
-    <section id="technology-area">
+    <section id="technology-area" tabindex="13">
         <div class="single-row">
         <div class="col full-width">
             <h2>Technology in Health in the UK</h2>
@@ -352,14 +353,14 @@ Copyright (C) 2017  Fiona MacNeill
     </section>
 <!---------------- Section ? - The Research Team ----------------------->
 
-    <section id="team-area">
+    <section id="team-area" tabindex="14">
         <span id="team"></span>
         <h2 class="color-bk-header">Introducing the Research Team</h2>
         <div class="single-row">
-            <div class="col col-4 bios">
-            <div class="col team-photo">
-                <img class="team-img" alt="photo of Dr Theo Fotis" title="Dr Theo Fotis" src="img/team/theo_fotis.jpg">
-            </div>
+            <div class="col col-4 bios" tabindex="15">
+                <div class="team-photo">
+                    <img class="team-img" alt="photo of Dr Theo Fotis" title="Dr Theo Fotis" src="img/team/theo_fotis.jpg">
+                </div>
                     <!-- bio written by T.Fotis - source: provided by T. Fotis -->
                         <p><strong>Dr. Theo Fotis</strong> is a Nurse, Futurist and Digital Nursing evangelist. He is
                         currently a Principal Lecturer at the School of Health Sciences, University of Brighton,
@@ -376,11 +377,11 @@ Copyright (C) 2017  Fiona MacNeill
                             <p class="bio-link">
                             <a href="https://about.brighton.ac.uk/staff/details.php?uid=tf75" title="Link to T. Fotis profile page">View Theo's profile at the University of Brighton website</a>
                         </p>
-
             </div>
-            <div class="col col-4 bios">
-            <div class="col team-photo">
-                   <img class="team-img" alt="photo of Fiona MacNeill" title="Fiona MacNeill" src="img/team/fiona_macneill.jpg">
+
+            <div class="col col-4 bios" tabindex="16">
+                <div class="team-photo">
+                    <img class="team-img" alt="photo of Fiona MacNeill" title="Fiona MacNeill" src="img/team/fiona_macneill.jpg">
                 </div>
                     <!-- bio written by F.MacNeill - based on bio at SenSe Research Cluster website,
                         University of Brighton - http://www.sense-brighton.eu/our-team/macneill/ -->
@@ -407,7 +408,7 @@ Copyright (C) 2017  Fiona MacNeill
     <section id="device-area">
         <span id="device"></span>
         <div class="single-row">
-            <div class="col full-width free-columns" id="device-blurb">
+            <div class="col full-width free-columns" id="device-blurb" tabindex="17">
                 <h2 title="Devices">Devices</h2>
                 <p>
                     As a means to explore future service models we acknowledge, yet temporarily set aside IT infrastructure
@@ -439,9 +440,9 @@ Copyright (C) 2017  Fiona MacNeill
                 </ul>
                 </div>
             </div>
-        <div class="single-row">
+        <div class="single-row" tabindex="18">
                 <div class="col full-width" id="device-factors">
-                    <div class="tab-container sr-only"></div>
+                    <div class="tab-container invisible"></div>
                     <div class="tab-class"></div>
                     <div id="factors-bk">
                 <p>
@@ -480,7 +481,7 @@ Copyright (C) 2017  Fiona MacNeill
             </div>
         </div>
 
-        <div class="single-row">
+        <div class="single-row" tabindex="19">
             <div class="col full-width free-columns" id="wear-intro">
                 <div id="wear-bk">
                 <p>
@@ -489,47 +490,41 @@ Copyright (C) 2017  Fiona MacNeill
                     available. Specifically, we need to examine the following factors: device form (how it is worn);
                     sensors contained; the type of information that can be captured by the sensors; data/information output;
                     service restrictions; interoperability; usability; price. These factors will be explored in more depth
-                    in the project, a brief summaries are provided below.
+                    as part of the project.
                 </p>
                 </div>
             </div>
         </div>
-
         <div class="single-row">
-                <div class="col col-4 device-img">
-                    <img src="https://placeholdit.imgix.net/~text?txtsize=20&txt=200%C3%97200&w=442&h=226">
+            <div class="col col-4 free-columns" tabindex="20">
+                <div class="col device-img">
+                    <img src="https://placeholdit.imgix.net/~text?txtsize=20&txt=200%C3%97200&w=350&h=200">
                 </div>
-                <div class="col col-4 device-img">
-                    <img src="https://placeholdit.imgix.net/~text?txtsize=20&txt=200%C3%97200&w=442&h=226">
-
-                </div>
-        </div>
-
-        <div class="single-row">
-            <div class="col col-4 device-block">
                 <h3>Device form: Hand/Wrist Type</h3>
                 <p class="device-desc">Devices worn on the hand or wrist. Devices worn on the wrist typically make
-                    contact with the inside of the wrist in order to take sensor readings. Some of these devices look
+                    contact with the inside of the wrist in order to take sensor readings. Some devices look
                     similar to digital watches and others are more like pieces of jewellery, so there is an aesthetic
-                    aspect with wearables which must be considered. Devices akin to rings also fall into this category.
+                    aspect with wearables which must be considered.
                 </p>
-                <div class="ac-container">
+                <div class="col device-img">
+
+                <div role="listbox" class="accordion-contain" tabindex="0">
                     <div>
-                        <input id="ac-01" name="examples-1" type="checkbox" />
-                        <label for="ac-01">Specific examples, currently available:</label>
+                        <input role="checkbox" id="ac-01" name="examples-1" type="checkbox">
+                        <label class="ac" for="ac-01" >Specific examples:</label>
                         <article class="ac-small">
-                            <p>
+                            <p class="accordion">
                             Apple Watch; Fitbit's Charge HR and Surge; Android Wear watches; Samsung Gear S2;
                                 Jawbone UP3; WellBe; Embrace Watch; Moodmetric Ring; Garmin Vivoactive.
                             </p>
                         </article>
                         </div>
                     <div>
-                        <input id="ac-02" name="sensors-1" type="checkbox" />
-                        <label for="ac-02">Sensors:</label>
+                        <input role ="checkbox" id="ac-02" name="sensors-1" type="checkbox">
+                        <label class="ac" for="ac-02">Sensors:</label>
                         <article class="ac-large">
-                            <p>
-                            Sensors of interest to the project are listed here. Sensors contained vary by device.<br>
+                            <p class="accordion">
+                            Sensors contained vary by device.<br>
                             General - Heart rate sensor; accelerometer; gyroscope; ambient light sensor<br>
                             Mood-specific devices - peripheral temperature sensor; electro dermal activity sensor.
                             Analytical features of some devices: activity, sleep and stress tracking.
@@ -537,51 +532,36 @@ Copyright (C) 2017  Fiona MacNeill
                         </article>
                     </div>
                     <div>
-                        <input id="ac-03" name="interop-1" type="checkbox" />
-                        <label for="ac-03">Interoperability:</label>
-                        <article class="ac-large">
-                            <p>
-                            This cannot be fully determined until a technical assessment of the devices has been
-                            undertaken. The key considerations are whether the user is able to obtain a download of all
-                            of their data and whether the device manufacturers provide options for independent
-                            developers to create apps which use data from the devices. Several of the devices listed
-                            above provide tools for developers.
-                            </p>
-                        </article>
-                    </div>
-                    <div>
-                        <input id="ac-04" name="price-1" type="checkbox" />
-                        <label for="ac-04">Price:</label>
-                        <article class="ac-small">
-                            <p>
+                        <input role="checkbox" id="ac-03" name="price-1" type="checkbox" />
+                        <label class="ac" for="ac-03">Price:</label>
+                        <article class="ac-xsmall">
+                            <p class="accordion">
                             Basic models ranging from £80 - £400
                             </p>
                         </article>
                     </div>
                     <div>
-                        <input id="ac-05" name="pros-1" type="checkbox" />
-                        <label for="ac-05">Pros:</label>
-                        <article class="ac-large">
+                        <input role="checkbox" id="ac-04" name="pros-1" type="checkbox" />
+                        <label class="ac" for="ac-04">Pros:</label>
+                        <article class="ac-xlarge">
                         <ul>
                             <li>Readily visible to the user at all times</li>
                             <li>Popular device types are available</li>
                             <li>Where the device has an touchscreen interface or physical buttons this could be used for
-                        self-reporting of anxiety
+                                self-reporting of anxiety
                             </li>
                             <li>Versatility: wristband straps are often interchangeable and some devices can be worn as
                                 a clips
                             </li>
-                            <li>The wearable devices's form/design is most clearly understood. The analogue or
-                                historical equivalent of a wrist/hand-based wearable is the watch and as this is clearly
-                                understood as a measurement device, it may be easier to acclimatise users to its use.
+                            <li>The wearable devices's form/design is most clearly understood (most similar to a wrist watch).
                             </li>
                         </ul>
                         </article>
-                    </div>
+                </div>
                     <div>
-                        <input id="ac-06" name="cons-1" type="checkbox" />
-                        <label for="ac-06">Cons:</label>
-                        <article class="ac-small">
+                        <input role="checkbox" id="ac-06" name="cons-1" type="checkbox" />
+                        <label class="ac" for="ac-06">Cons:</label>
+                        <article class="ac-large">
                         <ul>
                             <li>The patient may not wish for others to know about their use of the device</li>
                             <li>The device may not be in-keeping with the user's aesthetic taste</li>
@@ -590,61 +570,55 @@ Copyright (C) 2017  Fiona MacNeill
                         </article>
                     </div>
                 </div>
+                    </div>
             </div>
-            <div class="col col-4 device-block">
+
+            <div class="col col-4 free-columns" tabindex="21">
+                    <div class="col device-img">
+                        <img src="https://placeholdit.imgix.net/~text?txtsize=20&txt=200%C3%97200&w=350&h=200">
+                    </div>
                 <h3>Clip-on/Fasten Type</h3>
-                <p class="device-desc">Devices clipped or fastened onto clothing, in some bases touching the skin (e.g.
-                    inside trouser waistband). Another variation which loosely falls into this category are necklaces
+                <p class="device-desc">
+                    Devices clipped or fastened onto clothing, in some cases touching the skin (e.g.
+                    inside trouser waistband). Another variation which falls into this category are necklaces
                     and pin-badge style wearables. Some of the wrist type devices have adaptors to allow them to be worn
                     as clips.
                 </p>
-                <div class="ac-container">
+                <div class="col device-img">
+                <div role="listbox" class="accordion-contain">
                     <div>
-                        <input id="ac-07" name="examples-2" type="checkbox" />
-                        <label for="ac-07">Specific examples, currently available:</label>
+                        <input role="checkbox" id="ac-07" name="examples-2" type="checkbox" />
+                        <label class="ac" for="ac-07">Specific examples:</label>
                         <article class="ac-small">
-                            <p>
-                            Spire, Leaf Nature and Urban, Misfit Shine (could be listed in either category due to its
+                            <p class="accordion">
+                            Spire, Leaf Nature and Urban, Misfit Shine (due to its
                             versatility as a watch or a clip). Withings Pulse Ox can also be worn as a watch or a clip.
                             </p>
                         </article>
                     </div>
                     <div>
-                        <input id="ac-08" name="sensors-2" type="checkbox" />
-                        <label for="ac-08">Sensors:</label>
-                        <article class="ac-large">
-                            <p>
-                            Sensors of interest to the project are listed here. Sensors contained vary by device.<br>
+                        <input role="checkbox" id="ac-08" name="sensors-2" type="checkbox" />
+                        <label class="ac" for="ac-08">Sensors:</label>
+                        <article class="ac-medium">
+                            <p class="accordion">
+                            Sensors contained vary by device.<br>
                             Breathing pattern monitor; heart rate monitor; accelerometer; gyroscope; blood-oxygen level.
-                            Analytical features of some devices: activity, sleep and stress tracking.
+                            Analytical features: activity, sleep and stress tracking.
                             </p>
                          </article>
                     </div>
                     <div>
-                        <input id="ac-09" name="interop-2" type="checkbox" />
-                        <label for="ac-09">Interoperability:</label>
-                        <article class="ac-large">
-                            <p>
-                            This cannot be fully determined until a technical assessment of the devices has been
-                            undertaken. The key considerations are whether the user is able to obtain a download of all
-                            of their data and whether the device manufacturers provide options for independent
-                            developers to create apps which use data from the devices. Fewer of this device-type
-                            category seem to offer this and the emphasis is more on proprietary purpose and software.
-                            </p>
-                        </article>
-                    </div>
-                    <div>
-                        <input id="ac-10" name="price-2" type="checkbox" />
-                        <label for="ac-10">Price:</label>
-                        <article class="ac-small">
-                            <p>
+                        <input role="checkbox" id="ac-11" name="price-2" type="checkbox" />
+                        <label class="ac" for="ac-11">Price:</label>
+                        <article class="ac-xsmall">
+                            <p class="accordion">
                             Basic models ranging from £80-£115
                             </p>
                         </article>
                     </div>
                     <div>
-                        <input id="ac-11" name="pros-2" type="checkbox" />
-                        <label for="ac-11">Pros:</label>
+                        <input role="checkbox" id="ac-12" name="pros-2" type="checkbox" />
+                        <label class="ac" for="ac-12">Pros:</label>
                         <article class="ac-large">
                             <ul>
                                 <li>More discreet and can be hidden under clothing</li>
@@ -656,9 +630,9 @@ Copyright (C) 2017  Fiona MacNeill
                         </article>
                     </div>
                     <div>
-                        <input id="ac-12" name="cons-2" type="checkbox" />
-                        <label for="ac-12">Cons:</label>
-                        <article class="ac-small">
+                        <input role="checkbox" id="ac-13" name="cons-2" type="checkbox" />
+                        <label class="ac" for="ac-13">Cons:</label>
+                        <article class="ac-xlarge">
                             <ul>
                                 <li>The user may forget to wear/clip on the device</li>
                                 <li>The device may not be as accurate as it may be further from the user's pulse than
@@ -672,71 +646,73 @@ Copyright (C) 2017  Fiona MacNeill
                         </article>
                     </div>
                 </div>
+                </div>
             </div>
         </div>
     </section>
 
 <!---------------- Section ? - Contact us ----------------------->
 
-    <section id="contact-area">
+    <section id="contact-area" tabindex="22">
         <span id="contact"></span>
         <div id="contact_form">
-            <h2>Contact</h2>
-                <form>
+            <h2 id="contactfm">Contact</h2>
+                <form role="form" aria-labelledby="contactfm">
                     <fieldset>
                         <legend>Contact us to learn more about the project or join our very occasional mailing list
                         </legend>
                         <div class="nofloat">
-                        <div class="col col-4 nopadding">
+                        <div class="col col-4 minpadding">
                             <label for="email" class="form-label">Enter your email address*</label>
-                            <span id="hint_email" class="hint"> - please enter your email address</span>
-                            <input id="email" class="i-full-width" type="email" >
+                            <span id="hint_email" class="hint">please enter your email address</span>
+                            <input id="email" class="i-full-width" type="email" placeholder=" j.anon@aplace.com" aria-required="true" tabindex="23">
                         </div>
-                        <div class="col col-4 nopadding">
-                            <label for="subject" class="form-label">I am interested in...*</label>
-                            <select  id="subject" class="i-full-width" name="subject">
-                                <option value="mailing list" selected>joining the occasional mailing list</option>
-                                <option value="learn more about project">learning more about the project</option>
-                                <option value="collaborate">collaborating with you</option>
-                                <option value="other">other</option>
+                        <div class="col col-4 minpadding">
+                            <label for="subject" class="form-label">I am interested in...</label>
+                            <select role="listbox" id="subject" class="i-full-width" name="subject" tabindex="24">
+                                <option role="option" value="mailing list" selected>joining the occasional mailing list</option>
+                                <option role="option" value="learn more about project">learning more about the project</option>
+                                <option role="option" value="collaborate">collaborating with you</option>
+                                <option role="option" value="other">other</option>
                             </select>
                         </div>
-                        <div class="full-width nopadding">
+                        <div class="full-width minpadding">
                             <label for="message" class="form-label">Write your message*</label>
-                            <span id="hint_message" class="hint"> - please enter a message</span>
-                            <textarea class="i-full-width" id="message" name="message"></textarea>
-                            <input id="submit" type="button" value="submit" onclick="sendmail()" />
+                            <span id="hint_message" class="hint">please enter a message</span>
+                            <textarea class="i-full-width" id="message" name="message" placeholder="Hi I am interested in your project..." aria-multiline="true" aria-required="true" tabindex="25"></textarea>
+                            <input id="submit" type="button" value="submit" tabindex="26" onclick="sendmail()" />
                             </div>
                         </div>
                     </fieldset>
                 </form>
         </div>
-        <div id="loading" class="sr-only">
+        <div id="loading" class="invisible">
             <img src="img/loading.gif" />
         </div>
-        <div id="confirmation">
+        <div id="confirmation" class="invisible">
             <h2>Thank you!</h2>
-            <p><a href="#" onclick="reset()">Send another message</a></p>
+            <p><a href="#contactfm" onclick="reset()">Send another message</a></p>
         </div>
-        <div id="errmessage">
+        <div id="errmessage" class="invisible">
             <h2>Oops - something went wrong</h2>
-            <p id="conf-link"><a href="#" onclick="reset()">Try again</a></p>
+            <p id="conf-link"><a href="#contactfm" onclick="reset()">Try again</a></p>
         </div>
     </section>
 
 <!---------------- Section ? - Links/References ----------------------->
 
-<section id="links-area">
+<section id="links-area" tabindex="27">
         <span id="links"></span>
         <h2 class="color-bk-header">References/Links</h2>
                 <div class="col-5" id="links-bk">
-                    <h3 class="publication">Timeline images</h3>
+                    <h3>Timeline References</h3>
+                    <p class="reference">Stait Trait Anxiety Inventory</p>
                     <p class="imagelist">Slide 01: Illustration based on original photo -
                         <a href="https://flic.kr/p/7p3mai" title="Link to image at Flickr.com">"IMAG0039"</a> by
                         <a href="https://www.flickr.com/photos/phalinn/" title="Link to photographer page at Flickr.com">
                             Phalinn Ooi</a> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/"
                                                                  title="Link to CC license">CC BY 2.0</a></p>
-                    <h3 class="publication">Relevant Publications</h3>
+                    <h3>Relevant Publications</h3>
                     <p class="reference">
                         Fotis, T. (2016). The era of the robots is now? Association for Perioperative Practice, <em>Journal of
                         Perioperative Practice</em>.
@@ -756,15 +732,15 @@ Copyright (C) 2017  Fiona MacNeill
                         Media-Enhanced Learning Special Interest Group and Sheffield Hallam University, Sheffield, UK,
                         pp. 238-264. ISBN 1843873834
                     </p>
-                    <h3 class="publication">References</h3>
+                    <h3>References</h3>
                     <p class="reference">
-                        <span id="1">[1]</span> Stait Trait Anxiety Inventory
+                        <span id="1">[1]</span> Ofcom report page number is needed
                     </p>
                     <p class="reference">
                         <span id="2">[2]</span> Ofcom report page number is needed
                     </p>
                     <p class="reference">
-                        <span id="3">[3]</span> Ofcom report page number is needed
+                        <span id="3">[3]</span>
                     </p>
                     <p class="reference">
                         <span id="7">[7]</span>
@@ -773,12 +749,14 @@ Copyright (C) 2017  Fiona MacNeill
                         doi:10.1016/j.aorn.2010.04.017
                     </p>
                     <p class="reference">
-                        <span id="8">[8]</span> Centres for National excellence: https://www.england.nhs.uk/2016/09/digital-revolution/
+                        <span id="8">[8]</span> Centres for National excellence: https://www.england.nhs.uk
+                        /2016/09/digital-revolution/
                     </p>
                     <p class="reference">
                         <span id="9">[9]</span> Wachter, R. M. (2016, September 7). Making IT work: Harnessing the power
                         of health information technology to improve care in England. Retrieved 12, 2016,
-                        from https://www.gov.uk/government/publications/using-information-technology-to-improve-the-nhs
+                        from https://www.gov.uk/government
+                        /publications/using-information-technology-to-improve-the-nhs
                     </p>
                     <p class="reference">
                         <span id="10">[10]</span> Standing & Hampson (2015)
@@ -792,9 +770,11 @@ Copyright (C) 2017  Fiona MacNeill
     </main>
 </div>
 </body>
-<footer>
-    <h5>Copyright © 2017 Fiona MacNeill. Perioperative Wearable concept. Copyright © 2017 Dr. Theofanis Fotis</h5>
-    <button class="return-top-button">
+<footer role="contentinfo">
+    <div class="full-width">
+        <h5>Copyright © 2017, Fiona MacNeill. <br>Wearable concept. Copyright © 2017, Theofanis Fotis.</h5>
+    </div>
+    <button class="return-top-button" title="Return to the top of the page">
         <svg xmlns="http://www.w3.org/2000/svg" width="48" height= "48" viewBox="6 85 110 120"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow-up" transform="translate(100, 100) rotate(90) ">
         </path>
         </svg>
