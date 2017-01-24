@@ -46,38 +46,27 @@ Copyright (C) 2017 Fiona MacNeill
 
 /****** TABLE OF CONTENTS
 *
-* (1.0) - Box sizing
-* * (1.1) - Skip link
-* (2.0) - Site header
-* (3.0) - Navigation
-* * (3.1) - Toggle menu for mobile
-* (4.0) - Flickity Carousel for patient timeline
-* * (4.1) - Timeline content
-* * (4.2) - Timeline line and dots
-* * (4.3) - Timeline information boxes
-* (5.0) - Typography
-* * (5.1) - Heading level styles
-* * (5.2) - p styles
-* * (5.3) - Call-out styles
-* * (5.4) - List and label styles
-* (6.0) - Content sections
-* (7.0) - Data visualisation
-* (8.0) - Accordion
-* (9.0) - Form
-* (10.0) - Grid
-* (11.0) - Accessibility specific
-* (12.0) - Media queries
+* 1.0 - Box sizing
+* * 1.1 - Skip link
+* 2.0 - Site header
+* 3.0 - Navigation
+* * 3.1 - Toggle menu for mobile
+* 4.0 - Flickity Carousel for patient timeline
+* * 4.1 - Timeline content
+* * 4.2 - Timeline line and dots
+* * 4.3 - Timeline Information boxes
+* 5.0 - Typography
 
 *******/
 
-/*----- (1.0) - Box sizing -----*/
+/*----- 1.0 - Box sizing -----*/
 
 * {
     box-sizing: border-box;
 }
 
 
-/*---- (1.1) - Skip link ----*/
+/*---- 1.1 - Skip link ----*/
 /* element hidden offscreen until tabbed to for those who use screen readers and keyboard nav */
 /* Does not show in Firefox 50+ or Safari but operates as part of the tab-index, will be visible to Chrome users */
 /* referred to http://webaim.org/techniques/css/invisiblecontent/ */
@@ -85,17 +74,16 @@ Copyright (C) 2017 Fiona MacNeill
 #skip {
     position: absolute;
     top: -20em;
+    margin-left: 15em;
     padding: 4.5em;
-    margin-left: 20%;
 }
 
 #skip a {
     position: absolute;
-    left: 30%;
+    left: 0;
     right: 0;
     top: auto;
-    font-size: 1em;
-    background: #ECECEC;
+    background: #ececec;
 
 }
 
@@ -103,7 +91,7 @@ Copyright (C) 2017 Fiona MacNeill
     top: 20em;
 }
 
-/*---- (2.0) - Site header ----*/
+/*---- 2.0 - Site header ----*/
 /* site-header height adjustment is turned on/off by the menu toggle in section 3.1 */
 
 .site-header {
@@ -118,7 +106,7 @@ Copyright (C) 2017 Fiona MacNeill
 
 }
 
-/*---- (3.0) - Navigation ----*/
+/*---- 3.0 - Navigation ----*/
 
 nav {
     z-index: 4;
@@ -162,7 +150,7 @@ nav a:active {
 }
 
 
-/*---- (3.1) - Toggle menu button for mobile ----*/
+/*---- 3.1 - Toggle menu button for mobile ----*/
 
 #menu-btn {
     display: none;
@@ -187,7 +175,7 @@ nav a:active {
     transition: .4s;
 }
 
-/*---- (3.2) - Return to top button ----*/
+/*---- 3.2 - Return to top button ----*/
 
 .return-top-button {
     display: block;
@@ -222,7 +210,7 @@ nav a:active {
 
 /*/////////////////////////////////////////////////
 //                                               //
-// (4.0) Flickity Carousel for patient timeline  //
+//  4.0 Flickity Carousel for patient timeline   //
 //                                               //
 /////////////////////////////////////////////////*/
 
@@ -338,7 +326,7 @@ nav a:active {
     color: #333333;
 }
 
-/*---- (4.1) - Main carousel content ----*/
+/*---- 4.1 - Main carousel content ----*/
 
 
 .carousel {
@@ -359,7 +347,7 @@ nav a:active {
     left: 31%;
 }
 
-/* ---- (4.2) - Timeline line and dots [Custom styles] ----*/
+/* ---- 4.2 - Timeline line and dots [Custom styles] ----*/
 
 .timeline-line-end {
     z-index: 1;
@@ -373,6 +361,7 @@ nav a:active {
     left: 0;
     padding: 0;
     margin: 0;
+
 }
 
 
@@ -395,6 +384,7 @@ nav a:active {
     padding: 0;
 }
 
+
 .flickity-rtl .hidden {
     direction: rtl;
 }
@@ -411,6 +401,7 @@ nav a:active {
     cursor: pointer;
     counter-increment: flickity-page-dots;
 }
+
 
 .dot::before {
     display: block;
@@ -433,7 +424,7 @@ nav a:active {
 
 
 
-/*---- (4.3) - Timeline information boxes ----*/
+/*---- 4.3 - Timeline Information boxes ----*/
 
 
 /* This timeline is inspired by https://duckduckgo.com/about and uses Flickity.js
@@ -458,7 +449,7 @@ nav a:active {
     height: 100px;
     width: 100px;
     border-radius: 100%;
-    background: #FFF;
+    background: #FFFFFF;
 }
 
 #tl_img_resched {
@@ -466,64 +457,17 @@ nav a:active {
 }
 
 /* first and last timeline images need black backgrounds not white
- pseudo selectors do not work within the carousel as they are all first children*/
-
+ pseudo selectors do not work within the carousel*/
 .first-last {
-    background: #000;
+    background: #000000;
 }
 
-
-#tl_logo {
+.tl_logo {
     z-index: auto;
     display: block;
     height: 2.5em;
     position: absolute;
     margin: 6px auto 5px 20px;
-}
-
-#tl_arrowkeys{
-    position: absolute;
-    opacity: 0.6;
-}
-
-/* tooltip based on tutorial from: http://www.w3schools.com/css/css_tooltip.asp */
-
-.tooltip-contain {
-    position: absolute;
-    display: inline-block;
-    right: 20px;
-    top: 10px;
-    opacity: 0.9;
-}
-
-.tooltiptxt {
-    visibility: hidden;
-    width: 120px;
-    text-align: center;
-    font-size: 0.7em;
-    background: #33457E;
-    color: #fff;
-    border-radius: 6px;
-    padding: 2%;
-    margin: 70px 4px 0 4px;
-}
-
-.tooltip-contain:hover .tooltiptxt {
-    visibility: visible;
-}
-
-.tooltip-contain:hover, #tl_arrowkeys:hover{
-    opacity: 0.9;
-}
-
-.tooltip-contain .tooltiptxt::after{
-    content: " ";
-    position: absolute;
-    bottom: 45%;
-    left: 50%;
-    margin-left: -5px;
-    border: 5px solid;
-    border-color: transparent transparent #33457E transparent;
 }
 
 .tl_title {
@@ -545,7 +489,7 @@ nav a:active {
     line-height: 1.3;
     text-align: justify;
     border-radius: 2px;
-    background: #AFC1FD;
+    background: rgba(194, 206, 255, 0.8);
     margin: 1% auto;
     padding: 1%;
 }
@@ -557,12 +501,10 @@ nav a:active {
 
 /*/////////////////////
 //                   //
-// (5.0) Typography  //
+//  5.0 Typography   //
 //                   //
 /////////////////////*/
 
-
-/*---- 5.1 - Heading level styles ----*/
 
 h1 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -581,12 +523,6 @@ h2 {
     text-align: center;
     font-size: 1.5em;
     line-height: 1.25;
-    font-weight: 300;
-}
-
-h2.tl_title {
-    font-size: 1.4em;
-    line-height: 1;
     font-weight: 300;
 }
 
@@ -626,9 +562,6 @@ body {
     color: #333333;
 }
 
-
-/*---- (5.2) - p styles----*/
-
 p {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: left;
@@ -636,10 +569,7 @@ p {
     line-height: 1.48;
 }
 
-.accordion {
-    font-size: 1.03em;
-    padding: 0 2%;
-}
+/* p classes and ids*/
 
 .reference {
     font-size: 0.9em;
@@ -664,6 +594,14 @@ p {
     text-decoration: none;
 }
 
+/* strong class */
+
+.bignumber{
+    font-size: 3.5em;
+    color: #6B7DFF;
+}
+
+
 .bio-link{
     font-size: 0.9em;
 }
@@ -681,13 +619,6 @@ blockquote{
     text-align: right;
 }
 
-/* strong class */
-
-.bignumber{
-    font-size: 3.5em;
-    color: #6B7DFF;
-}
-
 /* Code snippet for fixing line-height when using superscript
 from https://css-tricks.com/snippets/css/prevent-superscripts-and-subscripts-from-affecting-line-height/ */
 
@@ -700,7 +631,7 @@ sub {
     top: 0.4em;
 }
 
-/*---- (5.3) - call-out styles----*/
+/* callout classes */
 
 .callout {
     font-family: "Optima", "Trebuchet MS", serif;
@@ -714,12 +645,12 @@ sub {
     margin: 10% 0 4% 0;
 }
 
-#stat {
+#stat{
     text-align: right;
     border-right: 3px solid #333333;
 }
 
-.color-bk-header {
+.color-bk-header{
     width: 100%;
     text-align: center;
     color: #FFF;
@@ -727,16 +658,16 @@ sub {
     padding: 2% 0 2% 0;
 }
 
-.goal-text {
+.goal-text{
     font-size: 0.95em;
     margin: 0 0.2em 1em auto;
 }
 
-.device-desc {
+.device-desc{
     text-align: left;
 }
 
-/*---- (5.4) - list and label styles ----*/
+/* list classes */
 
 
 ul {
@@ -750,18 +681,14 @@ li {
     margin: 0.9em auto 0 auto;
 }
 
-li:first-child {
+li:first-child{
     margin-top: 0;
-}
-
-label.ac {
-    padding: 0 2%;
 }
 
 
 /*////////////////////////////
 //                          //
-//  (6.0) Content Sections  //
+//     Content Sections     //
 //                          //
 ////////////////////////////*/
 
@@ -798,6 +725,7 @@ label.ac {
 
 .goals{
     background: #d6e1ff;
+    border: none;
 }
 
 .goal-img {
@@ -832,8 +760,8 @@ label.ac {
 }
 
 .team-photo {
-    float: left;
-    margin: 7% 4% 2% 0;
+    float: right;
+    margin: 3% auto 1% 2%;
 }
 
 #device-area {
@@ -869,7 +797,7 @@ label.ac {
     content: "UX Factors";
     color: #333333;
     font-weight: 400;
-    font-size: 1.3em;
+    font-size: 1.5em;
     line-height: 1;
 }
 
@@ -928,7 +856,7 @@ label.ac {
 
 /*//////////////////////////////////
 //                                //
-//   (7.0) Data Visualisation     //
+//       Data Visualisation       //
 //                                //
 //////////////////////////////////*/
 
@@ -952,20 +880,20 @@ label.ac {
 }
 
 
-/*/////////////////////////////
-//                           //
-//  (8.0) Accordion          //
-//    Uses CSS3 Checkboxes   //
-//                           //
-/////////////////////////////*/
+/*//////////////////////////////////
+//                                //
+//        Accordion element       //
+//       Uses CSS3 Checkboxes     //
+//                                //
+//////////////////////////////////*/
 
 /* CSS based on Accordion with CSS3 by Mary Lou. Source: https://tympanus.net/codrops/2012/02/21/accordion-with-css3 */
 
-.accordion-contain{
+.ac-container{
     margin: 10px auto 30px auto;
 }
 
-.accordion-contain label{
+.ac-container label{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: left;
     position: relative;
@@ -974,23 +902,33 @@ label.ac {
     height: 30px;
     cursor: pointer;
     color: #333333;
+    padding: 0.5em auto 0.5em auto;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
     line-height: 33px;
-    border: 1px solid #CCC;
+    background: linear-gradient(top, #ffffff 1%,#eaeaea 100%);
+    box-shadow:
+            0 0 0 1px rgba(155,155,155,0.3),
+            1px 0 0 0 rgba(255,255,255,0.9) inset,
+            0 2px 2px rgba(0,0,0,0.1);
 }
 
-.accordion-contain label:hover{
+.ac-container label:hover{
     background: #fff;
 }
 
 
-.accordion-contain input:checked + label,
-.accordion-contain input:checked + label:hover{
+.ac-container input:checked + label,
+.ac-container input:checked + label:hover{
     background: #c6e1ec;
     color: #3d7489;
+    text-shadow: 0 1px 1px rgba(255,255,255, 0.6);
+    box-shadow:
+            0 0 0 1px rgba(155,155,155,0.3),
+            0 2px 2px rgba(0,0,0,0.1);
 }
 
-.accordion-contain label:hover:after,
-.accordion-contain input:checked + label:hover:after{
+.ac-container label:hover:after,
+.ac-container input:checked + label:hover:after{
     content: '';
     position: absolute;
     width: 24px;
@@ -1000,16 +938,16 @@ label.ac {
     /*background: transparent url(../images/arrow_down.png) no-repeat center center;*/
 }
 
-.accordion-contain input:checked + label:hover:after{
+.ac-container input:checked + label:hover:after{
     /*background-image: url(../images/arrow_up.png);*/
 }
 
 
-.accordion-contain input{
+.ac-container input{
     display: none;
 }
 
-.accordion-contain article{
+.ac-container article{
     background: rgba(255, 255, 255, 0.5);
     margin-top: -1px;
     overflow: hidden;
@@ -1020,145 +958,27 @@ label.ac {
             height 0.3s ease-in-out,
             box-shadow 0.6s linear;
 }
-.accordion-contain input:checked ~ article{
+.ac-container input:checked ~ article{
     transition:
             height 0.5s ease-in-out,
             box-shadow 0.1s linear;
     box-shadow: 0 0 0 1px rgba(155,155,155,0.3);
 }
 
-.accordion-contain input:checked ~ article.ac-xsmall{
-    height: 4em;
+.ac-container input:checked ~ article.ac-small{
+    height: 140px;
 }
-.accordion-contain input:checked ~ article.ac-small{
-    height: 8em;
+.ac-container input:checked ~ article.ac-medium{
+    height: 180px;
 }
-
-.accordion-contain input:checked ~ article.ac-medium{
-    height: 12em;
-}
-
-.accordion-contain input:checked ~ article.ac-large{
-    height: 14em;
-}
-
-.accordion-contain input:checked ~ article.ac-xlarge{
-    height: 23em;
-}
-
-
-/*//////////////////
-//                //
-//  (9.0) Form    //
-//                //
-//////////////////*/
-
-
-button {
-    /* top | right | bottom | left*/
-    margin: 1% auto 1% 1%;
-    font-size: 16px;
-    border-radius: 5px;
-    background: #CCC;
-}
-
-#contact_form {
-    display: block;
-}
-
-legend {
-    text-align: center;
-}
-
-fieldset {
-    border: 0;
-}
-
-label.form-label {
-    margin-bottom: 3px;
-    text-align: left;
-    display: block;
-    font-weight: 600;
-    position: relative;
-}
-
-/* short hand for styling form elements to take up full width of containing grid column */
-.i-full-width {
-    width: 100%;
-    height: 3em;
-}
-
-/* Used specifically for the field divs in the contact form TO DO */
-.minpadding {
-    text-align: left;
-    margin-right: 0;
-    padding: 1% 0 1% 0;
-}
-
-input {
-    border-radius: 5px;
-    border: solid 1px #405F9B;
-}
-
-textarea {
-    border-radius: 5px;
-    border: solid 1px #405F9B;
-}
-
-#subject {
-    background: #FFF;
-}
-
-select {
-    border: solid 1px #405F9B;
-}
-
-#message {
-    height: 8em;
-    text-align: start;
-}
-
-#submit {
-    width: 100%;
-    height: 3em;
-    font-size: 1.05em;
-    border: none;
-    background: #6B7DFF;
-    color: #FFF;
-    margin-top: 0.5em;
-    cursor: pointer;
-}
-
-#submit:hover{
-    background: #4c56ff;
-}
-
-#loading,
-#confirmation,
-#errmessage {
-    display: none;
-    text-align: center;
-    padding-top: 10em;
-}
-
-#errmessage h3 {
-    color: #ff5134;
-}
-
-.hint {
-    display: none;
-    color: #ff5134;
-}
-
-.hint_focus:focus{
-    display: none;
-    outline: 1px solid #ff5134;
+.ac-container input:checked ~ article.ac-large{
+    height: 220px;
 }
 
 
 /*///////////////
 //             //
-// (10.0) Grid //
+//     Grid    //
 //             //
 ///////////////*/
 
@@ -1255,20 +1075,9 @@ http://itsuite.it.brighton.ac.uk/fjm19/idm18journal/index.php/gridlandish/ */
     border-radius: 5px;
 }
 
-.col.col-4.bios:first-child {
+.col.col-4.bios:first-child,
+ .col.col-4.bios:last-child {
     margin-left: 2%;
-}
-
-.col.col-4.bios:last-child {
-    margin-right: 2%;
-}
-
-.col.col-4.minpadding:first-child {
-    margin-left: 1%;
-}
-
-.col.col-4.minpadding:nth-child(2) {
-    margin-right: 1%;
 }
 
 #device-blurb {
@@ -1276,10 +1085,9 @@ http://itsuite.it.brighton.ac.uk/fjm19/idm18journal/index.php/gridlandish/ */
 }
 
 .device-img {
-    width: 100%;
-    border: none;
-    margin: 2% auto 4%;
-    padding: auto;
+    overflow: auto;
+    border: solid 2px #EEEEEE;
+    padding: 0;
 }
 
 /* col-5 and derivatives */
@@ -1289,10 +1097,11 @@ http://itsuite.it.brighton.ac.uk/fjm19/idm18journal/index.php/gridlandish/ */
 }
 
 /* Is used for certain children/descendants of col-5 - this is important as the max-width is 1000px not 945px
-This adjustment allows col-5 to span the window width when needed */
+This adjustment allows col-5 to span the space when needed */
 
 .full-width {
     width: 100%;
+    /* top | right | bottom | left */
     margin: 0 auto 1% auto;
     padding: 0 2% 0 2%;
 }
@@ -1301,9 +1110,117 @@ This adjustment allows col-5 to span the window width when needed */
     padding-left: 0.5em;
 }
 
+/*////////////////////////////
+//                          //
+//     Buttons & Forms      //
+//                          //
+////////////////////////////*/
+
+
+button {
+    /* top | right | bottom | left*/
+    margin: 1% auto 1% 1%;
+    font-size: 16px;
+    border-radius: 5px;
+    background: #CCC;
+}
+
+#contact_form {
+    display: block;
+}
+
+legend {
+    text-align: center;
+}
+
+fieldset {
+    border: 0;
+}
+
+label.form-label {
+    margin-bottom: 3px;
+    text-align: left;
+    display: block;
+    font-weight: 600;
+    position: relative;
+}
+
+/* short hand for styling form elements to take up full width of containing grid column */
+.i-full-width {
+    width: 100%;
+    height: 3em;
+}
+
+/* Used specifically for the field divs in the contact form */
+.minpadding {
+    text-align: left;
+    margin-right: 0;
+    padding: 1% 0 1% 0;
+}
+
+input {
+    border-radius: 5px;
+    border: solid 1px #405F9B;
+}
+
+textarea {
+    border-radius: 5px;
+    border: solid 1px #405F9B;
+}
+
+#subject-entry {
+    margin-right: 0;
+}
+
+#subject {
+    background: #FFF;
+}
+
+#message {
+    height: 8em;
+    text-align: start;
+}
+
+#submit {
+    width: 100%;
+    height: 3em;
+    font-size: 1.05em;
+    border: none;
+    background: #6B7DFF;
+    color: #FFF;
+    margin-top: 0.5em;
+    cursor: pointer;
+}
+
+#submit:hover{
+    background: #4c56ff;
+}
+
+#loading,
+#confirmation,
+#errmessage {
+    display: none;
+    text-align: center;
+    padding-top: 10em;
+}
+
+#errmessage h3 {
+    color: #ff5134;
+}
+
+.hint {
+    display: none;
+    color: #ff5134;
+}
+
+.hint_focus:focus{
+    display: none;
+    outline: 1px solid #ff5134;
+}
+
 /*//////////////////////////////////
 //                                //
-// (11.0) Accessibility specific  //
+//     Accessibility specific     //
 //                                //
 //////////////////////////////////*/
 
@@ -1314,29 +1231,22 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 }
 
 
-/*//////////////////////////
-//                        //
-// (12.0) Media queries   //
-//                        //
-//////////////////////////*/
+/*//////////////////////////////////
+//                                //
+//         Media Queries          //
+//                                //
+//////////////////////////////////*/
 
 /* Desktop first media queries - this will generally be viewed from a desktop in the work environment */
 
 /* larger than Desktop HD */
 @media screen and (min-width: 1200px) {
 
-    #skip {
-        margin-left: 35%;
-    }
 }
 
 
 /* larger than a desktop */
 @media screen and (min-width: 1000px) {
-
-    #skip {
-        margin-left: 30%;
-    }
 
 }
 
@@ -1357,10 +1267,6 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 /* Correct menu overlap on responsive display */
 @media screen and (max-width: 580px) {
 
-    #skip {
-        display: none;
-    }
-
     nav li {
         font-size: 1em;
     }
@@ -1375,6 +1281,7 @@ or when screen readers are used - it is deliberately empty as it is only for lab
     }
 
     .tl_title {
+        /* top | right | bottom | left */
         margin: 2% 5% 2% 5%;
     }
 
@@ -1386,7 +1293,7 @@ or when screen readers are used - it is deliberately empty as it is only for lab
     }
 
     .tl_desc {
-
+        /* top | right | bottom | left */
         margin: 2% 10% 0 15%;
         width: 70%;
         font-size: 1em;
@@ -1405,10 +1312,6 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         display: none;
     }
 
-    .tooltip-contain{
-        display: none;
-    }
-
     #about-area {
         margin: -7em -0.01em auto -0.01em;
         padding-top: 1em;
@@ -1418,7 +1321,7 @@ or when screen readers are used - it is deliberately empty as it is only for lab
     }
 
     #data_align {
-
+        /* top | right | bottom | left */
         margin: 0.5em 3em 0.5em -0.8em;
         -moz-Transition: .4s;
         -webkit-Transition: .4s;
@@ -1533,24 +1436,24 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         .col.device-img {
             float: none;
             width: 99%;
-
+            /* top | right | bottom | left */
             margin: 1em 0 1em 0;
         }
 
         .about-area {
-
+            /* top | right | bottom | left */
             margin: 10% auto 2% auto;
 
         }
 
         .free-header{
-
+            /* top | right | bottom | left */
             margin: 0 auto 5% auto;
             padding: 2% 0 2% 4%;
         }
 
         .on-color-text {
-
+            /* top | right | bottom | left */
             margin: auto 2% 2% 0;
 
         }
@@ -1583,7 +1486,7 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         }
 
         .tl_grid {
-
+            /* top | right | bottom | left */
             margin: 5% auto 10% auto;
             height: 80%;
 
@@ -1603,14 +1506,14 @@ or when screen readers are used - it is deliberately empty as it is only for lab
         }
 
         .tl_title {
-
+            /* top | right | bottom | left */
             margin: 2% 5% 5% 5%;
             padding: 0 5% 0 5%;
             font-size: 16px;
         }
 
         .tl_desc {
-
+            /* top | right | bottom | left */
             margin: 5% 5% 0 5%;
             padding: 1% 1% 1% 1%;
             width: 90%;
@@ -1623,12 +1526,12 @@ or when screen readers are used - it is deliberately empty as it is only for lab
 
 
         .about-area {
-
+            /* top | right | bottom | left */
             margin: 0 auto 2% auto;
         }
 
         .free-header {
-
+            /* top | right | bottom | left */
             margin: 0 auto 5% auto;
             padding: 2% 0 2% 4%;
         }
@@ -1668,14 +1571,14 @@ or when screen readers are used - it is deliberately empty as it is only for lab
     }
 
     #device-factors {
-
+        /* top | right | bottom | left */
         margin: 0 auto 0.5em auto;
         background: #563557;
         border: none;
     }
 
     #factors-bk {
-
+        /* top | right | bottom | left */
         margin: 0.5em 0.5em 1em 0.5em;
     }
 
